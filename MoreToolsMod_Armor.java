@@ -424,7 +424,7 @@ public class MoreToolsMod_Armor
 	public void addArmorItem(Item item, ItemStack input, String name, int part)
 	{
 		addName(item, name);
-		ClashsoftCrafting.addArmorRecipe(item, input, part);
+		ClashsoftCrafting.addArmorRecipe(new ItemStack(item), input, part);
 	}
 
 

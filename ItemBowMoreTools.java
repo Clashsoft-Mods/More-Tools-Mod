@@ -199,12 +199,12 @@ public class ItemBowMoreTools extends Item
         spaceicons = new Icon[spacetextures.length];
     	for (int i = 0; i < spacetextures.length; i++)
         {
-        	spaceicons[i] = ClashsoftMisc.registerIcon(par1IconRegister, spacetextures[i]);
+        	spaceicons[i] = par1IconRegister.registerIcon(spacetextures[i]);
         }
     	icons = new Icon[textures.length];
     	for (int i = 0; i < textures.length; i++)
         {
-        	icons[i] = ClashsoftMisc.registerIcon(par1IconRegister, textures[i]);
+        	icons[i] = par1IconRegister.registerIcon(textures[i]);
         }
     }
     

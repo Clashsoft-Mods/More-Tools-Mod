@@ -109,8 +109,8 @@ public class ItemDyeableToolMoreTools extends ItemToolMoreTools
     public void updateIcons(IconRegister par1IconRegister) //Registers the Icons
     {
         String s = this instanceof ItemDyeableSwordMoreTools ? "sword" : this instanceof ItemDyeableSpadeMoreTools ? "spade" : this instanceof ItemDyeablePickaxeMoreTools ? "pick" : this instanceof ItemDyeableAxeMoreTools ? "axe" : "hoe";
-    	this.icons[0] = ClashsoftMisc.registerIcon(par1IconRegister, "l" + s + "1");
-        this.icons[1] = ClashsoftMisc.registerIcon(par1IconRegister, "l" + s + "2");
+    	this.icons[0] = par1IconRegister.registerIcon("l" + s + "1");
+        this.icons[1] = par1IconRegister.registerIcon("l" + s + "2");
     }
 
     /**
