@@ -1,7 +1,7 @@
 package clashsoft.mods.moretools;
 
-import clashsoft.clashsoftapi.ClashsoftCrafting;
-import clashsoft.clashsoftapi.ClashsoftItems;
+import clashsoft.clashsoftapi.CSCrafting;
+import clashsoft.clashsoftapi.CSItems;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -350,10 +350,10 @@ public class MoreToolsMod_Armor
 		
 		//Invisibility Armor.
 
-		ClashsoftItems.addItemWithRecipe(invisibilityHelmet, 0, "Invisibility Helmet", 1, new Object[] { "XxX", "X X", 'X', Item.ingotIron, 'x', Item.diamond });
-		ClashsoftItems.addItemWithRecipe(invisibilityChestplate, 0, "Invisibility Chestplate", 1, new Object[] { "X X", "XxX", "XXX", 'X', Item.ingotIron, 'x', Item.diamond });
-		ClashsoftItems.addItemWithRecipe(invisibilityLeggings, 0, "Invisibility Leggings", 1, new Object[] { "XxX", "X X", "X X", 'X', Item.ingotIron, 'x', Item.diamond });
-		ClashsoftItems.addItemWithRecipe(invisibilityBoots, 0, "Invisibility Boots", 1, new Object[] { "x x", "X X", 'X', Item.ingotIron, 'x', Item.diamond });
+		CSItems.addItemWithRecipe(invisibilityHelmet, 0, "Invisibility Helmet", 1, new Object[] { "XxX", "X X", 'X', Item.ingotIron, 'x', Item.diamond });
+		CSItems.addItemWithRecipe(invisibilityChestplate, 0, "Invisibility Chestplate", 1, new Object[] { "X X", "XxX", "XXX", 'X', Item.ingotIron, 'x', Item.diamond });
+		CSItems.addItemWithRecipe(invisibilityLeggings, 0, "Invisibility Leggings", 1, new Object[] { "XxX", "X X", "X X", 'X', Item.ingotIron, 'x', Item.diamond });
+		CSItems.addItemWithRecipe(invisibilityBoots, 0, "Invisibility Boots", 1, new Object[] { "x x", "X X", 'X', Item.ingotIron, 'x', Item.diamond });
 
 		//Emerald Armor.
 
@@ -424,7 +424,7 @@ public class MoreToolsMod_Armor
 	public void addArmorItem(Item item, ItemStack input, String name, int part)
 	{
 		addName(item, name);
-		ClashsoftCrafting.addArmorRecipe(new ItemStack(item), input, part);
+		CSCrafting.addArmorRecipe(new ItemStack(item), input, part);
 	}
 
 

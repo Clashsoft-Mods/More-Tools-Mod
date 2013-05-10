@@ -45,7 +45,7 @@ public class ItemMultitoolMoreTools extends ItemToolMoreTools
             return toolMaterial.getHarvestLevel() >= 2;
         }
 
-        if (par1Block == Block.blockSteel || par1Block == Block.oreIron)
+        if (par1Block == Block.blockIron || par1Block == Block.oreIron)
         {
             return toolMaterial.getHarvestLevel() >= 1;
         }
@@ -110,7 +110,7 @@ public class ItemMultitoolMoreTools extends ItemToolMoreTools
     {
         blocksEffectiveAgainst = (new Block[]
                 {
-                    Block.cobblestone, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold,
+                    Block.cobblestone, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockIron, Block.oreCoal, Block.blockGold,
                     Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice, Block.netherrack, Block.oreLapis, Block.blockLapis, Block.oreRedstone, Block.oreRedstoneGlowing, Block.rail,
                     Block.railDetector, Block.railPowered,
                     

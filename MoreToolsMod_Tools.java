@@ -1,8 +1,8 @@
 package clashsoft.mods.moretools;
 
-import clashsoft.clashsoftapi.ClashsoftBlocks;
-import clashsoft.clashsoftapi.ClashsoftCrafting;
-import clashsoft.clashsoftapi.ClashsoftItems;
+import clashsoft.clashsoftapi.CSBlocks;
+import clashsoft.clashsoftapi.CSCrafting;
+import clashsoft.clashsoftapi.CSItems;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.Mod.Init;
@@ -37,7 +37,7 @@ public class MoreToolsMod_Tools
 	
 	//Tool Materials.
 	
-	private EnumToolMaterial OBSIDIAN = ClashsoftItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian));
+	private EnumToolMaterial OBSIDIAN = CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian));
     private EnumToolMaterial REDSTONE = EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 4, 15);
     private EnumToolMaterial COAL = EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 5, 15);
     private EnumToolMaterial LAPIS = EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 6, 15);
@@ -144,6 +144,11 @@ public class MoreToolsMod_Tools
     public static final Item slimeHoe = (new ItemHoeMoreTools(2054, SLIME)).setUnlocalizedName("slimeHoe");
     public static final Item slimeSword = (new ItemSwordMoreTools(2055, SLIME, COMMON)).setUnlocalizedName("slimeSword");
     
+    public static final Item goldBucket = (new ItemGoldBucket(2108, 0)).setUnlocalizedName("bucketgold");
+    public static final Item goldBucketWater = (new ItemGoldBucket(2109, Block.waterStill.blockID)).setUnlocalizedName("bucketgoldWater");
+    public static final Item goldBucketLava = (new ItemGoldBucket(2110, Block.lavaStill.blockID)).setUnlocalizedName("bucketgoldLava");
+    public static final Item goldBucketMilk = (new ItemBucketMilk(2111)).setUnlocalizedName("bucketgoldMilk");
+    
     public static final Block spaceBlock = (new BlockSpaceblock(250)).setHardness(3F).setLightValue(15/16).setUnlocalizedName("spaceblock");
     public static final Block spaceOre = new Block(251, Material.rock).setHardness(2.5F).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("spaceore");
     public static final Block glowing = (new BlockGlowing(252)).setHardness(0F).setLightValue(1F).setUnlocalizedName("glowing");
@@ -187,26 +192,11 @@ public class MoreToolsMod_Tools
         Item redstoneAxe = (new ItemAxeMoreTools(1908, REDSTONE)).setUnlocalizedName("redstoneAxe");
         Item redstoneHoe = (new ItemHoeMoreTools(1909, REDSTONE)).setUnlocalizedName("redstoneHoe");
         Item redstoneSword = (new ItemSwordMoreTools(1910, REDSTONE, UNCOMMON)).setUnlocalizedName("redstoneSword");
-        ModLoader.addName(redstonePick, "Redstone Pickaxe");
-        ModLoader.addName(redstoneShovel, "Redstone Shovel");
-        ModLoader.addName(redstoneAxe, "Redstone Axe");
-        ModLoader.addName(redstoneHoe, "Redstone Hoe");
-        ModLoader.addName(redstoneSword, "Redstone Sword");
-        ModLoader.addRecipe(new ItemStack(redstonePick, 1), new Object[] {
-            "XXX", " | ", " | ", Character.valueOf('X'), Item.redstone, Character.valueOf('|'), Item.stick
-        });                      
-        ModLoader.addRecipe(new ItemStack(redstoneShovel, 1), new Object[] {
-            "X", "|", "|", 		 Character.valueOf('X'), Item.redstone, Character.valueOf('|'), Item.stick
-        });                      
-        ModLoader.addRecipe(new ItemStack(redstoneAxe, 1), new Object[] {
-            "XX", "X|", " |", 	 Character.valueOf('X'), Item.redstone, Character.valueOf('|'), Item.stick
-        });                      
-        ModLoader.addRecipe(new ItemStack(redstoneHoe, 1), new Object[] {
-            "XX", " |", " |", 	 Character.valueOf('X'), Item.redstone, Character.valueOf('|'), Item.stick
-        });                      
-        ModLoader.addRecipe(new ItemStack(redstoneSword, 1), new Object[] {
-            "X", "X", "|", 		 Character.valueOf('X'), Item.redstone, Character.valueOf('|'), Item.stick
-        });
+        CSItems.addItemWithRecipe(redstonePick, c15 + l3, "Redstone Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Block.blockRedstone, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(redstoneShovel, c15 + l2, "Redstone Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Block.blockRedstone, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(redstoneAxe, c15 + l4, "Redstone Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Block.blockRedstone, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(redstoneHoe, c15 + l5, "Redstone Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Block.blockRedstone, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(redstoneSword, c15 + l1, "Redstone Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Block.blockRedstone, Character.valueOf('|'), Item.stick}); 
         
         //Coal tools.
         
@@ -663,11 +653,11 @@ public class MoreToolsMod_Tools
         Item netherstarAxe = (new ItemAxeMoreTools(1998, NETHERSTAR)).setUnlocalizedName("netherstarAxe");
         Item netherstarHoe = (new ItemHoeMoreTools(1999, NETHERSTAR)).setUnlocalizedName("netherstarHoe");
         Item netherstarSword = (new ItemSwordMoreTools(2020, NETHERSTAR, EPIC)).setUnlocalizedName("netherstarSword");
-        ClashsoftItems.addItemWithRecipe(netherstarPick, c4 + l8, "Nether Star Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(netherstarShovel, c4 + l7, "Nether Star Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(netherstarAxe, c4 + l9, "Nether Star Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(netherstarHoe, c4 + l10, "Nether Star Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(netherstarSword, c4 + l6, "Nether Star Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(netherstarPick, c4 + l8, "Nether Star Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(netherstarShovel, c4 + l7, "Nether Star Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(netherstarAxe, c4 + l9, "Nether Star Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(netherstarHoe, c4 + l10, "Nether Star Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(netherstarSword, c4 + l6, "Nether Star Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
         
         //Potato tools
         
@@ -676,11 +666,11 @@ public class MoreToolsMod_Tools
         Item potatoAxe = (new ItemAxeMoreTools(2023, POTATO)).setUnlocalizedName("potatoAxe");
         Item potatoHoe = (new ItemHoeMoreTools(2024, POTATO)).setUnlocalizedName("potatoHoe");
         Item potatoSword = (new ItemSwordMoreTools(2025, POTATO, COMMON)).setUnlocalizedName("potatoSword");
-        ClashsoftItems.addItemWithRecipe(potatoPick, c5 + l8, "Potato Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(potatoShovel, c5 + l7, "Potato Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(potatoAxe, c5 + l9, "Potato Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(potatoHoe, c5 + l10, "Potato Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(potatoSword, c5 + l6, "Potato Sword", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(potatoPick, c5 + l8, "Potato Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(potatoShovel, c5 + l7, "Potato Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(potatoAxe, c5 + l9, "Potato Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(potatoHoe, c5 + l10, "Potato Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(potatoSword, c5 + l6, "Potato Sword", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
         
         //Carrot tools
         
@@ -689,11 +679,11 @@ public class MoreToolsMod_Tools
         Item carrotAxe = (new ItemAxeMoreTools(2028, CARROT)).setUnlocalizedName("carrotAxe");
         Item carrotHoe = (new ItemHoeMoreTools(2029, CARROT)).setUnlocalizedName("carrotHoe");
         Item carrotSword = (new ItemSwordMoreTools(2030, CARROT, COMMON)).setUnlocalizedName("carrotSword");
-        ClashsoftItems.addItemWithRecipe(carrotPick, c6 + l8, "Carrot Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(carrotShovel, c6 + l7, "Carrot Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(carrotAxe, c6 + l9, "Carrot Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(carrotHoe, c6 + l10, "Carrot Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(carrotSword, c6 + l6, "Carrot Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(carrotPick, c6 + l8, "Carrot Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(carrotShovel, c6 + l7, "Carrot Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(carrotAxe, c6 + l9, "Carrot Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(carrotHoe, c6 + l10, "Carrot Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(carrotSword, c6 + l6, "Carrot Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
         
         //Fish tools
         
@@ -702,11 +692,11 @@ public class MoreToolsMod_Tools
         Item fishAxe = (new ItemAxeMoreTools(2033, FISH)).setUnlocalizedName("fishAxe");
         Item fishHoe = (new ItemHoeMoreTools(2034, FISH)).setUnlocalizedName("fishHoe");
         Item fishSword = (new ItemSwordMoreTools(2035, FISH, COMMON)).setUnlocalizedName("fishSword");
-        ClashsoftItems.addItemWithRecipe(fishPick, c7 + l8, "Fish Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(fishShovel, c7 + l7, "Fish Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(fishAxe, c7 + l9, "Fish Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(fishHoe, c7 + l10, "Fish Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(fishSword, c7 + l6, "Fish Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(fishPick, c7 + l8, "Fish Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(fishShovel, c7 + l7, "Fish Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(fishAxe, c7 + l9, "Fish Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(fishHoe, c7 + l10, "Fish Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(fishSword, c7 + l6, "Fish Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
         
         //Bacon tools.
         
@@ -715,11 +705,11 @@ public class MoreToolsMod_Tools
         Item baconAxe = (new ItemAxeMoreTools(2038, BACON)).setUnlocalizedName("baconAxe");
         Item baconHoe = (new ItemHoeMoreTools(2039, BACON)).setUnlocalizedName("baconHoe");
         Item baconSword = (new ItemSwordMoreTools(2040, BACON, COMMON)).setUnlocalizedName("baconSword");
-        ClashsoftItems.addItemWithRecipe(baconPick, c8 + l8, "Bacon Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(baconShovel, c8 + l7, "Bacon Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(baconAxe, c8 + l9, "Bacon Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(baconHoe, c8 + l10, "Bacon Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(baconSword, c8 + l6, "Bacon Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(baconPick, c8 + l8, "Bacon Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(baconShovel, c8 + l7, "Bacon Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(baconAxe, c8 + l9, "Bacon Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(baconHoe, c8 + l10, "Bacon Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(baconSword, c8 + l6, "Bacon Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
         
         //Dyeable tools.
         
@@ -728,27 +718,27 @@ public class MoreToolsMod_Tools
         Item leatherAxe = (new ItemDyeableAxeMoreTools(2043, LEATHER)).setUnlocalizedName("leatherAxe");
         Item leatherHoe = (new ItemDyeableHoeMoreTools(2044, LEATHER)).setUnlocalizedName("leatherHoe");
         Item leatherSword = (new ItemDyeableSwordMoreTools(2045, LEATHER)).setUnlocalizedName("leatherSword");
-        ClashsoftItems.addItemWithRecipe(leatherPick, c15 + l3, "Leather Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(leatherShovel, c15 + l2, "Leather Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(leatherAxe, c15 + l4, "Leather Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(leatherHoe, c15 + l5, "Leather Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(leatherSword, c15 + l1, "Leather Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(leatherPick, c15 + l3, "Leather Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(leatherShovel, c15 + l2, "Leather Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(leatherAxe, c15 + l4, "Leather Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(leatherHoe, c15 + l5, "Leather Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(leatherSword, c15 + l1, "Leather Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
         
         //Glowstone Tools
         
-        ClashsoftItems.addItemWithRecipe(glowstonePick, c9 + l8, "Glowstone Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(glowstoneShovel, c9 + l7, "Glowstone Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(glowstoneAxe, c9 + l9, "Glowstone Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(glowstoneHoe, c9 + l10, "Glowstone Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(glowstoneSword, c9 + l6, "Glowstone Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(glowstonePick, c9 + l8, "Glowstone Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(glowstoneShovel, c9 + l7, "Glowstone Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(glowstoneAxe, c9 + l9, "Glowstone Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(glowstoneHoe, c9 + l10, "Glowstone Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(glowstoneSword, c9 + l6, "Glowstone Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Block.glowStone, Character.valueOf('|'), Item.stick});
         
         //Slimeball Tools
         
-        ClashsoftItems.addItemWithRecipe(slimePick, c10 + l8, "Slime Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(slimeShovel, c10 + l7, "Slime Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(slimeAxe, c10 + l9, "Slime Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(slimeHoe, c10 + l10, "Slime Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
-        ClashsoftItems.addItemWithRecipe(slimeSword, c10 + l6, "Slime Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(slimePick, c10 + l8, "Slime Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(slimeShovel, c10 + l7, "Slime Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(slimeAxe, c10 + l9, "Slime Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(slimeHoe, c10 + l10, "Slime Hoe", 1, new Object[]{"XX", " |", " |", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
+        CSItems.addItemWithRecipe(slimeSword, c10 + l6, "Slime Sword", 1, new Object[]{"X", "X", "|", Character.valueOf('X'), Item.slimeBall, Character.valueOf('|'), Item.stick});
         
         //Space things.
         
@@ -760,31 +750,32 @@ public class MoreToolsMod_Tools
         
         ModLoader.addRecipe(new ItemStack(spaceBlock, 1, 1), new Object[] {"sss", "sss", "sss", Character.valueOf('s'), spaceIngot});
         //Space Multitool.
-        ClashsoftItems.addItemWithShapelessRecipe(spaceMultitool, c4 + l1, "Space Multitool", 1, new Object[]{spacePick, spaceShovel, spaceAxe, spaceHoe, spaceSwordStrong});
+        CSItems.addItemWithShapelessRecipe(spaceMultitool, c4 + l1, "Space Multitool", 1, new Object[]{spacePick, spaceShovel, spaceAxe, spaceHoe, spaceSwordStrong});
         //Space Bow.
-        ClashsoftItems.addItemWithRecipe(spaceBow, c2 + l1, "Space Bow", 1, new Object[]{"sS ", "s S", "sS ", 'S', spaceIngot, 's', Item.silk});
+        CSItems.addItemWithRecipe(spaceBow, c2 + l1, "Space Bow", 1, new Object[]{"sS ", "s S", "sS ", 'S', spaceIngot, 's', Item.silk});
         //Space Arrow
-        ClashsoftItems.addItemWithRecipe(spaceArrow, c3 + l1, "Space Arrow", 4, new Object[]{"s", "|", "f", Character.valueOf('s'), spaceIngot,Character.valueOf('|'), Item.stick,Character.valueOf('f'), Item.feather});
+        CSItems.addItemWithRecipe(spaceArrow, c3 + l1, "Space Arrow", 4, new Object[]{"s", "|", "f", Character.valueOf('s'), spaceIngot,Character.valueOf('|'), Item.stick,Character.valueOf('f'), Item.feather});
         //Space Ingot.
-        ClashsoftItems.addItemWithRecipe(spaceIngot, 0, "Space Ingot", 9, new Object[]{"s", 's', new ItemStack(spaceBlock, 1, 1)});
+        CSItems.addItemWithRecipe(spaceIngot, 0, "Space Ingot", 9, new Object[]{"s", 's', new ItemStack(spaceBlock, 1, 1)});
         
-        ClashsoftCrafting.addSmelting(new ItemStack(spaceBlock, 1, 0), new ItemStack(spaceIngot, 1), 0.5F);
+        CSCrafting.addSmelting(new ItemStack(spaceOre, 1, 0), new ItemStack(spaceIngot, 1), 0.5F);
+        CSCrafting.addSmelting(new ItemStack(spaceBlock, 1, 0), new ItemStack(spaceIngot, 1), 0.5F);
         
         //Other items.
         
         //Blazerod and Steel.
         Item blazerodAndSteel = (new ItemFlintAndSteelMoreTools(2104, 128)).setUnlocalizedName("blazeandsteel");
-        ClashsoftItems.addItemWithRecipe(blazerodAndSteel, c5 + l1, "Blazerod and Steel", 1, new Object[]{"i ", " b", Character.valueOf('i'), Item.ingotIron, Character.valueOf('b'), Item.blazeRod});
+        CSItems.addItemWithRecipe(blazerodAndSteel, c5 + l1, "Blazerod and Steel", 1, new Object[]{"i ", " b", Character.valueOf('i'), Item.ingotIron, Character.valueOf('b'), Item.blazeRod});
         
         Item goldShears = (new ItemShearsMoreTools(2105, 32, 2)).setUnlocalizedName("shearsgold");
-        ClashsoftItems.addItemWithRecipe(goldShears, 6, "Gold Shears", 1, new Object[]{"X ", " X", Character.valueOf('X'), Item.ingotGold});
+        CSItems.addItemWithRecipe(goldShears, 6, "Gold Shears", 1, new Object[]{"X ", " X", Character.valueOf('X'), Item.ingotGold});
         Item diamondShears = (new ItemShearsMoreTools(2106, 1024, 5)).setUnlocalizedName("shearsdiamond");
-        ClashsoftItems.addItemWithRecipe(diamondShears, 22, "Diamond Shears", 1, new Object[]{"X ", " X", Character.valueOf('X'), Item.diamond});
+        CSItems.addItemWithRecipe(diamondShears, 22, "Diamond Shears", 1, new Object[]{"X ", " X", Character.valueOf('X'), Item.diamond});
         //Item skeletonBow = (new ItemBowMoreTools(2107, Item.arrow, true)).setUnlocalizedName("skeletonBow");
         
-        //Glowing Block used by Glowstoe Tools
+        //Glowing Block used by Glowstone Tools
         
-        ClashsoftBlocks.addBlock(glowing, "Glowing Block");
+        CSBlocks.addBlock(glowing, "Glowing Block");
     }
 	
 	public void load2()

@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools;
 
-import clashsoft.clashsoftapi.ClashsoftMisc;
+import clashsoft.clashsoftapi.CSUtil;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -106,7 +106,7 @@ public class ItemDyeableToolMoreTools extends ItemToolMoreTools
     
     @SideOnly(Side.CLIENT)
     @Override
-    public void updateIcons(IconRegister par1IconRegister) //Registers the Icons
+    public void registerIcons(IconRegister par1IconRegister) //Registers the Icons
     {
         String s = this instanceof ItemDyeableSwordMoreTools ? "sword" : this instanceof ItemDyeableSpadeMoreTools ? "spade" : this instanceof ItemDyeablePickaxeMoreTools ? "pick" : this instanceof ItemDyeableAxeMoreTools ? "axe" : "hoe";
     	this.icons[0] = par1IconRegister.registerIcon("l" + s + "1");

@@ -2,7 +2,7 @@ package clashsoft.mods.moretools;
 
 import java.util.Random;
 
-import clashsoft.clashsoftapi.ClashsoftMisc;
+import clashsoft.clashsoftapi.CSUtil;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -194,7 +194,7 @@ public class ItemBowMoreTools extends Item
     
     @SideOnly(Side.CLIENT)
     @Override
-    public void updateIcons(IconRegister par1IconRegister) //Registers the Icons
+    public void registerIcons(IconRegister par1IconRegister) //Registers the Icons
     {
         spaceicons = new Icon[spacetextures.length];
     	for (int i = 0; i < spacetextures.length; i++)
