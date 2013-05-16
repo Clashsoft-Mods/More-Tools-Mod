@@ -1,6 +1,7 @@
 package clashsoft.mods.moretools;
 
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Mod.*;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -21,6 +22,10 @@ public class MoreToolsMod
 	@SidedProxy(clientSide = "clashsoft.mods.moretools.ClientProxy", serverSide = "clashsoft.mods.moretools.CommonProxy")
 	public static CommonProxy proxy;
 	
+	public static int TOOLS_ID = 1900;
+	public static int ARMORY_ID = 2500;
+	public static int MISCITEMS_ID = 2400;
+	
 	public int linesOfCode =
 			  803	//Tools
 			+ 436	//Armor
@@ -34,13 +39,20 @@ public class MoreToolsMod
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		proxy.registerRenderers();
-		GameRegistry.registerWorldGenerator(new MoreToolsMod_WorldGen());
+		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		config.load();
+		
+		TOOLS_ID = config.get("IDs", "ToolItems", 1900).getInt();
+		ARMORY_ID = config.get("IDs", "ArmorItems", 2500).getInt();
+		MISCITEMS_ID = config.get("IDs", "MiscItems", 2400).getInt();
 	}
 	
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
+		proxy.registerRenderers();
+		GameRegistry.registerWorldGenerator(new MoreToolsMod_WorldGen());
+		
 		MoreToolsMod_Tools.instance.load(event);
 		MoreToolsMod_Armor.instance.load(event);
 	}
@@ -48,8 +60,12 @@ public class MoreToolsMod
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		System.out.println("[MoreToolsMod] Succesfully loaded More Tools Mod v1.5.1");
+		System.out.println("[MoreToolsMod] Succesfully loaded More Tools Mod");
 		System.out.println("[MoreToolsMod] Thanks for using!");
 		System.out.println("[MoreToolsMod] Made by Clashsoft.");
+		System.out.println("[MoreToolsMod] Setting IDs: ");
+		System.out.println("[MoreToolsMod]   Tools: 	 " + TOOLS_ID);
+		System.out.println("[MoreToolsMod]   Armory:	 " + ARMORY_ID);
+		System.out.println("[MoreToolsMod]   Misc Items: " + MISCITEMS_ID);
 	}
 }

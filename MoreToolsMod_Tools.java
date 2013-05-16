@@ -37,31 +37,31 @@ public class MoreToolsMod_Tools
 	
 	//Tool Materials.
 	
-	private EnumToolMaterial OBSIDIAN = CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian));
-    private EnumToolMaterial REDSTONE = EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 4, 15);
-    private EnumToolMaterial COAL = EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 5, 15);
-    private EnumToolMaterial LAPIS = EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 6, 15);
-    private EnumToolMaterial END = EnumHelper.addToolMaterial("END", 2, 512, 5F, 7, 15);
-    private static EnumToolMaterial SPACESTRONG = EnumHelper.addToolMaterial("SPACESTRONG", 3, 8196, 70F, 50, 20);
-    private static EnumToolMaterial SPACEWEAK = EnumHelper.addToolMaterial("SPACEWEAK", 3, 6144, 50F, 25, 18);
-    private EnumToolMaterial BONE = EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 4, 15);
-    private EnumToolMaterial REED = EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 5, 15);
-    private EnumToolMaterial BLAZEROD = EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 9, 15);
-    private EnumToolMaterial DIRT = EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, 3, 15);
-    private EnumToolMaterial GLASS = EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 6, 15);
-    private EnumToolMaterial SANDSTONE = EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 6, 15);
-    private EnumToolMaterial BRICK = EnumHelper.addToolMaterial("BRICK", 1, 128, 2.5F, 3, 15);
-    private EnumToolMaterial ENDSTONE = EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 5, 15);
-    private EnumToolMaterial EXCALIBUR = EnumHelper.addToolMaterial("EXCALIBUR", 3, 1048576, 10F, 100, 1);
-    private EnumToolMaterial GOD = EnumHelper.addToolMaterial("GOD", 3, 4096, 5F, 20, 10);
-    private EnumToolMaterial LUZIFER = EnumHelper.addToolMaterial("LUZIFER", 3, 4096, 5F, 20, 10);
+	private EnumToolMaterial OBSIDIAN = 	CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian));
+    private EnumToolMaterial REDSTONE = 	EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 4, 15);
+    private EnumToolMaterial COAL = 		EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 5, 15);
+    private EnumToolMaterial LAPIS = 		EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 6, 15);
+    public static EnumToolMaterial END = 	EnumHelper.addToolMaterial("END", 2, 512, 5F, 7, 15);
+    private static EnumToolMaterial SPACE1 =EnumHelper.addToolMaterial("SPACESTRONG", 3, 8196, 50F, 30, 20);
+    private static EnumToolMaterial SPACE2 =EnumHelper.addToolMaterial("SPACEWEAK", 3, 6144, 40F, 20, 18);
+    private EnumToolMaterial BONE = 		EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 4, 15);
+    private EnumToolMaterial REED = 		EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 5, 15);
+    private EnumToolMaterial BLAZEROD = 	EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 9, 15);
+    private EnumToolMaterial DIRT = 		EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, 3, 15);
+    private EnumToolMaterial GLASS = 		EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 6, 15);
+    private EnumToolMaterial SANDSTONE =	EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 6, 15);
+    private EnumToolMaterial BRICK = 		EnumHelper.addToolMaterial("BRICK", 1, 128, 2.5F, 3, 15);
+    private EnumToolMaterial ENDSTONE = 	EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 5, 15);
+    private EnumToolMaterial EXCALIBUR = 	EnumHelper.addToolMaterial("EXCALIBUR", 3, 16392, 10F, 50, 1);
+    private EnumToolMaterial GOD = 			EnumHelper.addToolMaterial("GOD", 3, 2048, 5F, 20, 10);
+    private EnumToolMaterial LUZIFER = 		EnumHelper.addToolMaterial("LUZIFER", 3, 2048, 5F, 20, 10);
     private static EnumToolMaterial LASER = EnumHelper.addToolMaterial("LASER", 3, -1, 1F, 60, 1);
-    private EnumToolMaterial EMERALD2 = EnumHelper.addToolMaterial("EMERALD", 3, 1536, 10F, 10, 17);
-    private EnumToolMaterial NETHERSTAR = EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 15, 20);
-    private EnumToolMaterial POTATO = EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 5, 15);
-    private EnumToolMaterial CARROT = EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 5, 15);
-    private EnumToolMaterial FISH = EnumHelper.addToolMaterial("FISH", 1, 64, 2.5F, 6, 15);
-    private EnumToolMaterial BACON = EnumHelper.addToolMaterial("BACON", 1, 64, 2.5F, 6, 15);
+    private EnumToolMaterial EMERALD2 = 	EnumHelper.addToolMaterial("EMERALD", 3, 1536, 10F, 10, 17);
+    private EnumToolMaterial NETHERSTAR = 	EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 15, 20);
+    private EnumToolMaterial POTATO = 		EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 5, 15);
+    private EnumToolMaterial CARROT = 		EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 5, 15);
+    private EnumToolMaterial FISH = 		EnumHelper.addToolMaterial("FISH", 1, 64, 2.5F, 6, 15);
+    private EnumToolMaterial BACON = 		EnumHelper.addToolMaterial("BACON", 1, 64, 2.5F, 6, 15);
     public static EnumToolMaterial LEATHER = EnumToolMaterial.WOOD;
     private static EnumToolMaterial GLOWSTONE = EnumHelper.addToolMaterial("GLOWSTONE", 2, 64, 1F, 5, 16);
     private static EnumToolMaterial SLIME = EnumHelper.addToolMaterial("SLIME", 1, 80, 1.2F, 5, 15);
@@ -113,41 +113,41 @@ public class MoreToolsMod_Tools
     
     //Items.
     
-    public static final Item spacePick = (new ItemPickaxeMoreTools(1926, SPACESTRONG)).setUnlocalizedName("spacePickaxe");
-	public static final Item spaceShovel = (new ItemSpadeMoreTools(1927, SPACESTRONG)).setUnlocalizedName("spaceShovel");
-	public static final Item spaceAxe = (new ItemAxeMoreTools(1928, SPACESTRONG)).setUnlocalizedName("spaceAxe");
-	public static final Item spaceHoe = (new ItemHoeMoreTools(1929, SPACESTRONG)).setUnlocalizedName("spaceHoe");
-	public static final Item spaceSwordStrong = (new ItemSwordMoreTools(1930, SPACESTRONG, EPIC)).setUnlocalizedName("spaceSwordStrong");
+    public static final Item spacePick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 26, SPACE1)).setUnlocalizedName("spacePickaxe");
+	public static final Item spaceShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 27, SPACE1)).setUnlocalizedName("spaceShovel");
+	public static final Item spaceAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 28, SPACE1)).setUnlocalizedName("spaceAxe");
+	public static final Item spaceHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 29, SPACE1)).setUnlocalizedName("spaceHoe");
+	public static final Item spaceSwordStrong = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 30, SPACE1, EPIC)).setUnlocalizedName("spaceSwordStrong");
 	
-	public static final Item spaceMultitool = (new ItemMultitoolMoreTools(2400, SPACESTRONG)).setUnlocalizedName("spacemulti");
-	public static final Item spaceArrow = (new ItemMoreTools(2402, CreativeTabs.tabCombat)).setUnlocalizedName("spacearrow");
-	public static final Item spaceBow = (new ItemBowMoreTools(2401, spaceArrow, false)).setUnlocalizedName("spacebow");
-    public static final Item spaceIngot = (new ItemMoreTools(2403, CreativeTabs.tabMaterials)).setUnlocalizedName("spaceingot");
-    public static final Item spaceSwordWeak = (new ItemSwordMoreTools(2404, SPACEWEAK, RARE)).setUnlocalizedName("spaceSwordWeak");
+	public static final Item spaceMultitool = (new ItemMultitoolMoreTools(MoreToolsMod.MISCITEMS_ID, SPACE1)).setUnlocalizedName("spacemulti");
+	public static final Item spaceArrow = (new ItemMoreTools(MoreToolsMod.MISCITEMS_ID + 2, CreativeTabs.tabCombat)).setUnlocalizedName("spacearrow");
+	public static final Item spaceBow = (new ItemBowMoreTools(MoreToolsMod.MISCITEMS_ID + 1, spaceArrow, false)).setUnlocalizedName("spacebow");
+    public static final Item spaceIngot = (new ItemMoreTools(MoreToolsMod.MISCITEMS_ID + 3, CreativeTabs.tabMaterials)).setUnlocalizedName("spaceingot");
+    public static final Item spaceSwordWeak = (new ItemSwordMoreTools(MoreToolsMod.MISCITEMS_ID + 4, SPACE2, RARE)).setUnlocalizedName("spaceSwordWeak");
     
-    public static final Item lightsaberShaft = (new ItemLightsaberShaftMoreTools(2405)).setUnlocalizedName("lsshaft");
-    public static final Item lightsaberBlue = (new ItemLightsaberMoreTools(1986, LASER)).setUnlocalizedName("lightSaber1");
-    public static final Item lightsaberGreen = (new ItemLightsaberMoreTools(1987, LASER)).setUnlocalizedName("lightSaber2");
-    public static final Item lightsaberPurple = (new ItemLightsaberMoreTools(1988, LASER)).setUnlocalizedName("lightSaber3");
-    public static final Item lightsaberRed = (new ItemLightsaberMoreTools(1989, LASER)).setUnlocalizedName("lightSaber4");
-    public static final Item lightsaberWhite = (new ItemLightsaberMoreTools(1990, LASER)).setUnlocalizedName("lightSaber5");
+    public static final Item lightsaberShaft = (new ItemLightsaberShaftMoreTools(MoreToolsMod.MISCITEMS_ID + 05)).setUnlocalizedName("lsshaft");
+    public static final Item lightsaberBlue = (new ItemLightsaberMoreTools(MoreToolsMod.TOOLS_ID + 86, LASER)).setUnlocalizedName("lightSaber1");
+    public static final Item lightsaberGreen = (new ItemLightsaberMoreTools(MoreToolsMod.TOOLS_ID + 87, LASER)).setUnlocalizedName("lightSaber2");
+    public static final Item lightsaberPurple = (new ItemLightsaberMoreTools(MoreToolsMod.TOOLS_ID + 88, LASER)).setUnlocalizedName("lightSaber3");
+    public static final Item lightsaberRed = (new ItemLightsaberMoreTools(MoreToolsMod.TOOLS_ID + 89, LASER)).setUnlocalizedName("lightSaber4");
+    public static final Item lightsaberWhite = (new ItemLightsaberMoreTools(MoreToolsMod.TOOLS_ID + 90, LASER)).setUnlocalizedName("lightSaber5");
     
-    public static final Item glowstonePick = (new ItemPickaxeMoreTools(2046, GLOWSTONE)).setUnlocalizedName("glowstonePickaxe");
-    public static final Item glowstoneShovel = (new ItemSpadeMoreTools(2047, GLOWSTONE)).setUnlocalizedName("glowstoneShovel");
-    public static final Item glowstoneAxe = (new ItemAxeMoreTools(2048, GLOWSTONE)).setUnlocalizedName("glowstoneAxe");
-    public static final Item glowstoneHoe = (new ItemHoeMoreTools(2049, GLOWSTONE)).setUnlocalizedName("glowstoneHoe");
-    public static final Item glowstoneSword = (new ItemSwordMoreTools(2050, GLOWSTONE, COMMON)).setUnlocalizedName("glowstoneSword");
+    public static final Item glowstonePick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 46, GLOWSTONE)).setUnlocalizedName("glowstonePickaxe");
+    public static final Item glowstoneShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 47, GLOWSTONE)).setUnlocalizedName("glowstoneShovel");
+    public static final Item glowstoneAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 48, GLOWSTONE)).setUnlocalizedName("glowstoneAxe");
+    public static final Item glowstoneHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 49, GLOWSTONE)).setUnlocalizedName("glowstoneHoe");
+    public static final Item glowstoneSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 100 + 50, GLOWSTONE, COMMON)).setUnlocalizedName("glowstoneSword");
     
-    public static final Item slimePick = (new ItemPickaxeMoreTools(2051, SLIME)).setUnlocalizedName("slimePickaxe");
-    public static final Item slimeShovel = (new ItemSpadeMoreTools(2052, SLIME)).setUnlocalizedName("slimeShovel");
-    public static final Item slimeAxe = (new ItemAxeMoreTools(2053, SLIME)).setUnlocalizedName("slimeAxe");
-    public static final Item slimeHoe = (new ItemHoeMoreTools(2054, SLIME)).setUnlocalizedName("slimeHoe");
-    public static final Item slimeSword = (new ItemSwordMoreTools(2055, SLIME, COMMON)).setUnlocalizedName("slimeSword");
+    public static final Item slimePick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 51, SLIME)).setUnlocalizedName("slimePickaxe");
+    public static final Item slimeShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 52, SLIME)).setUnlocalizedName("slimeShovel");
+    public static final Item slimeAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 53, SLIME)).setUnlocalizedName("slimeAxe");
+    public static final Item slimeHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 54, SLIME)).setUnlocalizedName("slimeHoe");
+    public static final Item slimeSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 100 + 55, SLIME, COMMON)).setUnlocalizedName("slimeSword");
     
-    public static final Item goldBucket = (new ItemGoldBucket(2108, 0)).setUnlocalizedName("bucketgold");
-    public static final Item goldBucketWater = (new ItemGoldBucket(2109, Block.waterStill.blockID)).setUnlocalizedName("bucketgoldWater");
-    public static final Item goldBucketLava = (new ItemGoldBucket(2110, Block.lavaStill.blockID)).setUnlocalizedName("bucketgoldLava");
-    public static final Item goldBucketMilk = (new ItemBucketMilk(2111)).setUnlocalizedName("bucketgoldMilk");
+    public static final Item goldBucket = (new ItemGoldBucket(MoreToolsMod.TOOLS_ID + 200 + 8, 0)).setUnlocalizedName("bucketgold");
+    public static final Item goldBucketWater = (new ItemGoldBucket(MoreToolsMod.TOOLS_ID + 200 + 9, Block.waterStill.blockID)).setUnlocalizedName("bucketgoldWater");
+    public static final Item goldBucketLava = (new ItemGoldBucket(MoreToolsMod.TOOLS_ID + 200 + 10, Block.lavaStill.blockID)).setUnlocalizedName("bucketgoldLava");
+    public static final Item goldBucketMilk = (new ItemBucketMilk(MoreToolsMod.TOOLS_ID + 200 + 11)).setUnlocalizedName("bucketgoldMilk");
     
     public static final Block spaceBlock = (new BlockSpaceblock(250)).setHardness(3F).setLightValue(15/16).setUnlocalizedName("spaceblock");
     public static final Block spaceOre = new Block(251, Material.rock).setHardness(2.5F).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("spaceore");
@@ -159,11 +159,11 @@ public class MoreToolsMod_Tools
 		
 		//Obsidian tools.
     	
-    	Item obsidianPick = (new ItemPickaxeMoreTools(1901, OBSIDIAN)).setUnlocalizedName("obsidianPickaxe");
-        Item obsidianShovel = (new ItemSpadeMoreTools(1902, OBSIDIAN)).setUnlocalizedName("obsidianShovel");
-        Item obsidianAxe = (new ItemAxeMoreTools(1903, OBSIDIAN)).setUnlocalizedName("obsidianAxe");
-        Item obsidianHoe = (new ItemHoeMoreTools(1904, OBSIDIAN)).setUnlocalizedName("obsidianHoe");
-        Item obsidianSword = (new ItemSwordMoreTools(1905, OBSIDIAN, UNCOMMON)).setUnlocalizedName("obsidianSword");
+    	Item obsidianPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 01, OBSIDIAN)).setUnlocalizedName("obsidianPickaxe");
+        Item obsidianShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 02, OBSIDIAN)).setUnlocalizedName("obsidianShovel");
+        Item obsidianAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 03, OBSIDIAN)).setUnlocalizedName("obsidianAxe");
+        Item obsidianHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 04, OBSIDIAN)).setUnlocalizedName("obsidianHoe");
+        Item obsidianSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 05, OBSIDIAN, UNCOMMON)).setUnlocalizedName("obsidianSword");
         ModLoader.addName(obsidianPick, "Obsidian Pickaxe");
         ModLoader.addName(obsidianShovel, "Obsidian Shovel");
         ModLoader.addName(obsidianAxe, "Obsidian Axe");
@@ -187,11 +187,11 @@ public class MoreToolsMod_Tools
         
         //Redstone tools.
         
-        Item redstonePick = (new ItemPickaxeMoreTools(1906, REDSTONE)).setUnlocalizedName("redstonePickaxe");
-        Item redstoneShovel = (new ItemSpadeMoreTools(1907, REDSTONE)).setUnlocalizedName("redstoneShovel");
-        Item redstoneAxe = (new ItemAxeMoreTools(1908, REDSTONE)).setUnlocalizedName("redstoneAxe");
-        Item redstoneHoe = (new ItemHoeMoreTools(1909, REDSTONE)).setUnlocalizedName("redstoneHoe");
-        Item redstoneSword = (new ItemSwordMoreTools(1910, REDSTONE, UNCOMMON)).setUnlocalizedName("redstoneSword");
+        Item redstonePick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 06, REDSTONE)).setUnlocalizedName("redstonePickaxe");
+        Item redstoneShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 07, REDSTONE)).setUnlocalizedName("redstoneShovel");
+        Item redstoneAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 8, REDSTONE)).setUnlocalizedName("redstoneAxe");
+        Item redstoneHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 9, REDSTONE)).setUnlocalizedName("redstoneHoe");
+        Item redstoneSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 10, REDSTONE, UNCOMMON)).setUnlocalizedName("redstoneSword");
         CSItems.addItemWithRecipe(redstonePick, c15 + l3, "Redstone Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Block.blockRedstone, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(redstoneShovel, c15 + l2, "Redstone Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Block.blockRedstone, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(redstoneAxe, c15 + l4, "Redstone Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Block.blockRedstone, Character.valueOf('|'), Item.stick});
@@ -200,11 +200,11 @@ public class MoreToolsMod_Tools
         
         //Coal tools.
         
-        Item coalPick = (new ItemPickaxeMoreTools(1911, COAL)).setUnlocalizedName("coalPickaxe");
-        Item coalShovel = (new ItemSpadeMoreTools(1912, COAL)).setUnlocalizedName("coalShovel");
-        Item coalAxe = (new ItemAxeMoreTools(1913, COAL)).setUnlocalizedName("coalAxe");
-        Item coalHoe = (new ItemHoeMoreTools(1914, COAL)).setUnlocalizedName("coalHoe");
-        Item coalSword = (new ItemSwordMoreTools(1915, COAL, COMMON)).setUnlocalizedName("coalSword");
+        Item coalPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 11, COAL)).setUnlocalizedName("coalPickaxe");
+        Item coalShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 12, COAL)).setUnlocalizedName("coalShovel");
+        Item coalAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 13, COAL)).setUnlocalizedName("coalAxe");
+        Item coalHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 14, COAL)).setUnlocalizedName("coalHoe");
+        Item coalSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 15, COAL, COMMON)).setUnlocalizedName("coalSword");
         ModLoader.addName(coalPick, "Coal Pickaxe");
         ModLoader.addName(coalShovel, "Coal Shovel");
         ModLoader.addName(coalAxe, "Coal Axe");
@@ -228,11 +228,11 @@ public class MoreToolsMod_Tools
         
         //Lapislazuli tools.
         
-        Item lapisPick = (new ItemPickaxeMoreTools(1916, LAPIS)).setUnlocalizedName("lapisPickaxe");
-        Item lapisShovel = (new ItemSpadeMoreTools(1917, LAPIS)).setUnlocalizedName("lapisShovel");
-        Item lapisAxe = (new ItemAxeMoreTools(1918, LAPIS)).setUnlocalizedName("lapisAxe");
-        Item lapisHoe = (new ItemHoeMoreTools(1919, LAPIS)).setUnlocalizedName("lapisHoe");
-        Item lapisSword = (new ItemSwordMoreTools(1920, LAPIS, COMMON)).setUnlocalizedName("lapisSword");
+        Item lapisPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 16, LAPIS)).setUnlocalizedName("lapisPickaxe");
+        Item lapisShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 17, LAPIS)).setUnlocalizedName("lapisShovel");
+        Item lapisAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 18, LAPIS)).setUnlocalizedName("lapisAxe");
+        Item lapisHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 19, LAPIS)).setUnlocalizedName("lapisHoe");
+        Item lapisSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 20, LAPIS, COMMON)).setUnlocalizedName("lapisSword");
         ModLoader.addName(lapisPick, "Lapislazuli Pickaxe");
         ModLoader.addName(lapisShovel, "Lapislazuli Shovel");
         ModLoader.addName(lapisAxe, "Lapislazuli Axe");
@@ -256,11 +256,11 @@ public class MoreToolsMod_Tools
         
         //Endertools.
         
-        Item enderPick = (new ItemPickaxeMoreTools(1921, END)).setUnlocalizedName("enderPickaxe");
-        Item enderShovel = (new ItemSpadeMoreTools(1922, END)).setUnlocalizedName("enderShovel");
-        Item enderAxe = (new ItemAxeMoreTools(1923, END)).setUnlocalizedName("enderAxe");
-        Item enderHoe = (new ItemHoeMoreTools(1924, END)).setUnlocalizedName("enderHoe");
-        Item enderSword = (new ItemSwordMoreTools(1925, END, RARE)).setUnlocalizedName("enderSword");
+        Item enderPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 21, END)).setUnlocalizedName("enderPickaxe");
+        Item enderShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 22, END)).setUnlocalizedName("enderShovel");
+        Item enderAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 23, END)).setUnlocalizedName("enderAxe");
+        Item enderHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 24, END)).setUnlocalizedName("enderHoe");
+        Item enderSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 25, END, RARE)).setUnlocalizedName("enderSword");
         ModLoader.addName(enderPick, "Ender Pickaxe");
         ModLoader.addName(enderShovel, "Ender Shovel");
         ModLoader.addName(enderAxe, "Ender Axe");
@@ -311,11 +311,11 @@ public class MoreToolsMod_Tools
         
         //Bone tools.
         
-        Item bonePick = (new ItemPickaxeMoreTools(1931, BONE)).setUnlocalizedName("bonePickaxe");
-        Item boneShovel = (new ItemSpadeMoreTools(1932, BONE)).setUnlocalizedName("boneShovel");
-        Item boneAxe = (new ItemAxeMoreTools(1933, BONE)).setUnlocalizedName("boneAxe");
-        Item boneHoe = (new ItemHoeMoreTools(1934, BONE)).setUnlocalizedName("boneHoe");
-        Item boneSword = (new ItemSwordMoreTools(1935, BONE, COMMON)).setUnlocalizedName("boneSword");
+        Item bonePick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 31, BONE)).setUnlocalizedName("bonePickaxe");
+        Item boneShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 32, BONE)).setUnlocalizedName("boneShovel");
+        Item boneAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 33, BONE)).setUnlocalizedName("boneAxe");
+        Item boneHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 34, BONE)).setUnlocalizedName("boneHoe");
+        Item boneSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 35, BONE, COMMON)).setUnlocalizedName("boneSword");
         ModLoader.addName(bonePick, "Bone Pickaxe");
         ModLoader.addName(boneShovel, "Bone Shovel");
         ModLoader.addName(boneAxe, "Bone Axe");
@@ -339,11 +339,11 @@ public class MoreToolsMod_Tools
         
         //Sugarcane Tools.
         
-        Item sugarcanePick = (new ItemPickaxeMoreTools(1936, REED)).setUnlocalizedName("sugarcanePickaxe");
-        Item sugarcaneShovel = (new ItemSpadeMoreTools(1937, REED)).setUnlocalizedName("sugarcaneShovel");
-        Item sugarcaneAxe = (new ItemAxeMoreTools(1938, REED)).setUnlocalizedName("sugarcaneAxe");
-        Item sugarcaneHoe = (new ItemHoeMoreTools(1939, REED)).setUnlocalizedName("sugarcaneHoe");
-        Item sugarcaneSword = (new ItemSwordMoreTools(1940, REED, COMMON)).setUnlocalizedName("sugarcaneSword");
+        Item sugarcanePick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 36, REED)).setUnlocalizedName("sugarcanePickaxe");
+        Item sugarcaneShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 37, REED)).setUnlocalizedName("sugarcaneShovel");
+        Item sugarcaneAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 38, REED)).setUnlocalizedName("sugarcaneAxe");
+        Item sugarcaneHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 39, REED)).setUnlocalizedName("sugarcaneHoe");
+        Item sugarcaneSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 40, REED, COMMON)).setUnlocalizedName("sugarcaneSword");
         ModLoader.addName(sugarcanePick, "Sugarcane Pickaxe");
         ModLoader.addName(sugarcaneShovel, "Sugarcane Shovel");
         ModLoader.addName(sugarcaneAxe, "Sugarcane Axe");
@@ -367,11 +367,11 @@ public class MoreToolsMod_Tools
         
         //Blazerod Tools.
         
-        Item blazerodPick = (new ItemPickaxeMoreTools(1941, BLAZEROD)).setUnlocalizedName("blazePickaxe");
-        Item blazerodShovel = (new ItemSpadeMoreTools(1942, BLAZEROD)).setUnlocalizedName("blazeShovel");
-        Item blazerodAxe = (new ItemAxeMoreTools(1943, BLAZEROD)).setUnlocalizedName("blazeAxe");
-        Item blazerodHoe = (new ItemHoeMoreTools(1944, BLAZEROD)).setUnlocalizedName("blazeHoe");
-        Item blazerodSword = (new ItemSwordMoreTools(1945, BLAZEROD, UNCOMMON)).setUnlocalizedName("blazeSword");
+        Item blazerodPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 41, BLAZEROD)).setUnlocalizedName("blazePickaxe");
+        Item blazerodShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 42, BLAZEROD)).setUnlocalizedName("blazeShovel");
+        Item blazerodAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 43, BLAZEROD)).setUnlocalizedName("blazeAxe");
+        Item blazerodHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 44, BLAZEROD)).setUnlocalizedName("blazeHoe");
+        Item blazerodSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 45, BLAZEROD, UNCOMMON)).setUnlocalizedName("blazeSword");
         ModLoader.addName(blazerodPick, "Blaze Pickaxe");
         ModLoader.addName(blazerodShovel, "Blaze Shovel");
         ModLoader.addName(blazerodAxe, "Blaze Axe");
@@ -395,11 +395,11 @@ public class MoreToolsMod_Tools
         
         //Dirt Tools.
         
-        Item dirtPick = (new ItemPickaxeMoreTools(1946, DIRT)).setUnlocalizedName("dirtPickaxe");
-        Item dirtShovel = (new ItemSpadeMoreTools(1947, DIRT)).setUnlocalizedName("dirtShovel");
-        Item dirtAxe = (new ItemAxeMoreTools(1948, DIRT)).setUnlocalizedName("dirtAxe");
-        Item dirtHoe = (new ItemHoeMoreTools(1949, DIRT)).setUnlocalizedName("dirtHoe");
-        Item dirtSword = (new ItemSwordMoreTools(1950, DIRT, COMMON)).setUnlocalizedName("dirtSword");
+        Item dirtPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 46, DIRT)).setUnlocalizedName("dirtPickaxe");
+        Item dirtShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 47, DIRT)).setUnlocalizedName("dirtShovel");
+        Item dirtAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 48, DIRT)).setUnlocalizedName("dirtAxe");
+        Item dirtHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 49, DIRT)).setUnlocalizedName("dirtHoe");
+        Item dirtSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 50, DIRT, COMMON)).setUnlocalizedName("dirtSword");
         ModLoader.addName(dirtPick, "Dirt Pickaxe");
         ModLoader.addName(dirtShovel, "Dirt Shovel");
         ModLoader.addName(dirtAxe, "Dirt Axe");
@@ -423,11 +423,11 @@ public class MoreToolsMod_Tools
         
         //Glass Tools.
         
-        Item glassPick = (new ItemPickaxeMoreTools(1951, GLASS)).setUnlocalizedName("glassPickaxe");
-        Item glassShovel = (new ItemSpadeMoreTools(1952, GLASS)).setUnlocalizedName("glassShovel");
-        Item glassAxe = (new ItemAxeMoreTools(1953, GLASS)).setUnlocalizedName("glassAxe");
-        Item glassHoe = (new ItemHoeMoreTools(1954, GLASS)).setUnlocalizedName("glassHoe");
-        Item glassSword = (new ItemSwordMoreTools(1955, GLASS, COMMON)).setUnlocalizedName("glassSword");
+        Item glassPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 51, GLASS)).setUnlocalizedName("glassPickaxe");
+        Item glassShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 52, GLASS)).setUnlocalizedName("glassShovel");
+        Item glassAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 53, GLASS)).setUnlocalizedName("glassAxe");
+        Item glassHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 54, GLASS)).setUnlocalizedName("glassHoe");
+        Item glassSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 55, GLASS, COMMON)).setUnlocalizedName("glassSword");
         ModLoader.addName(glassPick, "Glass Pickaxe");
         ModLoader.addName(glassShovel, "Glass Shovel");
         ModLoader.addName(glassAxe, "Glass Axe");
@@ -451,11 +451,11 @@ public class MoreToolsMod_Tools
         
         //Sandstone Tools.
         
-        Item sandstonePick = (new ItemPickaxeMoreTools(1956, SANDSTONE)).setUnlocalizedName("sandstonePickaxe");
-        Item sandstoneShovel = (new ItemSpadeMoreTools(1957, SANDSTONE)).setUnlocalizedName("sandstoneShovel");
-        Item sandstoneAxe = (new ItemAxeMoreTools(1958, SANDSTONE)).setUnlocalizedName("sandstoneAxe");
-        Item sandstoneHoe = (new ItemHoeMoreTools(1959, SANDSTONE)).setUnlocalizedName("sandstoneHoe");
-        Item sandstoneSword = (new ItemSwordMoreTools(1960, SANDSTONE, COMMON)).setUnlocalizedName("sandstoneSword");
+        Item sandstonePick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 56, SANDSTONE)).setUnlocalizedName("sandstonePickaxe");
+        Item sandstoneShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 57, SANDSTONE)).setUnlocalizedName("sandstoneShovel");
+        Item sandstoneAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 58, SANDSTONE)).setUnlocalizedName("sandstoneAxe");
+        Item sandstoneHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 59, SANDSTONE)).setUnlocalizedName("sandstoneHoe");
+        Item sandstoneSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 60, SANDSTONE, COMMON)).setUnlocalizedName("sandstoneSword");
         ModLoader.addName(sandstonePick, "Sandstone Pickaxe");
         ModLoader.addName(sandstoneShovel, "Sandstone Shovel");
         ModLoader.addName(sandstoneAxe, "Sandstone Axe");
@@ -479,11 +479,11 @@ public class MoreToolsMod_Tools
         
         //Brick Tools.
         
-        Item brickPick = (new ItemPickaxeMoreTools(1961, BRICK)).setUnlocalizedName("brickPickaxe");
-        Item brickShovel = (new ItemSpadeMoreTools(1962, BRICK)).setUnlocalizedName("brickShovel");
-        Item brickAxe = (new ItemAxeMoreTools(1963, BRICK)).setUnlocalizedName("brickAxe");
-        Item brickHoe = (new ItemHoeMoreTools(1964, BRICK)).setUnlocalizedName("brickHoe");
-        Item brickSword = (new ItemSwordMoreTools(1965, BRICK, COMMON)).setUnlocalizedName("brickSword");
+        Item brickPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 61, BRICK)).setUnlocalizedName("brickPickaxe");
+        Item brickShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 62, BRICK)).setUnlocalizedName("brickShovel");
+        Item brickAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 63, BRICK)).setUnlocalizedName("brickAxe");
+        Item brickHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 64, BRICK)).setUnlocalizedName("brickHoe");
+        Item brickSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 65, BRICK, COMMON)).setUnlocalizedName("brickSword");
         ModLoader.addName(brickPick, "Brick Pickaxe");
         ModLoader.addName(brickShovel, "Brick Shovel");
         ModLoader.addName(brickAxe, "Brick Axe");
@@ -507,11 +507,11 @@ public class MoreToolsMod_Tools
         
         //Endstone Tools.
         
-        Item endstonePick = (new ItemPickaxeMoreTools(1966, ENDSTONE)).setUnlocalizedName("endstonePickaxe");
-        Item endstoneShovel = (new ItemSpadeMoreTools(1967, ENDSTONE)).setUnlocalizedName("endstoneShovel");
-        Item endstoneAxe = (new ItemAxeMoreTools(1968, ENDSTONE)).setUnlocalizedName("endstoneAxe");
-        Item endstoneHoe = (new ItemHoeMoreTools(1969, ENDSTONE)).setUnlocalizedName("endstoneHoe");
-        Item endstoneSword = (new ItemSwordMoreTools(1970, ENDSTONE, UNCOMMON)).setUnlocalizedName("endstoneSword");
+        Item endstonePick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 66, ENDSTONE)).setUnlocalizedName("endstonePickaxe");
+        Item endstoneShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 67, ENDSTONE)).setUnlocalizedName("endstoneShovel");
+        Item endstoneAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 68, ENDSTONE)).setUnlocalizedName("endstoneAxe");
+        Item endstoneHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 69, ENDSTONE)).setUnlocalizedName("endstoneHoe");
+        Item endstoneSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 70, ENDSTONE, UNCOMMON)).setUnlocalizedName("endstoneSword");
         ModLoader.addName(endstonePick, "Endstone Pickaxe");
         ModLoader.addName(endstoneShovel, "Endstone Shovel");
         ModLoader.addName(endstoneAxe, "Endstone Axe");
@@ -535,24 +535,24 @@ public class MoreToolsMod_Tools
         
         //Excalibur.
         
-        Item excaliburSword = (new ItemSwordMoreTools(1975, EXCALIBUR, EPIC)).setUnlocalizedName("epicSword");
+        Item excaliburSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 75, EXCALIBUR, EPIC)).setUnlocalizedName("epicSword");
         ModLoader.addName(excaliburSword, "Excalibur");
         ModLoader.addRecipe(new ItemStack(excaliburSword, 1), new Object[]{
-        	"gGg",
-        	"gDg",
-        	" | ",
-        	Character.valueOf('g'), Item.ghastTear, Character.valueOf('G'), Block.blockGold,
-        	Character.valueOf('D'), Block.blockDiamond,
-        	Character.valueOf('|'), Item.stick
+        	"gNg",
+        	"hDh",
+        	"l|l",
+        	Character.valueOf('g'), Item.ghastTear, Character.valueOf('N'), Item.netherStar,
+        	Character.valueOf('D'), Block.dragonEgg, 'h', new ItemStack(Item.skull, 1, 1),
+        	Character.valueOf('|'), Item.blazeRod, 'l', Item.leather
         });
         
         //Hallowed Tools.
         
-        Item godPick = (new ItemPickaxeMoreTools(1976, GOD)).setUnlocalizedName("godPickaxe");
-        Item godShovel = (new ItemSpadeMoreTools(1977, GOD)).setUnlocalizedName("godShovel");
-        Item godAxe = (new ItemAxeMoreTools(1978, GOD)).setUnlocalizedName("godAxe");
-        Item godHoe = (new ItemHoeMoreTools(1979, GOD)).setUnlocalizedName("godHoe");
-        Item godSword = (new ItemSwordMoreTools(1980, GOD, EPIC)).setUnlocalizedName("godSword");
+        Item godPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 76, GOD)).setUnlocalizedName("godPickaxe");
+        Item godShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 77, GOD)).setUnlocalizedName("godShovel");
+        Item godAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 78, GOD)).setUnlocalizedName("godAxe");
+        Item godHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 79, GOD)).setUnlocalizedName("godHoe");
+        Item godSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 80, GOD, EPIC)).setUnlocalizedName("godSword");
         ModLoader.addName(godPick, "God's Pickaxe");
         ModLoader.addName(godShovel, "God's Shovel");
         ModLoader.addName(godAxe, "God's Axe");
@@ -576,11 +576,11 @@ public class MoreToolsMod_Tools
         
         //Goddawn Tools.
         
-        Item luziferPick = (new ItemPickaxeMoreTools(1981, LUZIFER)).setUnlocalizedName("luziferPickaxe");
-        Item luziferShovel = (new ItemSpadeMoreTools(1982, LUZIFER)).setUnlocalizedName("luziferShovel");
-        Item luziferAxe = (new ItemAxeMoreTools(1983, LUZIFER)).setUnlocalizedName("luziferAxe");
-        Item luziferHoe = (new ItemHoeMoreTools(1984, LUZIFER)).setUnlocalizedName("luziferHoe");
-        Item luziferSword = (new ItemSwordMoreTools(1985, LUZIFER, EPIC)).setUnlocalizedName("luziferSword");
+        Item luziferPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 81, LUZIFER)).setUnlocalizedName("luziferPickaxe");
+        Item luziferShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 82, LUZIFER)).setUnlocalizedName("luziferShovel");
+        Item luziferAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 83, LUZIFER)).setUnlocalizedName("luziferAxe");
+        Item luziferHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 84, LUZIFER)).setUnlocalizedName("luziferHoe");
+        Item luziferSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 85, LUZIFER, EPIC)).setUnlocalizedName("luziferSword");
         ModLoader.addName(luziferPick, "Luzifer's Pickaxe");
         ModLoader.addName(luziferShovel, "Luzifer's Shovel");
         ModLoader.addName(luziferAxe, "Luzifer's Axe");
@@ -620,11 +620,11 @@ public class MoreToolsMod_Tools
         
         //Emerald Tools.
         
-        Item emeraldPick = (new ItemPickaxeMoreTools(1991, EMERALD2)).setUnlocalizedName("emeraldPickaxe");
-        Item emeraldShovel = (new ItemSpadeMoreTools(1992, EMERALD2)).setUnlocalizedName("emeraldShovel");
-        Item emeraldAxe = (new ItemAxeMoreTools(1993, EMERALD2)).setUnlocalizedName("emeraldAxe");
-        Item emeraldHoe = (new ItemHoeMoreTools(1994, EMERALD2)).setUnlocalizedName("emeraldHoe");
-        Item emeraldSword = (new ItemSwordMoreTools(1995, EMERALD2, EPIC)).setUnlocalizedName("emeraldSword");
+        Item emeraldPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 91, EMERALD2)).setUnlocalizedName("emeraldPickaxe");
+        Item emeraldShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 92, EMERALD2)).setUnlocalizedName("emeraldShovel");
+        Item emeraldAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 93, EMERALD2)).setUnlocalizedName("emeraldAxe");
+        Item emeraldHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 94, EMERALD2)).setUnlocalizedName("emeraldHoe");
+        Item emeraldSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 95, EMERALD2, EPIC)).setUnlocalizedName("emeraldSword");
         ModLoader.addName(emeraldPick, "Emerald Pickaxe");
         ModLoader.addName(emeraldShovel, "Emerald Shovel");
         ModLoader.addName(emeraldAxe, "Emerald Axe");
@@ -648,11 +648,11 @@ public class MoreToolsMod_Tools
         
         //Netherstar tools
         
-        Item netherstarPick = (new ItemPickaxeMoreTools(1996, NETHERSTAR)).setUnlocalizedName("netherstarPickaxe");
-        Item netherstarShovel = (new ItemSpadeMoreTools(1997, NETHERSTAR)).setUnlocalizedName("netherstarShovel");
-        Item netherstarAxe = (new ItemAxeMoreTools(1998, NETHERSTAR)).setUnlocalizedName("netherstarAxe");
-        Item netherstarHoe = (new ItemHoeMoreTools(1999, NETHERSTAR)).setUnlocalizedName("netherstarHoe");
-        Item netherstarSword = (new ItemSwordMoreTools(2020, NETHERSTAR, EPIC)).setUnlocalizedName("netherstarSword");
+        Item netherstarPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 96, NETHERSTAR)).setUnlocalizedName("netherstarPickaxe");
+        Item netherstarShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 97, NETHERSTAR)).setUnlocalizedName("netherstarShovel");
+        Item netherstarAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 98, NETHERSTAR)).setUnlocalizedName("netherstarAxe");
+        Item netherstarHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 99, NETHERSTAR)).setUnlocalizedName("netherstarHoe");
+        Item netherstarSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 100 + 20, NETHERSTAR, EPIC)).setUnlocalizedName("netherstarSword");
         CSItems.addItemWithRecipe(netherstarPick, c4 + l8, "Nether Star Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(netherstarShovel, c4 + l7, "Nether Star Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(netherstarAxe, c4 + l9, "Nether Star Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.netherStar, Character.valueOf('|'), Item.stick});
@@ -661,11 +661,11 @@ public class MoreToolsMod_Tools
         
         //Potato tools
         
-        Item potatoPick = (new ItemPickaxeMoreTools(2021, POTATO)).setUnlocalizedName("potatoPickaxe");
-        Item potatoShovel = (new ItemSpadeMoreTools(2022, POTATO)).setUnlocalizedName("potatoShovel");
-        Item potatoAxe = (new ItemAxeMoreTools(2023, POTATO)).setUnlocalizedName("potatoAxe");
-        Item potatoHoe = (new ItemHoeMoreTools(2024, POTATO)).setUnlocalizedName("potatoHoe");
-        Item potatoSword = (new ItemSwordMoreTools(2025, POTATO, COMMON)).setUnlocalizedName("potatoSword");
+        Item potatoPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 21, POTATO)).setUnlocalizedName("potatoPickaxe");
+        Item potatoShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 22, POTATO)).setUnlocalizedName("potatoShovel");
+        Item potatoAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 23, POTATO)).setUnlocalizedName("potatoAxe");
+        Item potatoHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 24, POTATO)).setUnlocalizedName("potatoHoe");
+        Item potatoSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 100 + 25, POTATO, COMMON)).setUnlocalizedName("potatoSword");
         CSItems.addItemWithRecipe(potatoPick, c5 + l8, "Potato Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(potatoShovel, c5 + l7, "Potato Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(potatoAxe, c5 + l9, "Potato Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.potato, Character.valueOf('|'), Item.stick});
@@ -674,11 +674,11 @@ public class MoreToolsMod_Tools
         
         //Carrot tools
         
-        Item carrotPick = (new ItemPickaxeMoreTools(2026, CARROT)).setUnlocalizedName("carrotPickaxe");
-        Item carrotShovel = (new ItemSpadeMoreTools(2027, CARROT)).setUnlocalizedName("carrotShovel");
-        Item carrotAxe = (new ItemAxeMoreTools(2028, CARROT)).setUnlocalizedName("carrotAxe");
-        Item carrotHoe = (new ItemHoeMoreTools(2029, CARROT)).setUnlocalizedName("carrotHoe");
-        Item carrotSword = (new ItemSwordMoreTools(2030, CARROT, COMMON)).setUnlocalizedName("carrotSword");
+        Item carrotPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 26, CARROT)).setUnlocalizedName("carrotPickaxe");
+        Item carrotShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 27, CARROT)).setUnlocalizedName("carrotShovel");
+        Item carrotAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 28, CARROT)).setUnlocalizedName("carrotAxe");
+        Item carrotHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 29, CARROT)).setUnlocalizedName("carrotHoe");
+        Item carrotSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 100 + 30, CARROT, COMMON)).setUnlocalizedName("carrotSword");
         CSItems.addItemWithRecipe(carrotPick, c6 + l8, "Carrot Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(carrotShovel, c6 + l7, "Carrot Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(carrotAxe, c6 + l9, "Carrot Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.carrot, Character.valueOf('|'), Item.stick});
@@ -687,11 +687,11 @@ public class MoreToolsMod_Tools
         
         //Fish tools
         
-        Item fishPick = (new ItemPickaxeMoreTools(2031, FISH)).setUnlocalizedName("fishPickaxe");
-        Item fishShovel = (new ItemSpadeMoreTools(2032, FISH)).setUnlocalizedName("fishShovel");
-        Item fishAxe = (new ItemAxeMoreTools(2033, FISH)).setUnlocalizedName("fishAxe");
-        Item fishHoe = (new ItemHoeMoreTools(2034, FISH)).setUnlocalizedName("fishHoe");
-        Item fishSword = (new ItemSwordMoreTools(2035, FISH, COMMON)).setUnlocalizedName("fishSword");
+        Item fishPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 31, FISH)).setUnlocalizedName("fishPickaxe");
+        Item fishShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 32, FISH)).setUnlocalizedName("fishShovel");
+        Item fishAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 33, FISH)).setUnlocalizedName("fishAxe");
+        Item fishHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 34, FISH)).setUnlocalizedName("fishHoe");
+        Item fishSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 100 + 35, FISH, COMMON)).setUnlocalizedName("fishSword");
         CSItems.addItemWithRecipe(fishPick, c7 + l8, "Fish Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(fishShovel, c7 + l7, "Fish Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(fishAxe, c7 + l9, "Fish Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.fishRaw, Character.valueOf('|'), Item.stick});
@@ -700,11 +700,11 @@ public class MoreToolsMod_Tools
         
         //Bacon tools.
         
-        Item baconPick = (new ItemPickaxeMoreTools(2036, BACON)).setUnlocalizedName("baconPickaxe");
-        Item baconShovel = (new ItemSpadeMoreTools(2037, BACON)).setUnlocalizedName("baconShovel");
-        Item baconAxe = (new ItemAxeMoreTools(2038, BACON)).setUnlocalizedName("baconAxe");
-        Item baconHoe = (new ItemHoeMoreTools(2039, BACON)).setUnlocalizedName("baconHoe");
-        Item baconSword = (new ItemSwordMoreTools(2040, BACON, COMMON)).setUnlocalizedName("baconSword");
+        Item baconPick = (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 36, BACON)).setUnlocalizedName("baconPickaxe");
+        Item baconShovel = (new ItemSpadeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 37, BACON)).setUnlocalizedName("baconShovel");
+        Item baconAxe = (new ItemAxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 38, BACON)).setUnlocalizedName("baconAxe");
+        Item baconHoe = (new ItemHoeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 39, BACON)).setUnlocalizedName("baconHoe");
+        Item baconSword = (new ItemSwordMoreTools(MoreToolsMod.TOOLS_ID + 100 + 40, BACON, COMMON)).setUnlocalizedName("baconSword");
         CSItems.addItemWithRecipe(baconPick, c8 + l8, "Bacon Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(baconShovel, c8 + l7, "Bacon Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(baconAxe, c8 + l9, "Bacon Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.porkRaw, Character.valueOf('|'), Item.stick});
@@ -713,11 +713,11 @@ public class MoreToolsMod_Tools
         
         //Dyeable tools.
         
-        Item leatherPick = (new ItemDyeablePickaxeMoreTools(2041, LEATHER)).setUnlocalizedName("leatherPickaxe");
-        Item leatherShovel = (new ItemDyeableSpadeMoreTools(2042, LEATHER)).setUnlocalizedName("leatherShovel");
-        Item leatherAxe = (new ItemDyeableAxeMoreTools(2043, LEATHER)).setUnlocalizedName("leatherAxe");
-        Item leatherHoe = (new ItemDyeableHoeMoreTools(2044, LEATHER)).setUnlocalizedName("leatherHoe");
-        Item leatherSword = (new ItemDyeableSwordMoreTools(2045, LEATHER)).setUnlocalizedName("leatherSword");
+        Item leatherPick = (new ItemDyeablePickaxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 41, LEATHER)).setUnlocalizedName("leatherPickaxe");
+        Item leatherShovel = (new ItemDyeableSpadeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 42, LEATHER)).setUnlocalizedName("leatherShovel");
+        Item leatherAxe = (new ItemDyeableAxeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 43, LEATHER)).setUnlocalizedName("leatherAxe");
+        Item leatherHoe = (new ItemDyeableHoeMoreTools(MoreToolsMod.TOOLS_ID + 100 + 44, LEATHER)).setUnlocalizedName("leatherHoe");
+        Item leatherSword = (new ItemDyeableSwordMoreTools(MoreToolsMod.TOOLS_ID + 100 + 45, LEATHER)).setUnlocalizedName("leatherSword");
         CSItems.addItemWithRecipe(leatherPick, c15 + l3, "Leather Pickaxe", 1, new Object[]{"XXX", " | ", " | ", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(leatherShovel, c15 + l2, "Leather Shovel", 1, new Object[]{"X", "|", "|", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
         CSItems.addItemWithRecipe(leatherAxe, c15 + l4, "Leather Axe", 1, new Object[]{"XX", "X|", " |", Character.valueOf('X'), Item.leather, Character.valueOf('|'), Item.stick});
@@ -764,14 +764,14 @@ public class MoreToolsMod_Tools
         //Other items.
         
         //Blazerod and Steel.
-        Item blazerodAndSteel = (new ItemFlintAndSteelMoreTools(2104, 128)).setUnlocalizedName("blazeandsteel");
+        Item blazerodAndSteel = (new ItemFlintAndSteelMoreTools(MoreToolsMod.TOOLS_ID + 200 + 04, 128)).setUnlocalizedName("blazeandsteel");
         CSItems.addItemWithRecipe(blazerodAndSteel, c5 + l1, "Blazerod and Steel", 1, new Object[]{"i ", " b", Character.valueOf('i'), Item.ingotIron, Character.valueOf('b'), Item.blazeRod});
         
-        Item goldShears = (new ItemShearsMoreTools(2105, 32, 2)).setUnlocalizedName("shearsgold");
+        Item goldShears = (new ItemShearsMoreTools(MoreToolsMod.TOOLS_ID + 200 + 05, 32, 2)).setUnlocalizedName("shearsgold");
         CSItems.addItemWithRecipe(goldShears, 6, "Gold Shears", 1, new Object[]{"X ", " X", Character.valueOf('X'), Item.ingotGold});
-        Item diamondShears = (new ItemShearsMoreTools(2106, 1024, 5)).setUnlocalizedName("shearsdiamond");
+        Item diamondShears = (new ItemShearsMoreTools(MoreToolsMod.TOOLS_ID + 200 + 06, 1024, 5)).setUnlocalizedName("shearsdiamond");
         CSItems.addItemWithRecipe(diamondShears, 22, "Diamond Shears", 1, new Object[]{"X ", " X", Character.valueOf('X'), Item.diamond});
-        //Item skeletonBow = (new ItemBowMoreTools(2107, Item.arrow, true)).setUnlocalizedName("skeletonBow");
+        //Item skeletonBow = (new ItemBowMoreTools(MoreToolsMod.TOOLS_ID + 200 + 07, Item.arrow, true)).setUnlocalizedName("skeletonBow");
         
         //Glowing Block used by Glowstone Tools
         

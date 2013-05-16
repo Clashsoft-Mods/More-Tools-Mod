@@ -3,6 +3,8 @@ package clashsoft.mods.moretools;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.*;
+import net.minecraft.entity.item.EntityEnderPearl;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -88,7 +90,6 @@ public class ItemToolMoreTools extends ItemTool
         return toolMaterial.getEnchantability();
     }
     
-    int counter = 5;
     /**
      * Called each tick as long the item is on a player inventory. Uses by maps to check if is on a player hand and
      * update it's contents.
@@ -100,5 +101,18 @@ public class ItemToolMoreTools extends ItemTool
     	{
     		ItemArmorMoreTools.setLight(par2World, par3Entity);
     	}
+    }
+    
+    /**
+     * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
+     */
+    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+    {
+    	if (this.toolMaterial == MoreToolsMod_Tools.END && par3EntityPlayer.isSneaking())
+		{
+			ItemStack is = Item.enderPearl.onItemRightClick(par1ItemStack.copy(), par2World, par3EntityPlayer);
+			par1ItemStack.damageItem(20, par3EntityPlayer);
+		}
+        return par1ItemStack;
     }
 }

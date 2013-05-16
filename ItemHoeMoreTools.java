@@ -80,7 +80,6 @@ public class ItemHoeMoreTools extends ItemHoe
         return true;
     }
     
-    int counter = 5;
     /**
      * Called each tick as long the item is on a player inventory. Uses by maps to check if is on a player hand and
      * update it's contents.
@@ -92,5 +91,18 @@ public class ItemHoeMoreTools extends ItemHoe
     	{
     		ItemArmorMoreTools.setLight(par2World, par3Entity);
     	}
+    }
+    
+    /**
+     * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
+     */
+    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+    {
+    	if (this.theToolMaterial == MoreToolsMod_Tools.END && par3EntityPlayer.isSneaking())
+		{
+			Item.enderPearl.onItemRightClick(par1ItemStack.copy(), par2World, par3EntityPlayer);
+			par1ItemStack.damageItem(20, par3EntityPlayer);
+		}
+        return par1ItemStack;
     }
 }
