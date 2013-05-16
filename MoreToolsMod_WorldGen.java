@@ -22,6 +22,13 @@ public class MoreToolsMod_WorldGen implements IWorldGenerator
   			int randPosZ = chunkZ * 16 + rand.nextInt(16);
   			(new WorldGenMinable(MoreToolsMod_Tools.spaceOre.blockID, 6)).generate(world, rand, randPosX, randPosY, randPosZ);
   		}
+  		if (rand.nextInt(100) == 0)
+  		{
+  			int randPosX = chunkX * 16 + rand.nextInt(16);
+  			int randPosY = rand.nextInt(20);
+  			int randPosZ = chunkZ * 16 + rand.nextInt(16);
+  			(new WorldGenMinable(MoreToolsMod_Tools.spaceBlock.blockID, 12)).generate(world, rand, randPosX, randPosY, randPosZ);
+  		}
     }
 	
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)

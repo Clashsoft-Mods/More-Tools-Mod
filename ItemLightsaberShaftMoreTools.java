@@ -16,6 +16,7 @@ public class ItemLightsaberShaftMoreTools extends ItemMoreTools {
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	{
 		ItemStack blue = new ItemStack(MoreToolsMod_Tools.lightsaberBlue, 1);
+		par3EntityPlayer.triggerAchievement(MoreToolsMod_Achievements.instance.lightsaber);
 		return blue;
 	}
 

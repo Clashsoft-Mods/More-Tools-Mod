@@ -3,16 +3,9 @@ package clashsoft.mods.moretools;
 import clashsoft.clashsoftapi.CSBlocks;
 import clashsoft.clashsoftapi.CSCrafting;
 import clashsoft.clashsoftapi.CSItems;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.Mod.Init;
-import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLLoadEvent;
-import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
@@ -21,20 +14,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.src.ModLoader;
-import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 
-//@Mod (modid = "MoreToolsModToolsID", name="MoreToolsMod(Tools)", version="1.5")
-//@NetworkMod (clientSideRequired = true, serverSideRequired = false)
 public class MoreToolsMod_Tools
 {
-//	@Instance("MoreToolsModToolsID")
+
 	public static MoreToolsMod_Tools instance = new MoreToolsMod_Tools();
-//	
-//	@SidedProxy(clientSide = "clashsoft.mods.moretools.ClientProxy", serverSide = "clashsoft.mods.moretools.CommonProxy")
-//	public static CommonProxy proxy;
-	
+
 	//Tool Materials.
 	
 	private EnumToolMaterial OBSIDIAN = 	CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian));
@@ -540,10 +527,10 @@ public class MoreToolsMod_Tools
         ModLoader.addRecipe(new ItemStack(excaliburSword, 1), new Object[]{
         	"gNg",
         	"hDh",
-        	"l|l",
+        	"d|d",
         	Character.valueOf('g'), Item.ghastTear, Character.valueOf('N'), Item.netherStar,
         	Character.valueOf('D'), Block.dragonEgg, 'h', new ItemStack(Item.skull, 1, 1),
-        	Character.valueOf('|'), Item.blazeRod, 'l', Item.leather
+        	Character.valueOf('|'), Item.blazeRod, 'd', Item.diamond
         });
         
         //Hallowed Tools.

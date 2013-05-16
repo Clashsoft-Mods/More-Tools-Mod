@@ -29,7 +29,7 @@ public class MoreToolsMod
 	public int linesOfCode =
 			  803	//Tools
 			+ 436	//Armor
-			//+ 68	//Achievements
+			+ 68	//Achievements
 			+ 46	//WorldGen
 			+ 69	//ClientProxy
 			+ 23	//CommonProxy
@@ -55,6 +55,7 @@ public class MoreToolsMod
 		
 		MoreToolsMod_Tools.instance.load(event);
 		MoreToolsMod_Armor.instance.load(event);
+		MoreToolsMod_Achievements.instance.load();
 	}
 	
 	@PostInit

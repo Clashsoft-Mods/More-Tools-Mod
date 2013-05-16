@@ -2,22 +2,15 @@ package clashsoft.mods.moretools;
 
 import clashsoft.clashsoftapi.CSCrafting;
 import clashsoft.clashsoftapi.CSItems;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
-import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
 
-//@Mod(modid = "MoreToolsModArmorID", name = "MoreToolsMod(Armor)", version = "1.5")
-//@NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MoreToolsMod_Armor
 {	
-	//	@Instance("MoreToolsModArmorID")
 	public static MoreToolsMod_Armor instance = new MoreToolsMod_Armor();
 
 	//Armor Materials.
@@ -27,7 +20,7 @@ public class MoreToolsMod_Armor
 	private static EnumArmorMaterial COAL = EnumHelper.addArmorMaterial("COAL", 128, new int[] {1, 5, 3, 2}, 10);
 	private static EnumArmorMaterial LAPIS = EnumHelper.addArmorMaterial("LAPIS", 128, new int[] {1, 5, 3, 2}, 10);
 	private static EnumArmorMaterial END = EnumHelper.addArmorMaterial("END", 1024, new int[] {3, 8, 7, 6}, 10);
-	private static EnumArmorMaterial SPACE = EnumHelper.addArmorMaterial("SPACE", 700, new int[] {9, 12, 11, 10}, 15);
+	private static EnumArmorMaterial SPACE = EnumHelper.addArmorMaterial("SPACE", 700, new int[] {7, 10, 9, 8}, 15);
 	private static EnumArmorMaterial BONE = EnumHelper.addArmorMaterial("BONE", 24, new int[] {1, 5, 3, 2}, 10);
 	private static EnumArmorMaterial REED = EnumHelper.addArmorMaterial("REED", 16, new int[] {1, 5, 3, 2}, 10);
 	private static EnumArmorMaterial BLAZEROD = EnumHelper.addArmorMaterial("BLAZEROD", 64, new int[] {4, 10, 7, 3}, 10);
@@ -36,10 +29,10 @@ public class MoreToolsMod_Armor
 	private static EnumArmorMaterial SANDSTONE = EnumHelper.addArmorMaterial("SANDSTONE", 64, new int[] {2, 4, 3, 2}, 10);
 	private static EnumArmorMaterial BRICK = EnumHelper.addArmorMaterial("BRICK", 32, new int[] {2, 4, 3, 2}, 10);
 	private static EnumArmorMaterial ENDSTONE = EnumHelper.addArmorMaterial("ENDSTONE", 100, new int[] {3, 5, 4, 2}, 10);
-	private static EnumArmorMaterial EPIC = EnumHelper.addArmorMaterial("EPIC", 4096, new int[] {100, 150, 130, 60}, 1);
+	private static EnumArmorMaterial EPIC = EnumHelper.addArmorMaterial("EPIC", 4096, new int[] {13, 18, 15, 10}, 1);
 	public static EnumArmorMaterial INVISIBILITY = EnumHelper.addArmorMaterial("INVISIBILITY", 24, new int[] {2, 7, 5, 2}, 10);
-	private static EnumArmorMaterial HALLOWED = EnumHelper.addArmorMaterial("HALLOWED", 512, new int[] {10, 15, 13, 6}, 7);
-	private static EnumArmorMaterial GODDAWN = EnumHelper.addArmorMaterial("GODDAWN", 512, new int[] {10, 15, 13, 6}, 7);
+	private static EnumArmorMaterial HALLOWED = EnumHelper.addArmorMaterial("HALLOWED", 512, new int[] {8, 10, 9, 5}, 7);
+	private static EnumArmorMaterial GODDAWN = EnumHelper.addArmorMaterial("GODDAWN", 512, new int[] {8, 10, 9, 5}, 7);
 	private static EnumArmorMaterial EMERALD = EnumHelper.addArmorMaterial("EMERALD", 512, new int[] {3, 8, 6, 3}, 13);
 	private static EnumArmorMaterial NETHERSTAR = EnumHelper.addArmorMaterial("NETHERSTAR", 512, new int[] {11, 16, 14, 7}, 20);
 	private static EnumArmorMaterial POTATO = EnumHelper.addArmorMaterial("POTATO", 16, new int[] {1, 3, 3, 2}, 7);
@@ -420,7 +413,6 @@ public class MoreToolsMod_Armor
 	 * @param iconIndex
 	 * @param part
 	 */
-
 	public void addArmorItem(Item item, ItemStack input, String name, int part)
 	{
 		addName(item, name);
