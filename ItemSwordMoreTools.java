@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 public class ItemSwordMoreTools extends ItemSword
 {
 	private int weaponDamage;
-	private final EnumToolMaterial toolMaterial;
+	public final EnumToolMaterial toolMaterial;
 	private int rarity;
 
 	public ItemSwordMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial, int par3)

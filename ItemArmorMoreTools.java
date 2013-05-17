@@ -30,7 +30,7 @@ public class ItemArmorMoreTools extends ItemArmor
     public final int renderIndex;
 
     /** The EnumArmorMaterial used for this ItemArmor */
-    private final EnumArmorMaterial material;
+    public final EnumArmorMaterial material;
 
     public ItemArmorMoreTools(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4)
     {

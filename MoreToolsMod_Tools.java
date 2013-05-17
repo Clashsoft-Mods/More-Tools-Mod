@@ -24,43 +24,43 @@ public class MoreToolsMod_Tools
 
 	//Tool Materials.
 	
-	private EnumToolMaterial OBSIDIAN = 	CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian));
-    private EnumToolMaterial REDSTONE = 	EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 4, 15);
-    private EnumToolMaterial COAL = 		EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 5, 15);
-    private EnumToolMaterial LAPIS = 		EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 6, 15);
-    public static EnumToolMaterial END = 	EnumHelper.addToolMaterial("END", 2, 512, 5F, 7, 15);
-    private static EnumToolMaterial SPACE1 =EnumHelper.addToolMaterial("SPACESTRONG", 3, 8196, 50F, 30, 20);
-    private static EnumToolMaterial SPACE2 =EnumHelper.addToolMaterial("SPACEWEAK", 3, 6144, 40F, 20, 18);
-    private EnumToolMaterial BONE = 		EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 4, 15);
-    private EnumToolMaterial REED = 		EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 5, 15);
-    private EnumToolMaterial BLAZEROD = 	EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 9, 15);
-    private EnumToolMaterial DIRT = 		EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, 3, 15);
-    private EnumToolMaterial GLASS = 		EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 6, 15);
-    private EnumToolMaterial SANDSTONE =	EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 6, 15);
-    private EnumToolMaterial BRICK = 		EnumHelper.addToolMaterial("BRICK", 1, 128, 2.5F, 3, 15);
-    private EnumToolMaterial ENDSTONE = 	EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 5, 15);
-    private EnumToolMaterial EXCALIBUR = 	EnumHelper.addToolMaterial("EXCALIBUR", 3, 16392, 10F, 50, 1);
-    private EnumToolMaterial GOD = 			EnumHelper.addToolMaterial("GOD", 3, 2048, 5F, 20, 10);
-    private EnumToolMaterial LUZIFER = 		EnumHelper.addToolMaterial("LUZIFER", 3, 2048, 5F, 20, 10);
-    private static EnumToolMaterial LASER = EnumHelper.addToolMaterial("LASER", 3, -1, 1F, 60, 1);
-    private EnumToolMaterial EMERALD2 = 	EnumHelper.addToolMaterial("EMERALD", 3, 1536, 10F, 10, 17);
-    private EnumToolMaterial NETHERSTAR = 	EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 15, 20);
-    private EnumToolMaterial POTATO = 		EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 5, 15);
-    private EnumToolMaterial CARROT = 		EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 5, 15);
-    private EnumToolMaterial FISH = 		EnumHelper.addToolMaterial("FISH", 1, 64, 2.5F, 6, 15);
-    private EnumToolMaterial BACON = 		EnumHelper.addToolMaterial("BACON", 1, 64, 2.5F, 6, 15);
-    public static EnumToolMaterial LEATHER = EnumToolMaterial.WOOD;
-    private static EnumToolMaterial GLOWSTONE = EnumHelper.addToolMaterial("GLOWSTONE", 2, 64, 1F, 5, 16);
-    private static EnumToolMaterial SLIME = EnumHelper.addToolMaterial("SLIME", 1, 80, 1.2F, 5, 15);
+	public static EnumToolMaterial OBSIDIAN = 	CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian));
+    public static EnumToolMaterial REDSTONE = 	EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 4, 15);
+    public static EnumToolMaterial COAL = 		EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 5, 15);
+    public static EnumToolMaterial LAPIS = 		EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 6, 15);
+    public static EnumToolMaterial END = 		EnumHelper.addToolMaterial("END", 2, 512, 5F, 7, 15);
+    public static EnumToolMaterial SPACE1 =		EnumHelper.addToolMaterial("SPACESTRONG", 3, 8196, 50F, 30, 20);
+    public static EnumToolMaterial SPACE2 =		EnumHelper.addToolMaterial("SPACEWEAK", 3, 6144, 40F, 20, 18);
+    public static EnumToolMaterial BONE = 		EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 4, 15);
+    public static EnumToolMaterial REED = 		EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 5, 15);
+    public static EnumToolMaterial BLAZEROD = 	EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 9, 15);
+    public static EnumToolMaterial DIRT = 		EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, 3, 15);
+    public static EnumToolMaterial GLASS = 		EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 6, 15);
+    public static EnumToolMaterial SANDSTONE =	EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 6, 15);
+    public static EnumToolMaterial BRICK = 		EnumHelper.addToolMaterial("BRICK", 1, 128, 2.5F, 3, 15);
+    public static EnumToolMaterial ENDSTONE = 	EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 5, 15);
+    public static EnumToolMaterial EXCALIBUR = 	EnumHelper.addToolMaterial("EXCALIBUR", 3, 16392, 10F, 50, 1);
+    public static EnumToolMaterial GOD = 		EnumHelper.addToolMaterial("GOD", 3, 2048, 5F, 20, 10);
+    public static EnumToolMaterial LUZIFER = 	EnumHelper.addToolMaterial("LUZIFER", 3, 2048, 5F, 20, 10);
+    public static EnumToolMaterial LASER = 		EnumHelper.addToolMaterial("LASER", 3, -1, 1F, 60, 1);
+    public static EnumToolMaterial EMERALD2 = 	EnumHelper.addToolMaterial("EMERALD", 3, 1536, 10F, 10, 17);
+    public static EnumToolMaterial NETHERSTAR = EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 15, 20);
+    public static EnumToolMaterial POTATO = 	EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 5, 15);
+    public static EnumToolMaterial CARROT = 	EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 5, 15);
+    public static EnumToolMaterial FISH = 		EnumHelper.addToolMaterial("FISH", 1, 64, 2.5F, 6, 15);
+    public static EnumToolMaterial BACON = 		EnumHelper.addToolMaterial("BACON", 1, 64, 2.5F, 6, 15);
+    public static EnumToolMaterial LEATHER = 	EnumToolMaterial.WOOD;
+    public static EnumToolMaterial GLOWSTONE = 	EnumHelper.addToolMaterial("GLOWSTONE", 2, 64, 1F, 5, 16);
+    public static EnumToolMaterial SLIME = 		EnumHelper.addToolMaterial("SLIME", 1, 80, 1.2F, 5, 15);
     
     public static Enchantment quickDraw = new EnchantmentMoreTools(7, 1, 3, EnumEnchantmentType.bow, "quickdraw");
 	
 	//Rarities.
     
-    private static int EPIC = 0;
-	private static int RARE = 1;
-	private static int UNCOMMON = 2;
-	private static int COMMON = 3;
+    public static int EPIC = 0;
+	public static int RARE = 1;
+	public static int UNCOMMON = 2;
+	public static int COMMON = 3;
     
     //Integers.
     

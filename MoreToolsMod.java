@@ -45,6 +45,8 @@ public class MoreToolsMod
 		TOOLS_ID = config.get("IDs", "ToolItems", 1900).getInt();
 		ARMORY_ID = config.get("IDs", "ArmorItems", 2500).getInt();
 		MISCITEMS_ID = config.get("IDs", "MiscItems", 2400).getInt();
+		
+		config.save();
 	}
 	
 	@Init
