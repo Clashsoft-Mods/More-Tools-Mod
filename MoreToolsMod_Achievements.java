@@ -122,6 +122,10 @@ public class MoreToolsMod_Achievements
 				else if (item.getItem() instanceof ItemArmorMoreTools)
 					player.triggerAchievement(materialachievements.get(((ItemArmorMoreTools)item.getItem()).material));
 			}
+			if (item.getItem() instanceof ItemMoreTools)
+			{
+				player.triggerAchievement(moretools);
+			}
 		}
 
 		@Override

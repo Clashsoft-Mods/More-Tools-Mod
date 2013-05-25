@@ -13,9 +13,12 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 
 public class ItemHoeMoreTools extends ItemHoe
 {
+	public EnumToolMaterial theToolMaterial;
+	
     public ItemHoeMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, par2EnumToolMaterial);
+        theToolMaterial = par2EnumToolMaterial;
         maxStackSize = 1;
         setMaxDamage(par2EnumToolMaterial.getMaxUses());
         this.setCreativeTab(CreativeTabs.tabTools);

@@ -8,7 +8,6 @@ public class ItemMultiBlock extends ItemBlock
 	private final static String[] subNames =
 		{
 		"ore", "block", "old", "old", "old"
-		//, "redstone", "coal"
 		};
 
 	public ItemMultiBlock(int id)

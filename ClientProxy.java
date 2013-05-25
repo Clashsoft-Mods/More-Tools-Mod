@@ -34,18 +34,8 @@ public class ClientProxy extends CommonProxy
 	public static int glowstone;
 	public static int slime;
 	
-	public static String items = "/mod_moreTools/gui/items.png";
-	public static String tools1 = "/mod_moreTools/gui/tools.png";
-	public static String armor1 = "/mod_moreTools/gui/armor.png";
-	public static String terrain = "/mod_moreTools/terrain.png";
-	
 	public void registerRenderers()
 	{
-		MinecraftForgeClient.preloadTexture(items);
-		MinecraftForgeClient.preloadTexture(tools1);
-		MinecraftForgeClient.preloadTexture(armor1);
-		MinecraftForgeClient.preloadTexture(terrain);
-		
 		obsidian = RenderingRegistry.addNewArmourRendererPrefix("obsidian");
 		redstone = RenderingRegistry.addNewArmourRendererPrefix("redstone");
 		coal = RenderingRegistry.addNewArmourRendererPrefix("coal");

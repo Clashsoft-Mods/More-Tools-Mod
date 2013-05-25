@@ -20,7 +20,6 @@ public class BlockSpaceblock extends Block
 	public static String[] names = new String[]
 			{
 		"", "Space Block", "Old Space Block", "Old Space Block", "Old Space Block"
-		//, "Redstone", "Coal"
 			};
 	private static String[] textures = new String[]
 			{
@@ -53,12 +52,14 @@ public class BlockSpaceblock extends Block
     }
 	
 	@Override
-	public int damageDropped (int metadata) {
+	public int damageDropped (int metadata)
+	{
 		return metadata;
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public void getSubBlocks(int par1, CreativeTabs tab, List subItems) {
+	public void getSubBlocks(int par1, CreativeTabs tab, List subItems)
+	{
 		for (int ix = 1; ix < names.length; ix++) {
 			subItems.add(new ItemStack(this, 1, ix));
 		}
