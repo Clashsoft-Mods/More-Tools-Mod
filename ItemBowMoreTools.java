@@ -2,11 +2,9 @@ package clashsoft.mods.moretools;
 
 import java.util.Random;
 
-import clashsoft.clashsoftapi.CSUtil;
-
+import clashsoft.clashsoftapi.util.CSUtil;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.*;

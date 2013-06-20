@@ -1,7 +1,7 @@
 package clashsoft.mods.moretools;
 
-import clashsoft.clashsoftapi.CSCrafting;
-import clashsoft.clashsoftapi.CSItems;
+import clashsoft.clashsoftapi.util.CSCrafting;
+import clashsoft.clashsoftapi.util.CSItems;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;

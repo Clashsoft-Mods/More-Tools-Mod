@@ -4,13 +4,14 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import clashsoft.clashsoftapi.CSLang;
-
+import clashsoft.clashsoftapi.util.CSLang;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.ICraftingHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,7 +27,7 @@ public class MoreToolsMod_Achievements
 {
 	public static MoreToolsMod_Achievements instance = new MoreToolsMod_Achievements();
 	
-	public static final Achievement spaceingot =  new Achievement(1000, "spaceIngot", 5, 5, MoreToolsMod_Tools.spaceIngot, AchievementList.buildFurnace).registerAchievement();
+	public static final Achievement spaceingot =  new Achievement(1006, "spaceIngot", 5, 5, MoreToolsMod_Tools.spaceIngot, AchievementList.buildFurnace).registerAchievement();
 	public static final Achievement spaceblock =  new Achievement(1001, "spaceBlock", 8, 5, new ItemStack(MoreToolsMod_Tools.spaceBlock, 1, 1), spaceingot).registerAchievement();
 	public static final Achievement spacestrong = new Achievement(1002, "spaceSwordStrong", 8, 7, MoreToolsMod_Tools.spaceSwordStrong, spaceblock).registerAchievement();
     public static final Achievement spaceweak =   new Achievement(1003, "spaceSwordWeak", 5, 7, MoreToolsMod_Tools.spaceSwordWeak, spaceingot).registerAchievement();
@@ -67,12 +68,12 @@ public class MoreToolsMod_Achievements
 		addMaterialAchievement(new ItemStack(Block.glowStone), t.GLOWSTONE);
 		addMaterialAchievement(new ItemStack(Item.slimeBall), t.SLIME);
 		
-    	ModLoader.addAchievementDesc(spaceingot, "Space Ingot", "Smelt Space Ore.");
-    	ModLoader.addAchievementDesc(spaceblock, "Space BLOCK!", "Craft a Spaceblock.");
-    	ModLoader.addAchievementDesc(spacestrong, "Overpowered", "Craft a Spacesword with two spaceblocks and one stick.");
-    	ModLoader.addAchievementDesc(spaceweak, "Less Overpowered", "Craft a Spacesword with two spaceingots and one stick.");
-    	ModLoader.addAchievementDesc(moretools, "MORE TOOLS!", "Craft a tool or an armory part");
-    	ModLoader.addAchievementDesc(lightsaber, "Luke, I am your father.", "Use a light saber");
+		MoreToolsMod.proxy.addAchievementUS(spaceingot, "Space Ingot", "Smelt Space Ore.");
+		MoreToolsMod.proxy.addAchievementUS(spaceblock, "Space BLOCK!", "Craft a Spaceblock.");
+		MoreToolsMod.proxy.addAchievementUS(spacestrong, "Overpowered", "Craft a Spacesword with two spaceblocks and one stick.");
+		MoreToolsMod.proxy.addAchievementUS(spaceweak, "Less Overpowered", "Craft a Spacesword with two spaceingots and one stick.");
+		MoreToolsMod.proxy.addAchievementUS(moretools, "MORE TOOLS!", "Craft a tool or an armory part");
+		MoreToolsMod.proxy.addAchievementUS(lightsaber, "Luke, I am your father.", "Use a light saber");
 	}
 	
 	public static void addMaterialAchievement(ItemStack material, EnumToolMaterial material2)
@@ -87,7 +88,10 @@ public class MoreToolsMod_Achievements
 		
 		String name = material.getDisplayName() + " Tools";
 		String description = "Craft a tool out of " + material.getDisplayName() + ".";
-		CSLang.addAchievementUS(a, name, description);
+		if (FMLCommonHandler.instance().getEffectiveSide() == Side.CLIENT)
+		{
+			MoreToolsMod.proxy.addAchievementUS(a, name, description);
+		}
 	}
 	
 	public static class MoreToolsModCraftingHandler implements ICraftingHandler

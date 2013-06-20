@@ -1,5 +1,6 @@
 package clashsoft.mods.moretools;
 
+import clashsoft.clashsoftapi.util.CSUtil;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Mod.*;
@@ -12,7 +13,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "More Tools Mod", name="More Tools Mod", version="1.5.1")
+@Mod(modid = "MoreToolsMod", name="More Tools Mod", version=CSUtil.CURRENT_VERION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MoreToolsMod
 {

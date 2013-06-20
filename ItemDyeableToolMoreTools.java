@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools;
 
-import clashsoft.clashsoftapi.CSUtil;
+import clashsoft.clashsoftapi.util.CSUtil;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;

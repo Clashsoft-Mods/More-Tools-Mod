@@ -1,6 +1,7 @@
 package clashsoft.mods.moretools;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.stats.Achievement;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
 
@@ -17,7 +18,7 @@ public class CommonProxy implements IGuiHandler
 	}
 	
 	public void registerRenderers()
-	{
-		
-	}
+	{}
+	
+	public void addAchievementUS(Achievement a, String name, String desc) {}
 }

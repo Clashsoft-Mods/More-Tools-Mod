@@ -1,8 +1,8 @@
 package clashsoft.mods.moretools;
 
-import clashsoft.clashsoftapi.CSBlocks;
-import clashsoft.clashsoftapi.CSCrafting;
-import clashsoft.clashsoftapi.CSItems;
+import clashsoft.clashsoftapi.util.CSBlocks;
+import clashsoft.clashsoftapi.util.CSCrafting;
+import clashsoft.clashsoftapi.util.CSItems;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -24,7 +24,7 @@ public class MoreToolsMod_Tools
 
 	//Tool Materials.
 	
-	public static EnumToolMaterial OBSIDIAN = 	CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian));
+	public static EnumToolMaterial OBSIDIAN = 	CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian), false);
     public static EnumToolMaterial REDSTONE = 	EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 4, 15);
     public static EnumToolMaterial COAL = 		EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 5, 15);
     public static EnumToolMaterial LAPIS = 		EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 6, 15);
@@ -43,7 +43,7 @@ public class MoreToolsMod_Tools
     public static EnumToolMaterial GOD = 		EnumHelper.addToolMaterial("GOD", 3, 2048, 5F, 20, 10);
     public static EnumToolMaterial LUZIFER = 	EnumHelper.addToolMaterial("LUZIFER", 3, 2048, 5F, 20, 10);
     public static EnumToolMaterial LASER = 		EnumHelper.addToolMaterial("LASER", 3, -1, 1F, 60, 1);
-    public static EnumToolMaterial EMERALD2 = 	EnumHelper.addToolMaterial("EMERALD", 3, 1536, 10F, 10, 17);
+    public static EnumToolMaterial EMERALD2 = 	EnumHelper.addToolMaterial("EMERALD2", 3, 1536, 8F, 10, 17);
     public static EnumToolMaterial NETHERSTAR = EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 15, 20);
     public static EnumToolMaterial POTATO = 	EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 5, 15);
     public static EnumToolMaterial CARROT = 	EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 5, 15);
