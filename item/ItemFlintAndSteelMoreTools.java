@@ -1,4 +1,4 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -14,5 +14,17 @@ public class ItemFlintAndSteelMoreTools extends ItemFlintAndSteel
         this.maxStackSize = 1;
         this.setMaxDamage(par2);
         this.setCreativeTab(CreativeTabs.tabTools);
+    }
+    
+    /**
+     * CLASHSOFT:
+     * This code makes items use their unlocalized name as icon name
+     */
+    @Override
+    public Item setUnlocalizedName(String name)
+    {
+    	super.setUnlocalizedName(name);
+    	super.func_111206_d(name);
+    	return this;
     }
 }

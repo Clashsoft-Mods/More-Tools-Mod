@@ -1,8 +1,9 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
 import java.util.Random;
 
 import clashsoft.clashsoftapi.util.CSUtil;
+import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -210,5 +211,17 @@ public class ItemBowMoreTools extends Item
     public Icon func_94599_c(int par1)
     {
         return this == MoreToolsMod_Tools.spaceBow ? spaceicons[par1] : icons[par1];
+    }
+    
+    /**
+     * CLASHSOFT:
+     * This code makes items use their unlocalized name as icon name
+     */
+    @Override
+    public Item setUnlocalizedName(String name)
+    {
+    	super.setUnlocalizedName(name);
+    	super.func_111206_d(name);
+    	return this;
     }
 }

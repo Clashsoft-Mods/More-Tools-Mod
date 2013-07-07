@@ -1,15 +1,20 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.*;
 
-public class ItemDyeableSpadeMoreTools extends ItemDyeableToolMoreTools
+public class ItemSpadeMoreTools extends ItemToolMoreTools
 {
     private static Block blocksEffectiveAgainst[];
 
-    public ItemDyeableSpadeMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
+    public ItemSpadeMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, 1, par2EnumToolMaterial, blocksEffectiveAgainst);
+    }
+    
+    public String getTextureFile()
+    {
+        return "/mod_moreTools/gui/tools.png";
     }
 
     /**

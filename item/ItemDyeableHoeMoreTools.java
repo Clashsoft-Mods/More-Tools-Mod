@@ -1,5 +1,6 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
+import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,7 +22,7 @@ public class ItemDyeableHoeMoreTools extends ItemDyeableToolMoreTools
 
     public ItemDyeableHoeMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
-        super(par1, 1, par2EnumToolMaterial, new Block[]{});
+        super(par1, 0, par2EnumToolMaterial, new Block[]{});
         this.theToolMaterial = par2EnumToolMaterial;
         this.maxStackSize = 1;
         this.setMaxDamage(par2EnumToolMaterial.getMaxUses());

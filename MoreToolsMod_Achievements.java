@@ -5,6 +5,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 import clashsoft.clashsoftapi.util.CSLang;
+import clashsoft.mods.moretools.item.ItemArmorMoreTools;
+import clashsoft.mods.moretools.item.ItemHoeMoreTools;
+import clashsoft.mods.moretools.item.ItemMoreTools;
+import clashsoft.mods.moretools.item.ItemSwordMoreTools;
+import clashsoft.mods.moretools.item.ItemToolMoreTools;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.ICraftingHandler;
 import cpw.mods.fml.common.Mod;

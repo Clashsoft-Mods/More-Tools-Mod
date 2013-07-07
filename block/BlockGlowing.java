@@ -1,4 +1,4 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.block;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.lib;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;

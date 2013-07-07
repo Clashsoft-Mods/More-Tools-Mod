@@ -1,4 +1,4 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -13,9 +13,9 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 public class ItemMultitoolMoreTools extends ItemToolMoreTools
 {
     private static Block blocksEffectiveAgainst[];
-    private int weaponDamage;
+    private float weaponDamage;
 
-    protected ItemMultitoolMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
+    public ItemMultitoolMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, 2, par2EnumToolMaterial, blocksEffectiveAgainst);
         weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();

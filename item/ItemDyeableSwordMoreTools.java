@@ -1,5 +1,6 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
+import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,7 +17,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemDyeableSwordMoreTools extends ItemDyeableToolMoreTools
 {
-    private int weaponDamage;
+    private float weaponDamage;
     private final EnumToolMaterial toolMaterial;
 
     public ItemDyeableSwordMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
@@ -27,11 +28,6 @@ public class ItemDyeableSwordMoreTools extends ItemDyeableToolMoreTools
         this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
         this.setCreativeTab(CreativeTabs.tabCombat);
         this.weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
-    }
-
-    public int func_82803_g()
-    {
-        return this.toolMaterial.getDamageVsEntity();
     }
 
     /**
@@ -69,14 +65,6 @@ public class ItemDyeableSwordMoreTools extends ItemDyeableToolMoreTools
         }
 
         return true;
-    }
-
-    /**
-     * Returns the damage against a given entity.
-     */
-    public int getDamageVsEntity(Entity par1Entity)
-    {
-        return this.weaponDamage;
     }
 
     @SideOnly(Side.CLIENT)

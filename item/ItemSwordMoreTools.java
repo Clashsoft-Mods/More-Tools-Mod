@@ -1,13 +1,18 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
+
+import clashsoft.mods.moretools.MoreToolsMod_Tools;
+
+import com.google.common.collect.Multimap;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.util.MathHelper;
@@ -15,7 +20,7 @@ import net.minecraft.world.World;
 
 public class ItemSwordMoreTools extends ItemSword
 {
-	private int weaponDamage;
+	private float weaponDamage;
 	public final EnumToolMaterial toolMaterial;
 	private int rarity;
 
@@ -38,10 +43,17 @@ public class ItemSwordMoreTools extends ItemSword
 	}
 
 	@Override
-	public int func_82803_g()
+	public float func_82803_g()
 	{
 		return this.toolMaterial.getDamageVsEntity();
 	}
+	
+	public Multimap func_111205_h()
+    {
+        Multimap multimap = super.func_111205_h();
+        multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Weapon modifier", (double)this.weaponDamage, 0));
+        return multimap;
+    }
 
 	/**
 	 * Returns the strength of the stack against a given block. 1.0F base, (Quality+1)*2 if correct blocktype, 1.5F if
@@ -78,14 +90,6 @@ public class ItemSwordMoreTools extends ItemSword
 		}
 
 		return true;
-	}
-
-	/**
-	 * Returns the damage against a given entity.
-	 */
-	public int getDamageVsEntity(Entity par1Entity)
-	{
-		return this.weaponDamage;
 	}
 
 	/**
@@ -169,4 +173,16 @@ public class ItemSwordMoreTools extends ItemSword
 			ItemArmorMoreTools.setLight(par2World, par3Entity);
 		}
 	}
+	
+	/**
+     * CLASHSOFT:
+     * This code makes items use their unlocalized name as icon name
+     */
+    @Override
+    public Item setUnlocalizedName(String name)
+    {
+    	super.setUnlocalizedName(name);
+    	super.func_111206_d(name);
+    	return this;
+    }
 }

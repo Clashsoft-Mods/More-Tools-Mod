@@ -1,5 +1,8 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
+import clashsoft.mods.moretools.MoreToolsMod_Armor;
+import clashsoft.mods.moretools.MoreToolsMod_Tools;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -92,6 +95,14 @@ public class ItemArmorMoreTools extends ItemArmor
         		}
         	}
     	}
+    }
+    
+    @Override
+    public Item setUnlocalizedName(String name)
+    {
+    	super.setUnlocalizedName(name);
+    	super.func_111206_d(name);
+    	return this;
     }
     
     public static void setLight(World par1World, Entity par2Entity)

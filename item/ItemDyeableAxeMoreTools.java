@@ -1,4 +1,4 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -8,7 +8,7 @@ public class ItemDyeableAxeMoreTools extends ItemDyeableToolMoreTools
 {
     private static Block blocksEffectiveAgainst[];
 
-    protected ItemDyeableAxeMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
+    public ItemDyeableAxeMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, 3, par2EnumToolMaterial, blocksEffectiveAgainst);
     }

@@ -1,5 +1,6 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
+import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.world.World;

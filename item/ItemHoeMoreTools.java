@@ -1,5 +1,6 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
+import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -107,5 +108,17 @@ public class ItemHoeMoreTools extends ItemHoe
 			par1ItemStack.damageItem(20, par3EntityPlayer);
 		}
         return par1ItemStack;
+    }
+    
+    /**
+     * CLASHSOFT:
+     * This code makes items use their unlocalized name as icon name
+     */
+    @Override
+    public Item setUnlocalizedName(String name)
+    {
+    	super.setUnlocalizedName(name);
+    	super.func_111206_d(name);
+    	return this;
     }
 }

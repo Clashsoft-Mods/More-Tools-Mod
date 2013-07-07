@@ -1,4 +1,4 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -8,13 +8,13 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
-
 import net.minecraftforge.common.IShearable;
 
 public class ItemShearsMoreTools extends Item
@@ -22,7 +22,7 @@ public class ItemShearsMoreTools extends Item
     private int wool;
 	
 	public ItemShearsMoreTools(int par1, int par2, int par3)
-    {
+	{
         super(par1);
         this.setMaxStackSize(1);
         this.setMaxDamage(par2);
@@ -61,7 +61,7 @@ public class ItemShearsMoreTools extends Item
     }
     
     @Override
-    public boolean itemInteractionForEntity(ItemStack itemstack, EntityLiving entity)
+    public boolean func_111207_a(ItemStack itemstack, EntityPlayer player, EntityLivingBase entity)
     {
         if (entity.worldObj.isRemote)
         {
@@ -131,5 +131,17 @@ public class ItemShearsMoreTools extends Item
             }
         }
         return false;
+    }
+    
+    /**
+     * CLASHSOFT:
+     * This code makes items use their unlocalized name as icon name
+     */
+    @Override
+    public Item setUnlocalizedName(String name)
+    {
+    	super.setUnlocalizedName(name);
+    	super.func_111206_d(name);
+    	return this;
     }
 }

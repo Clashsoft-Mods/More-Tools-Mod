@@ -1,4 +1,4 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;

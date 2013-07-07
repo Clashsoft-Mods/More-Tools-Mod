@@ -1,15 +1,15 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.*;
 
-public class ItemPickaxeMoreTools extends ItemToolMoreTools
+public class ItemDyeablePickaxeMoreTools extends ItemDyeableToolMoreTools
 {
 	/** an array of the blocks this pickaxe is effective against */
     public static final Block[] blocksEffectiveAgainst = new Block[] {Block.cobblestone, Block.stoneDoubleSlab, Block.stoneSingleSlab, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockIron, Block.oreCoal, Block.blockGold, Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice, Block.netherrack, Block.oreLapis, Block.blockLapis, Block.oreRedstone, Block.oreRedstoneGlowing, Block.rail, Block.railDetector, Block.railPowered};
 
-    public ItemPickaxeMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
+    public ItemDyeablePickaxeMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, 2, par2EnumToolMaterial, blocksEffectiveAgainst);
     }

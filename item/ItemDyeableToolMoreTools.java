@@ -1,6 +1,6 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
 
-import clashsoft.clashsoftapi.util.CSUtil;
+import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -17,13 +17,14 @@ public class ItemDyeableToolMoreTools extends ItemToolMoreTools
 	
 	private EnumToolMaterial material;
 	
-	public ItemDyeableToolMoreTools(int par1, int par2, EnumToolMaterial par3EnumToolMaterial, Block[] par4ArrayOfBlock)
+	public ItemDyeableToolMoreTools(int par1, float par2, EnumToolMaterial par3EnumToolMaterial, Block[] par4ArrayOfBlock)
 	{
 		super(par1, par2, par3EnumToolMaterial, par4ArrayOfBlock);
 		material = par3EnumToolMaterial;
 	}
 	
-    public int getColorFromItemStack(ItemStack par1ItemStack, int par2)
+    @Override
+	public int getColorFromItemStack(ItemStack par1ItemStack, int par2)
     {
         if (par2 > 0)
         {
@@ -42,7 +43,8 @@ public class ItemDyeableToolMoreTools extends ItemToolMoreTools
         }
     }
 
-    public boolean requiresMultipleRenderPasses()
+    @Override
+	public boolean requiresMultipleRenderPasses()
     {
         return true;
     }
@@ -50,7 +52,8 @@ public class ItemDyeableToolMoreTools extends ItemToolMoreTools
     /**
      * Return the enchantability factor of the item, most of the time is based on material.
      */
-    public int getItemEnchantability()
+    @Override
+	public int getItemEnchantability()
     {
         return this.material.getEnchantability();
     }
@@ -99,7 +102,8 @@ public class ItemDyeableToolMoreTools extends ItemToolMoreTools
     /**
      * Gets an icon index based on an item's damage value and the given render pass
      */
-    public Icon getIconFromDamageForRenderPass(int par1, int par2)
+    @Override
+	public Icon getIconFromDamageForRenderPass(int par1, int par2)
     {
         return icons[par2 < 2 ? par2 : 1];
     }
@@ -164,7 +168,8 @@ public class ItemDyeableToolMoreTools extends ItemToolMoreTools
     /**
      * Return whether this item is repairable in an anvil.
      */
-    public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
+    @Override
+	public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
     {
         return this.material.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
     }

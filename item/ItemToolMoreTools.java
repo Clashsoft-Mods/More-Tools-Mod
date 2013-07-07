@@ -1,8 +1,13 @@
-package clashsoft.mods.moretools;
+package clashsoft.mods.moretools.item;
+
+import clashsoft.mods.moretools.MoreToolsMod_Tools;
+
+import com.google.common.collect.Multimap;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.item.EntityEnderPearl;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
@@ -17,12 +22,12 @@ public class ItemToolMoreTools extends ItemTool
     protected float efficiencyOnProperMaterial;
 
     /** Damage versus entities. */
-    private int damageVsEntity;
+    private float damageVsEntity;
 
     /** The material this tool is made from. */
-    protected EnumToolMaterial toolMaterial;
+    public EnumToolMaterial toolMaterial;
 
-    protected ItemToolMoreTools(int par1, int par2, EnumToolMaterial par3EnumToolMaterial, Block par4ArrayOfBlock[])
+    protected ItemToolMoreTools(int par1, float par2, EnumToolMaterial par3EnumToolMaterial, Block par4ArrayOfBlock[])
     {
         super(par1, par2, par3EnumToolMaterial, par4ArrayOfBlock);
         efficiencyOnProperMaterial = 4F;
@@ -68,12 +73,11 @@ public class ItemToolMoreTools extends ItemTool
         return true;
     }
 
-    /**
-     * Returns the damage against a given entity.
-     */
-    public int getDamageVsEntity(Entity par1Entity)
+    public Multimap func_111205_h()
     {
-        return damageVsEntity;
+        Multimap multimap = super.func_111205_h();
+        multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.damageVsEntity, 0));
+        return multimap;
     }
 
     /**
@@ -116,5 +120,17 @@ public class ItemToolMoreTools extends ItemTool
 			par1ItemStack.damageItem(20, par3EntityPlayer);
 		}
         return par1ItemStack;
+    }
+    
+    /**
+     * CLASHSOFT:
+     * This code makes items use their unlocalized name as icon name
+     */
+    @Override
+    public Item setUnlocalizedName(String name)
+    {
+    	super.setUnlocalizedName(name);
+    	super.func_111206_d(name);
+    	return this;
     }
 }
