@@ -47,34 +47,34 @@ public class MoreToolsMod_Tools
 
 	//Tool Materials.
 
-	public static EnumToolMaterial OBSIDIAN = 	CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian), false);
-	public static EnumToolMaterial REDSTONE = 	EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 4, 15);
-	public static EnumToolMaterial COAL = 		EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 5, 15);
-	public static EnumToolMaterial LAPIS = 		EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 6, 15);
-	public static EnumToolMaterial END = 		EnumHelper.addToolMaterial("END", 2, 512, 5F, 7, 15);
-	public static EnumToolMaterial SPACE1 =		EnumHelper.addToolMaterial("SPACESTRONG", 3, 8196, 50F, 30, 20);
-	public static EnumToolMaterial SPACE2 =		EnumHelper.addToolMaterial("SPACEWEAK", 3, 6144, 40F, 20, 18);
-	public static EnumToolMaterial BONE = 		EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 4, 15);
-	public static EnumToolMaterial REED = 		EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 5, 15);
-	public static EnumToolMaterial BLAZEROD = 	EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 9, 15);
-	public static EnumToolMaterial DIRT = 		EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, 3, 15);
-	public static EnumToolMaterial GLASS = 		EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 6, 15);
-	public static EnumToolMaterial SANDSTONE =	EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 6, 15);
-	public static EnumToolMaterial BRICK = 		EnumHelper.addToolMaterial("BRICK", 1, 128, 2.5F, 3, 15);
-	public static EnumToolMaterial ENDSTONE = 	EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 5, 15);
-	public static EnumToolMaterial EXCALIBUR = 	EnumHelper.addToolMaterial("EXCALIBUR", 3, 16392, 10F, 50, 1);
-	public static EnumToolMaterial GOD = 		EnumHelper.addToolMaterial("GOD", 3, 2048, 5F, 20, 10);
-	public static EnumToolMaterial LUZIFER = 	EnumHelper.addToolMaterial("LUZIFER", 3, 2048, 5F, 20, 10);
-	public static EnumToolMaterial LASER = 		EnumHelper.addToolMaterial("LASER", 3, -1, 1F, 60, 1);
-	public static EnumToolMaterial EMERALD2 = 	EnumHelper.addToolMaterial("EMERALD2", 3, 1536, 8F, 10, 17);
-	public static EnumToolMaterial NETHERSTAR = EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 15, 20);
-	public static EnumToolMaterial POTATO = 	EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 5, 15);
-	public static EnumToolMaterial CARROT = 	EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 5, 15);
-	public static EnumToolMaterial FISH = 		EnumHelper.addToolMaterial("FISH", 1, 64, 2.5F, 6, 15);
-	public static EnumToolMaterial BACON = 		EnumHelper.addToolMaterial("BACON", 1, 64, 2.5F, 6, 15);
+	public static EnumToolMaterial OBSIDIAN = 	CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian), null);
+	public static EnumToolMaterial REDSTONE = 	EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 2.5F, 15);
+	public static EnumToolMaterial COAL = 		EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 2.1F, 15);
+	public static EnumToolMaterial LAPIS = 		EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 2F, 15);
+	public static EnumToolMaterial END = 		EnumHelper.addToolMaterial("END", 2, 512, 5F, 2.8F, 15);
+	public static EnumToolMaterial SPACE1 =		EnumHelper.addToolMaterial("SPACESTRONG", 3, 8196, 50F, 13F, 20);
+	public static EnumToolMaterial SPACE2 =		EnumHelper.addToolMaterial("SPACEWEAK", 3, 6144, 40F, 10F, 18);
+	public static EnumToolMaterial BONE = 		EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 1.2F, 15);
+	public static EnumToolMaterial REED = 		EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 0.2F, 15);
+	public static EnumToolMaterial BLAZEROD = 	EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 1.9F, 15);
+	public static EnumToolMaterial DIRT = 		EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, -0.1F, 15);
+	public static EnumToolMaterial GLASS = 		EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 1.3F, 15);
+	public static EnumToolMaterial SANDSTONE =	EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 1.8F, 15);
+	public static EnumToolMaterial BRICK = 		EnumHelper.addToolMaterial("BRICK", 1, 128, 2.5F, 1.75F, 15);
+	public static EnumToolMaterial ENDSTONE = 	EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 2.9F, 15);
+	public static EnumToolMaterial EXCALIBUR = 	EnumHelper.addToolMaterial("EXCALIBUR", 3, 16392, 10F, 20F, 1);
+	public static EnumToolMaterial GOD = 		EnumHelper.addToolMaterial("GOD", 3, 2048, 5F, 15F, 10);
+	public static EnumToolMaterial LUZIFER = 	EnumHelper.addToolMaterial("LUZIFER", 3, 2048, 5F, 15F, 10);
+	public static EnumToolMaterial LASER = 		EnumHelper.addToolMaterial("LASER", 3, -1, 1F, 25F, 1);
+	public static EnumToolMaterial EMERALD2 = 	EnumHelper.addToolMaterial("EMERALD2", 3, 1536, 8F, 2.95F, 17);
+	public static EnumToolMaterial NETHERSTAR = EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 4F, 20);
+	public static EnumToolMaterial POTATO = 	EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 0.6F, 15);
+	public static EnumToolMaterial CARROT = 	EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 0.6F, 15);
+	public static EnumToolMaterial FISH = 		EnumHelper.addToolMaterial("FISH", 1, 64, 2.5F, 0.7F, 15);
+	public static EnumToolMaterial BACON = 		EnumHelper.addToolMaterial("BACON", 1, 64, 2.5F, 0.7F, 15);
 	public static EnumToolMaterial LEATHER = 	EnumToolMaterial.WOOD;
-	public static EnumToolMaterial GLOWSTONE = 	EnumHelper.addToolMaterial("GLOWSTONE", 2, 64, 1F, 5, 16);
-	public static EnumToolMaterial SLIME = 		EnumHelper.addToolMaterial("SLIME", 1, 80, 1.2F, 5, 15);
+	public static EnumToolMaterial GLOWSTONE = 	EnumHelper.addToolMaterial("GLOWSTONE", 2, 64, 1F, 1F, 16);
+	public static EnumToolMaterial SLIME = 		EnumHelper.addToolMaterial("SLIME", 1, 80, 1.2F, 0.85F, 15);
 
 	public static Enchantment quickDraw = new EnchantmentMoreTools(7, 1, 3, EnumEnchantmentType.bow, "quickdraw");
 
@@ -569,19 +569,19 @@ public class MoreToolsMod_Tools
 		ModLoader.addName(godHoe, "God's Hoe");
 		ModLoader.addName(godSword, "God's Sword");
 		ModLoader.addRecipe(new ItemStack(godPick, 1), new Object[]{
-			"GGG", "g|g", " | ", Character.valueOf('g'), Item.lightStoneDust, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
+			"GGG", "g|g", " | ", Character.valueOf('g'), Item.glowstone, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
 		});
 		ModLoader.addRecipe(new ItemStack(godShovel, 1), new Object[]{
-			"gGg", " | ", " | ", Character.valueOf('g'), Item.lightStoneDust, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
+			"gGg", " | ", " | ", Character.valueOf('g'), Item.glowstone, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
 		});
 		ModLoader.addRecipe(new ItemStack(godAxe, 1), new Object[]{
-			"GGg", "G|g", " | ", Character.valueOf('g'), Item.lightStoneDust, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
+			"GGg", "G|g", " | ", Character.valueOf('g'), Item.glowstone, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
 		});
 		ModLoader.addRecipe(new ItemStack(godHoe, 1), new Object[]{
-			"GGg", "g| ", " | ", Character.valueOf('g'), Item.lightStoneDust, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
+			"GGg", "g| ", " | ", Character.valueOf('g'), Item.glowstone, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
 		});
 		ModLoader.addRecipe(new ItemStack(godSword, 1), new Object[]{
-			"gGg", "gGg", " | ", Character.valueOf('g'), Item.lightStoneDust, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
+			"gGg", "gGg", " | ", Character.valueOf('g'), Item.glowstone, Character.valueOf('G'), Block.blockGold, Character.valueOf('|'), Item.stick
 		});
 
 		//Goddawn Tools.
