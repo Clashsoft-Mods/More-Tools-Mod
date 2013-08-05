@@ -287,6 +287,13 @@ public class MoreToolsMod_Armor
 		
 		// Goddawn Armor.
 		
+		ModLoader.addRecipe(new ItemStack(hallowedHelmet, 1), new Object[] { "XXX", "XxX", Character.valueOf('X'), Block.blockGold, Character.valueOf('x'), Item.redstone });
+		ModLoader.addRecipe(new ItemStack(hallowedChestplate, 1), new Object[] { "XxX", "XXX", "XXX", Character.valueOf('X'), Block.blockGold, Character.valueOf('x'), Item.redstone });
+		ModLoader.addRecipe(new ItemStack(hallowedLeggings, 1), new Object[] { "XXX", "XxX", "XxX", Character.valueOf('X'), Block.blockGold, Character.valueOf('x'), Item.redstone });
+		ModLoader.addRecipe(new ItemStack(hallowedHelmet, 1), new Object[] { "x x", "XxX", "XxX", Character.valueOf('X'), Block.blockGold, Character.valueOf('x'), Item.redstone });
+		
+		// Goddawn Armor.
+		
 		addName(goddawnHelmet, "Luzifer's Helmet");
 		addName(goddawnChestplate, "Luzifer's Chestplate");
 		addName(goddawnLeggings, "Luzifer's Leggings");
@@ -295,6 +302,20 @@ public class MoreToolsMod_Armor
 		ModLoader.addRecipe(new ItemStack(goddawnChestplate, 1), new Object[] { "XxX", "XXX", "XXX", Character.valueOf('X'), Block.netherrack, Character.valueOf('x'), Item.redstone });
 		ModLoader.addRecipe(new ItemStack(goddawnLeggings, 1), new Object[] { "XXX", "XxX", "XxX", Character.valueOf('X'), Block.netherrack, Character.valueOf('x'), Item.redstone });
 		ModLoader.addRecipe(new ItemStack(goddawnHelmet, 1), new Object[] { "x x", "XxX", "XxX", Character.valueOf('X'), Block.netherrack, Character.valueOf('x'), Item.redstone });
+		
+		// Invisibility Armor.
+		
+		CSItems.addItemWithRecipe(invisibilityHelmet, "Invisibility Helmet", 1, new Object[] { "XxX", "X X", 'X', Item.ingotIron, 'x', Item.diamond });
+		CSItems.addItemWithRecipe(invisibilityChestplate, "Invisibility Chestplate", 1, new Object[] { "X X", "XxX", "XXX", 'X', Item.ingotIron, 'x', Item.diamond });
+		CSItems.addItemWithRecipe(invisibilityLeggings, "Invisibility Leggings", 1, new Object[] { "XxX", "X X", "X X", 'X', Item.ingotIron, 'x', Item.diamond });
+		CSItems.addItemWithRecipe(invisibilityBoots, "Invisibility Boots", 1, new Object[] { "x x", "X X", 'X', Item.ingotIron, 'x', Item.diamond });
+		
+		// Emerald Armor.
+		
+		ModLoader.addRecipe(new ItemStack(goddawnHelmet, 1), new Object[] { "XXX", "XxX", Character.valueOf('X'), Block.netherrack, Character.valueOf('x'), Item.redstone });
+		ModLoader.addRecipe(new ItemStack(goddawnChestplate, 1), new Object[] { "XxX", "XXX", "XXX", Character.valueOf('X'), Block.netherrack, Character.valueOf('x'), Item.redstone });
+		ModLoader.addRecipe(new ItemStack(goddawnLeggings, 1), new Object[] { "XXX", "XxX", "XxX", Character.valueOf('X'), Block.netherrack, Character.valueOf('x'), Item.redstone });
+		ModLoader.addRecipe(new ItemStack(goddawnHelmet, 1), new Object[] { "x x", "XxX", "XxX", Character.valueOf('x'), Block.netherrack, Character.valueOf('x'), Item.redstone });
 		
 		// Invisibility Armor.
 		

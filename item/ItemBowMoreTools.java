@@ -43,7 +43,8 @@ public class ItemBowMoreTools extends Item
     /**
      * called when the player releases the use item button. Args: itemstack, world, entityplayer, itemInUseCount
      */
-    public void onPlayerStoppedUsing(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer, int par4)
+    @Override
+	public void onPlayerStoppedUsing(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer, int par4)
     {
     	int j = this.getMaxItemUseDuration(par1ItemStack) - par4;
 
@@ -59,10 +60,10 @@ public class ItemBowMoreTools extends Item
 
         if (flag || par3EntityPlayer.inventory.hasItem(arrowToConsume.itemID))
         {
-            float f = ((float)j / 20.0F) + (EnchantmentHelper.getEnchantmentLevel(MoreToolsMod_Tools.quickDraw.effectId, par1ItemStack) * 0.04F);
+            float f = (j / 20.0F) + (EnchantmentHelper.getEnchantmentLevel(MoreToolsMod_Tools.quickDraw.effectId, par1ItemStack) * 0.04F);
             f = (f * f + f * 2.0F) / 3.0F;
 
-            if ((double)f < 0.1D)
+            if (f < 0.1D)
             {
                 return;
             }
@@ -83,7 +84,7 @@ public class ItemBowMoreTools extends Item
 
             if (k > 0)
             {
-                entityarrow.setDamage(entityarrow.getDamage() + (double)k * 0.5D + 0.5D);
+                entityarrow.setDamage(entityarrow.getDamage() + k * 0.5D + 0.5D);
             }
 
             int l = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, par1ItemStack);
@@ -125,7 +126,8 @@ public class ItemBowMoreTools extends Item
     /**
      * How long it takes to use or consume an item
      */
-    public int getMaxItemUseDuration(ItemStack par1ItemStack)
+    @Override
+	public int getMaxItemUseDuration(ItemStack par1ItemStack)
     {
         return 71232;
     }
@@ -133,7 +135,8 @@ public class ItemBowMoreTools extends Item
     /**
      * returns the action that specifies what animation to play when the items is being used
      */
-    public EnumAction getItemUseAction(ItemStack par1ItemStack)
+    @Override
+	public EnumAction getItemUseAction(ItemStack par1ItemStack)
     {
         return EnumAction.bow;
     }
@@ -141,7 +144,8 @@ public class ItemBowMoreTools extends Item
     /**
      * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
      */
-    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+    @Override
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
         if (par3EntityPlayer.capabilities.isCreativeMode || par3EntityPlayer.inventory.hasItem(arrowToConsume.itemID))
         {
@@ -154,7 +158,8 @@ public class ItemBowMoreTools extends Item
     /**
      * Return the enchantability factor of the item, most of the time is based on material.
      */
-    public int getItemEnchantability()
+    @Override
+	public int getItemEnchantability()
     {
         return 1;
     }

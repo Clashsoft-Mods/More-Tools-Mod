@@ -11,29 +11,28 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "MoreToolsMod", name="More Tools Mod", version=CSUtil.CURRENT_VERION)
+@Mod(modid = "MoreToolsMod", name = "More Tools Mod", version = CSUtil.CURRENT_VERION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MoreToolsMod
 {
 	@Instance("MoreToolsModMainID")
-	public static MoreToolsMod instance;
+	public static MoreToolsMod	instance;
 	
 	@SidedProxy(clientSide = "clashsoft.mods.moretools.ClientProxy", serverSide = "clashsoft.mods.moretools.CommonProxy")
-	public static CommonProxy proxy;
+	public static CommonProxy	proxy;
 	
-	public static int TOOLS_ID = 1900;
-	public static int ARMORY_ID = 2500;
-	public static int MISCITEMS_ID = 2400;
+	public static int			TOOLS_ID		= 1900;
+	public static int			ARMORY_ID		= 2500;
+	public static int			MISCITEMS_ID	= 2400;
 	
-	public int linesOfCode =
-			  803	//Tools
-			+ 436	//Armor
-			+ 68	//Achievements
-			+ 46	//WorldGen
-			+ 69	//ClientProxy
-			+ 23	//CommonProxy
-			+ 56	//this
-			;
+	public int					linesOfCode		= 803 // Tools
+														+ 436 // Armor
+														+ 68 // Achievements
+														+ 46 // WorldGen
+														+ 69 // ClientProxy
+														+ 23 // CommonProxy
+														+ 56 // this
+												;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)

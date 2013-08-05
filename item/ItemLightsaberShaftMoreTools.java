@@ -8,10 +8,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-
-public class ItemLightsaberShaftMoreTools extends ItemMoreTools {
-
-	public ItemLightsaberShaftMoreTools(int par1) {
+public class ItemLightsaberShaftMoreTools extends ItemMoreTools
+{
+	
+	public ItemLightsaberShaftMoreTools(int par1)
+	{
 		super(par1, CreativeTabs.tabRedstone);
 		this.maxStackSize = 1;
 	}
@@ -22,16 +23,15 @@ public class ItemLightsaberShaftMoreTools extends ItemMoreTools {
 		par3EntityPlayer.triggerAchievement(MoreToolsMod_Achievements.instance.lightsaber);
 		return blue;
 	}
-
+	
 	/**
-     * CLASHSOFT:
-     * This code makes items use their unlocalized name as icon name
-     */
-    @Override
-    public Item setUnlocalizedName(String name)
-    {
-    	super.setUnlocalizedName(name);
-    	super.func_111206_d(name);
-    	return this;
-    }
+	 * CLASHSOFT: This code makes items use their unlocalized name as icon name
+	 */
+	@Override
+	public Item setUnlocalizedName(String name)
+	{
+		super.setUnlocalizedName(name);
+		super.func_111206_d(name);
+		return this;
+	}
 }

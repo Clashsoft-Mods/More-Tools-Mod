@@ -10,23 +10,24 @@ import cpw.mods.fml.common.IWorldGenerator;
 public class MoreToolsMod_WorldGen implements IWorldGenerator
 {
 	public void generateSurface(World world, Random rand, int chunkX, int chunkZ)
-  	{
-  		for(int i = 0; i < 5; i++)
-  		{
-  			int randPosX = chunkX * 16 + rand.nextInt(16);
-  			int randPosY = rand.nextInt(20);
-  			int randPosZ = chunkZ * 16 + rand.nextInt(16);
-  			(new WorldGenMinable(MoreToolsMod_Tools.spaceOre.blockID, 6)).generate(world, rand, randPosX, randPosY, randPosZ);
-  		}
-  		if (rand.nextInt(100) == 0)
-  		{
-  			int randPosX = chunkX * 16 + rand.nextInt(16);
-  			int randPosY = rand.nextInt(20);
-  			int randPosZ = chunkZ * 16 + rand.nextInt(16);
-  			(new WorldGenMinable(MoreToolsMod_Tools.spaceBlock.blockID, 12)).generate(world, rand, randPosX, randPosY, randPosZ);
-  		}
-    }
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			int randPosX = chunkX * 16 + rand.nextInt(16);
+			int randPosY = rand.nextInt(20);
+			int randPosZ = chunkZ * 16 + rand.nextInt(16);
+			(new WorldGenMinable(MoreToolsMod_Tools.spaceOre.blockID, 6)).generate(world, rand, randPosX, randPosY, randPosZ);
+		}
+		if (rand.nextInt(100) == 0)
+		{
+			int randPosX = chunkX * 16 + rand.nextInt(16);
+			int randPosY = rand.nextInt(20);
+			int randPosZ = chunkZ * 16 + rand.nextInt(16);
+			(new WorldGenMinable(MoreToolsMod_Tools.spaceBlock.blockID, 12)).generate(world, rand, randPosX, randPosY, randPosZ);
+		}
+	}
 	
+	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
 	{
 		if (world.provider.isSurfaceWorld())

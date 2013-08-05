@@ -6,7 +6,7 @@ import net.minecraft.item.*;
 import net.minecraft.world.World;
 
 public class ItemLightsaberMoreTools extends ItemSwordMoreTools
-{	
+{
 	public ItemLightsaberMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
 	{
 		super(par1, par2EnumToolMaterial, 2);

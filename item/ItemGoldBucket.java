@@ -25,12 +25,16 @@ public class ItemGoldBucket extends ItemBucketMoreTools
 		System.out.println("Added liquid");
 		par1ItemStack.setItemDamage(par1ItemStack.getItemDamage() + 1);
 		System.out.println("Damage increased");
-		switch(par2)
+		switch (par2)
 		{
-		case 9: return new ItemStack(MoreToolsMod_Tools.goldBucketWater, 1, par1ItemStack.getItemDamage());
-		case 11: return new ItemStack(MoreToolsMod_Tools.goldBucketLava, 1, par1ItemStack.getItemDamage());
-		case 79: return new ItemStack(MoreToolsMod_Tools.goldBucketMilk, 1, par1ItemStack.getItemDamage());
-		default: return par1ItemStack;
+		case 9:
+			return new ItemStack(MoreToolsMod_Tools.goldBucketWater, 1, par1ItemStack.getItemDamage());
+		case 11:
+			return new ItemStack(MoreToolsMod_Tools.goldBucketLava, 1, par1ItemStack.getItemDamage());
+		case 79:
+			return new ItemStack(MoreToolsMod_Tools.goldBucketMilk, 1, par1ItemStack.getItemDamage());
+		default:
+			return par1ItemStack;
 		}
 	}
 	

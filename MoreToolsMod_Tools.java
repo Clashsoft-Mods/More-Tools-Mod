@@ -103,7 +103,7 @@ public class MoreToolsMod_Tools
 	int									l14					= 208;																																				//
 	int									l15					= 224;																																				//
 	int									l16					= 240;																																				// Misc
-	
+																																																				
 	int									c1					= 0;																																				// Obsidian
 	// Epic
 	int									c2					= 1;																																				// Redstone
@@ -129,7 +129,7 @@ public class MoreToolsMod_Tools
 	int									c14					= 13;																																				// Space
 	int									c15					= 14;																																				// Hallowed
 	int									c16					= 15;																																				// Goddawn
-	
+																																																				
 	// Items.
 	
 	public static final Item			spacePick			= (new ItemPickaxeMoreTools(MoreToolsMod.TOOLS_ID + 26, SPACE1)).setUnlocalizedName("spacePickaxe");

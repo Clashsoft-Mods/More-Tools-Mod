@@ -7,31 +7,31 @@ import net.minecraft.stats.Achievement;
 public class ClientProxy extends CommonProxy
 {
 	/** Armor files **/
-	public static int obsidian;
-	public static int redstone;
-	public static int coal;
-	public static int lapis;
-	public static int ender;
-	public static int space;
-	public static int bone;
-	public static int sugarcane;
-	public static int blazerod;
-	public static int dirt;
-	public static int glass;
-	public static int sandstone;
-	public static int brick;
-	public static int endstone;
-	public static int hallowed;
-	public static int goddawn;
-	public static int invisibility;
-	public static int emerald;
-	public static int netherstar;
-	public static int potato;
-	public static int carrot;
-	public static int fish;
-	public static int bacon;
-	public static int glowstone;
-	public static int slime;
+	public static int	obsidian;
+	public static int	redstone;
+	public static int	coal;
+	public static int	lapis;
+	public static int	ender;
+	public static int	space;
+	public static int	bone;
+	public static int	sugarcane;
+	public static int	blazerod;
+	public static int	dirt;
+	public static int	glass;
+	public static int	sandstone;
+	public static int	brick;
+	public static int	endstone;
+	public static int	hallowed;
+	public static int	goddawn;
+	public static int	invisibility;
+	public static int	emerald;
+	public static int	netherstar;
+	public static int	potato;
+	public static int	carrot;
+	public static int	fish;
+	public static int	bacon;
+	public static int	glowstone;
+	public static int	slime;
 	
 	@Override
 	public void registerRenderers()
@@ -64,5 +64,8 @@ public class ClientProxy extends CommonProxy
 	}
 	
 	@Override
-	public void addAchievementUS(Achievement a, String name, String desc) { CSLang.addAchievementUS(a, name, desc); }
+	public void addAchievementUS(Achievement a, String name, String desc)
+	{
+		CSLang.addAchievementUS(a, name, desc);
+	}
 }
