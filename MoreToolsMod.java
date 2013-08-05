@@ -1,10 +1,8 @@
 package clashsoft.mods.moretools;
 
 import clashsoft.clashsoftapi.util.CSUtil;
-import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Mod.*;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -37,7 +35,7 @@ public class MoreToolsMod
 			+ 56	//this
 			;
 	
-	@PreInit
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
@@ -50,7 +48,7 @@ public class MoreToolsMod
 		config.save();
 	}
 	
-	@Init
+	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenderers();
@@ -61,7 +59,7 @@ public class MoreToolsMod
 		MoreToolsMod_Achievements.instance.load();
 	}
 	
-	@PostInit
+	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		System.out.println("[MoreToolsMod] Succesfully loaded More Tools Mod");

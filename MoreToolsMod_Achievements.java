@@ -1,10 +1,6 @@
 package clashsoft.mods.moretools;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-
-import clashsoft.clashsoftapi.util.CSLang;
 import clashsoft.mods.moretools.item.ItemArmorMoreTools;
 import clashsoft.mods.moretools.item.ItemHoeMoreTools;
 import clashsoft.mods.moretools.item.ItemMoreTools;
@@ -12,19 +8,14 @@ import clashsoft.mods.moretools.item.ItemSwordMoreTools;
 import clashsoft.mods.moretools.item.ItemToolMoreTools;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.ICraftingHandler;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.src.ModLoader;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 

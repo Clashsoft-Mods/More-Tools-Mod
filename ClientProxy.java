@@ -1,11 +1,8 @@
 package clashsoft.mods.moretools;
 
 import clashsoft.clashsoftapi.util.CSLang;
-import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.minecraft.stats.Achievement;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.client.MinecraftForgeClient;
 
 public class ClientProxy extends CommonProxy
 {
@@ -36,6 +33,7 @@ public class ClientProxy extends CommonProxy
 	public static int glowstone;
 	public static int slime;
 	
+	@Override
 	public void registerRenderers()
 	{
 		obsidian = RenderingRegistry.addNewArmourRendererPrefix("obsidian");
@@ -65,5 +63,6 @@ public class ClientProxy extends CommonProxy
 		slime = RenderingRegistry.addNewArmourRendererPrefix("slime");
 	}
 	
+	@Override
 	public void addAchievementUS(Achievement a, String name, String desc) { CSLang.addAchievementUS(a, name, desc); }
 }

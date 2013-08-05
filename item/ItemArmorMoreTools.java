@@ -2,12 +2,10 @@ package clashsoft.mods.moretools.item;
 
 import clashsoft.mods.moretools.MoreToolsMod_Armor;
 import clashsoft.mods.moretools.MoreToolsMod_Tools;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;

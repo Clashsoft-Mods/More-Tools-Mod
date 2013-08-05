@@ -1,16 +1,11 @@
 package clashsoft.mods.moretools.item;
 
-import java.util.Random;
-
-import clashsoft.clashsoftapi.util.CSUtil;
 import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.*;
-import net.minecraft.entity.*;
-import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.player.*;
 import net.minecraft.entity.projectile.*;
 import net.minecraft.item.*;

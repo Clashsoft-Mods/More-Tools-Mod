@@ -6,7 +6,6 @@ import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import clashsoft.mods.moretools.item.ItemDyeableHoeMoreTools;
 import clashsoft.mods.moretools.item.ItemDyeableSwordMoreTools;
 import clashsoft.mods.moretools.item.ItemDyeableToolMoreTools;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.inventory.*;
