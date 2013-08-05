@@ -283,28 +283,28 @@ public class MoreToolsMod_Armor
 		ModLoader.addRecipe(new ItemStack(hallowedHelmet, 1), new Object[]{
 			"XXX",
 			"XxX",
-			Character.valueOf('x'), Block.blockGold,
+			Character.valueOf('X'), Block.blockGold,
 			Character.valueOf('x'), Item.redstone
 		});
 		ModLoader.addRecipe(new ItemStack(hallowedChestplate, 1), new Object[]{
 			"XxX",
 			"XXX",
 			"XXX",
-			Character.valueOf('x'), Block.blockGold,
+			Character.valueOf('X'), Block.blockGold,
 			Character.valueOf('x'), Item.redstone
 		});
 		ModLoader.addRecipe(new ItemStack(hallowedLeggings, 1), new Object[]{
 			"XXX",
 			"XxX",
 			"XxX",
-			Character.valueOf('x'), Block.blockGold,
+			Character.valueOf('X'), Block.blockGold,
 			Character.valueOf('x'), Item.redstone
 		});
 		ModLoader.addRecipe(new ItemStack(hallowedHelmet, 1), new Object[]{
 			"x x",
 			"XxX",
 			"XxX",
-			Character.valueOf('x'), Block.blockGold,
+			Character.valueOf('X'), Block.blockGold,
 			Character.valueOf('x'), Item.redstone
 		});
 
@@ -317,21 +317,21 @@ public class MoreToolsMod_Armor
 		ModLoader.addRecipe(new ItemStack(goddawnHelmet, 1), new Object[]{
 			"XXX",
 			"XxX",
-			Character.valueOf('x'), Block.netherrack,
+			Character.valueOf('X'), Block.netherrack,
 			Character.valueOf('x'), Item.redstone
 		});
 		ModLoader.addRecipe(new ItemStack(goddawnChestplate, 1), new Object[]{
 			"XxX",
 			"XXX",
 			"XXX",
-			Character.valueOf('x'), Block.netherrack,
+			Character.valueOf('X'), Block.netherrack,
 			Character.valueOf('x'), Item.redstone
 		});
 		ModLoader.addRecipe(new ItemStack(goddawnLeggings, 1), new Object[]{
 			"XXX",
 			"XxX",
 			"XxX",
-			Character.valueOf('x'), Block.netherrack,
+			Character.valueOf('X'), Block.netherrack,
 			Character.valueOf('x'), Item.redstone
 		});
 		ModLoader.addRecipe(new ItemStack(goddawnHelmet, 1), new Object[]{
