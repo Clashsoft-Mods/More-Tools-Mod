@@ -6,8 +6,8 @@ import java.util.Random;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -18,7 +18,7 @@ public class BlockSpaceblock extends Block
 {
 	public static String[]	names		= new String[] { "", "Space Block", "Old Space Block", "Old Space Block", "Old Space Block" };
 	private static String[]	textures	= new String[] { "spaceore", "spaceblock_1", "spaceblock_old_1", "spaceblock_old_2", "spaceblock_old_3" };
-	public static Icon[]	icons		= new Icon[textures.length];
+	public Icon[]	icons		= new Icon[textures.length];
 	
 	public BlockSpaceblock(int id)
 	{

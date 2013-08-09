@@ -5,8 +5,11 @@ import clashsoft.clashsoftapi.util.CSItems;
 import clashsoft.mods.moretools.item.ItemArmorMoreTools;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+
 import net.minecraft.block.Block;
-import net.minecraft.item.*;
+import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
 

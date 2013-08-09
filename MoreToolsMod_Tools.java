@@ -166,7 +166,7 @@ public class MoreToolsMod_Tools
 	public static final Item			goldBucket			= (new ItemGoldBucket(MoreToolsMod.TOOLS_ID + 200 + 8, 0)).setUnlocalizedName("bucketgold");
 	public static final Item			goldBucketWater		= (new ItemGoldBucket(MoreToolsMod.TOOLS_ID + 200 + 9, Block.waterStill.blockID)).setUnlocalizedName("bucketgoldWater");
 	public static final Item			goldBucketLava		= (new ItemGoldBucket(MoreToolsMod.TOOLS_ID + 200 + 10, Block.lavaStill.blockID)).setUnlocalizedName("bucketgoldLava");
-	public static final Item			goldBucketMilk		= (new ItemBucketMilk(MoreToolsMod.TOOLS_ID + 200 + 11)).setUnlocalizedName("bucketgoldMilk");
+	public static final Item			goldBucketMilk		= (new ItemBucketMilk(MoreToolsMod.TOOLS_ID + 200 + 11)).setUnlocalizedName("bucketgoldMilk").setCreativeTab(null);
 	
 	public static final Block			spaceBlock			= (new BlockSpaceblock(250)).setHardness(3F).setLightValue(15 / 16).setUnlocalizedName("spaceblock");
 	public static final Block			spaceOre			= new Block(251, Material.rock).setHardness(2.5F).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("spaceore").func_111022_d("spaceore");
