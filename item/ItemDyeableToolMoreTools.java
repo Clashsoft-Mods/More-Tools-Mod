@@ -13,7 +13,6 @@ import net.minecraft.util.Icon;
 public class ItemDyeableToolMoreTools extends ItemToolMoreTools
 {
 	private Icon[]				icons	= new Icon[2];
-	private Icon				icon;
 	
 	private EnumToolMaterial	material;
 	

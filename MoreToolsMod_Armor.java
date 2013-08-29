@@ -33,6 +33,7 @@ public class MoreToolsMod_Armor
 	private static EnumArmorMaterial	SANDSTONE				= EnumHelper.addArmorMaterial("SANDSTONE", 64, new int[] { 2, 4, 3, 2 }, 10);
 	private static EnumArmorMaterial	BRICK					= EnumHelper.addArmorMaterial("BRICK", 32, new int[] { 2, 4, 3, 2 }, 10);
 	private static EnumArmorMaterial	ENDSTONE				= EnumHelper.addArmorMaterial("ENDSTONE", 100, new int[] { 3, 5, 4, 2 }, 10);
+	@SuppressWarnings("unused")
 	private static EnumArmorMaterial	EPIC					= EnumHelper.addArmorMaterial("EPIC", 4096, new int[] { 13, 18, 15, 10 }, 1);
 	public static EnumArmorMaterial		INVISIBILITY			= EnumHelper.addArmorMaterial("INVISIBILITY", 24, new int[] { 2, 7, 5, 2 }, 10);
 	private static EnumArmorMaterial	HALLOWED				= EnumHelper.addArmorMaterial("HALLOWED", 512, new int[] { 8, 10, 9, 5 }, 7);

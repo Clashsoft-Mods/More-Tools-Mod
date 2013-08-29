@@ -3,9 +3,7 @@ package clashsoft.mods.moretools.item;
 import net.minecraft.item.ItemBlock;
 
 public class ItemMultiBlock extends ItemBlock
-{
-	private final static String[]	subNames	= { "ore", "block", "old", "old", "old" };
-	
+{	
 	public ItemMultiBlock(int id)
 	{
 		super(id);

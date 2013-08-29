@@ -16,7 +16,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemDyeableSwordMoreTools extends ItemDyeableToolMoreTools
 {
-    private float weaponDamage;
     private final EnumToolMaterial toolMaterial;
 
     public ItemDyeableSwordMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
@@ -26,7 +25,6 @@ public class ItemDyeableSwordMoreTools extends ItemDyeableToolMoreTools
         this.maxStackSize = 1;
         this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
         this.setCreativeTab(CreativeTabs.tabCombat);
-        this.weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
     }
 
     /**

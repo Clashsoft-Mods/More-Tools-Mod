@@ -16,8 +16,6 @@ public class ItemDyeableHoeMoreTools extends ItemDyeableToolMoreTools
 {
 	protected EnumToolMaterial	theToolMaterial;
 	
-	private String[]			textures	= new String[] { "lhoe1", "lhoe2" };
-	
 	public ItemDyeableHoeMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
 	{
 		super(par1, 0, par2EnumToolMaterial, new Block[] {});

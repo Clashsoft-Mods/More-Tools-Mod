@@ -1,5 +1,6 @@
 package clashsoft.mods.moretools;
 
+import clashsoft.clashsoftapi.CustomEnchantment;
 import clashsoft.clashsoftapi.util.CSBlocks;
 import clashsoft.clashsoftapi.util.CSCrafting;
 import clashsoft.clashsoftapi.util.CSItems;
@@ -24,11 +25,11 @@ import clashsoft.mods.moretools.item.ItemPickaxeMoreTools;
 import clashsoft.mods.moretools.item.ItemShearsMoreTools;
 import clashsoft.mods.moretools.item.ItemSpadeMoreTools;
 import clashsoft.mods.moretools.item.ItemSwordMoreTools;
-import clashsoft.mods.moretools.lib.EnchantmentMoreTools;
 import clashsoft.mods.moretools.lib.RecipesToolDyes;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
@@ -76,7 +77,7 @@ public class MoreToolsMod_Tools
 	public static EnumToolMaterial		GLOWSTONE			= EnumHelper.addToolMaterial("GLOWSTONE", 2, 64, 1F, 1F, 16);
 	public static EnumToolMaterial		SLIME				= EnumHelper.addToolMaterial("SLIME", 1, 80, 1.2F, 0.85F, 15);
 	
-	public static Enchantment			quickDraw			= new EnchantmentMoreTools(7, 1, 3, EnumEnchantmentType.bow, "quickdraw");
+	public static Enchantment			quickDraw			= new CustomEnchantment(7, 1, 3, EnumEnchantmentType.bow, "quickdraw");
 	
 	// Rarities.
 	

@@ -3,6 +3,7 @@ package clashsoft.mods.moretools.item;
 import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.*;
@@ -22,7 +23,8 @@ public class ItemBowMoreTools extends Item
 	private static Icon[] icons;
 	
     private Item arrowToConsume;
-    private boolean isSkeletonBow;
+    @SuppressWarnings("unused")
+	private boolean isSkeletonBow;
 	
 	public ItemBowMoreTools(int par1, Item par2, boolean par3)
     {

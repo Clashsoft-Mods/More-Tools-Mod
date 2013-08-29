@@ -1,7 +1,7 @@
 package clashsoft.mods.moretools.item;
 
-import clashsoft.mods.moretools.MoreToolsMod_Achievements;
 import clashsoft.mods.moretools.MoreToolsMod_Tools;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -20,7 +20,7 @@ public class ItemLightsaberShaftMoreTools extends ItemMoreTools
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	{
 		ItemStack blue = new ItemStack(MoreToolsMod_Tools.lightsaberBlue, 1);
-		par3EntityPlayer.triggerAchievement(MoreToolsMod_Achievements.instance.lightsaber);
+		//par3EntityPlayer.triggerAchievement(MoreToolsMod_Achievements.lightsaber);
 		return blue;
 	}
 	

@@ -13,12 +13,10 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 public class ItemMultitoolMoreTools extends ItemToolMoreTools
 {
 	private static Block	blocksEffectiveAgainst[];
-	private float			weaponDamage;
 	
 	public ItemMultitoolMoreTools(int par1, EnumToolMaterial par2EnumToolMaterial)
 	{
-		super(par1, 2, par2EnumToolMaterial, blocksEffectiveAgainst);
-		weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
+		super(par1, 4, par2EnumToolMaterial, blocksEffectiveAgainst);
 	}
 	
 	/**

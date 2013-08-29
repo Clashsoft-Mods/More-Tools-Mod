@@ -13,9 +13,6 @@ import net.minecraft.world.World;
 
 public class ItemArmorMoreTools extends ItemArmor
 {
-	/** Holds the 'base' maxDamage that each armorType have. */
-	private static final int[]		maxDamageArray	= new int[] { 11, 16, 15, 13 };
-	
 	/**
 	 * Stores the armor type: 0 is helmet, 1 is plate, 2 is legs and 3 is boots
 	 */
