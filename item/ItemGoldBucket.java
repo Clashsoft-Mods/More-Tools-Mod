@@ -1,6 +1,7 @@
 package clashsoft.mods.moretools.item;
 
 import clashsoft.mods.moretools.MoreToolsMod_Tools;
+
 import net.minecraft.item.ItemStack;
 
 public class ItemGoldBucket extends ItemBucketMoreTools

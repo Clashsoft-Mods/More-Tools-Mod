@@ -6,35 +6,17 @@ import clashsoft.clashsoftapi.util.CSCrafting;
 import clashsoft.clashsoftapi.util.CSItems;
 import clashsoft.mods.moretools.block.BlockGlowing;
 import clashsoft.mods.moretools.block.BlockSpaceblock;
-import clashsoft.mods.moretools.item.ItemAxeMoreTools;
-import clashsoft.mods.moretools.item.ItemBowMoreTools;
-import clashsoft.mods.moretools.item.ItemDyeableAxeMoreTools;
-import clashsoft.mods.moretools.item.ItemDyeableHoeMoreTools;
-import clashsoft.mods.moretools.item.ItemDyeablePickaxeMoreTools;
-import clashsoft.mods.moretools.item.ItemDyeableSpadeMoreTools;
-import clashsoft.mods.moretools.item.ItemDyeableSwordMoreTools;
-import clashsoft.mods.moretools.item.ItemFlintAndSteelMoreTools;
-import clashsoft.mods.moretools.item.ItemGoldBucket;
-import clashsoft.mods.moretools.item.ItemHoeMoreTools;
-import clashsoft.mods.moretools.item.ItemLightsaberMoreTools;
-import clashsoft.mods.moretools.item.ItemLightsaberShaftMoreTools;
-import clashsoft.mods.moretools.item.ItemMoreTools;
-import clashsoft.mods.moretools.item.ItemMultiBlock;
-import clashsoft.mods.moretools.item.ItemMultitoolMoreTools;
-import clashsoft.mods.moretools.item.ItemPickaxeMoreTools;
-import clashsoft.mods.moretools.item.ItemShearsMoreTools;
-import clashsoft.mods.moretools.item.ItemSpadeMoreTools;
-import clashsoft.mods.moretools.item.ItemSwordMoreTools;
+import clashsoft.mods.moretools.item.*;
 import clashsoft.mods.moretools.lib.RecipesToolDyes;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.src.ModLoader;
@@ -170,7 +152,7 @@ public class MoreToolsMod_Tools
 	public static final Item			goldBucketMilk		= (new ItemBucketMilk(MoreToolsMod.TOOLS_ID + 200 + 11)).setUnlocalizedName("bucketgoldMilk").setCreativeTab(null);
 	
 	public static final Block			spaceBlock			= (new BlockSpaceblock(250)).setHardness(3F).setLightValue(15 / 16).setUnlocalizedName("spaceblock");
-	public static final Block			spaceOre			= new Block(251, Material.rock).setHardness(2.5F).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("spaceore").func_111022_d("spaceore");
+	public static final Block			spaceOre			= new Block(251, Material.rock).setHardness(2.5F).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("spaceore").setTextureName("spaceore");
 	public static final Block			glowing				= (new BlockGlowing(252)).setHardness(0F).setLightValue(1F).setUnlocalizedName("glowing");
 	
 	public void load(FMLInitializationEvent event)

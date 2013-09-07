@@ -2,6 +2,7 @@ package clashsoft.mods.moretools.item;
 
 import clashsoft.mods.moretools.MoreToolsMod_Tools;
 
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
 import net.minecraft.block.Block;
@@ -76,11 +77,11 @@ public class ItemToolMoreTools extends ItemTool
 	}
 	
 	@Override
-	public Multimap func_111205_h()
+	public Multimap getItemAttributeModifiers()
 	{
-		Multimap multimap = super.func_111205_h();
-		multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Tool modifier", this.damageVsEntity, 0));
-		return multimap;
+		Multimap multimap = HashMultimap.create();
+        multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.damageVsEntity, 0));
+        return multimap;
 	}
 	
 	/**
@@ -138,7 +139,7 @@ public class ItemToolMoreTools extends ItemTool
 	public Item setUnlocalizedName(String name)
 	{
 		super.setUnlocalizedName(name);
-		super.func_111206_d(name);
+		super.setTextureName(name);
 		return this;
 	}
 }

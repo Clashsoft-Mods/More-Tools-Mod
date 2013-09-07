@@ -1,7 +1,8 @@
 package clashsoft.mods.moretools.item;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemFlintAndSteel;
 
 public class ItemFlintAndSteelMoreTools extends ItemFlintAndSteel
 {
@@ -20,7 +21,7 @@ public class ItemFlintAndSteelMoreTools extends ItemFlintAndSteel
 	public Item setUnlocalizedName(String name)
 	{
 		super.setUnlocalizedName(name);
-		super.func_111206_d(name);
+		super.setTextureName(name);
 		return this;
 	}
 }

@@ -17,10 +17,11 @@ public class ItemLightsaberShaftMoreTools extends ItemMoreTools
 		this.maxStackSize = 1;
 	}
 	
+	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	{
 		ItemStack blue = new ItemStack(MoreToolsMod_Tools.lightsaberBlue, 1);
-		//par3EntityPlayer.triggerAchievement(MoreToolsMod_Achievements.lightsaber);
+		// par3EntityPlayer.triggerAchievement(MoreToolsMod_Achievements.lightsaber);
 		return blue;
 	}
 	
@@ -31,7 +32,7 @@ public class ItemLightsaberShaftMoreTools extends ItemMoreTools
 	public Item setUnlocalizedName(String name)
 	{
 		super.setUnlocalizedName(name);
-		super.func_111206_d(name);
+		super.setTextureName(name);
 		return this;
 	}
 }

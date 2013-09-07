@@ -15,6 +15,7 @@ public class ItemDyeableSpadeMoreTools extends ItemDyeableToolMoreTools
 	/**
 	 * Returns if the item (tool) can harvest results from the block type.
 	 */
+	@Override
 	public boolean canHarvestBlock(Block par1Block)
 	{
 		if (par1Block == Block.snow)

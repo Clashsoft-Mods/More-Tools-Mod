@@ -1,18 +1,14 @@
 package clashsoft.mods.moretools.item;
 
 import clashsoft.mods.moretools.MoreToolsMod_Tools;
-
-import com.google.common.collect.Multimap;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.world.World;
@@ -46,18 +42,12 @@ public class ItemSwordMoreTools extends ItemSword
 	{
 		return this.toolMaterial.getDamageVsEntity();
 	}
-	
-	public Multimap func_111205_h()
-    {
-        Multimap multimap = super.func_111205_h();
-        multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Weapon modifier", (double)this.weaponDamage, 0));
-        return multimap;
-    }
 
 	/**
 	 * Returns the strength of the stack against a given block. 1.0F base, (Quality+1)*2 if correct blocktype, 1.5F if
 	 * sword
 	 */
+	@Override
 	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
 	{
 		if (par2Block.blockID == Block.web.blockID)
@@ -83,7 +73,7 @@ public class ItemSwordMoreTools extends ItemSword
 
 	public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving)
 	{
-		if ((double)Block.blocksList[par3].getBlockHardness(par2World, par4, par5, par6) != 0.0D)
+		if (Block.blocksList[par3].getBlockHardness(par2World, par4, par5, par6) != 0.0D)
 		{
 			par1ItemStack.damageItem(2, par7EntityLiving);
 		}
@@ -94,6 +84,7 @@ public class ItemSwordMoreTools extends ItemSword
 	/**
 	 * Returns True is the item is renderer in full 3D when hold.
 	 */
+	@Override
 	public boolean isFull3D()
 	{
 		return true;
@@ -102,6 +93,7 @@ public class ItemSwordMoreTools extends ItemSword
 	/**
 	 * returns the action that specifies what animation to play when the items is being used
 	 */
+	@Override
 	public EnumAction getItemUseAction(ItemStack par1ItemStack)
 	{
 		return EnumAction.block;
@@ -110,6 +102,7 @@ public class ItemSwordMoreTools extends ItemSword
 	/**
 	 * How long it takes to use or consume an item
 	 */
+	@Override
 	public int getMaxItemUseDuration(ItemStack par1ItemStack)
 	{
 		return 72000;
@@ -118,6 +111,7 @@ public class ItemSwordMoreTools extends ItemSword
 	/**
 	 * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
 	 */
+	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	{
 		par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
@@ -134,6 +128,7 @@ public class ItemSwordMoreTools extends ItemSword
 	/**
 	 * Returns if the item (tool) can harvest results from the block type.
 	 */
+	@Override
 	public boolean canHarvestBlock(Block par1Block)
 	{
 		return par1Block.blockID == Block.web.blockID;
@@ -142,6 +137,7 @@ public class ItemSwordMoreTools extends ItemSword
 	/**
 	 * Return the enchantability factor of the item, most of the time is based on material.
 	 */
+	@Override
 	public int getItemEnchantability()
 	{
 		return this.toolMaterial.getEnchantability();
@@ -155,6 +151,7 @@ public class ItemSwordMoreTools extends ItemSword
 	/**
 	 * Return whether this item is repairable in an anvil.
 	 */
+	@Override
 	public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
 	{
 		return this.toolMaterial.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
@@ -164,6 +161,7 @@ public class ItemSwordMoreTools extends ItemSword
 	 * Called each tick as long the item is on a player inventory. Uses by maps to check if is on a player hand and
 	 * update it's contents.
 	 */
+	@Override
 	public void onUpdate(ItemStack par1ItemStack, World par2World, Entity par3Entity, int par4, boolean par5)
 	{
 		Item i = par1ItemStack.getItem();
@@ -181,7 +179,7 @@ public class ItemSwordMoreTools extends ItemSword
     public Item setUnlocalizedName(String name)
     {
     	super.setUnlocalizedName(name);
-    	super.func_111206_d(name);
+    	super.setTextureName(name);
     	return this;
     }
 }

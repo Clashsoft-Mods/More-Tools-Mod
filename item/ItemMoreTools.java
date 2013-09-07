@@ -19,7 +19,7 @@ public class ItemMoreTools extends Item
     public Item setUnlocalizedName(String name)
     {
     	super.setUnlocalizedName(name);
-    	super.func_111206_d(name);
+    	super.setTextureName(name);
     	return this;
     }
 }

@@ -6,11 +6,13 @@ import clashsoft.mods.moretools.MoreToolsMod_Tools;
 import clashsoft.mods.moretools.item.ItemDyeableHoeMoreTools;
 import clashsoft.mods.moretools.item.ItemDyeableSwordMoreTools;
 import clashsoft.mods.moretools.item.ItemDyeableToolMoreTools;
+
 import net.minecraft.block.BlockColored;
 import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.inventory.*;
-import net.minecraft.item.*;
-import net.minecraft.item.crafting.*;
+import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 
 public class RecipesToolDyes implements IRecipe

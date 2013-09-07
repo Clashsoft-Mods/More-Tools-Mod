@@ -2,7 +2,8 @@ package clashsoft.mods.moretools.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.*;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemStack;
 
 public class ItemAxeMoreTools extends ItemToolMoreTools
 {
@@ -22,7 +23,8 @@ public class ItemAxeMoreTools extends ItemToolMoreTools
      * Returns the strength of the stack against a given block. 1.0F base, (Quality+1)*2 if correct blocktype, 1.5F if
      * sword
      */
-    public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
+    @Override
+	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
     {
         if (par2Block != null && par2Block.blockMaterial == Material.wood)
         {

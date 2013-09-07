@@ -2,7 +2,8 @@ package clashsoft.mods.moretools.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.*;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemStack;
 
 public class ItemPickaxeMoreTools extends ItemToolMoreTools
 {

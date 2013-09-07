@@ -2,6 +2,7 @@ package clashsoft.mods.moretools;
 
 import clashsoft.clashsoftapi.util.CSLang;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+
 import net.minecraft.stats.Achievement;
 
 public class ClientProxy extends CommonProxy

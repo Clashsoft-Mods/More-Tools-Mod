@@ -18,7 +18,7 @@ public class BlockSpaceblock extends Block
 {
 	public static String[]	names		= new String[] { "", "Space Block", "Old Space Block", "Old Space Block", "Old Space Block" };
 	private static String[]	textures	= new String[] { "spaceore", "spaceblock_1", "spaceblock_old_1", "spaceblock_old_2", "spaceblock_old_3" };
-	public Icon[]	icons		= new Icon[textures.length];
+	public Icon[]			icons		= new Icon[textures.length];
 	
 	public BlockSpaceblock(int id)
 	{

@@ -1,11 +1,15 @@
 package clashsoft.mods.moretools.item;
 
 import clashsoft.mods.moretools.MoreToolsMod_Tools;
+
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.*;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event.Result;
@@ -121,7 +125,7 @@ public class ItemHoeMoreTools extends ItemHoe
 	public Item setUnlocalizedName(String name)
 	{
 		super.setUnlocalizedName(name);
-		super.func_111206_d(name);
+		super.setTextureName(name);
 		return this;
 	}
 }

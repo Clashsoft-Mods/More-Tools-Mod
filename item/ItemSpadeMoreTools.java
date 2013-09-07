@@ -1,7 +1,7 @@
 package clashsoft.mods.moretools.item;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.*;
+import net.minecraft.item.EnumToolMaterial;
 
 public class ItemSpadeMoreTools extends ItemToolMoreTools
 {
@@ -20,6 +20,7 @@ public class ItemSpadeMoreTools extends ItemToolMoreTools
 	/**
 	 * Returns if the item (tool) can harvest results from the block type.
 	 */
+	@Override
 	public boolean canHarvestBlock(Block par1Block)
 	{
 		if (par1Block == Block.snow)

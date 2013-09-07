@@ -2,10 +2,14 @@ package clashsoft.mods.moretools.item;
 
 import clashsoft.mods.moretools.MoreToolsMod_Armor;
 import clashsoft.mods.moretools.MoreToolsMod_Tools;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.*;
+import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
@@ -97,7 +101,7 @@ public class ItemArmorMoreTools extends ItemArmor
 	public Item setUnlocalizedName(String name)
 	{
 		super.setUnlocalizedName(name);
-		super.func_111206_d(name);
+		super.setTextureName(name);
 		return this;
 	}
 	

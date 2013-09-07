@@ -63,7 +63,7 @@ public class ItemShearsMoreTools extends Item
 	}
 	
 	@Override
-	public boolean func_111207_a(ItemStack itemstack, EntityPlayer player, EntityLivingBase entity)
+	public boolean itemInteractionForEntity(ItemStack itemstack, EntityPlayer player, EntityLivingBase entity)
 	{
 		if (entity.worldObj.isRemote)
 		{
@@ -141,7 +141,7 @@ public class ItemShearsMoreTools extends Item
 	public Item setUnlocalizedName(String name)
 	{
 		super.setUnlocalizedName(name);
-		super.func_111206_d(name);
+		super.setTextureName(name);
 		return this;
 	}
 }
