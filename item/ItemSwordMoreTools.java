@@ -15,7 +15,6 @@ import net.minecraft.world.World;
 
 public class ItemSwordMoreTools extends ItemSword
 {
-	private float weaponDamage;
 	public final EnumToolMaterial toolMaterial;
 	private int rarity;
 
@@ -27,7 +26,6 @@ public class ItemSwordMoreTools extends ItemSword
 		this.rarity = par3;
 		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
 		this.setCreativeTab(CreativeTabs.tabCombat);
-		this.weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
 	}
 
 	@Override
