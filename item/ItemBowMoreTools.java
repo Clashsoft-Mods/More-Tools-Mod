@@ -26,8 +26,6 @@ public class ItemBowMoreTools extends Item
 	private static Icon[] icons;
 	
     private Item arrowToConsume;
-    @SuppressWarnings("unused")
-	private boolean isSkeletonBow;
 	
 	public ItemBowMoreTools(int par1, Item par2, boolean par3)
     {
@@ -35,7 +33,6 @@ public class ItemBowMoreTools extends Item
         maxStackSize = 1;
         setMaxDamage(384);
         this.arrowToConsume = par2;
-        this.isSkeletonBow = par3;
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
     

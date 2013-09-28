@@ -11,12 +11,19 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.ForgeSubscribe;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 
-@Mod(modid = "MoreToolsMod", name = "More Tools Mod", version = CSUtil.CURRENT_VERION)
+@Mod(modid = "MoreToolsMod", name = "More Tools Mod", version = MoreToolsMod.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MoreToolsMod
 {
+	public static final int		REVISION		= 1;
+	public static final String	VERSION			= CSUtil.CURRENT_VERION + "-" + REVISION;
+	
 	@Instance("MoreToolsModMainID")
 	public static MoreToolsMod	instance;
 	
@@ -26,15 +33,6 @@ public class MoreToolsMod
 	public static int			TOOLS_ID		= 1900;
 	public static int			ARMORY_ID		= 2500;
 	public static int			MISCITEMS_ID	= 2400;
-	
-	public int					linesOfCode		= 803 // Tools
-														+ 436 // Armor
-														+ 68 // Achievements
-														+ 46 // WorldGen
-														+ 69 // ClientProxy
-														+ 23 // CommonProxy
-														+ 56 // this
-												;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -58,6 +56,19 @@ public class MoreToolsMod
 		MoreToolsMod_Tools.instance.load(event);
 		MoreToolsMod_Armor.instance.load(event);
 		MoreToolsMod_Achievements.instance.load();
+		
+		MinecraftForge.EVENT_BUS.register(this);
+	}
+	
+	@ForgeSubscribe
+	public void playerJoined(EntityJoinWorldEvent event)
+	{
+		if (event.entity instanceof EntityPlayer)
+		{
+			String nextVersion = CSUtil.checkForUpdate("mtm", CSUtil.CLASHSOFT_ADFLY, VERSION);
+			if (nextVersion != VERSION)
+				((EntityPlayer) event.entity).addChatMessage("A new More Tools Mod version is available: " + nextVersion + ". You are using " + VERSION);
+		}
 	}
 	
 	@EventHandler
