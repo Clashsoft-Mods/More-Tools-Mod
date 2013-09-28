@@ -21,7 +21,7 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MoreToolsMod
 {
-	public static final int		REVISION		= 1;
+	public static final int		REVISION		= 2;
 	public static final String	VERSION			= CSUtil.CURRENT_VERION + "-" + REVISION;
 	
 	@Instance("MoreToolsModMainID")
