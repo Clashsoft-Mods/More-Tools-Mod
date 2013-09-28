@@ -1,6 +1,7 @@
 package clashsoft.mods.moretools;
 
 import clashsoft.clashsoftapi.util.CSUtil;
+import clashsoft.clashsoftapi.util.update.ModUpdate;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -65,9 +66,8 @@ public class MoreToolsMod
 	{
 		if (event.entity instanceof EntityPlayer)
 		{
-			String nextVersion = CSUtil.checkForUpdate("mtm", CSUtil.CLASHSOFT_ADFLY, VERSION);
-			if (nextVersion != VERSION)
-				((EntityPlayer) event.entity).addChatMessage("A new More Tools Mod version is available: " + nextVersion + ". You are using " + VERSION);
+			ModUpdate update = CSUtil.checkForUpdate("mtm", CSUtil.CLASHSOFT_ADFLY, MoreToolsMod.VERSION);
+			CSUtil.notifyUpdate((EntityPlayer) event.entity, "More Tools Mod", update);
 		}
 	}
 	
