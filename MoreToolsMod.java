@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools;
 
-import clashsoft.clashsoftapi.util.CSUtil;
+import clashsoft.clashsoftapi.util.CSUpdate;
 import clashsoft.clashsoftapi.util.update.ModUpdate;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -23,7 +23,7 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 public class MoreToolsMod
 {
 	public static final int		REVISION		= 2;
-	public static final String	VERSION			= CSUtil.CURRENT_VERION + "-" + REVISION;
+	public static final String	VERSION			= CSUpdate.CURRENT_VERION + "-" + REVISION;
 	
 	@Instance("MoreToolsModMainID")
 	public static MoreToolsMod	instance;
@@ -66,8 +66,8 @@ public class MoreToolsMod
 	{
 		if (event.entity instanceof EntityPlayer)
 		{
-			ModUpdate update = CSUtil.checkForUpdate("mtm", CSUtil.CLASHSOFT_ADFLY, MoreToolsMod.VERSION);
-			CSUtil.notifyUpdate((EntityPlayer) event.entity, "More Tools Mod", update);
+			ModUpdate update = CSUpdate.checkForUpdate("More Tools Mod", MoreToolsMod.VERSION);
+			CSUpdate.notifyUpdate((EntityPlayer) event.entity, "More Tools Mod", update);
 		}
 	}
 	
