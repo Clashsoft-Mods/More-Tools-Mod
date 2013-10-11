@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools.item;
 
-import clashsoft.mods.moretools.MoreToolsMod_Tools;
+import clashsoft.mods.moretools.MTMTools;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
@@ -111,7 +111,7 @@ public class ItemToolMoreTools extends ItemTool
 	public void onUpdate(ItemStack par1ItemStack, World par2World, Entity par3Entity, int par4, boolean par5)
 	{
 		Item i = par1ItemStack.getItem();
-		if ((i == MoreToolsMod_Tools.glowstonePick || i == MoreToolsMod_Tools.glowstoneShovel || i == MoreToolsMod_Tools.glowstoneAxe) && par5)
+		if ((i == MTMTools.glowstonePick || i == MTMTools.glowstoneShovel || i == MTMTools.glowstoneAxe) && par5)
 		{
 			ItemArmorMoreTools.setLight(par2World, par3Entity);
 		}
@@ -124,7 +124,7 @@ public class ItemToolMoreTools extends ItemTool
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	{
-		if (this.toolMaterial == MoreToolsMod_Tools.END && par3EntityPlayer.isSneaking())
+		if (this.toolMaterial == MTMTools.END && par3EntityPlayer.isSneaking())
 		{
 			ItemStack is = Item.enderPearl.onItemRightClick(par1ItemStack.copy(), par2World, par3EntityPlayer);
 			par1ItemStack.damageItem(20, par3EntityPlayer);

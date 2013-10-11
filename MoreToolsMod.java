@@ -23,7 +23,7 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 public class MoreToolsMod
 {
 	public static final int		REVISION		= 3;
-	public static final String	VERSION			= CSUpdate.CURRENT_VERION + "-" + REVISION;
+	public static final String	VERSION			= CSUpdate.CURRENT_VERSION + "-" + REVISION;
 	
 	@Instance("MoreToolsModMainID")
 	public static MoreToolsMod	instance;
@@ -52,11 +52,11 @@ public class MoreToolsMod
 	public void load(FMLInitializationEvent event)
 	{
 		proxy.registerRenderers();
-		GameRegistry.registerWorldGenerator(new MoreToolsMod_WorldGen());
+		GameRegistry.registerWorldGenerator(new MTMWorld());
 		
-		MoreToolsMod_Tools.instance.load(event);
-		MoreToolsMod_Armor.instance.load(event);
-		MoreToolsMod_Achievements.instance.load();
+		MTMTools.instance.load(event);
+		MTMArmor.instance.load(event);
+		MTMAchievements.instance.load();
 		
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -66,7 +66,7 @@ public class MoreToolsMod
 	{
 		if (event.entity instanceof EntityPlayer)
 		{
-			ModUpdate update = CSUpdate.checkForUpdate("More Tools Mod", MoreToolsMod.VERSION);
+			ModUpdate update = CSUpdate.checkForUpdate("More Tools Mod", "mtm", MoreToolsMod.VERSION);
 			CSUpdate.notifyUpdate((EntityPlayer) event.entity, "More Tools Mod", update);
 		}
 	}

@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools.item;
 
-import clashsoft.mods.moretools.MoreToolsMod_Tools;
+import clashsoft.mods.moretools.MTMTools;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -62,7 +62,7 @@ public class ItemBowMoreTools extends Item
 
         if (flag || par3EntityPlayer.inventory.hasItem(arrowToConsume.itemID))
         {
-            float f = (j / 20.0F) + (EnchantmentHelper.getEnchantmentLevel(MoreToolsMod_Tools.quickDraw.effectId, par1ItemStack) * 0.04F);
+            float f = (j / 20.0F) + (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, par1ItemStack) * 0.04F);
             f = (f * f + f * 2.0F) / 3.0F;
 
             if (f < 0.1D)
@@ -169,7 +169,7 @@ public class ItemBowMoreTools extends Item
     @Override
     public Icon getIconFromDamage(int par1)
     {
-    	if (this == MoreToolsMod_Tools.spaceBow)
+    	if (this == MTMTools.spaceBow)
     	{
     		return spaceicons[0];
     	}
@@ -179,12 +179,12 @@ public class ItemBowMoreTools extends Item
     @Override
     public Icon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
     {
-        boolean isSpaceBow = this == MoreToolsMod_Tools.spaceBow;
-    	if (usingItem != null && usingItem.getItem().itemID == MoreToolsMod_Tools.spaceBow.itemID)
+        boolean isSpaceBow = this == MTMTools.spaceBow;
+    	if (usingItem != null && usingItem.getItem().itemID == MTMTools.spaceBow.itemID)
         {
             int k = usingItem.getMaxItemUseDuration() - useRemaining;
-            int var1 = 18 - (EnchantmentHelper.getEnchantmentLevel(MoreToolsMod_Tools.quickDraw.effectId, stack) * 4);
-            int var2 = 13 - (EnchantmentHelper.getEnchantmentLevel(MoreToolsMod_Tools.quickDraw.effectId, stack) * 4);
+            int var1 = 18 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
+            int var2 = 13 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
             int var3 = 0;
             if (k >= var1) return isSpaceBow ? spaceicons[3] : icons[3];
             if (k >  var2) return isSpaceBow ? spaceicons[2] : icons[2];
@@ -212,7 +212,7 @@ public class ItemBowMoreTools extends Item
     @SideOnly(Side.CLIENT)
     public Icon func_94599_c(int par1)
     {
-        return this == MoreToolsMod_Tools.spaceBow ? spaceicons[par1] : icons[par1];
+        return this == MTMTools.spaceBow ? spaceicons[par1] : icons[par1];
     }
     
     /**

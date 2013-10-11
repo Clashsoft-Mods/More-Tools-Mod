@@ -1,7 +1,7 @@
 package clashsoft.mods.moretools.item;
 
-import clashsoft.mods.moretools.MoreToolsMod_Armor;
-import clashsoft.mods.moretools.MoreToolsMod_Tools;
+import clashsoft.mods.moretools.MTMArmor;
+import clashsoft.mods.moretools.MTMTools;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -61,35 +61,35 @@ public class ItemArmorMoreTools extends ItemArmor
 			ItemStack leggings = player.inventory.armorInventory[1];
 			ItemStack boots = player.inventory.armorInventory[0];
 			
-			if (helmet != null && helmet.getItem() == MoreToolsMod_Armor.glowstoneHelmet)
+			if (helmet != null && helmet.getItem() == MTMArmor.glowstoneHelmet)
 			{
 				setLight(world, player);
 			}
-			if (chestplate != null && chestplate.getItem() == MoreToolsMod_Armor.glowstoneChestplate)
+			if (chestplate != null && chestplate.getItem() == MTMArmor.glowstoneChestplate)
 			{
 				setLight(world, player);
 			}
-			if (leggings != null && leggings.getItem() == MoreToolsMod_Armor.glowstoneLeggings)
+			if (leggings != null && leggings.getItem() == MTMArmor.glowstoneLeggings)
 			{
 				setLight(world, player);
 			}
-			if (boots != null && boots.getItem() == MoreToolsMod_Armor.glowstoneBoots)
+			if (boots != null && boots.getItem() == MTMArmor.glowstoneBoots)
 			{
 				setLight(world, player);
 			}
 			
-			if (leggings != null && leggings.getItem() == MoreToolsMod_Armor.slimeLeggings)
+			if (leggings != null && leggings.getItem() == MTMArmor.slimeLeggings)
 			{
 				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 10, 1));
 			}
-			if (boots != null && boots.getItem() == MoreToolsMod_Armor.slimeBoots)
+			if (boots != null && boots.getItem() == MTMArmor.slimeBoots)
 			{
 				player.addPotionEffect(new PotionEffect(Potion.jump.id, 10, 2));
 			}
 			
 			if (helmet != null && chestplate != null && leggings != null && boots != null)
 			{
-				if (helmet.getItem() == MoreToolsMod_Armor.invisibilityHelmet && chestplate.getItem() == MoreToolsMod_Armor.invisibilityChestplate && leggings.getItem() == MoreToolsMod_Armor.invisibilityLeggings && boots.getItem() == MoreToolsMod_Armor.invisibilityBoots)
+				if (helmet.getItem() == MTMArmor.invisibilityHelmet && chestplate.getItem() == MTMArmor.invisibilityChestplate && leggings.getItem() == MTMArmor.invisibilityLeggings && boots.getItem() == MTMArmor.invisibilityBoots)
 				{
 					player.addPotionEffect(new PotionEffect(Potion.invisibility.id, 4, 0));
 				}
@@ -109,7 +109,7 @@ public class ItemArmorMoreTools extends ItemArmor
 	{
 		if (par1World.getBlockId(MathHelper.floor_double(par2Entity.posX), MathHelper.floor_double(par2Entity.posY), MathHelper.floor_double(par2Entity.posZ)) == 0)
 		{
-			par1World.setBlock(MathHelper.floor_double(par2Entity.posX), MathHelper.floor_double(par2Entity.posY), MathHelper.floor_double(par2Entity.posZ), MoreToolsMod_Tools.glowing.blockID, 0, 0x02);
+			par1World.setBlock(MathHelper.floor_double(par2Entity.posX), MathHelper.floor_double(par2Entity.posY), MathHelper.floor_double(par2Entity.posZ), MTMTools.glowing.blockID, 0, 0x02);
 		}
 	}
 	

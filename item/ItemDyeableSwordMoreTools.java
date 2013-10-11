@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools.item;
 
-import clashsoft.mods.moretools.MoreToolsMod_Tools;
+import clashsoft.mods.moretools.MTMTools;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -183,7 +183,7 @@ public class ItemDyeableSwordMoreTools extends ItemDyeableToolMoreTools
 	@Override
 	public boolean hasColor(ItemStack par1ItemStack)
 	{
-		return this.toolMaterial != MoreToolsMod_Tools.LEATHER ? false : (!par1ItemStack.hasTagCompound() ? false : (!par1ItemStack.getTagCompound().hasKey("display") ? false : par1ItemStack.getTagCompound().getCompoundTag("display").hasKey("color")));
+		return this.toolMaterial != MTMTools.LEATHER ? false : (!par1ItemStack.hasTagCompound() ? false : (!par1ItemStack.getTagCompound().hasKey("display") ? false : par1ItemStack.getTagCompound().getCompoundTag("display").hasKey("color")));
 	}
 	
 	/**
@@ -192,7 +192,7 @@ public class ItemDyeableSwordMoreTools extends ItemDyeableToolMoreTools
 	@Override
 	public int getColor(ItemStack par1ItemStack)
 	{
-		if (this.toolMaterial != MoreToolsMod_Tools.LEATHER)
+		if (this.toolMaterial != MTMTools.LEATHER)
 		{
 			return -1;
 		}
@@ -218,7 +218,7 @@ public class ItemDyeableSwordMoreTools extends ItemDyeableToolMoreTools
 	@Override
 	public void removeColor(ItemStack par1ItemStack)
 	{
-		if (this.toolMaterial == MoreToolsMod_Tools.LEATHER)
+		if (this.toolMaterial == MTMTools.LEATHER)
 		{
 			NBTTagCompound var2 = par1ItemStack.getTagCompound();
 			
@@ -237,7 +237,7 @@ public class ItemDyeableSwordMoreTools extends ItemDyeableToolMoreTools
 	@Override
 	public void func_82813_b(ItemStack par1ItemStack, int par2)
 	{
-		if (this.toolMaterial != MoreToolsMod_Tools.LEATHER)
+		if (this.toolMaterial != MTMTools.LEATHER)
 		{
 			throw new UnsupportedOperationException("Can\'t dye non-leather!");
 		}

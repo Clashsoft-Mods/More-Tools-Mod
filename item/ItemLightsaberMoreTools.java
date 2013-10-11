@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools.item;
 
-import clashsoft.mods.moretools.MoreToolsMod_Tools;
+import clashsoft.mods.moretools.MTMTools;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.*;
 import net.minecraft.world.World;
@@ -15,12 +15,12 @@ public class ItemLightsaberMoreTools extends ItemSwordMoreTools
 	
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	{
-		ItemStack shaft = new ItemStack(MoreToolsMod_Tools.lightsaberShaft, 1);
-		ItemStack blue = new ItemStack(MoreToolsMod_Tools.lightsaberBlue, 1);
-		ItemStack green = new ItemStack(MoreToolsMod_Tools.lightsaberGreen, 1);
-		ItemStack purple = new ItemStack(MoreToolsMod_Tools.lightsaberPurple, 1);
-		ItemStack red = new ItemStack(MoreToolsMod_Tools.lightsaberRed, 1);
-		ItemStack white = new ItemStack(MoreToolsMod_Tools.lightsaberWhite, 1);
+		ItemStack shaft = new ItemStack(MTMTools.lightsaberShaft, 1);
+		ItemStack blue = new ItemStack(MTMTools.lightsaberBlue, 1);
+		ItemStack green = new ItemStack(MTMTools.lightsaberGreen, 1);
+		ItemStack purple = new ItemStack(MTMTools.lightsaberPurple, 1);
+		ItemStack red = new ItemStack(MTMTools.lightsaberRed, 1);
+		ItemStack white = new ItemStack(MTMTools.lightsaberWhite, 1);
 		
 		if (par1ItemStack == shaft)
 		{

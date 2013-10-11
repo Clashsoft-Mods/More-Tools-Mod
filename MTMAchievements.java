@@ -14,16 +14,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 
-public class MoreToolsMod_Achievements
+public class MTMAchievements
 {
-	public static MoreToolsMod_Achievements						instance				= new MoreToolsMod_Achievements();
+	public static MTMAchievements						instance				= new MTMAchievements();
 	
-	public static final Achievement								spaceingot				= new Achievement(1006, "spaceIngot", 5, 5, MoreToolsMod_Tools.spaceIngot, AchievementList.buildFurnace).registerAchievement();
-	public static final Achievement								spaceblock				= new Achievement(1001, "spaceBlock", 8, 5, new ItemStack(MoreToolsMod_Tools.spaceBlock, 1, 1), spaceingot).registerAchievement();
-	public static final Achievement								spacestrong				= new Achievement(1002, "spaceSwordStrong", 8, 7, MoreToolsMod_Tools.spaceSwordStrong, spaceblock).registerAchievement();
-	public static final Achievement								spaceweak				= new Achievement(1003, "spaceSwordWeak", 5, 7, MoreToolsMod_Tools.spaceSwordWeak, spaceingot).registerAchievement();
-	public static final Achievement								moretools				= new Achievement(1004, "moreTools", 8, 3, MoreToolsMod_Tools.spaceAxe, AchievementList.buildWorkBench).registerAchievement();
-	public static final Achievement								lightsaber				= new Achievement(1005, "lightsaber", -3, 7, MoreToolsMod_Tools.lightsaberBlue, AchievementList.portal).registerAchievement();
+	public static final Achievement								spaceingot				= new Achievement(1006, "spaceIngot", 5, 5, MTMTools.spaceIngot, AchievementList.buildFurnace).registerAchievement();
+	public static final Achievement								spaceblock				= new Achievement(1001, "spaceBlock", 8, 5, new ItemStack(MTMTools.spaceBlock, 1, 1), spaceingot).registerAchievement();
+	public static final Achievement								spacestrong				= new Achievement(1002, "spaceSwordStrong", 8, 7, MTMTools.spaceSwordAdvanced, spaceblock).registerAchievement();
+	public static final Achievement								spaceweak				= new Achievement(1003, "spaceSwordWeak", 5, 7, MTMTools.spaceSword, spaceingot).registerAchievement();
+	public static final Achievement								moretools				= new Achievement(1004, "moreTools", 8, 3, MTMTools.spaceAxe, AchievementList.buildWorkBench).registerAchievement();
+	public static final Achievement								lightsaber				= new Achievement(1005, "lightsaber", -3, 7, MTMTools.lightsaberBlue, AchievementList.portal).registerAchievement();
 	
 	public static final HashMap<EnumToolMaterial, Achievement>	materialachievements	= new HashMap<EnumToolMaterial, Achievement>();
 	
@@ -97,18 +97,18 @@ public class MoreToolsMod_Achievements
 		@Override
 		public void onCrafting(EntityPlayer player, ItemStack item, IInventory craftMatrix)
 		{
-			if (item.itemID == MoreToolsMod_Tools.spaceBlock.blockID)
+			if (item.itemID == MTMTools.spaceBlock.blockID)
 			{
 				player.triggerAchievement(spaceblock);
 			}
-			if (item.getItem() == MoreToolsMod_Tools.spaceSwordStrong)
+			if (item.getItem() == MTMTools.spaceSwordAdvanced)
 			{
-				player.triggerAchievement(materialachievements.get(MoreToolsMod_Tools.SPACE1));
+				player.triggerAchievement(materialachievements.get(MTMTools.SPACE1));
 				player.triggerAchievement(spacestrong);
 			}
-			if (item.getItem() == MoreToolsMod_Tools.spaceSwordWeak)
+			if (item.getItem() == MTMTools.spaceSword)
 			{
-				player.triggerAchievement(materialachievements.get(MoreToolsMod_Tools.SPACE1));
+				player.triggerAchievement(materialachievements.get(MTMTools.SPACE1));
 				player.triggerAchievement(spaceweak);
 			}
 			if (item.getItem() instanceof ItemToolMoreTools || item.getItem() instanceof ItemSwordMoreTools || item.getItem() instanceof ItemHoeMoreTools || item.getItem() instanceof ItemArmorMoreTools)
@@ -133,7 +133,7 @@ public class MoreToolsMod_Achievements
 		@Override
 		public void onSmelting(EntityPlayer player, ItemStack item)
 		{
-			if (item.getItem() == MoreToolsMod_Tools.spaceIngot)
+			if (item.getItem() == MTMTools.spaceIngot)
 			{
 				player.triggerAchievement(spaceingot);
 			}

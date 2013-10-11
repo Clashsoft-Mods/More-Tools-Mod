@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 
-public class MoreToolsMod_WorldGen implements IWorldGenerator
+public class MTMWorld implements IWorldGenerator
 {
 	public void generateSurface(World world, Random rand, int chunkX, int chunkZ)
 	{
@@ -17,14 +17,14 @@ public class MoreToolsMod_WorldGen implements IWorldGenerator
 			int randPosX = chunkX * 16 + rand.nextInt(16);
 			int randPosY = rand.nextInt(20);
 			int randPosZ = chunkZ * 16 + rand.nextInt(16);
-			(new WorldGenMinable(MoreToolsMod_Tools.spaceOre.blockID, 6)).generate(world, rand, randPosX, randPosY, randPosZ);
+			(new WorldGenMinable(MTMTools.spaceOre.blockID, 6)).generate(world, rand, randPosX, randPosY, randPosZ);
 		}
 		if (rand.nextInt(100) == 0)
 		{
 			int randPosX = chunkX * 16 + rand.nextInt(16);
 			int randPosY = rand.nextInt(20);
 			int randPosZ = chunkZ * 16 + rand.nextInt(16);
-			(new WorldGenMinable(MoreToolsMod_Tools.spaceBlock.blockID, 12)).generate(world, rand, randPosX, randPosY, randPosZ);
+			(new WorldGenMinable(MTMTools.spaceBlock.blockID, 12)).generate(world, rand, randPosX, randPosY, randPosZ);
 		}
 	}
 	

@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools.item;
 
-import clashsoft.mods.moretools.MoreToolsMod_Tools;
+import clashsoft.mods.moretools.MTMTools;
 
 import net.minecraft.item.ItemStack;
 
@@ -17,7 +17,7 @@ public class ItemGoldBucket extends ItemBucketMoreTools
 	@Override
 	public ItemStack reduceLiquid(ItemStack par1ItemStack)
 	{
-		return par1ItemStack.getItemDamage() <= 1 ? new ItemStack(MoreToolsMod_Tools.goldBucket) : new ItemStack(par1ItemStack.getItem(), par1ItemStack.stackSize, par1ItemStack.getItemDamage() - 1);
+		return par1ItemStack.getItemDamage() <= 1 ? new ItemStack(MTMTools.goldBucket) : new ItemStack(par1ItemStack.getItem(), par1ItemStack.stackSize, par1ItemStack.getItemDamage() - 1);
 	}
 	
 	@Override
@@ -29,11 +29,11 @@ public class ItemGoldBucket extends ItemBucketMoreTools
 		switch (par2)
 		{
 		case 9:
-			return new ItemStack(MoreToolsMod_Tools.goldBucketWater, 1, par1ItemStack.getItemDamage());
+			return new ItemStack(MTMTools.goldBucketWater, 1, par1ItemStack.getItemDamage());
 		case 11:
-			return new ItemStack(MoreToolsMod_Tools.goldBucketLava, 1, par1ItemStack.getItemDamage());
+			return new ItemStack(MTMTools.goldBucketLava, 1, par1ItemStack.getItemDamage());
 		case 79:
-			return new ItemStack(MoreToolsMod_Tools.goldBucketMilk, 1, par1ItemStack.getItemDamage());
+			return new ItemStack(MTMTools.goldBucketMilk, 1, par1ItemStack.getItemDamage());
 		default:
 			return par1ItemStack;
 		}

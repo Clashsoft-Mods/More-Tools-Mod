@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools.item;
 
-import clashsoft.mods.moretools.MoreToolsMod_Tools;
+import clashsoft.mods.moretools.MTMTools;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -114,7 +114,7 @@ public class ItemSwordMoreTools extends ItemSword
 	{
 		par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
 
-		if (this.toolMaterial == MoreToolsMod_Tools.END && par3EntityPlayer.isSneaking())
+		if (this.toolMaterial == MTMTools.END && par3EntityPlayer.isSneaking())
 		{
 			Item.enderPearl.onItemRightClick(par1ItemStack.copy(), par2World, par3EntityPlayer);
 			par1ItemStack.damageItem(20, par3EntityPlayer);
@@ -163,7 +163,7 @@ public class ItemSwordMoreTools extends ItemSword
 	public void onUpdate(ItemStack par1ItemStack, World par2World, Entity par3Entity, int par4, boolean par5)
 	{
 		Item i = par1ItemStack.getItem();
-		if ((i == MoreToolsMod_Tools.glowstoneSword) && par5)
+		if ((i == MTMTools.glowstoneSword) && par5)
 		{
 			ItemArmorMoreTools.setLight(par2World, par3Entity);
 		}
