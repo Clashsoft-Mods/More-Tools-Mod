@@ -22,10 +22,10 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MoreToolsMod
 {
-	public static final int		REVISION		= 3;
+	public static final int		REVISION		= 4;
 	public static final String	VERSION			= CSUpdate.CURRENT_VERSION + "-" + REVISION;
 	
-	@Instance("MoreToolsModMainID")
+	@Instance("MoreToolsMod")
 	public static MoreToolsMod	instance;
 	
 	@SidedProxy(clientSide = "clashsoft.mods.moretools.ClientProxy", serverSide = "clashsoft.mods.moretools.CommonProxy")
@@ -74,12 +74,10 @@ public class MoreToolsMod
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		System.out.println("[MoreToolsMod] Succesfully loaded More Tools Mod");
-		System.out.println("[MoreToolsMod] Thanks for using!");
-		System.out.println("[MoreToolsMod] Made by Clashsoft.");
-		System.out.println("[MoreToolsMod] Setting IDs: ");
-		System.out.println("[MoreToolsMod]   Tools: 	 " + TOOLS_ID);
-		System.out.println("[MoreToolsMod]   Armory:	 " + ARMORY_ID);
+		System.out.println("[MoreToolsMod] Succesfully loaded More Tools Mod v" + VERSION);
+		System.out.println("[MoreToolsMod] ID Settings: ");
+		System.out.println("[MoreToolsMod]   Tools:      " + TOOLS_ID);
+		System.out.println("[MoreToolsMod]   Armory:     " + ARMORY_ID);
 		System.out.println("[MoreToolsMod]   Misc Items: " + MISCITEMS_ID);
 	}
 }
