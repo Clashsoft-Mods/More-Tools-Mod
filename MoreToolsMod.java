@@ -2,6 +2,11 @@ package clashsoft.mods.moretools;
 
 import clashsoft.clashsoftapi.util.CSUpdate;
 import clashsoft.clashsoftapi.util.update.ModUpdate;
+import clashsoft.mods.moretools.addons.MTMAchievements;
+import clashsoft.mods.moretools.addons.MTMArmor;
+import clashsoft.mods.moretools.addons.MTMTools;
+import clashsoft.mods.moretools.addons.MTMWorld;
+import clashsoft.mods.moretools.common.MTMCommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -28,8 +33,8 @@ public class MoreToolsMod
 	@Instance("MoreToolsMod")
 	public static MoreToolsMod	instance;
 	
-	@SidedProxy(clientSide = "clashsoft.mods.moretools.ClientProxy", serverSide = "clashsoft.mods.moretools.CommonProxy")
-	public static CommonProxy	proxy;
+	@SidedProxy(clientSide = "clashsoft.mods.moretools.client.MTMClientProxy", serverSide = "clashsoft.mods.moretools.common.MTMCommonProxy")
+	public static MTMCommonProxy	proxy;
 	
 	public static int			TOOLS_ID		= 1900;
 	public static int			ARMORY_ID		= 2500;
