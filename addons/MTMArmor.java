@@ -53,130 +53,130 @@ public class MTMArmor
 	
 	// Items
 	
-	public static Item				obsidianHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 1, OBSIDIAN, MTMClientProxy.obsidian, 0)).setUnlocalizedName("obsidianHelmet");
-	public static Item				obsidianChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 2, OBSIDIAN, MTMClientProxy.obsidian, 1)).setUnlocalizedName("obsidianChestplate");
-	public static Item				obsidianLeggings		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 3, OBSIDIAN, MTMClientProxy.obsidian, 2)).setUnlocalizedName("obsidianLeggings");
-	public static Item				obsidianBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 4, OBSIDIAN, MTMClientProxy.obsidian, 3)).setUnlocalizedName("obsidianBoots");
+	public static Item				obsidianHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 1, OBSIDIAN, MTMClientProxy.obsidian, 0)).setUnlocalizedName("obsidianHelmet");
+	public static Item				obsidianChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 2, OBSIDIAN, MTMClientProxy.obsidian, 1)).setUnlocalizedName("obsidianChestplate");
+	public static Item				obsidianLeggings		= (new ItemArmorMTM(MoreToolsMod.armorID + 3, OBSIDIAN, MTMClientProxy.obsidian, 2)).setUnlocalizedName("obsidianLeggings");
+	public static Item				obsidianBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 4, OBSIDIAN, MTMClientProxy.obsidian, 3)).setUnlocalizedName("obsidianBoots");
 	
-	public static Item				redstoneHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 5, REDSTONE, MTMClientProxy.redstone, 0)).setUnlocalizedName("redstoneHelmet");
-	public static Item				redstoneChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 6, REDSTONE, MTMClientProxy.redstone, 1)).setUnlocalizedName("redstoneChestplate");
-	public static Item				redstoneLeggings		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 7, REDSTONE, MTMClientProxy.redstone, 2)).setUnlocalizedName("redstoneLeggings");
-	public static Item				redstoneBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 8, REDSTONE, MTMClientProxy.redstone, 3)).setUnlocalizedName("redstoneBoots");
+	public static Item				redstoneHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 5, REDSTONE, MTMClientProxy.redstone, 0)).setUnlocalizedName("redstoneHelmet");
+	public static Item				redstoneChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 6, REDSTONE, MTMClientProxy.redstone, 1)).setUnlocalizedName("redstoneChestplate");
+	public static Item				redstoneLeggings		= (new ItemArmorMTM(MoreToolsMod.armorID + 7, REDSTONE, MTMClientProxy.redstone, 2)).setUnlocalizedName("redstoneLeggings");
+	public static Item				redstoneBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 8, REDSTONE, MTMClientProxy.redstone, 3)).setUnlocalizedName("redstoneBoots");
 	
-	public static Item				coalHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 9, COAL, MTMClientProxy.coal, 0)).setUnlocalizedName("coalHelmet");
-	public static Item				coalChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 10, COAL, MTMClientProxy.coal, 1)).setUnlocalizedName("coalChestplate");
-	public static Item				coalLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 11, COAL, MTMClientProxy.coal, 2)).setUnlocalizedName("coalLeggings");
-	public static Item				coalBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 12, COAL, MTMClientProxy.coal, 3)).setUnlocalizedName("coalBoots");
+	public static Item				coalHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 9, COAL, MTMClientProxy.coal, 0)).setUnlocalizedName("coalHelmet");
+	public static Item				coalChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 10, COAL, MTMClientProxy.coal, 1)).setUnlocalizedName("coalChestplate");
+	public static Item				coalLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 11, COAL, MTMClientProxy.coal, 2)).setUnlocalizedName("coalLeggings");
+	public static Item				coalBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 12, COAL, MTMClientProxy.coal, 3)).setUnlocalizedName("coalBoots");
 	
-	public static Item				lapisHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 13, LAPIS, MTMClientProxy.lapis, 0)).setUnlocalizedName("lapisHelmet");
-	public static Item				lapisChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 14, LAPIS, MTMClientProxy.lapis, 1)).setUnlocalizedName("lapisChestplate");
-	public static Item				lapisLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 15, LAPIS, MTMClientProxy.lapis, 2)).setUnlocalizedName("lapisLeggings");
-	public static Item				lapisBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 16, LAPIS, MTMClientProxy.lapis, 3)).setUnlocalizedName("lapisBoots");
+	public static Item				lapisHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 13, LAPIS, MTMClientProxy.lapis, 0)).setUnlocalizedName("lapisHelmet");
+	public static Item				lapisChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 14, LAPIS, MTMClientProxy.lapis, 1)).setUnlocalizedName("lapisChestplate");
+	public static Item				lapisLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 15, LAPIS, MTMClientProxy.lapis, 2)).setUnlocalizedName("lapisLeggings");
+	public static Item				lapisBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 16, LAPIS, MTMClientProxy.lapis, 3)).setUnlocalizedName("lapisBoots");
 	
-	public static Item				enderHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 17, END, MTMClientProxy.ender, 0)).setUnlocalizedName("enderHelmet");
-	public static Item				enderChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 18, END, MTMClientProxy.ender, 1)).setUnlocalizedName("enderChestplate");
-	public static Item				enderLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 19, END, MTMClientProxy.ender, 2)).setUnlocalizedName("enderLeggings");
-	public static Item				enderBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 20, END, MTMClientProxy.ender, 3)).setUnlocalizedName("enderBoots");
+	public static Item				enderHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 17, END, MTMClientProxy.ender, 0)).setUnlocalizedName("enderHelmet");
+	public static Item				enderChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 18, END, MTMClientProxy.ender, 1)).setUnlocalizedName("enderChestplate");
+	public static Item				enderLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 19, END, MTMClientProxy.ender, 2)).setUnlocalizedName("enderLeggings");
+	public static Item				enderBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 20, END, MTMClientProxy.ender, 3)).setUnlocalizedName("enderBoots");
 	
-	public static Item				spaceHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 21, SPACE, MTMClientProxy.space, 0)).setUnlocalizedName("spaceHelmet");
-	public static Item				spaceChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 22, SPACE, MTMClientProxy.space, 1)).setUnlocalizedName("spaceChestplate");
-	public static Item				spaceLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 23, SPACE, MTMClientProxy.space, 2)).setUnlocalizedName("spaceLeggings");
-	public static Item				spaceBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 24, SPACE, MTMClientProxy.space, 3)).setUnlocalizedName("spaceBoots");
+	public static Item				spaceHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 21, SPACE, MTMClientProxy.space, 0)).setUnlocalizedName("spaceHelmet");
+	public static Item				spaceChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 22, SPACE, MTMClientProxy.space, 1)).setUnlocalizedName("spaceChestplate");
+	public static Item				spaceLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 23, SPACE, MTMClientProxy.space, 2)).setUnlocalizedName("spaceLeggings");
+	public static Item				spaceBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 24, SPACE, MTMClientProxy.space, 3)).setUnlocalizedName("spaceBoots");
 	
-	public static Item				boneHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 25, BONE, MTMClientProxy.bone, 0)).setUnlocalizedName("boneHelmet");
-	public static Item				boneChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 26, BONE, MTMClientProxy.bone, 1)).setUnlocalizedName("boneChestplate");
-	public static Item				boneLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 27, BONE, MTMClientProxy.bone, 2)).setUnlocalizedName("boneLeggings");
-	public static Item				boneBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 28, BONE, MTMClientProxy.bone, 3)).setUnlocalizedName("boneBoots");
+	public static Item				boneHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 25, BONE, MTMClientProxy.bone, 0)).setUnlocalizedName("boneHelmet");
+	public static Item				boneChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 26, BONE, MTMClientProxy.bone, 1)).setUnlocalizedName("boneChestplate");
+	public static Item				boneLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 27, BONE, MTMClientProxy.bone, 2)).setUnlocalizedName("boneLeggings");
+	public static Item				boneBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 28, BONE, MTMClientProxy.bone, 3)).setUnlocalizedName("boneBoots");
 	
-	public static Item				sugarcaneHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 29, REED, MTMClientProxy.sugarcane, 0)).setUnlocalizedName("sugarcaneHelmet");
-	public static Item				sugarcaneChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 30, REED, MTMClientProxy.sugarcane, 1)).setUnlocalizedName("sugarcaneChestplate");
-	public static Item				sugarcaneLeggings		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 31, REED, MTMClientProxy.sugarcane, 2)).setUnlocalizedName("sugarcaneLeggings");
-	public static Item				sugarcaneBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 32, REED, MTMClientProxy.sugarcane, 3)).setUnlocalizedName("sugarcaneBoots");
+	public static Item				sugarcaneHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 29, REED, MTMClientProxy.sugarcane, 0)).setUnlocalizedName("sugarcaneHelmet");
+	public static Item				sugarcaneChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 30, REED, MTMClientProxy.sugarcane, 1)).setUnlocalizedName("sugarcaneChestplate");
+	public static Item				sugarcaneLeggings		= (new ItemArmorMTM(MoreToolsMod.armorID + 31, REED, MTMClientProxy.sugarcane, 2)).setUnlocalizedName("sugarcaneLeggings");
+	public static Item				sugarcaneBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 32, REED, MTMClientProxy.sugarcane, 3)).setUnlocalizedName("sugarcaneBoots");
 	
-	public static Item				blazerodHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 33, BLAZEROD, MTMClientProxy.blazerod, 0)).setUnlocalizedName("blazeHelmet");
-	public static Item				blazerodChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 34, BLAZEROD, MTMClientProxy.blazerod, 1)).setUnlocalizedName("blazeChestplate");
-	public static Item				blazerodLeggings		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 35, BLAZEROD, MTMClientProxy.blazerod, 2)).setUnlocalizedName("blazeLeggings");
-	public static Item				blazerodBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 36, BLAZEROD, MTMClientProxy.blazerod, 3)).setUnlocalizedName("blazeBoots");
+	public static Item				blazerodHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 33, BLAZEROD, MTMClientProxy.blazerod, 0)).setUnlocalizedName("blazeHelmet");
+	public static Item				blazerodChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 34, BLAZEROD, MTMClientProxy.blazerod, 1)).setUnlocalizedName("blazeChestplate");
+	public static Item				blazerodLeggings		= (new ItemArmorMTM(MoreToolsMod.armorID + 35, BLAZEROD, MTMClientProxy.blazerod, 2)).setUnlocalizedName("blazeLeggings");
+	public static Item				blazerodBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 36, BLAZEROD, MTMClientProxy.blazerod, 3)).setUnlocalizedName("blazeBoots");
 	
-	public static Item				dirtHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 37, DIRT, MTMClientProxy.dirt, 0)).setUnlocalizedName("dirtHelmet");
-	public static Item				dirtChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 38, DIRT, MTMClientProxy.dirt, 1)).setUnlocalizedName("dirtChestplate");
-	public static Item				dirtLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 39, DIRT, MTMClientProxy.dirt, 2)).setUnlocalizedName("dirtLeggings");
-	public static Item				dirtBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 40, DIRT, MTMClientProxy.dirt, 3)).setUnlocalizedName("dirtBoots");
+	public static Item				dirtHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 37, DIRT, MTMClientProxy.dirt, 0)).setUnlocalizedName("dirtHelmet");
+	public static Item				dirtChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 38, DIRT, MTMClientProxy.dirt, 1)).setUnlocalizedName("dirtChestplate");
+	public static Item				dirtLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 39, DIRT, MTMClientProxy.dirt, 2)).setUnlocalizedName("dirtLeggings");
+	public static Item				dirtBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 40, DIRT, MTMClientProxy.dirt, 3)).setUnlocalizedName("dirtBoots");
 	
-	public static Item				glassHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 41, GLASS, MTMClientProxy.glass, 0)).setUnlocalizedName("glassHelmet");
-	public static Item				glassChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 42, GLASS, MTMClientProxy.glass, 1)).setUnlocalizedName("glassChestplate");
-	public static Item				glassLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 43, GLASS, MTMClientProxy.glass, 2)).setUnlocalizedName("glassLeggings");
-	public static Item				glassBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 44, GLASS, MTMClientProxy.glass, 3)).setUnlocalizedName("glassBoots");
+	public static Item				glassHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 41, GLASS, MTMClientProxy.glass, 0)).setUnlocalizedName("glassHelmet");
+	public static Item				glassChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 42, GLASS, MTMClientProxy.glass, 1)).setUnlocalizedName("glassChestplate");
+	public static Item				glassLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 43, GLASS, MTMClientProxy.glass, 2)).setUnlocalizedName("glassLeggings");
+	public static Item				glassBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 44, GLASS, MTMClientProxy.glass, 3)).setUnlocalizedName("glassBoots");
 	
-	public static Item				sandstoneHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 45, SANDSTONE, MTMClientProxy.sandstone, 0)).setUnlocalizedName("sandstoneHelmet");
-	public static Item				sandstoneChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 46, SANDSTONE, MTMClientProxy.sandstone, 1)).setUnlocalizedName("sandstoneChestplate");
-	public static Item				sandstoneLeggings		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 47, SANDSTONE, MTMClientProxy.sandstone, 2)).setUnlocalizedName("sandstoneLeggings");
-	public static Item				sandstoneBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 48, SANDSTONE, MTMClientProxy.sandstone, 3)).setUnlocalizedName("sandstoneBoots");
+	public static Item				sandstoneHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 45, SANDSTONE, MTMClientProxy.sandstone, 0)).setUnlocalizedName("sandstoneHelmet");
+	public static Item				sandstoneChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 46, SANDSTONE, MTMClientProxy.sandstone, 1)).setUnlocalizedName("sandstoneChestplate");
+	public static Item				sandstoneLeggings		= (new ItemArmorMTM(MoreToolsMod.armorID + 47, SANDSTONE, MTMClientProxy.sandstone, 2)).setUnlocalizedName("sandstoneLeggings");
+	public static Item				sandstoneBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 48, SANDSTONE, MTMClientProxy.sandstone, 3)).setUnlocalizedName("sandstoneBoots");
 	
-	public static Item				brickHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 49, BRICK, MTMClientProxy.brick, 0)).setUnlocalizedName("brickHelmet");
-	public static Item				brickChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 50, BRICK, MTMClientProxy.brick, 1)).setUnlocalizedName("brickChestplate");
-	public static Item				brickLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 51, BRICK, MTMClientProxy.brick, 2)).setUnlocalizedName("brickLeggings");
-	public static Item				brickBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 52, BRICK, MTMClientProxy.brick, 3)).setUnlocalizedName("brickBoots");
+	public static Item				brickHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 49, BRICK, MTMClientProxy.brick, 0)).setUnlocalizedName("brickHelmet");
+	public static Item				brickChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 50, BRICK, MTMClientProxy.brick, 1)).setUnlocalizedName("brickChestplate");
+	public static Item				brickLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 51, BRICK, MTMClientProxy.brick, 2)).setUnlocalizedName("brickLeggings");
+	public static Item				brickBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 52, BRICK, MTMClientProxy.brick, 3)).setUnlocalizedName("brickBoots");
 	
-	public static Item				endstoneHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 53, ENDSTONE, MTMClientProxy.endstone, 0)).setUnlocalizedName("endstoneHelmet");
-	public static Item				endstoneChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 54, ENDSTONE, MTMClientProxy.endstone, 1)).setUnlocalizedName("endstoneChestplate");
-	public static Item				endstoneLeggings		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 55, ENDSTONE, MTMClientProxy.endstone, 2)).setUnlocalizedName("endstoneLeggings");
-	public static Item				endstoneBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 56, ENDSTONE, MTMClientProxy.endstone, 3)).setUnlocalizedName("endstoneBoots");
+	public static Item				endstoneHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 53, ENDSTONE, MTMClientProxy.endstone, 0)).setUnlocalizedName("endstoneHelmet");
+	public static Item				endstoneChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 54, ENDSTONE, MTMClientProxy.endstone, 1)).setUnlocalizedName("endstoneChestplate");
+	public static Item				endstoneLeggings		= (new ItemArmorMTM(MoreToolsMod.armorID + 55, ENDSTONE, MTMClientProxy.endstone, 2)).setUnlocalizedName("endstoneLeggings");
+	public static Item				endstoneBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 56, ENDSTONE, MTMClientProxy.endstone, 3)).setUnlocalizedName("endstoneBoots");
 	
-	public static Item				godHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 57, HALLOWED, MTMClientProxy.hallowed, 0)).setUnlocalizedName("godHelmet");
-	public static Item				godChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 58, HALLOWED, MTMClientProxy.hallowed, 1)).setUnlocalizedName("godChestplate");
-	public static Item				godLeggings				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 59, HALLOWED, MTMClientProxy.hallowed, 2)).setUnlocalizedName("godLeggings");
-	public static Item				godBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 60, HALLOWED, MTMClientProxy.hallowed, 3)).setUnlocalizedName("godBoots");
+	public static Item				godHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 57, HALLOWED, MTMClientProxy.hallowed, 0)).setUnlocalizedName("godHelmet");
+	public static Item				godChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 58, HALLOWED, MTMClientProxy.hallowed, 1)).setUnlocalizedName("godChestplate");
+	public static Item				godLeggings				= (new ItemArmorMTM(MoreToolsMod.armorID + 59, HALLOWED, MTMClientProxy.hallowed, 2)).setUnlocalizedName("godLeggings");
+	public static Item				godBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 60, HALLOWED, MTMClientProxy.hallowed, 3)).setUnlocalizedName("godBoots");
 	
-	public static Item				luziferHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 61, GODDAWN, MTMClientProxy.goddawn, 0)).setUnlocalizedName("luziferHelmet");
-	public static Item				luziferChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 62, GODDAWN, MTMClientProxy.goddawn, 1)).setUnlocalizedName("luziferChestplate");
-	public static Item				luziferLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 63, GODDAWN, MTMClientProxy.goddawn, 2)).setUnlocalizedName("luziferLeggings");
-	public static Item				luziferBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 64, GODDAWN, MTMClientProxy.goddawn, 3)).setUnlocalizedName("luziferBoots");
+	public static Item				luziferHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 61, GODDAWN, MTMClientProxy.goddawn, 0)).setUnlocalizedName("luziferHelmet");
+	public static Item				luziferChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 62, GODDAWN, MTMClientProxy.goddawn, 1)).setUnlocalizedName("luziferChestplate");
+	public static Item				luziferLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 63, GODDAWN, MTMClientProxy.goddawn, 2)).setUnlocalizedName("luziferLeggings");
+	public static Item				luziferBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 64, GODDAWN, MTMClientProxy.goddawn, 3)).setUnlocalizedName("luziferBoots");
 	
-	public static Item				invisibilityHelmet		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 69, INVISIBILITY, MTMClientProxy.invisibility, 0)).setUnlocalizedName("invisibilityHelmet");
-	public static Item				invisibilityChestplate	= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 70, INVISIBILITY, MTMClientProxy.invisibility, 1)).setUnlocalizedName("invisibilityChestplate");
-	public static Item				invisibilityLeggings	= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 71, INVISIBILITY, MTMClientProxy.invisibility, 2)).setUnlocalizedName("invisibilityLeggings");
-	public static Item				invisibilityBoots		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 72, INVISIBILITY, MTMClientProxy.invisibility, 3)).setUnlocalizedName("invisibilityBoots");
+	public static Item				invisibilityHelmet		= (new ItemArmorMTM(MoreToolsMod.armorID + 69, INVISIBILITY, MTMClientProxy.invisibility, 0)).setUnlocalizedName("invisibilityHelmet");
+	public static Item				invisibilityChestplate	= (new ItemArmorMTM(MoreToolsMod.armorID + 70, INVISIBILITY, MTMClientProxy.invisibility, 1)).setUnlocalizedName("invisibilityChestplate");
+	public static Item				invisibilityLeggings	= (new ItemArmorMTM(MoreToolsMod.armorID + 71, INVISIBILITY, MTMClientProxy.invisibility, 2)).setUnlocalizedName("invisibilityLeggings");
+	public static Item				invisibilityBoots		= (new ItemArmorMTM(MoreToolsMod.armorID + 72, INVISIBILITY, MTMClientProxy.invisibility, 3)).setUnlocalizedName("invisibilityBoots");
 	
-	public static Item				emeraldHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 73, EMERALD, MTMClientProxy.emerald, 0)).setUnlocalizedName("emeraldHelmet");
-	public static Item				emeraldChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 74, EMERALD, MTMClientProxy.emerald, 1)).setUnlocalizedName("emeraldChestplate");
-	public static Item				emeraldLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 75, EMERALD, MTMClientProxy.emerald, 2)).setUnlocalizedName("emeraldLeggings");
-	public static Item				emeraldBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 76, EMERALD, MTMClientProxy.emerald, 3)).setUnlocalizedName("emeraldBoots");
+	public static Item				emeraldHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 73, EMERALD, MTMClientProxy.emerald, 0)).setUnlocalizedName("emeraldHelmet");
+	public static Item				emeraldChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 74, EMERALD, MTMClientProxy.emerald, 1)).setUnlocalizedName("emeraldChestplate");
+	public static Item				emeraldLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 75, EMERALD, MTMClientProxy.emerald, 2)).setUnlocalizedName("emeraldLeggings");
+	public static Item				emeraldBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 76, EMERALD, MTMClientProxy.emerald, 3)).setUnlocalizedName("emeraldBoots");
 	
-	public static Item				netherstarHelmet		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 77, NETHERSTAR, MTMClientProxy.netherstar, 0)).setUnlocalizedName("netherstarHelmet");
-	public static Item				netherstarChestplate	= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 78, NETHERSTAR, MTMClientProxy.netherstar, 1)).setUnlocalizedName("netherstarChestplate");
-	public static Item				netherstarLeggings		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 79, NETHERSTAR, MTMClientProxy.netherstar, 2)).setUnlocalizedName("netherstarLeggings");
-	public static Item				netherstarBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 80, NETHERSTAR, MTMClientProxy.netherstar, 3)).setUnlocalizedName("netherstarBoots");
+	public static Item				netherstarHelmet		= (new ItemArmorMTM(MoreToolsMod.armorID + 77, NETHERSTAR, MTMClientProxy.netherstar, 0)).setUnlocalizedName("netherstarHelmet");
+	public static Item				netherstarChestplate	= (new ItemArmorMTM(MoreToolsMod.armorID + 78, NETHERSTAR, MTMClientProxy.netherstar, 1)).setUnlocalizedName("netherstarChestplate");
+	public static Item				netherstarLeggings		= (new ItemArmorMTM(MoreToolsMod.armorID + 79, NETHERSTAR, MTMClientProxy.netherstar, 2)).setUnlocalizedName("netherstarLeggings");
+	public static Item				netherstarBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 80, NETHERSTAR, MTMClientProxy.netherstar, 3)).setUnlocalizedName("netherstarBoots");
 	
-	public static Item				potatoHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 81, POTATO, MTMClientProxy.potato, 0)).setUnlocalizedName("potatoHelmet");
-	public static Item				potatoChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 82, POTATO, MTMClientProxy.potato, 1)).setUnlocalizedName("potatoChestplate");
-	public static Item				potatoLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 83, POTATO, MTMClientProxy.potato, 2)).setUnlocalizedName("potatoLeggings");
-	public static Item				potatoBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 84, POTATO, MTMClientProxy.potato, 3)).setUnlocalizedName("potatoBoots");
+	public static Item				potatoHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 81, POTATO, MTMClientProxy.potato, 0)).setUnlocalizedName("potatoHelmet");
+	public static Item				potatoChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 82, POTATO, MTMClientProxy.potato, 1)).setUnlocalizedName("potatoChestplate");
+	public static Item				potatoLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 83, POTATO, MTMClientProxy.potato, 2)).setUnlocalizedName("potatoLeggings");
+	public static Item				potatoBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 84, POTATO, MTMClientProxy.potato, 3)).setUnlocalizedName("potatoBoots");
 	
-	public static Item				carrotHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 85, CARROT, MTMClientProxy.carrot, 0)).setUnlocalizedName("carrotHelmet");
-	public static Item				carrotChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 86, CARROT, MTMClientProxy.carrot, 1)).setUnlocalizedName("carrotChestplate");
-	public static Item				carrotLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 87, CARROT, MTMClientProxy.carrot, 2)).setUnlocalizedName("carrotLeggings");
-	public static Item				carrotBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 88, CARROT, MTMClientProxy.carrot, 3)).setUnlocalizedName("carrotBoots");
+	public static Item				carrotHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 85, CARROT, MTMClientProxy.carrot, 0)).setUnlocalizedName("carrotHelmet");
+	public static Item				carrotChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 86, CARROT, MTMClientProxy.carrot, 1)).setUnlocalizedName("carrotChestplate");
+	public static Item				carrotLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 87, CARROT, MTMClientProxy.carrot, 2)).setUnlocalizedName("carrotLeggings");
+	public static Item				carrotBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 88, CARROT, MTMClientProxy.carrot, 3)).setUnlocalizedName("carrotBoots");
 	
-	public static Item				fishHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 89, FISH, MTMClientProxy.fish, 0)).setUnlocalizedName("fishHelmet");
-	public static Item				fishChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 90, FISH, MTMClientProxy.fish, 1)).setUnlocalizedName("fishChestplate");
-	public static Item				fishLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 91, FISH, MTMClientProxy.fish, 2)).setUnlocalizedName("fishLeggings");
-	public static Item				fishBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 92, FISH, MTMClientProxy.fish, 3)).setUnlocalizedName("fishBoots");
+	public static Item				fishHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 89, FISH, MTMClientProxy.fish, 0)).setUnlocalizedName("fishHelmet");
+	public static Item				fishChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 90, FISH, MTMClientProxy.fish, 1)).setUnlocalizedName("fishChestplate");
+	public static Item				fishLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 91, FISH, MTMClientProxy.fish, 2)).setUnlocalizedName("fishLeggings");
+	public static Item				fishBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 92, FISH, MTMClientProxy.fish, 3)).setUnlocalizedName("fishBoots");
 	
-	public static Item				baconHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 93, BACON, MTMClientProxy.bacon, 0)).setUnlocalizedName("baconHelmet");
-	public static Item				baconChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 94, BACON, MTMClientProxy.bacon, 1)).setUnlocalizedName("baconChestplate");
-	public static Item				baconLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 95, BACON, MTMClientProxy.bacon, 2)).setUnlocalizedName("baconLeggings");
-	public static Item				baconBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 96, BACON, MTMClientProxy.bacon, 3)).setUnlocalizedName("baconBoots");
+	public static Item				baconHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 93, BACON, MTMClientProxy.bacon, 0)).setUnlocalizedName("baconHelmet");
+	public static Item				baconChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 94, BACON, MTMClientProxy.bacon, 1)).setUnlocalizedName("baconChestplate");
+	public static Item				baconLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 95, BACON, MTMClientProxy.bacon, 2)).setUnlocalizedName("baconLeggings");
+	public static Item				baconBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 96, BACON, MTMClientProxy.bacon, 3)).setUnlocalizedName("baconBoots");
 	
-	public static Item				glowstoneHelmet			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 97, GLOWSTONE, MTMClientProxy.glowstone, 0)).setUnlocalizedName("glowstoneHelmet");
-	public static Item				glowstoneChestplate		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 98, GLOWSTONE, MTMClientProxy.glowstone, 1)).setUnlocalizedName("glowstoneChestplate");
-	public static Item				glowstoneLeggings		= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 99, GLOWSTONE, MTMClientProxy.glowstone, 2)).setUnlocalizedName("glowstoneLeggings");
-	public static Item				glowstoneBoots			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 100 + 00, GLOWSTONE, MTMClientProxy.glowstone, 3)).setUnlocalizedName("glowstoneBoots");
+	public static Item				glowstoneHelmet			= (new ItemArmorMTM(MoreToolsMod.armorID + 97, GLOWSTONE, MTMClientProxy.glowstone, 0)).setUnlocalizedName("glowstoneHelmet");
+	public static Item				glowstoneChestplate		= (new ItemArmorMTM(MoreToolsMod.armorID + 98, GLOWSTONE, MTMClientProxy.glowstone, 1)).setUnlocalizedName("glowstoneChestplate");
+	public static Item				glowstoneLeggings		= (new ItemArmorMTM(MoreToolsMod.armorID + 99, GLOWSTONE, MTMClientProxy.glowstone, 2)).setUnlocalizedName("glowstoneLeggings");
+	public static Item				glowstoneBoots			= (new ItemArmorMTM(MoreToolsMod.armorID + 100 + 00, GLOWSTONE, MTMClientProxy.glowstone, 3)).setUnlocalizedName("glowstoneBoots");
 	
-	public static Item				slimeHelmet				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 101, SLIME, MTMClientProxy.slime, 0)).setUnlocalizedName("slimeHelmet");
-	public static Item				slimeChestplate			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 102, SLIME, MTMClientProxy.slime, 1)).setUnlocalizedName("slimeChestplate");
-	public static Item				slimeLeggings			= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 103, SLIME, MTMClientProxy.slime, 2)).setUnlocalizedName("slimeLeggings");
-	public static Item				slimeBoots				= (new ItemArmorMTM(MoreToolsMod.ARMORY_ID + 104, SLIME, MTMClientProxy.slime, 3)).setUnlocalizedName("slimeBoots");
+	public static Item				slimeHelmet				= (new ItemArmorMTM(MoreToolsMod.armorID + 101, SLIME, MTMClientProxy.slime, 0)).setUnlocalizedName("slimeHelmet");
+	public static Item				slimeChestplate			= (new ItemArmorMTM(MoreToolsMod.armorID + 102, SLIME, MTMClientProxy.slime, 1)).setUnlocalizedName("slimeChestplate");
+	public static Item				slimeLeggings			= (new ItemArmorMTM(MoreToolsMod.armorID + 103, SLIME, MTMClientProxy.slime, 2)).setUnlocalizedName("slimeLeggings");
+	public static Item				slimeBoots				= (new ItemArmorMTM(MoreToolsMod.armorID + 104, SLIME, MTMClientProxy.slime, 3)).setUnlocalizedName("slimeBoots");
 	
 	public void load(FMLInitializationEvent event)
 	{

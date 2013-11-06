@@ -109,7 +109,7 @@ public class ItemArmorMTM extends ItemArmor
 	{
 		if (par1World.getBlockId(MathHelper.floor_double(par2Entity.posX), MathHelper.floor_double(par2Entity.posY), MathHelper.floor_double(par2Entity.posZ)) == 0)
 		{
-			par1World.setBlock(MathHelper.floor_double(par2Entity.posX), MathHelper.floor_double(par2Entity.posY), MathHelper.floor_double(par2Entity.posZ), MTMTools.glowing.blockID, 0, 0x02);
+			par1World.setBlock(MathHelper.floor_double(par2Entity.posX), MathHelper.floor_double(par2Entity.posY), MathHelper.floor_double(par2Entity.posZ), MTMTools.glowingBlock.blockID, 0, 0x02);
 		}
 	}
 	

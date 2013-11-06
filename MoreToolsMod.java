@@ -1,7 +1,6 @@
 package clashsoft.mods.moretools;
 
 import clashsoft.clashsoftapi.util.CSUpdate;
-import clashsoft.clashsoftapi.util.update.ModUpdate;
 import clashsoft.mods.moretools.addons.MTMAchievements;
 import clashsoft.mods.moretools.addons.MTMArmor;
 import clashsoft.mods.moretools.addons.MTMTools;
@@ -27,18 +26,22 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MoreToolsMod
 {
-	public static final int		REVISION		= 4;
-	public static final String	VERSION			= CSUpdate.CURRENT_VERSION + "-" + REVISION;
+	public static final int			REVISION		= 5;
+	public static final String		VERSION			= CSUpdate.CURRENT_VERSION + "-" + REVISION;
 	
 	@Instance("MoreToolsMod")
-	public static MoreToolsMod	instance;
+	public static MoreToolsMod		instance;
 	
 	@SidedProxy(clientSide = "clashsoft.mods.moretools.client.MTMClientProxy", serverSide = "clashsoft.mods.moretools.common.MTMCommonProxy")
 	public static MTMCommonProxy	proxy;
 	
-	public static int			TOOLS_ID		= 1900;
-	public static int			ARMORY_ID		= 2500;
-	public static int			MISCITEMS_ID	= 2400;
+	public static int				toolsID			= 17000;
+	public static int				armorID			= 17500;
+	public static int				itemsID			= 18000;
+	
+	public static int				spaceBlockID	= 1300;
+	public static int				spaceOreID		= 1301;
+	public static int				glowingBlockID	= 1302;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -46,9 +49,13 @@ public class MoreToolsMod
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
 		
-		TOOLS_ID = config.get("IDs", "ToolItems", 1900).getInt();
-		ARMORY_ID = config.get("IDs", "ArmorItems", 2500).getInt();
-		MISCITEMS_ID = config.get("IDs", "MiscItems", 2400).getInt();
+		toolsID = config.getItem("Tool Items Start ID", 17000).getInt();
+		armorID = config.getItem("Armor Item Start ID", 17500).getInt();
+		itemsID = config.getItem("Item Start ID", 18000).getInt();
+		
+		spaceBlockID = config.getBlock("Space Block ID", 1300).getInt();
+		spaceOreID = config.getBlock("Space Ore ID", 1301).getInt();
+		glowingBlockID = config.getBlock("Glowing Block ID", 1302).getInt();
 		
 		config.save();
 	}
@@ -70,10 +77,7 @@ public class MoreToolsMod
 	public void playerJoined(EntityJoinWorldEvent event)
 	{
 		if (event.entity instanceof EntityPlayer)
-		{
-			ModUpdate update = CSUpdate.checkForUpdate("More Tools Mod", "mtm", MoreToolsMod.VERSION);
-			CSUpdate.notifyUpdate((EntityPlayer) event.entity, "More Tools Mod", update);
-		}
+			CSUpdate.doClashsoftUpdateCheck((EntityPlayer) event.entity, "More Tools Mod", "mtm", VERSION);
 	}
 	
 	@EventHandler
@@ -81,8 +85,8 @@ public class MoreToolsMod
 	{
 		System.out.println("[MoreToolsMod] Succesfully loaded More Tools Mod v" + VERSION);
 		System.out.println("[MoreToolsMod] ID Settings: ");
-		System.out.println("[MoreToolsMod]   Tools:      " + TOOLS_ID);
-		System.out.println("[MoreToolsMod]   Armory:     " + ARMORY_ID);
-		System.out.println("[MoreToolsMod]   Misc Items: " + MISCITEMS_ID);
+		System.out.println("[MoreToolsMod]   Tools:      " + toolsID);
+		System.out.println("[MoreToolsMod]   Armory:     " + armorID);
+		System.out.println("[MoreToolsMod]   Misc Items: " + itemsID);
 	}
 }
