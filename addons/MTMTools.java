@@ -1,12 +1,12 @@
 package clashsoft.mods.moretools.addons;
 
-import clashsoft.clashsoftapi.CustomBlock;
-import clashsoft.clashsoftapi.CustomEnchantment;
-import clashsoft.clashsoftapi.ItemCustomBlock;
-import clashsoft.clashsoftapi.util.CSBlocks;
-import clashsoft.clashsoftapi.util.CSCrafting;
-import clashsoft.clashsoftapi.util.CSItems;
-import clashsoft.clashsoftapi.util.addons.Addon;
+import clashsoft.cslib.addon.Addon;
+import clashsoft.cslib.minecraft.CustomBlock;
+import clashsoft.cslib.minecraft.CustomEnchantment;
+import clashsoft.cslib.minecraft.ItemCustomBlock;
+import clashsoft.cslib.minecraft.util.CSBlocks;
+import clashsoft.cslib.minecraft.util.CSCrafting;
+import clashsoft.cslib.minecraft.util.CSItems;
 import clashsoft.mods.moretools.MoreToolsMod;
 import clashsoft.mods.moretools.block.BlockGlowing;
 import clashsoft.mods.moretools.block.BlockSpaceblock;

@@ -2,7 +2,7 @@ package clashsoft.mods.moretools.addons;
 
 import java.util.Random;
 
-import clashsoft.clashsoftapi.util.addons.Addon;
+import clashsoft.cslib.addon.Addon;
 import cpw.mods.fml.common.IWorldGenerator;
 
 import net.minecraft.world.World;

@@ -1,8 +1,8 @@
 package clashsoft.mods.moretools.addons;
 
-import clashsoft.clashsoftapi.util.CSCrafting;
-import clashsoft.clashsoftapi.util.CSItems;
-import clashsoft.clashsoftapi.util.addons.Addon;
+import clashsoft.cslib.addon.Addon;
+import clashsoft.cslib.minecraft.util.CSCrafting;
+import clashsoft.cslib.minecraft.util.CSItems;
 import clashsoft.mods.moretools.MoreToolsMod;
 import clashsoft.mods.moretools.client.MTMClientProxy;
 import clashsoft.mods.moretools.item.armor.ItemArmorMTM;

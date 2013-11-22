@@ -2,7 +2,7 @@ package clashsoft.mods.moretools.addons;
 
 import java.util.HashMap;
 
-import clashsoft.clashsoftapi.util.addons.Addon;
+import clashsoft.cslib.addon.Addon;
 import clashsoft.mods.moretools.MoreToolsMod;
 import clashsoft.mods.moretools.item.*;
 import clashsoft.mods.moretools.item.armor.ItemArmorMTM;

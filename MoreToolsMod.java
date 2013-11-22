@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools;
 
-import clashsoft.clashsoftapi.util.CSUpdate;
+import clashsoft.cslib.minecraft.update.CSUpdate;
 import clashsoft.mods.moretools.addons.MTMAchievements;
 import clashsoft.mods.moretools.addons.MTMArmor;
 import clashsoft.mods.moretools.addons.MTMTools;

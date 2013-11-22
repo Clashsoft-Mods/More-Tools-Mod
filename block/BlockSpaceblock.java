@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools.block;
 
-import clashsoft.clashsoftapi.CustomBlock;
+import clashsoft.cslib.minecraft.CustomBlock;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
