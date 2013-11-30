@@ -81,8 +81,8 @@ public class ItemToolMTM extends ItemTool
 	public Multimap getItemAttributeModifiers()
 	{
 		Multimap multimap = HashMultimap.create();
-        multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.damageVsEntity, 0));
-        return multimap;
+		multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Tool modifier", this.damageVsEntity, 0));
+		return multimap;
 	}
 	
 	/**

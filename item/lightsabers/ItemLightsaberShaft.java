@@ -11,15 +11,14 @@ import net.minecraft.world.World;
 
 public class ItemLightsaberShaft extends ItemMTM
 {
-	
-	public ItemLightsaberShaft(int par1)
+	public ItemLightsaberShaft(int itemID)
 	{
-		super(par1, CreativeTabs.tabRedstone);
-		this.maxStackSize = 1;
+		super(itemID, CreativeTabs.tabCombat);
+		this.setMaxStackSize(1);
 	}
 	
 	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
 	{
 		ItemStack blue = new ItemStack(MTMTools.lightsaberBlue, 1);
 		// par3EntityPlayer.triggerAchievement(MoreToolsMod_Achievements.lightsaber);

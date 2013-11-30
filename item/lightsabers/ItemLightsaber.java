@@ -9,48 +9,26 @@ import net.minecraft.world.World;
 
 public class ItemLightsaber extends ItemSwordMTM
 {
-	public ItemLightsaber(int par1, EnumToolMaterial par2EnumToolMaterial)
+	public ItemLightsaber(int itemID, EnumToolMaterial toolMaterial)
 	{
-		super(par1, par2EnumToolMaterial, 2);
+		super(itemID, toolMaterial, EnumRarity.rare);
 		this.maxStackSize = 1;
 	}
 	
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+	@Override
+	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
 	{
-		ItemStack shaft = new ItemStack(MTMTools.lightsaberShaft, 1);
-		ItemStack blue = new ItemStack(MTMTools.lightsaberBlue, 1);
-		ItemStack green = new ItemStack(MTMTools.lightsaberGreen, 1);
-		ItemStack purple = new ItemStack(MTMTools.lightsaberPurple, 1);
-		ItemStack red = new ItemStack(MTMTools.lightsaberRed, 1);
-		ItemStack white = new ItemStack(MTMTools.lightsaberWhite, 1);
-		
-		if (par1ItemStack == shaft)
-		{
-			return blue;
-		}
-		else if (par1ItemStack.itemID == 1986 + 256)
-		{
-			return green;
-		}
-		else if (par1ItemStack.itemID == 1987 + 256)
-		{
-			return purple;
-		}
-		else if (par1ItemStack.itemID == 1988 + 256)
-		{
-			return red;
-		}
-		else if (par1ItemStack.itemID == 1989 + 256)
-		{
-			return white;
-		}
-		else if (par1ItemStack.itemID == 1990 + 256)
-		{
-			return blue;
-		}
+		if (itemID == MTMTools.lightsaberBlue.itemID)
+			return new ItemStack(MTMTools.lightsaberGreen, 1, stack.getItemDamage());
+		else if (itemID == MTMTools.lightsaberGreen.itemID)
+			return new ItemStack(MTMTools.lightsaberPurple, 1, stack.getItemDamage());
+		else if (itemID == MTMTools.lightsaberPurple.itemID)
+			return new ItemStack(MTMTools.lightsaberRed, 1, stack.getItemDamage());
+		else if (itemID == MTMTools.lightsaberRed.itemID)
+			return new ItemStack(MTMTools.lightsaberWhite, 1, stack.getItemDamage());
+		else if (itemID == MTMTools.lightsaberShaft.itemID || itemID == MTMTools.lightsaberWhite.itemID)
+			return new ItemStack(MTMTools.lightsaberBlue, 1, stack.getItemDamage());
 		else
-		{
-			return blue;
-		}
+			return stack;
 	}
 }

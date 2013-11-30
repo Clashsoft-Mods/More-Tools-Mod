@@ -23,7 +23,7 @@ import net.minecraft.stats.AchievementList;
 @Addon(modName = "MoreToolsMod", addonName = "Achievements")
 public class MTMAchievements
 {
-	public static MTMAchievements						instance				= new MTMAchievements();
+	public static MTMAchievements								instance				= new MTMAchievements();
 	
 	public static final Achievement								spaceingot				= new Achievement(1006, "spaceIngot", 5, 5, MTMTools.spaceIngot, AchievementList.buildFurnace).registerAchievement();
 	public static final Achievement								spaceblock				= new Achievement(1001, "spaceBlock", 8, 5, new ItemStack(MTMTools.spaceBlock, 1, 1), spaceingot).registerAchievement();

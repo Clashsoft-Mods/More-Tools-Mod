@@ -16,35 +16,35 @@ import net.minecraft.world.World;
 
 public class ItemSwordMTM extends ItemSword
 {
-	public final EnumToolMaterial toolMaterial;
-	private int rarity;
-
-	public ItemSwordMTM(int par1, EnumToolMaterial par2EnumToolMaterial, int par3)
+	public EnumToolMaterial	toolMaterial;
+	public EnumRarity		rarity;
+	
+	public ItemSwordMTM(int itemID, EnumToolMaterial toolMaterial, EnumRarity rarity)
 	{
-		super(par1, par2EnumToolMaterial);
-		this.toolMaterial = par2EnumToolMaterial;
+		super(itemID, toolMaterial);
+		this.toolMaterial = toolMaterial;
 		this.maxStackSize = 1;
-		this.rarity = par3;
-		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
+		this.rarity = rarity;
+		this.setMaxDamage(toolMaterial.getMaxUses());
 		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
-
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public EnumRarity getRarity(ItemStack par1ItemStack)
 	{
-		return rarity == 0 ? EnumRarity.epic : (rarity == 1 ? EnumRarity.rare : (rarity == 2 ? EnumRarity.uncommon : EnumRarity.common));
+		return rarity;
 	}
-
+	
 	@Override
 	public float func_82803_g()
 	{
 		return this.toolMaterial.getDamageVsEntity();
 	}
-
+	
 	/**
-	 * Returns the strength of the stack against a given block. 1.0F base, (Quality+1)*2 if correct blocktype, 1.5F if
-	 * sword
+	 * Returns the strength of the stack against a given block. 1.0F base,
+	 * (Quality+1)*2 if correct blocktype, 1.5F if sword
 	 */
 	@Override
 	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
@@ -59,27 +59,27 @@ public class ItemSwordMTM extends ItemSword
 			return var3 != Material.plants && var3 != Material.vine && var3 != Material.coral && var3 != Material.leaves && var3 != Material.pumpkin ? 1.0F : 1.5F;
 		}
 	}
-
+	
 	/**
-	 * Current implementations of this method in child classes do not use the entry argument beside ev. They just raise
-	 * the damage on the stack.
+	 * Current implementations of this method in child classes do not use the
+	 * entry argument beside ev. They just raise the damage on the stack.
 	 */
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLiving par2EntityLiving, EntityLiving par3EntityLiving)
 	{
 		par1ItemStack.damageItem(1, par3EntityLiving);
 		return true;
 	}
-
+	
 	public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving)
 	{
 		if (Block.blocksList[par3].getBlockHardness(par2World, par4, par5, par6) != 0.0D)
 		{
 			par1ItemStack.damageItem(2, par7EntityLiving);
 		}
-
+		
 		return true;
 	}
-
+	
 	/**
 	 * Returns True is the item is renderer in full 3D when hold.
 	 */
@@ -88,16 +88,17 @@ public class ItemSwordMTM extends ItemSword
 	{
 		return true;
 	}
-
+	
 	/**
-	 * returns the action that specifies what animation to play when the items is being used
+	 * returns the action that specifies what animation to play when the items
+	 * is being used
 	 */
 	@Override
 	public EnumAction getItemUseAction(ItemStack par1ItemStack)
 	{
 		return EnumAction.block;
 	}
-
+	
 	/**
 	 * How long it takes to use or consume an item
 	 */
@@ -106,24 +107,25 @@ public class ItemSwordMTM extends ItemSword
 	{
 		return 72000;
 	}
-
+	
 	/**
-	 * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
+	 * Called whenever this item is equipped and the right mouse button is
+	 * pressed. Args: itemStack, world, entityPlayer
 	 */
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	{
 		par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
-
+		
 		if (this.toolMaterial == MTMTools.END && par3EntityPlayer.isSneaking())
 		{
 			Item.enderPearl.onItemRightClick(par1ItemStack.copy(), par2World, par3EntityPlayer);
 			par1ItemStack.damageItem(20, par3EntityPlayer);
 		}
-
+		
 		return par1ItemStack;
 	}
-
+	
 	/**
 	 * Returns if the item (tool) can harvest results from the block type.
 	 */
@@ -132,21 +134,22 @@ public class ItemSwordMTM extends ItemSword
 	{
 		return par1Block.blockID == Block.web.blockID;
 	}
-
+	
 	/**
-	 * Return the enchantability factor of the item, most of the time is based on material.
+	 * Return the enchantability factor of the item, most of the time is based
+	 * on material.
 	 */
 	@Override
 	public int getItemEnchantability()
 	{
 		return this.toolMaterial.getEnchantability();
 	}
-
+	
 	public String func_77825_f()
 	{
 		return this.toolMaterial.toString();
 	}
-
+	
 	/**
 	 * Return whether this item is repairable in an anvil.
 	 */
@@ -155,10 +158,10 @@ public class ItemSwordMTM extends ItemSword
 	{
 		return this.toolMaterial.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
 	}
-
+	
 	/**
-	 * Called each tick as long the item is on a player inventory. Uses by maps to check if is on a player hand and
-	 * update it's contents.
+	 * Called each tick as long the item is on a player inventory. Uses by maps
+	 * to check if is on a player hand and update it's contents.
 	 */
 	@Override
 	public void onUpdate(ItemStack par1ItemStack, World par2World, Entity par3Entity, int par4, boolean par5)
@@ -171,14 +174,13 @@ public class ItemSwordMTM extends ItemSword
 	}
 	
 	/**
-     * CLASHSOFT:
-     * This code makes items use their unlocalized name as icon name
-     */
-    @Override
-    public Item setUnlocalizedName(String name)
-    {
-    	super.setUnlocalizedName(name);
-    	super.setTextureName(name);
-    	return this;
-    }
+	 * CLASHSOFT: This code makes items use their unlocalized name as icon name
+	 */
+	@Override
+	public Item setUnlocalizedName(String name)
+	{
+		super.setUnlocalizedName(name);
+		super.setTextureName(name);
+		return this;
+	}
 }

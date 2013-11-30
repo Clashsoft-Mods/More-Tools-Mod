@@ -106,7 +106,7 @@ public class RecipesToolDyes implements IRecipe
 					}
 				}
 				else if (stackInSlot.itemID == Item.dyePowder.itemID)
-				{	
+				{
 					float[] var14 = EntitySheep.fleeceColorTable[BlockColored.getBlockFromDye(stackInSlot.getItemDamage())];
 					int var16 = (int) (var14[0] * 255.0F);
 					int var15 = (int) (var14[1] * 255.0F);

@@ -6,11 +6,11 @@ import net.minecraft.item.ItemFlintAndSteel;
 
 public class ItemFlintAndSteelMTM extends ItemFlintAndSteel
 {
-	public ItemFlintAndSteelMTM(int par1, int par2)
+	public ItemFlintAndSteelMTM(int itemID, int maxDamage)
 	{
-		super(par1);
+		super(itemID);
 		this.maxStackSize = 1;
-		this.setMaxDamage(par2);
+		this.setMaxDamage(maxDamage);
 		this.setCreativeTab(CreativeTabs.tabTools);
 	}
 	
