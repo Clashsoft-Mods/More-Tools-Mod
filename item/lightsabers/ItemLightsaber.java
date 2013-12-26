@@ -18,17 +18,29 @@ public class ItemLightsaber extends ItemSwordMTM
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
 	{
-		if (itemID == MTMTools.lightsaberBlue.itemID)
-			return new ItemStack(MTMTools.lightsaberGreen, 1, stack.getItemDamage());
-		else if (itemID == MTMTools.lightsaberGreen.itemID)
-			return new ItemStack(MTMTools.lightsaberPurple, 1, stack.getItemDamage());
-		else if (itemID == MTMTools.lightsaberPurple.itemID)
-			return new ItemStack(MTMTools.lightsaberRed, 1, stack.getItemDamage());
-		else if (itemID == MTMTools.lightsaberRed.itemID)
-			return new ItemStack(MTMTools.lightsaberWhite, 1, stack.getItemDamage());
-		else if (itemID == MTMTools.lightsaberShaft.itemID || itemID == MTMTools.lightsaberWhite.itemID)
-			return new ItemStack(MTMTools.lightsaberBlue, 1, stack.getItemDamage());
-		else
-			return stack;
+		if (player.isSneaking())
+		{
+			if (itemID == MTMTools.lightsaberBlue.itemID)
+			{
+				return new ItemStack(MTMTools.lightsaberGreen, 1, stack.getItemDamage());
+			}
+			else if (itemID == MTMTools.lightsaberGreen.itemID)
+			{
+				return new ItemStack(MTMTools.lightsaberPurple, 1, stack.getItemDamage());
+			}
+			else if (itemID == MTMTools.lightsaberPurple.itemID)
+			{
+				return new ItemStack(MTMTools.lightsaberRed, 1, stack.getItemDamage());
+			}
+			else if (itemID == MTMTools.lightsaberRed.itemID)
+			{
+				return new ItemStack(MTMTools.lightsaberWhite, 1, stack.getItemDamage());
+			}
+			else if (itemID == MTMTools.lightsaberShaft.itemID || itemID == MTMTools.lightsaberWhite.itemID)
+			{
+				return new ItemStack(MTMTools.lightsaberBlue, 1, stack.getItemDamage());
+			}
+		}
+		return super.onItemRightClick(stack, world, player);
 	}
 }

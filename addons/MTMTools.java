@@ -1,5 +1,9 @@
 package clashsoft.mods.moretools.addons;
 
+import static net.minecraft.item.EnumRarity.common;
+import static net.minecraft.item.EnumRarity.epic;
+import static net.minecraft.item.EnumRarity.rare;
+import static net.minecraft.item.EnumRarity.uncommon;
 import clashsoft.cslib.addon.Addon;
 import clashsoft.cslib.minecraft.CustomBlock;
 import clashsoft.cslib.minecraft.CustomEnchantment;
@@ -12,7 +16,6 @@ import clashsoft.mods.moretools.block.BlockGlowing;
 import clashsoft.mods.moretools.block.BlockSpaceblock;
 import clashsoft.mods.moretools.crafting.RecipesToolDyes;
 import clashsoft.mods.moretools.item.ItemMTM;
-import clashsoft.mods.moretools.item.buckets.ItemGoldBucket;
 import clashsoft.mods.moretools.item.dyeable.*;
 import clashsoft.mods.moretools.item.lightsabers.ItemLightsaber;
 import clashsoft.mods.moretools.item.lightsabers.ItemLightsaberShaft;
@@ -20,13 +23,14 @@ import clashsoft.mods.moretools.item.tools.*;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-import static net.minecraft.item.EnumRarity.*;
-
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.item.*;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
@@ -251,11 +255,6 @@ public class MTMTools
 	public static Item				goldShears			= (new ItemShearsMTM(MoreToolsMod.toolsID + 205, 32, 2)).setUnlocalizedName("shearsgold");
 	public static Item				diamondShears		= (new ItemShearsMTM(MoreToolsMod.toolsID + 206, 1024, 5)).setUnlocalizedName("shearsdiamond");
 	
-	public static Item				goldBucket			= (new ItemGoldBucket(MoreToolsMod.toolsID + 208, 0)).setUnlocalizedName("bucketgold");
-	public static Item				goldBucketWater		= (new ItemGoldBucket(MoreToolsMod.toolsID + 209, Block.waterStill.blockID)).setUnlocalizedName("bucketgoldWater");
-	public static Item				goldBucketLava		= (new ItemGoldBucket(MoreToolsMod.toolsID + 210, Block.lavaStill.blockID)).setUnlocalizedName("bucketgoldLava");
-	public static Item				goldBucketMilk		= (new ItemBucketMilk(MoreToolsMod.toolsID + 211)).setUnlocalizedName("bucketgoldMilk").setCreativeTab(null);
-	
 	public static ItemStack			obsidian			= new ItemStack(Block.obsidian);
 	public static ItemStack			redstone			= new ItemStack(Block.blockRedstone);
 	public static ItemStack			coal				= new ItemStack(Item.coal);
@@ -285,9 +284,9 @@ public class MTMTools
 	{
 		LanguageRegistry.instance().addStringLocalization("enchantment.quickdraw", "Quick Draw");
 		
-		addItems();
-		addBlocks();
-		addRecipes();
+		this.addItems();
+		this.addBlocks();
+		this.addRecipes();
 	}
 	
 	public void addRecipes()
@@ -301,167 +300,167 @@ public class MTMTools
 	
 	public void addItems()
 	{
-		CSItems.addTool(MTMTools.obsidianSword, "Obsidian Sword", obsidian, 0);
-		CSItems.addTool(MTMTools.obsidianShovel, "Obsidian Shovel", obsidian, 1);
-		CSItems.addTool(MTMTools.obsidianPick, "Obsidian Pickaxe", obsidian, 2);
-		CSItems.addTool(MTMTools.obsidianAxe, "Obsidian Axe", obsidian, 3);
-		CSItems.addTool(MTMTools.obsidianHoe, "Obsidian Hoe", obsidian, 4);
+		CSItems.addTool(obsidianSword, "Obsidian Sword", obsidian, 0);
+		CSItems.addTool(obsidianShovel, "Obsidian Shovel", obsidian, 1);
+		CSItems.addTool(obsidianPick, "Obsidian Pickaxe", obsidian, 2);
+		CSItems.addTool(obsidianAxe, "Obsidian Axe", obsidian, 3);
+		CSItems.addTool(obsidianHoe, "Obsidian Hoe", obsidian, 4);
 		
-		CSItems.addTool(MTMTools.redstoneSword, "Redstone Sword", redstone, 0);
-		CSItems.addTool(MTMTools.redstoneShovel, "Redstone Shovel", redstone, 1);
-		CSItems.addTool(MTMTools.redstonePick, "Redstone Pickaxe", redstone, 2);
-		CSItems.addTool(MTMTools.redstoneAxe, "Redstone Axe", redstone, 3);
-		CSItems.addTool(MTMTools.redstoneHoe, "Redstone Hoe", redstone, 4);
+		CSItems.addTool(redstoneSword, "Redstone Sword", redstone, 0);
+		CSItems.addTool(redstoneShovel, "Redstone Shovel", redstone, 1);
+		CSItems.addTool(redstonePick, "Redstone Pickaxe", redstone, 2);
+		CSItems.addTool(redstoneAxe, "Redstone Axe", redstone, 3);
+		CSItems.addTool(redstoneHoe, "Redstone Hoe", redstone, 4);
 		
-		CSItems.addTool(MTMTools.coalSword, "Coal Sword", coal, 0);
-		CSItems.addTool(MTMTools.coalShovel, "Coal Shovel", coal, 1);
-		CSItems.addTool(MTMTools.coalPick, "Coal Pickaxe", coal, 2);
-		CSItems.addTool(MTMTools.coalAxe, "Coal Axe", coal, 3);
-		CSItems.addTool(MTMTools.coalHoe, "Coal Hoe", coal, 4);
+		CSItems.addTool(coalSword, "Coal Sword", coal, 0);
+		CSItems.addTool(coalShovel, "Coal Shovel", coal, 1);
+		CSItems.addTool(coalPick, "Coal Pickaxe", coal, 2);
+		CSItems.addTool(coalAxe, "Coal Axe", coal, 3);
+		CSItems.addTool(coalHoe, "Coal Hoe", coal, 4);
 		
-		CSItems.addTool(MTMTools.lapisSword, "Lapislazuli Sword", lapis, 0);
-		CSItems.addTool(MTMTools.lapisShovel, "Lapislazuli Shovel", lapis, 1);
-		CSItems.addTool(MTMTools.lapisPick, "Lapislazuli Pickaxe", lapis, 2);
-		CSItems.addTool(MTMTools.lapisAxe, "Lapislazuli Axe", lapis, 3);
-		CSItems.addTool(MTMTools.lapisHoe, "Lapislazuli Hoe", lapis, 4);
+		CSItems.addTool(lapisSword, "Lapislazuli Sword", lapis, 0);
+		CSItems.addTool(lapisShovel, "Lapislazuli Shovel", lapis, 1);
+		CSItems.addTool(lapisPick, "Lapislazuli Pickaxe", lapis, 2);
+		CSItems.addTool(lapisAxe, "Lapislazuli Axe", lapis, 3);
+		CSItems.addTool(lapisHoe, "Lapislazuli Hoe", lapis, 4);
 		
-		CSItems.addTool(MTMTools.enderSword, "Ender Sword", enderPearl, 0);
-		CSItems.addTool(MTMTools.enderShovel, "Ender Shovel", enderPearl, 1);
-		CSItems.addTool(MTMTools.enderPick, "Ender Pickaxe", enderPearl, 2);
-		CSItems.addTool(MTMTools.enderAxe, "Ender Axe", enderPearl, 3);
-		CSItems.addTool(MTMTools.enderHoe, "Ender Hoe", enderPearl, 4);
+		CSItems.addTool(enderSword, "Ender Sword", enderPearl, 0);
+		CSItems.addTool(enderShovel, "Ender Shovel", enderPearl, 1);
+		CSItems.addTool(enderPick, "Ender Pickaxe", enderPearl, 2);
+		CSItems.addTool(enderAxe, "Ender Axe", enderPearl, 3);
+		CSItems.addTool(enderHoe, "Ender Hoe", enderPearl, 4);
 		
 		CSItems.addTool(spaceSword, "Normal Spacesword", space, 0);
-		CSItems.addTool(MTMTools.spaceSwordAdvanced, "Advanced Spacesword", spaceAdvanced, 0);
-		CSItems.addTool(MTMTools.spaceShovel, "Space Shovel", space, 1);
-		CSItems.addTool(MTMTools.spacePick, "Space Pickaxe", space, 2);
-		CSItems.addTool(MTMTools.spaceAxe, "Space Axe", space, 3);
-		CSItems.addTool(MTMTools.spaceHoe, "Space Hoe", space, 4);
+		CSItems.addTool(spaceSwordAdvanced, "Advanced Spacesword", spaceAdvanced, 0);
+		CSItems.addTool(spaceShovel, "Space Shovel", space, 1);
+		CSItems.addTool(spacePick, "Space Pickaxe", space, 2);
+		CSItems.addTool(spaceAxe, "Space Axe", space, 3);
+		CSItems.addTool(spaceHoe, "Space Hoe", space, 4);
 		
-		CSItems.addTool(MTMTools.boneSword, "Bone Sword", bone, 0);
-		CSItems.addTool(MTMTools.boneShovel, "Bone Shovel", bone, 1);
-		CSItems.addTool(MTMTools.bonePick, "Bone Pickaxe", bone, 2);
-		CSItems.addTool(MTMTools.boneAxe, "Bone Axe", bone, 3);
-		CSItems.addTool(MTMTools.boneHoe, "Bone Hoe", bone, 4);
+		CSItems.addTool(boneSword, "Bone Sword", bone, 0);
+		CSItems.addTool(boneShovel, "Bone Shovel", bone, 1);
+		CSItems.addTool(bonePick, "Bone Pickaxe", bone, 2);
+		CSItems.addTool(boneAxe, "Bone Axe", bone, 3);
+		CSItems.addTool(boneHoe, "Bone Hoe", bone, 4);
 		
-		CSItems.addTool(MTMTools.sugarcaneSword, "Senseis Sword", sugarcane, 0);
-		CSItems.addTool(MTMTools.sugarcaneShovel, "Sugarcane Shovel", sugarcane, 1);
-		CSItems.addTool(MTMTools.sugarcanePick, "Sugarcane Pickaxe", sugarcane, 2);
-		CSItems.addTool(MTMTools.sugarcaneAxe, "Sugarcane Axe", sugarcane, 3);
-		CSItems.addTool(MTMTools.sugarcaneHoe, "Sugarcane Hoe", sugarcane, 4);
+		CSItems.addTool(sugarcaneSword, "Senseis Sword", sugarcane, 0);
+		CSItems.addTool(sugarcaneShovel, "Sugarcane Shovel", sugarcane, 1);
+		CSItems.addTool(sugarcanePick, "Sugarcane Pickaxe", sugarcane, 2);
+		CSItems.addTool(sugarcaneAxe, "Sugarcane Axe", sugarcane, 3);
+		CSItems.addTool(sugarcaneHoe, "Sugarcane Hoe", sugarcane, 4);
 		
-		CSItems.addTool(MTMTools.blazerodSword, "Blazerod Sword", blazerod, 0);
-		CSItems.addTool(MTMTools.blazerodShovel, "Blazerod Shovel", blazerod, 1);
-		CSItems.addTool(MTMTools.blazerodPick, "Blazerod Pickaxe", blazerod, 2);
-		CSItems.addTool(MTMTools.blazerodAxe, "Blazerod Axe", blazerod, 3);
-		CSItems.addTool(MTMTools.blazerodHoe, "Blazerod Hoe", blazerod, 4);
+		CSItems.addTool(blazerodSword, "Blazerod Sword", blazerod, 0);
+		CSItems.addTool(blazerodShovel, "Blazerod Shovel", blazerod, 1);
+		CSItems.addTool(blazerodPick, "Blazerod Pickaxe", blazerod, 2);
+		CSItems.addTool(blazerodAxe, "Blazerod Axe", blazerod, 3);
+		CSItems.addTool(blazerodHoe, "Blazerod Hoe", blazerod, 4);
 		
-		CSItems.addTool(MTMTools.dirtSword, "Dirt Sword", dirt, 0);
-		CSItems.addTool(MTMTools.dirtShovel, "Dirt Shovel", dirt, 1);
-		CSItems.addTool(MTMTools.dirtPick, "Dirt Pickaxe", dirt, 2);
-		CSItems.addTool(MTMTools.dirtAxe, "Dirt Axe", dirt, 3);
-		CSItems.addTool(MTMTools.dirtHoe, "Dirt Hoe", dirt, 4);
+		CSItems.addTool(dirtSword, "Dirt Sword", dirt, 0);
+		CSItems.addTool(dirtShovel, "Dirt Shovel", dirt, 1);
+		CSItems.addTool(dirtPick, "Dirt Pickaxe", dirt, 2);
+		CSItems.addTool(dirtAxe, "Dirt Axe", dirt, 3);
+		CSItems.addTool(dirtHoe, "Dirt Hoe", dirt, 4);
 		
-		CSItems.addTool(MTMTools.glassSword, "Glass Sword", glass, 0);
-		CSItems.addTool(MTMTools.glassShovel, "Glass Shovel", glass, 1);
-		CSItems.addTool(MTMTools.glassPick, "Glass Pickaxe", glass, 2);
-		CSItems.addTool(MTMTools.glassAxe, "Glass Axe", glass, 3);
-		CSItems.addTool(MTMTools.glassHoe, "Glass Hoe", glass, 4);
+		CSItems.addTool(glassSword, "Glass Sword", glass, 0);
+		CSItems.addTool(glassShovel, "Glass Shovel", glass, 1);
+		CSItems.addTool(glassPick, "Glass Pickaxe", glass, 2);
+		CSItems.addTool(glassAxe, "Glass Axe", glass, 3);
+		CSItems.addTool(glassHoe, "Glass Hoe", glass, 4);
 		
-		CSItems.addTool(MTMTools.sandstoneSword, "Sandstone Sword", sandstone, 0);
-		CSItems.addTool(MTMTools.sandstoneShovel, "Sandstone Shovel", sandstone, 1);
-		CSItems.addTool(MTMTools.sandstonePick, "Sandstone Pickaxe", sandstone, 2);
-		CSItems.addTool(MTMTools.sandstoneAxe, "Sandstone Axe", sandstone, 3);
-		CSItems.addTool(MTMTools.sandstoneHoe, "Sandstone Hoe", sandstone, 4);
+		CSItems.addTool(sandstoneSword, "Sandstone Sword", sandstone, 0);
+		CSItems.addTool(sandstoneShovel, "Sandstone Shovel", sandstone, 1);
+		CSItems.addTool(sandstonePick, "Sandstone Pickaxe", sandstone, 2);
+		CSItems.addTool(sandstoneAxe, "Sandstone Axe", sandstone, 3);
+		CSItems.addTool(sandstoneHoe, "Sandstone Hoe", sandstone, 4);
 		
-		CSItems.addTool(MTMTools.brickSword, "Brick Sword", brick, 0);
-		CSItems.addTool(MTMTools.brickShovel, "Brick Shovel", brick, 1);
-		CSItems.addTool(MTMTools.brickPick, "Brick Pickaxe", brick, 2);
-		CSItems.addTool(MTMTools.brickAxe, "Brick Axe", brick, 3);
-		CSItems.addTool(MTMTools.brickHoe, "Brick Hoe", brick, 4);
+		CSItems.addTool(brickSword, "Brick Sword", brick, 0);
+		CSItems.addTool(brickShovel, "Brick Shovel", brick, 1);
+		CSItems.addTool(brickPick, "Brick Pickaxe", brick, 2);
+		CSItems.addTool(brickAxe, "Brick Axe", brick, 3);
+		CSItems.addTool(brickHoe, "Brick Hoe", brick, 4);
 		
-		CSItems.addTool(MTMTools.endstoneSword, "Endstone Sword", endstone, 0);
-		CSItems.addTool(MTMTools.endstoneShovel, "Endstone Shovel", endstone, 1);
-		CSItems.addTool(MTMTools.endstonePick, "Endstone Pickaxe", endstone, 2);
-		CSItems.addTool(MTMTools.endstoneAxe, "Endstone Axe", endstone, 3);
-		CSItems.addTool(MTMTools.endstoneHoe, "Endstone Hoe", endstone, 4);
+		CSItems.addTool(endstoneSword, "Endstone Sword", endstone, 0);
+		CSItems.addTool(endstoneShovel, "Endstone Shovel", endstone, 1);
+		CSItems.addTool(endstonePick, "Endstone Pickaxe", endstone, 2);
+		CSItems.addTool(endstoneAxe, "Endstone Axe", endstone, 3);
+		CSItems.addTool(endstoneHoe, "Endstone Hoe", endstone, 4);
 		
-		CSItems.addItemWithRecipe(MTMTools.excaliburSword, "Excalibur", 1, new Object[] { "gNg", "hDh", "d|d", Character.valueOf('g'), Item.ghastTear, Character.valueOf('N'), Item.netherStar, Character.valueOf('D'), Block.dragonEgg, 'h', new ItemStack(Item.skull, 1, 1), Character.valueOf('|'), Item.blazeRod, 'd', Item.diamond });
+		CSItems.addItemWithRecipe(excaliburSword, "Excalibur", 1, new Object[] { "gNg", "hDh", "d|d", Character.valueOf('g'), Item.ghastTear, Character.valueOf('N'), Item.netherStar, Character.valueOf('D'), Block.dragonEgg, 'h', new ItemStack(Item.skull, 1, 1), Character.valueOf('|'), Item.blazeRod, 'd', Item.diamond });
 		
-		CSItems.addItemWithRecipe(MTMTools.godSword, "God's Sword", 1, new Object[] { "gGg", "gGg", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
-		CSItems.addItemWithRecipe(MTMTools.godShovel, "God's Shovel", 1, new Object[] { "gGg", " b ", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
-		CSItems.addItemWithRecipe(MTMTools.godPick, "God's Pickaxe", 1, new Object[] { "GGG", "gbg", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
-		CSItems.addItemWithRecipe(MTMTools.godAxe, "God's Axe", 1, new Object[] { "GGg", "Gb ", "gb ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
-		CSItems.addItemWithRecipe(MTMTools.godHoe, "God's Hoe", 1, new Object[] { "GGg", "gb ", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
+		CSItems.addItemWithRecipe(godSword, "God's Sword", 1, new Object[] { "gGg", "gGg", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
+		CSItems.addItemWithRecipe(godShovel, "God's Shovel", 1, new Object[] { "gGg", " b ", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
+		CSItems.addItemWithRecipe(godPick, "God's Pickaxe", 1, new Object[] { "GGG", "gbg", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
+		CSItems.addItemWithRecipe(godAxe, "God's Axe", 1, new Object[] { "GGg", "Gb ", "gb ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
+		CSItems.addItemWithRecipe(godHoe, "God's Hoe", 1, new Object[] { "GGg", "gb ", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
 		
-		CSItems.addItemWithRecipe(MTMTools.luziferSword, "Luzifers's Sword", 1, new Object[] { "rRr", "rRr", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
-		CSItems.addItemWithRecipe(MTMTools.luziferShovel, "Luzifers's Shovel", 1, new Object[] { "rRr", " b ", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
-		CSItems.addItemWithRecipe(MTMTools.luziferPick, "Luzifers's Pickaxe", 1, new Object[] { "RRR", "rbr", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
-		CSItems.addItemWithRecipe(MTMTools.luziferAxe, "Luzifers's Axe", 1, new Object[] { "RRg", "Rb ", "rb ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
-		CSItems.addItemWithRecipe(MTMTools.luziferHoe, "Luzifers's Hoe", 1, new Object[] { "RRg", "rb ", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
+		CSItems.addItemWithRecipe(luziferSword, "Luzifers's Sword", 1, new Object[] { "rRr", "rRr", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
+		CSItems.addItemWithRecipe(luziferShovel, "Luzifers's Shovel", 1, new Object[] { "rRr", " b ", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
+		CSItems.addItemWithRecipe(luziferPick, "Luzifers's Pickaxe", 1, new Object[] { "RRR", "rbr", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
+		CSItems.addItemWithRecipe(luziferAxe, "Luzifers's Axe", 1, new Object[] { "RRg", "Rb ", "rb ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
+		CSItems.addItemWithRecipe(luziferHoe, "Luzifers's Hoe", 1, new Object[] { "RRg", "rb ", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
 		
-		CSItems.addItemWithRecipe(MTMTools.lightsaberShaft, "Lightsaber Shaft", 1, new Object[] { "idi", "rGi", "iii", Character.valueOf('i'), Item.ingotIron, 'r', Item.diamond, 'r', Item.redstone, 'G', Block.glowStone });
-		CSItems.addItem(MTMTools.lightsaberBlue, "Blue Lightsaber");
-		CSItems.addItem(MTMTools.lightsaberGreen, "Green Lightsaber");
-		CSItems.addItem(MTMTools.lightsaberPurple, "Purple Lightsaber");
-		CSItems.addItem(MTMTools.lightsaberRed, "Red Lightsaber");
-		CSItems.addItem(MTMTools.lightsaberWhite, "White Lightsaber");
+		CSItems.addItemWithRecipe(lightsaberShaft, "Lightsaber Shaft", 1, new Object[] { "idi", "rGi", "iii", Character.valueOf('i'), Item.ingotIron, 'r', Item.diamond, 'r', Item.redstone, 'G', Block.glowStone });
+		CSItems.addItem(lightsaberBlue, "Blue Lightsaber");
+		CSItems.addItem(lightsaberGreen, "Green Lightsaber");
+		CSItems.addItem(lightsaberPurple, "Purple Lightsaber");
+		CSItems.addItem(lightsaberRed, "Red Lightsaber");
+		CSItems.addItem(lightsaberWhite, "White Lightsaber");
 		
-		CSItems.addTool(MTMTools.emeraldSword, "Emerald Sword", emerald, 0);
-		CSItems.addTool(MTMTools.emeraldShovel, "Emerald Shovel", emerald, 1);
-		CSItems.addTool(MTMTools.emeraldPick, "Emerald Pickaxe", emerald, 2);
-		CSItems.addTool(MTMTools.emeraldAxe, "Emerald Axe", emerald, 3);
-		CSItems.addTool(MTMTools.emeraldHoe, "Emerald Hoe", emerald, 4);
+		CSItems.addTool(emeraldSword, "Emerald Sword", emerald, 0);
+		CSItems.addTool(emeraldShovel, "Emerald Shovel", emerald, 1);
+		CSItems.addTool(emeraldPick, "Emerald Pickaxe", emerald, 2);
+		CSItems.addTool(emeraldAxe, "Emerald Axe", emerald, 3);
+		CSItems.addTool(emeraldHoe, "Emerald Hoe", emerald, 4);
 		
-		CSItems.addTool(MTMTools.netherstarSword, "Nether Star Sword", netherstar, 0);
-		CSItems.addTool(MTMTools.netherstarShovel, "Nether Star Shovel", netherstar, 1);
-		CSItems.addTool(MTMTools.netherstarPick, "Nether Star Pickaxe", netherstar, 2);
-		CSItems.addTool(MTMTools.netherstarAxe, "Nether Star Axe", netherstar, 3);
-		CSItems.addTool(MTMTools.netherstarHoe, "Nether Star Hoe", netherstar, 4);
+		CSItems.addTool(netherstarSword, "Nether Star Sword", netherstar, 0);
+		CSItems.addTool(netherstarShovel, "Nether Star Shovel", netherstar, 1);
+		CSItems.addTool(netherstarPick, "Nether Star Pickaxe", netherstar, 2);
+		CSItems.addTool(netherstarAxe, "Nether Star Axe", netherstar, 3);
+		CSItems.addTool(netherstarHoe, "Nether Star Hoe", netherstar, 4);
 		
-		CSItems.addTool(MTMTools.potatoSword, "Potato Sword", potato, 0);
-		CSItems.addTool(MTMTools.potatoShovel, "Potato Shovel", potato, 1);
-		CSItems.addTool(MTMTools.potatoPick, "Potato Pickaxe", potato, 2);
-		CSItems.addTool(MTMTools.potatoAxe, "Potato Axe", potato, 3);
-		CSItems.addTool(MTMTools.potatoHoe, "Potato Hoe", potato, 4);
+		CSItems.addTool(potatoSword, "Potato Sword", potato, 0);
+		CSItems.addTool(potatoShovel, "Potato Shovel", potato, 1);
+		CSItems.addTool(potatoPick, "Potato Pickaxe", potato, 2);
+		CSItems.addTool(potatoAxe, "Potato Axe", potato, 3);
+		CSItems.addTool(potatoHoe, "Potato Hoe", potato, 4);
 		
-		CSItems.addTool(MTMTools.carrotSword, "Carrot Sword", carrot, 0);
-		CSItems.addTool(MTMTools.carrotShovel, "Carrot Shovel", carrot, 1);
-		CSItems.addTool(MTMTools.carrotPick, "Carrot Pickaxe", carrot, 2);
-		CSItems.addTool(MTMTools.carrotAxe, "Carrot Axe", carrot, 3);
-		CSItems.addTool(MTMTools.carrotHoe, "Carrot Hoe", carrot, 4);
+		CSItems.addTool(carrotSword, "Carrot Sword", carrot, 0);
+		CSItems.addTool(carrotShovel, "Carrot Shovel", carrot, 1);
+		CSItems.addTool(carrotPick, "Carrot Pickaxe", carrot, 2);
+		CSItems.addTool(carrotAxe, "Carrot Axe", carrot, 3);
+		CSItems.addTool(carrotHoe, "Carrot Hoe", carrot, 4);
 		
-		CSItems.addTool(MTMTools.fishSword, "Fish Sword", fish, 0);
-		CSItems.addTool(MTMTools.fishShovel, "Fish Shovel", fish, 1);
-		CSItems.addTool(MTMTools.fishPick, "Fish Pickaxe", fish, 2);
-		CSItems.addTool(MTMTools.fishAxe, "Fish Axe", fish, 3);
-		CSItems.addTool(MTMTools.fishHoe, "Fish Hoe", fish, 4);
+		CSItems.addTool(fishSword, "Fish Sword", fish, 0);
+		CSItems.addTool(fishShovel, "Fish Shovel", fish, 1);
+		CSItems.addTool(fishPick, "Fish Pickaxe", fish, 2);
+		CSItems.addTool(fishAxe, "Fish Axe", fish, 3);
+		CSItems.addTool(fishHoe, "Fish Hoe", fish, 4);
 		
-		CSItems.addTool(MTMTools.baconSword, "Bacon Sword", bacon, 0);
-		CSItems.addTool(MTMTools.baconShovel, "Bacon Shovel", bacon, 1);
-		CSItems.addTool(MTMTools.baconPick, "Bacon Pickaxe", bacon, 2);
-		CSItems.addTool(MTMTools.baconAxe, "Bacon Axe", bacon, 3);
-		CSItems.addTool(MTMTools.baconHoe, "Bacon Hoe", bacon, 4);
+		CSItems.addTool(baconSword, "Bacon Sword", bacon, 0);
+		CSItems.addTool(baconShovel, "Bacon Shovel", bacon, 1);
+		CSItems.addTool(baconPick, "Bacon Pickaxe", bacon, 2);
+		CSItems.addTool(baconAxe, "Bacon Axe", bacon, 3);
+		CSItems.addTool(baconHoe, "Bacon Hoe", bacon, 4);
 		
-		CSItems.addTool(MTMTools.leatherPick, "Leather Pickaxe", leather, 0);
-		CSItems.addTool(MTMTools.leatherShovel, "Leather Shovel", leather, 1);
-		CSItems.addTool(MTMTools.leatherAxe, "Leather Axe", leather, 2);
-		CSItems.addTool(MTMTools.leatherHoe, "Leather Hoe", leather, 3);
-		CSItems.addTool(MTMTools.leatherSword, "Leather Sword", leather, 4);
+		CSItems.addTool(leatherPick, "Leather Pickaxe", leather, 0);
+		CSItems.addTool(leatherShovel, "Leather Shovel", leather, 1);
+		CSItems.addTool(leatherAxe, "Leather Axe", leather, 2);
+		CSItems.addTool(leatherHoe, "Leather Hoe", leather, 3);
+		CSItems.addTool(leatherSword, "Leather Sword", leather, 4);
 		
-		CSItems.addTool(MTMTools.glowstonePick, "Glowstone Pickaxe", glowstone, 0);
-		CSItems.addTool(MTMTools.glowstoneShovel, "Glowstone Shovel", glowstone, 1);
-		CSItems.addTool(MTMTools.glowstoneAxe, "Glowstone Axe", glowstone, 2);
-		CSItems.addTool(MTMTools.glowstoneHoe, "Glowstone Hoe", glowstone, 3);
-		CSItems.addTool(MTMTools.glowstoneSword, "Glowstone Sword", glowstone, 4);
+		CSItems.addTool(glowstonePick, "Glowstone Pickaxe", glowstone, 0);
+		CSItems.addTool(glowstoneShovel, "Glowstone Shovel", glowstone, 1);
+		CSItems.addTool(glowstoneAxe, "Glowstone Axe", glowstone, 2);
+		CSItems.addTool(glowstoneHoe, "Glowstone Hoe", glowstone, 3);
+		CSItems.addTool(glowstoneSword, "Glowstone Sword", glowstone, 4);
 		
-		CSItems.addTool(MTMTools.slimePick, "Slime Pickaxe", slime, 0);
-		CSItems.addTool(MTMTools.slimeShovel, "Slime Shovel", slime, 1);
-		CSItems.addTool(MTMTools.slimeAxe, "Slime Axe", slime, 2);
-		CSItems.addTool(MTMTools.slimeHoe, "Slime Hoe", slime, 3);
-		CSItems.addTool(MTMTools.slimeSword, "Slime Sword", slime, 4);
+		CSItems.addTool(slimePick, "Slime Pickaxe", slime, 0);
+		CSItems.addTool(slimeShovel, "Slime Shovel", slime, 1);
+		CSItems.addTool(slimeAxe, "Slime Axe", slime, 2);
+		CSItems.addTool(slimeHoe, "Slime Hoe", slime, 3);
+		CSItems.addTool(slimeSword, "Slime Sword", slime, 4);
 		
-		CSItems.addItemWithShapelessRecipe(spaceMultitool, "Space Multitool", 1, new Object[] { MTMTools.spacePick, MTMTools.spaceShovel, MTMTools.spaceAxe, MTMTools.spaceHoe, MTMTools.spaceSwordAdvanced });
+		CSItems.addItemWithShapelessRecipe(spaceMultitool, "Space Multitool", 1, new Object[] { spacePick, spaceShovel, spaceAxe, spaceHoe, spaceSwordAdvanced });
 		CSItems.addItemWithRecipe(spaceBow, "Space Bow", 1, new Object[] { "sS ", "s S", "sS ", 'S', spaceIngot, 's', Item.silk });
 		CSItems.addItemWithRecipe(spaceArrow, "Space Arrow", 4, new Object[] { "s", "|", "f", Character.valueOf('s'), spaceIngot, Character.valueOf('|'), Item.stick, Character.valueOf('f'), Item.feather });
 		CSItems.addItemWithRecipe(spaceIngot, "Space Ingot", 9, new Object[] { "s", 's', new ItemStack(spaceBlock, 1, 1) });
@@ -476,8 +475,6 @@ public class MTMTools
 	{
 		CSBlocks.addBlock(spaceBlock, ItemCustomBlock.class, "SpaceBlock");
 		CSBlocks.addBlock(glowingBlock, ItemBlock.class, "Glowing Block");
-		
-		spaceBlock.addNames();
 		
 		MinecraftForge.setBlockHarvestLevel(spaceBlock, "pickaxe", 2);
 	}

@@ -21,12 +21,12 @@ public class MTMWorld implements IWorldGenerator
 			int randPosZ = chunkZ * 16 + rand.nextInt(16);
 			(new WorldGenMinable(MTMTools.spaceBlock.blockID, 6)).generate(world, rand, randPosX, randPosY, randPosZ);
 		}
-		if (rand.nextInt(100) == 0)
+		if (rand.nextInt(64) == 0)
 		{
 			int randPosX = chunkX * 16 + rand.nextInt(16);
 			int randPosY = rand.nextInt(20);
 			int randPosZ = chunkZ * 16 + rand.nextInt(16);
-			(new WorldGenMinable(MTMTools.spaceBlock.blockID, 12)).generate(world, rand, randPosX, randPosY, randPosZ);
+			(new WorldGenMinable(MTMTools.spaceBlock.blockID, 24)).generate(world, rand, randPosX, randPosY, randPosZ);
 		}
 	}
 	
@@ -38,5 +38,4 @@ public class MTMWorld implements IWorldGenerator
 			generateSurface(world, random, chunkX, chunkZ);
 		}
 	}
-	
 }
