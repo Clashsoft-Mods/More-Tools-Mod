@@ -1,6 +1,7 @@
 package clashsoft.mods.moretools;
 
 import clashsoft.cslib.minecraft.update.CSUpdate;
+import clashsoft.cslib.util.CSLog;
 import clashsoft.mods.moretools.addons.MTMAchievements;
 import clashsoft.mods.moretools.addons.MTMArmor;
 import clashsoft.mods.moretools.addons.MTMTools;
@@ -83,10 +84,10 @@ public class MoreToolsMod
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		System.out.println("[MoreToolsMod] Succesfully loaded More Tools Mod version " + VERSION);
-		System.out.println("[MoreToolsMod] ID Settings: ");
-		System.out.println("[MoreToolsMod]   Tools:      " + toolsID);
-		System.out.println("[MoreToolsMod]   Armory:     " + armorID);
-		System.out.println("[MoreToolsMod]   Misc Items: " + itemsID);
+		CSLog.info("[MoreToolsMod] Succesfully loaded More Tools Mod version " + VERSION);
+		CSLog.info("[MoreToolsMod] ID Settings: ");
+		CSLog.info("[MoreToolsMod]   Tools:      " + toolsID);
+		CSLog.info("[MoreToolsMod]   Armory:     " + armorID);
+		CSLog.info("[MoreToolsMod]   Misc Items: " + itemsID);
 	}
 }
