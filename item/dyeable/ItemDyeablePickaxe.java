@@ -1,36 +1,50 @@
 package clashsoft.mods.moretools.item.dyeable;
 
+import clashsoft.cslib.minecraft.item.datatools.ItemDataPickaxe;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 public class ItemDyeablePickaxe extends ItemDyeableTool
 {
-	/** an array of the blocks this pickaxe is effective against */
-	public static final Block[]	blocksEffectiveAgainst	= new Block[] { Block.cobblestone, Block.stoneDoubleSlab, Block.stoneSingleSlab, Block.stone, Block.sandStone, Block.cobblestoneMossy, Block.oreIron, Block.blockIron, Block.oreCoal, Block.blockGold, Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.ice, Block.netherrack, Block.oreLapis, Block.blockLapis, Block.oreRedstone, Block.oreRedstoneGlowing, Block.rail, Block.railDetector, Block.railPowered };
-	
-	public ItemDyeablePickaxe(int par1, EnumToolMaterial par2EnumToolMaterial)
+	public ItemDyeablePickaxe(ToolMaterial toolMaterial)
 	{
-		super(par1, 2, par2EnumToolMaterial, blocksEffectiveAgainst);
+		super(2.0F, toolMaterial, ItemDataPickaxe.blocksEffectiveAgainst);
 	}
 	
-	/**
-	 * Returns if the item (tool) can harvest results from the block type.
-	 */
 	@Override
-	public boolean canHarvestBlock(Block par1Block)
+	public boolean canHarvestBlock(Block block, ItemStack stack)
 	{
-		return par1Block == Block.obsidian ? this.toolMaterial.getHarvestLevel() == 3 : (par1Block != Block.blockDiamond && par1Block != Block.oreDiamond ? (par1Block != Block.oreEmerald && par1Block != Block.blockEmerald ? (par1Block != Block.blockGold && par1Block != Block.oreGold ? (par1Block != Block.blockIron && par1Block != Block.oreIron ? (par1Block != Block.blockLapis && par1Block != Block.oreLapis ? (par1Block != Block.oreRedstone && par1Block != Block.oreRedstoneGlowing ? (par1Block.blockMaterial == Material.rock ? true : (par1Block.blockMaterial == Material.iron ? true : par1Block.blockMaterial == Material.anvil)) : this.toolMaterial.getHarvestLevel() >= 2) : this.toolMaterial.getHarvestLevel() >= 1) : this.toolMaterial.getHarvestLevel() >= 1) : this.toolMaterial.getHarvestLevel() >= 2) : this.toolMaterial.getHarvestLevel() >= 2) : this.toolMaterial.getHarvestLevel() >= 2);
+		if (block == Blocks.obsidian)
+			return (this.toolMaterial.getHarvestLevel() == 3);
+		if ((block == Blocks.diamond_block) || (block == Blocks.diamond_ore))
+			return (this.toolMaterial.getHarvestLevel() >= 2);
+		if ((block == Blocks.emerald_ore) || (block == Blocks.emerald_block))
+			return (this.toolMaterial.getHarvestLevel() >= 2);
+		if ((block == Blocks.gold_block) || (block == Blocks.gold_ore))
+			return (this.toolMaterial.getHarvestLevel() >= 2);
+		if ((block == Blocks.iron_block) || (block == Blocks.iron_ore))
+			return (this.toolMaterial.getHarvestLevel() >= 1);
+		if ((block == Blocks.lapis_block) || (block == Blocks.lapis_ore))
+			return (this.toolMaterial.getHarvestLevel() >= 1);
+		if ((block == Blocks.redstone_ore) || (block == Blocks.lit_redstone_ore))
+			return (this.toolMaterial.getHarvestLevel() >= 2);
+		if (block.getMaterial() == Material.rock)
+			return true;
+		if (block.getMaterial() == Material.iron)
+			return true;
+		return (block.getMaterial() == Material.anvil);
 	}
 	
-	/**
-	 * Returns the strength of the stack against a given block. 1.0F base,
-	 * (Quality+1)*2 if correct blocktype, 1.5F if sword
-	 */
 	@Override
-	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
+	public float getDigSpeed(ItemStack stack, Block block, int metadata)
 	{
-		return par2Block != null && (par2Block.blockMaterial == Material.iron || par2Block.blockMaterial == Material.anvil || par2Block.blockMaterial == Material.rock) ? this.efficiencyOnProperMaterial : super.getStrVsBlock(par1ItemStack, par2Block);
+		if ((block.getMaterial() == Material.iron) || (block.getMaterial() == Material.anvil) || (block.getMaterial() == Material.rock))
+		{
+			return this.efficiencyOnProperMaterial;
+		}
+		return super.getDigSpeed(stack, block, metadata);
 	}
 }

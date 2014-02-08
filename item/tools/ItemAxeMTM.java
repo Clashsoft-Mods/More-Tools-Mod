@@ -1,33 +1,53 @@
 package clashsoft.mods.moretools.item.tools;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemStack;
+import clashsoft.mods.moretools.addons.MTMTools;
+import clashsoft.mods.moretools.item.armor.ItemArmorMTM;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemAxeMTM extends ItemToolMTM
+import net.minecraft.entity.Entity;
+import net.minecraft.item.EnumRarity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
+public class ItemAxeMTM extends ItemAxe
 {
-	private static Block	blocksEffectiveAgainst[]	= new Block[] { Block.planks, Block.bookShelf, Block.wood, Block.chest, Block.pumpkin, Block.pumpkinLantern };
+	public EnumRarity		rarity;
 	
-	public ItemAxeMTM(int par1, EnumToolMaterial par2EnumToolMaterial)
+	public ItemAxeMTM(ToolMaterial material)
 	{
-		super(par1, 3, par2EnumToolMaterial, blocksEffectiveAgainst);
+		this(material, EnumRarity.common);
 	}
 	
-	/**
-	 * Returns the strength of the stack against a given block. 1.0F base,
-	 * (Quality+1)*2 if correct blocktype, 1.5F if sword
-	 */
-	@Override
-	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
+	public ItemAxeMTM(ToolMaterial material, EnumRarity rarity)
 	{
-		if (par2Block != null && par2Block.blockMaterial == Material.wood)
+		super(material);
+		this.rarity = rarity;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public EnumRarity getRarity(ItemStack stack)
+	{
+		return this.rarity;
+	}
+	
+	@Override
+	public void onUpdate(ItemStack stack, World world, Entity entity, int slot, boolean holding)
+	{
+		if ((this == MTMTools.glowstoneAxe) && holding)
 		{
-			return efficiencyOnProperMaterial;
+			ItemArmorMTM.setLight(world, entity);
 		}
-		else
-		{
-			return super.getStrVsBlock(par1ItemStack, par2Block);
-		}
+	}
+	
+	@Override
+	public Item setUnlocalizedName(String name)
+	{
+		super.setUnlocalizedName(name);
+		super.setTextureName(name);
+		return this;
 	}
 }

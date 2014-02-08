@@ -4,7 +4,7 @@ import clashsoft.mods.moretools.addons.MTMTools;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -13,26 +13,23 @@ import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 
 public class ItemBowMTM extends Item
 {
-	private static String[]	spacetextures	= new String[] { "spacebow", "spacebow_1", "spacebow_2", "spacebow_3" };
-	private static Icon[]	spaceicons;
-	private static String[]	textures		= new String[] { "spacebow", "spacebow_1", "spacebow_2", "spacebow_3" };
-	private static Icon[]	icons;
+	private static String[]	textures	= new String[] { "spacebow", "spacebow_1", "spacebow_2", "spacebow_3" };
+	private IIcon[]			icons;
 	
 	private Item			arrowToConsume;
 	
-	public ItemBowMTM(int par1, Item par2, boolean par3)
+	public ItemBowMTM(Item arrow)
 	{
-		super(par1);
 		maxStackSize = 1;
 		setMaxDamage(384);
-		this.arrowToConsume = par2;
+		this.arrowToConsume = arrow;
 		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
@@ -42,16 +39,12 @@ public class ItemBowMTM extends Item
 		return true;
 	}
 	
-	/**
-	 * called when the player releases the use item button. Args: itemstack,
-	 * world, entityplayer, itemInUseCount
-	 */
 	@Override
-	public void onPlayerStoppedUsing(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer, int par4)
+	public void onPlayerStoppedUsing(ItemStack stack, World world, EntityPlayer player, int time)
 	{
-		int j = this.getMaxItemUseDuration(par1ItemStack) - par4;
+		int j = this.getMaxItemUseDuration(stack) - time;
 		
-		ArrowLooseEvent event = new ArrowLooseEvent(par3EntityPlayer, par1ItemStack, j);
+		ArrowLooseEvent event = new ArrowLooseEvent(player, stack, j);
 		MinecraftForge.EVENT_BUS.post(event);
 		if (event.isCanceled())
 		{
@@ -59,11 +52,11 @@ public class ItemBowMTM extends Item
 		}
 		j = event.charge;
 		
-		boolean flag = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
+		boolean flag = player.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, stack) > 0;
 		
-		if (flag || par3EntityPlayer.inventory.hasItem(arrowToConsume.itemID))
+		if (flag || player.inventory.hasItem(arrowToConsume))
 		{
-			float f = (j / 20.0F) + (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, par1ItemStack) * 0.04F);
+			float f = (j / 20.0F) + (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 0.04F);
 			f = (f * f + f * 2.0F) / 3.0F;
 			
 			if (f < 0.1D)
@@ -76,34 +69,34 @@ public class ItemBowMTM extends Item
 				f = 1.0F;
 			}
 			
-			EntityArrow entityarrow = new EntityArrow(par2World, par3EntityPlayer, f * 2.0F);
+			EntityArrow entityarrow = new EntityArrow(world, player, f * 2.0F);
 			
 			if (f == 1.0F)
 			{
 				entityarrow.setIsCritical(true);
 			}
 			
-			int k = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, par1ItemStack);
+			int k = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, stack);
 			
 			if (k > 0)
 			{
 				entityarrow.setDamage(entityarrow.getDamage() + k * 0.5D + 0.5D);
 			}
 			
-			int l = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, par1ItemStack);
+			int l = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, stack);
 			
 			if (l > 0)
 			{
 				entityarrow.setKnockbackStrength(l);
 			}
 			
-			if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, par1ItemStack) > 0)
+			if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, stack) > 0)
 			{
 				entityarrow.setFire(100);
 			}
 			
-			par1ItemStack.damageItem(1, par3EntityPlayer);
-			par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+			stack.damageItem(1, player);
+			world.playSoundAtEntity(player, "random.bow", 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
 			
 			if (flag)
 			{
@@ -111,59 +104,39 @@ public class ItemBowMTM extends Item
 			}
 			else
 			{
-				par3EntityPlayer.inventory.consumeInventoryItem(Item.arrow.itemID);
+				player.inventory.consumeInventoryItem(arrowToConsume);
 			}
 			
-			if (!par2World.isRemote)
+			if (!world.isRemote)
 			{
-				par2World.spawnEntityInWorld(entityarrow);
+				world.spawnEntityInWorld(entityarrow);
 			}
 		}
 	}
 	
-	public ItemStack onFoodEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
-	{
-		return par1ItemStack;
-	}
-	
-	/**
-	 * How long it takes to use or consume an item
-	 */
 	@Override
-	public int getMaxItemUseDuration(ItemStack par1ItemStack)
+	public int getMaxItemUseDuration(ItemStack stack)
 	{
 		return 71232;
 	}
 	
-	/**
-	 * returns the action that specifies what animation to play when the items
-	 * is being used
-	 */
 	@Override
-	public EnumAction getItemUseAction(ItemStack par1ItemStack)
+	public EnumAction getItemUseAction(ItemStack stack)
 	{
 		return EnumAction.bow;
 	}
 	
-	/**
-	 * Called whenever this item is equipped and the right mouse button is
-	 * pressed. Args: itemStack, world, entityPlayer
-	 */
 	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
 	{
-		if (par3EntityPlayer.capabilities.isCreativeMode || par3EntityPlayer.inventory.hasItem(arrowToConsume.itemID))
+		if (player.capabilities.isCreativeMode || player.inventory.hasItem(arrowToConsume))
 		{
-			par3EntityPlayer.setItemInUse(par1ItemStack, getMaxItemUseDuration(par1ItemStack));
+			player.setItemInUse(stack, getMaxItemUseDuration(stack));
 		}
 		
-		return par1ItemStack;
+		return stack;
 	}
 	
-	/**
-	 * Return the enchantability factor of the item, most of the time is based
-	 * on material.
-	 */
 	@Override
 	public int getItemEnchantability()
 	{
@@ -171,61 +144,36 @@ public class ItemBowMTM extends Item
 	}
 	
 	@Override
-	public Icon getIconFromDamage(int par1)
-	{
-		if (this == MTMTools.spaceBow)
-		{
-			return spaceicons[0];
-		}
-		return super.getIconFromDamage(par1);
-	}
-	
-	@Override
-	public Icon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
+	public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
 	{
 		boolean isSpaceBow = this == MTMTools.spaceBow;
-		if (usingItem != null && usingItem.getItem().itemID == MTMTools.spaceBow.itemID)
+		if (usingItem != null && usingItem.getItem() == MTMTools.spaceBow)
 		{
 			int k = usingItem.getMaxItemUseDuration() - useRemaining;
 			int var1 = 18 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
 			int var2 = 13 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
 			int var3 = 0;
 			if (k >= var1)
-				return isSpaceBow ? spaceicons[3] : icons[3];
+				return icons[3];
 			if (k > var2)
-				return isSpaceBow ? spaceicons[2] : icons[2];
+				return icons[2];
 			if (k > var3)
-				return isSpaceBow ? spaceicons[1] : icons[1];
+				return icons[1];
 		}
-		return isSpaceBow ? spaceicons[0] : icons[0];
+		return icons[0];
 	}
 	
-	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister par1IconRegister) // Registers the
-																// Icons
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister iconRegister)
 	{
-		spaceicons = new Icon[spacetextures.length];
-		for (int i = 0; i < spacetextures.length; i++)
-		{
-			spaceicons[i] = par1IconRegister.registerIcon(spacetextures[i]);
-		}
-		icons = new Icon[textures.length];
+		this.icons = new IIcon[textures.length];
 		for (int i = 0; i < textures.length; i++)
 		{
-			icons[i] = par1IconRegister.registerIcon(textures[i]);
+			this.icons[i] = iconRegister.registerIcon(textures[i]);
 		}
 	}
 	
-	@SideOnly(Side.CLIENT)
-	public Icon func_94599_c(int par1)
-	{
-		return this == MTMTools.spaceBow ? spaceicons[par1] : icons[par1];
-	}
-	
-	/**
-	 * CLASHSOFT: This code makes items use their unlocalized name as icon name
-	 */
 	@Override
 	public Item setUnlocalizedName(String name)
 	{

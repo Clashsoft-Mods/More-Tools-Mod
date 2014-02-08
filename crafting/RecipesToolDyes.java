@@ -1,14 +1,9 @@
 package clashsoft.mods.moretools.crafting;
 
-import java.util.ArrayList;
-
 import clashsoft.mods.moretools.addons.MTMTools;
-import clashsoft.mods.moretools.item.dyeable.ItemDyeableHoe;
-import clashsoft.mods.moretools.item.dyeable.ItemDyeableSword;
 import clashsoft.mods.moretools.item.dyeable.ItemDyeableTool;
 
-import net.minecraft.block.BlockColored;
-import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,134 +13,133 @@ import net.minecraft.world.World;
 public class RecipesToolDyes implements IRecipe
 {
 	@Override
-	/**
-	 * Used to check if a recipe matches current crafting inventory
-	 */
-	public boolean matches(InventoryCrafting par1InventoryCrafting, World par2World)
+	public boolean matches(InventoryCrafting inventory, World world)
 	{
-		ItemStack var3 = null;
-		ArrayList var4 = new ArrayList();
+		ItemStack theTool = null;
+		int dyes = 0;
 		
-		for (int var5 = 0; var5 < par1InventoryCrafting.getSizeInventory(); ++var5)
+		for (int i = 0; i < inventory.getSizeInventory(); ++i)
 		{
-			ItemStack var6 = par1InventoryCrafting.getStackInSlot(var5);
+			ItemStack stack = inventory.getStackInSlot(i);
 			
-			if (var6 != null)
+			if (stack != null)
 			{
-				if (var6.getItem() instanceof ItemDyeableTool)
+				Item item = stack.getItem();
+				if (item instanceof ItemDyeableTool)
 				{
-					ItemDyeableTool var7 = (ItemDyeableTool) var6.getItem();
+					ItemDyeableTool tool = (ItemDyeableTool) item;
 					
-					if (var7.getToolMaterial() != MTMTools.LEATHER || var3 != null)
+					if (tool.getToolMaterial() != MTMTools.LEATHER)
 					{
 						return false;
 					}
 					
-					var3 = var6;
+					theTool = stack;
 				}
 				else
 				{
-					if (var6.itemID != Item.dyePowder.itemID)
+					if (stack.getItem() != Items.dye)
 					{
 						return false;
 					}
-					
-					var4.add(var6);
+					dyes++;
 				}
 			}
 		}
 		
-		return var3 != null && !var4.isEmpty();
+		return theTool != null && dyes > 0;
 	}
 	
 	/**
 	 * Returns an Item that is the result of this recipe
 	 */
 	@Override
-	public ItemStack getCraftingResult(InventoryCrafting par1InventoryCrafting)
+	public ItemStack getCraftingResult(InventoryCrafting inventory)
 	{
-		ItemStack result = null;
-		int[] rgb = new int[3];
-		int var4 = 0;
-		int var5 = 0;
-		ItemDyeableTool theTool = null;
-		int slot;
-		int toolColor;
-		float var10;
-		float var11;
-		int var17;
+		ItemStack theTool = null;
+		int[] colors = new int[3];
+		int i = 0;
+		int j = 0;
+		int k = 0;
+		ItemDyeableTool item = null;
 		
-		for (slot = 0; slot < par1InventoryCrafting.getSizeInventory(); ++slot)
+		for (; k < inventory.getSizeInventory(); ++k)
 		{
-			ItemStack stackInSlot = par1InventoryCrafting.getStackInSlot(slot);
-			
-			if (stackInSlot != null)
+			ItemStack stack = inventory.getStackInSlot(k);
+			if (stack == null)
 			{
-				if (stackInSlot.getItem() instanceof ItemDyeableTool || stackInSlot.getItem() instanceof ItemDyeableSword || stackInSlot.getItem() instanceof ItemDyeableHoe)
+				continue;
+			}
+			if (stack.getItem() instanceof ItemDyeableTool)
+			{
+				item = (ItemDyeableTool) stack.getItem();
+				
+				if (theTool == null)
 				{
-					theTool = (ItemDyeableTool) stackInSlot.getItem();
+					theTool = stack.copy();
+					theTool.stackSize = 1;
 					
-					if (theTool.getToolMaterial() != MTMTools.LEATHER || result != null)
+					if (item.hasColor(stack))
 					{
-						return null;
+						int i1 = item.getColor(theTool);
+						float f1 = (i1 >> 16 & 0xFF) / 255.0F;
+						float f3 = (i1 >> 8 & 0xFF) / 255.0F;
+						float f5 = (i1 & 0xFF) / 255.0F;
+						
+						i = (int) (i + Math.max(f1, Math.max(f3, f5)) * 255.0F);
+						colors[0] = (int) (colors[0] + f1 * 255.0F);
+						colors[1] = (int) (colors[1] + f3 * 255.0F);
+						colors[2] = (int) (colors[2] + f5 * 255.0F);
+						++j;
 					}
-					
-					result = stackInSlot.copy();
-					
-					if (theTool.hasColor(stackInSlot))
-					{
-						toolColor = theTool.getColor(result);
-						var10 = (toolColor >> 16 & 255) / 255.0F;
-						var11 = (toolColor >> 8 & 255) / 255.0F;
-						float var12 = (toolColor & 255) / 255.0F;
-						var4 = (int) (var4 + Math.max(var10, Math.max(var11, var12)) * 255.0F);
-						rgb[0] = (int) (rgb[0] + var10 * 255.0F);
-						rgb[1] = (int) (rgb[1] + var11 * 255.0F);
-						rgb[2] = (int) (rgb[2] + var12 * 255.0F);
-						++var5;
-					}
-				}
-				else if (stackInSlot.itemID == Item.dyePowder.itemID)
-				{
-					float[] var14 = EntitySheep.fleeceColorTable[BlockColored.getBlockFromDye(stackInSlot.getItemDamage())];
-					int var16 = (int) (var14[0] * 255.0F);
-					int var15 = (int) (var14[1] * 255.0F);
-					var17 = (int) (var14[2] * 255.0F);
-					var4 += Math.max(var16, Math.max(var15, var17));
-					rgb[0] += var16;
-					rgb[1] += var15;
-					rgb[2] += var17;
-					++var5;
 				}
 				else
+				{
 					return null;
+				}
+			}
+			else if (stack.getItem() == Items.dye)
+			{
+				float[] arrayOfFloat = net.minecraft.entity.passive.EntitySheep.fleeceColorTable[net.minecraft.block.BlockColored.func_150032_b(stack.getItemDamage())];
+				int i3 = (int) (arrayOfFloat[0] * 255.0F);
+				int i4 = (int) (arrayOfFloat[1] * 255.0F);
+				int i5 = (int) (arrayOfFloat[2] * 255.0F);
+				
+				i += Math.max(i3, Math.max(i4, i5));
+				
+				colors[0] += i3;
+				colors[1] += i4;
+				colors[2] += i5;
+				++j;
+			}
+			else
+			{
+				return null;
 			}
 		}
 		
-		if (theTool == null)
-		{
+		if (item == null)
 			return null;
-		}
-		else
-		{
-			slot = rgb[0] / var5;
-			int var13 = rgb[1] / var5;
-			toolColor = rgb[2] / var5;
-			var10 = (float) var4 / (float) var5;
-			var11 = Math.max(slot, Math.max(var13, toolColor));
-			slot = (int) (slot * var10 / var11);
-			var13 = (int) (var13 * var10 / var11);
-			toolColor = (int) (toolColor * var10 / var11);
-			var17 = (slot << 8) + var13;
-			var17 = (var17 << 8) + toolColor;
-			theTool.func_82813_b(result, var17);
-			return result;
-		}
+		
+		k = colors[0] / j;
+		int l = colors[1] / j;
+		int i2 = colors[2] / j;
+		
+		float f2 = i / j;
+		float f4 = Math.max(k, Math.max(l, i2));
+		
+		k = (int) (k * f2 / f4);
+		l = (int) (l * f2 / f4);
+		i2 = (int) (i2 * f2 / f4);
+		
+		int color = k;
+		color = (color << 8) + l;
+		color = (color << 8) + i2;
+		
+		item.dye(theTool, color);
+		return theTool;
 	}
 	
-	/**
-	 * Returns the size of the recipe area
-	 */
 	@Override
 	public int getRecipeSize()
 	{

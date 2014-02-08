@@ -11,278 +11,267 @@ import clashsoft.cslib.minecraft.ItemCustomBlock;
 import clashsoft.cslib.minecraft.util.CSBlocks;
 import clashsoft.cslib.minecraft.util.CSCrafting;
 import clashsoft.cslib.minecraft.util.CSItems;
-import clashsoft.mods.moretools.MoreToolsMod;
+import clashsoft.cslib.minecraft.util.CSLang;
 import clashsoft.mods.moretools.block.BlockGlowing;
 import clashsoft.mods.moretools.block.BlockSpaceblock;
 import clashsoft.mods.moretools.crafting.RecipesToolDyes;
-import clashsoft.mods.moretools.item.ItemMTM;
 import clashsoft.mods.moretools.item.dyeable.*;
 import clashsoft.mods.moretools.item.lightsabers.ItemLightsaber;
 import clashsoft.mods.moretools.item.lightsabers.ItemLightsaberShaft;
 import clashsoft.mods.moretools.item.tools.*;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
-import net.minecraftforge.common.EnumHelper;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 
 @Addon(modName = "MoreToolsMod", addonName = "Tools")
 public class MTMTools
 {
+	public static MTMTools		instance			= new MTMTools();
 	
-	public static MTMTools			instance			= new MTMTools();
+	public static ToolMaterial	OBSIDIAN			= EnumHelper.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10);
+	public static ToolMaterial	REDSTONE			= EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 2.5F, 15);
+	public static ToolMaterial	COAL				= EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 2.1F, 15);
+	public static ToolMaterial	LAPIS				= EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 2F, 15);
+	public static ToolMaterial	END					= EnumHelper.addToolMaterial("END", 2, 512, 5F, 2.8F, 15);
+	public static ToolMaterial	SPACE1				= EnumHelper.addToolMaterial("SPACESTRONG", 3, 8196, 50F, 13F, 20);
+	public static ToolMaterial	SPACE2				= EnumHelper.addToolMaterial("SPACEWEAK", 3, 6144, 40F, 10F, 18);
+	public static ToolMaterial	BONE				= EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 1.2F, 15);
+	public static ToolMaterial	REED				= EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 0.2F, 15);
+	public static ToolMaterial	BLAZEROD			= EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 1.9F, 15);
+	public static ToolMaterial	DIRT				= EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, -0.1F, 15);
+	public static ToolMaterial	GLASS				= EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 1.3F, 15);
+	public static ToolMaterial	SANDSTONE			= EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 1.8F, 15);
+	public static ToolMaterial	BRICK				= EnumHelper.addToolMaterial("BRICK", 1, 128, 2.5F, 1.75F, 15);
+	public static ToolMaterial	ENDSTONE			= EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 2.9F, 15);
+	public static ToolMaterial	EXCALIBUR			= EnumHelper.addToolMaterial("EXCALIBUR", 3, 16392, 10F, 20F, 1);
+	public static ToolMaterial	GOD					= EnumHelper.addToolMaterial("GOD", 3, 2048, 5F, 15F, 10);
+	public static ToolMaterial	LUZIFER				= EnumHelper.addToolMaterial("LUZIFER", 3, 2048, 5F, 15F, 10);
+	public static ToolMaterial	LASER				= EnumHelper.addToolMaterial("LASER", 3, -1, 1F, 25F, 1);
+	public static ToolMaterial	EMERALD2			= EnumHelper.addToolMaterial("EMERALD2", 3, 1536, 8F, 2.95F, 17);
+	public static ToolMaterial	NETHERSTAR			= EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 4F, 20);
+	public static ToolMaterial	POTATO				= EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 0.6F, 15);
+	public static ToolMaterial	CARROT				= EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 0.6F, 15);
+	public static ToolMaterial	FISH				= EnumHelper.addToolMaterial("FISH", 1, 64, 2.5F, 0.7F, 15);
+	public static ToolMaterial	BACON				= EnumHelper.addToolMaterial("BACON", 1, 64, 2.5F, 0.7F, 15);
+	public static ToolMaterial	LEATHER				= ToolMaterial.WOOD;
+	public static ToolMaterial	GLOWSTONE			= EnumHelper.addToolMaterial("GLOWSTONE", 2, 64, 1F, 1F, 16);
+	public static ToolMaterial	SLIME				= EnumHelper.addToolMaterial("SLIME", 1, 80, 1.2F, 0.85F, 15);
 	
-	// Tool Materials
+	public static Enchantment	quickDraw			= new CustomEnchantment(7, 1, 3, EnumEnchantmentType.bow, "quickdraw");
 	
-	public static EnumToolMaterial	OBSIDIAN			= CSItems.addToolMaterial("OBSIDIAN", 3, 4096, 25F, 10, 10, 0x1e182b, new ItemStack(Block.obsidian), null);
-	public static EnumToolMaterial	REDSTONE			= EnumHelper.addToolMaterial("REDSTONE", 2, 64, 6F, 2.5F, 15);
-	public static EnumToolMaterial	COAL				= EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 2.1F, 15);
-	public static EnumToolMaterial	LAPIS				= EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 2F, 15);
-	public static EnumToolMaterial	END					= EnumHelper.addToolMaterial("END", 2, 512, 5F, 2.8F, 15);
-	public static EnumToolMaterial	SPACE1				= EnumHelper.addToolMaterial("SPACESTRONG", 3, 8196, 50F, 13F, 20);
-	public static EnumToolMaterial	SPACE2				= EnumHelper.addToolMaterial("SPACEWEAK", 3, 6144, 40F, 10F, 18);
-	public static EnumToolMaterial	BONE				= EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 1.2F, 15);
-	public static EnumToolMaterial	REED				= EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 0.2F, 15);
-	public static EnumToolMaterial	BLAZEROD			= EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 1.9F, 15);
-	public static EnumToolMaterial	DIRT				= EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, -0.1F, 15);
-	public static EnumToolMaterial	GLASS				= EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 1.3F, 15);
-	public static EnumToolMaterial	SANDSTONE			= EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 1.8F, 15);
-	public static EnumToolMaterial	BRICK				= EnumHelper.addToolMaterial("BRICK", 1, 128, 2.5F, 1.75F, 15);
-	public static EnumToolMaterial	ENDSTONE			= EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 2.9F, 15);
-	public static EnumToolMaterial	EXCALIBUR			= EnumHelper.addToolMaterial("EXCALIBUR", 3, 16392, 10F, 20F, 1);
-	public static EnumToolMaterial	GOD					= EnumHelper.addToolMaterial("GOD", 3, 2048, 5F, 15F, 10);
-	public static EnumToolMaterial	LUZIFER				= EnumHelper.addToolMaterial("LUZIFER", 3, 2048, 5F, 15F, 10);
-	public static EnumToolMaterial	LASER				= EnumHelper.addToolMaterial("LASER", 3, -1, 1F, 25F, 1);
-	public static EnumToolMaterial	EMERALD2			= EnumHelper.addToolMaterial("EMERALD2", 3, 1536, 8F, 2.95F, 17);
-	public static EnumToolMaterial	NETHERSTAR			= EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 4F, 20);
-	public static EnumToolMaterial	POTATO				= EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 0.6F, 15);
-	public static EnumToolMaterial	CARROT				= EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 0.6F, 15);
-	public static EnumToolMaterial	FISH				= EnumHelper.addToolMaterial("FISH", 1, 64, 2.5F, 0.7F, 15);
-	public static EnumToolMaterial	BACON				= EnumHelper.addToolMaterial("BACON", 1, 64, 2.5F, 0.7F, 15);
-	public static EnumToolMaterial	LEATHER				= EnumToolMaterial.WOOD;
-	public static EnumToolMaterial	GLOWSTONE			= EnumHelper.addToolMaterial("GLOWSTONE", 2, 64, 1F, 1F, 16);
-	public static EnumToolMaterial	SLIME				= EnumHelper.addToolMaterial("SLIME", 1, 80, 1.2F, 0.85F, 15);
+	public static CustomBlock	spaceBlock			= (CustomBlock) (new BlockSpaceblock()).setBlockName("spaceblock").setHardness(3F);
+	public static BlockGlowing	glowingBlock		= (BlockGlowing) (new BlockGlowing()).setBlockName("glowing");
 	
-	// Enchantments
+	public static Item			obsidianPick		= (new ItemPickaxeMTM(OBSIDIAN)).setUnlocalizedName("obsidianPickaxe");
+	public static Item			obsidianShovel		= (new ItemSpadeMTM(OBSIDIAN)).setUnlocalizedName("obsidianShovel");
+	public static Item			obsidianAxe			= (new ItemAxeMTM(OBSIDIAN)).setUnlocalizedName("obsidianAxe");
+	public static Item			obsidianHoe			= (new ItemHoeMTM(OBSIDIAN)).setUnlocalizedName("obsidianHoe");
+	public static Item			obsidianSword		= (new ItemSwordMTM(OBSIDIAN, uncommon)).setUnlocalizedName("obsidianSword");
 	
-	public static Enchantment		quickDraw			= new CustomEnchantment(7, 1, 3, EnumEnchantmentType.bow, "quickdraw");
+	public static Item			redstonePick		= (new ItemPickaxeMTM(REDSTONE)).setUnlocalizedName("redstonePickaxe");
+	public static Item			redstoneShovel		= (new ItemSpadeMTM(REDSTONE)).setUnlocalizedName("redstoneShovel");
+	public static Item			redstoneAxe			= (new ItemAxeMTM(REDSTONE)).setUnlocalizedName("redstoneAxe");
+	public static Item			redstoneHoe			= (new ItemHoeMTM(REDSTONE)).setUnlocalizedName("redstoneHoe");
+	public static Item			redstoneSword		= (new ItemSwordMTM(REDSTONE, uncommon)).setUnlocalizedName("redstoneSword");
 	
-	// Rarities
+	public static Item			coalPick			= (new ItemPickaxeMTM(COAL)).setUnlocalizedName("coalPickaxe");
+	public static Item			coalShovel			= (new ItemSpadeMTM(COAL)).setUnlocalizedName("coalShovel");
+	public static Item			coalAxe				= (new ItemAxeMTM(COAL)).setUnlocalizedName("coalAxe");
+	public static Item			coalHoe				= (new ItemHoeMTM(COAL)).setUnlocalizedName("coalHoe");
+	public static Item			coalSword			= (new ItemSwordMTM(COAL, common)).setUnlocalizedName("coalSword");
 	
-	// Blocks
+	public static Item			lapisPick			= (new ItemPickaxeMTM(LAPIS)).setUnlocalizedName("lapisPickaxe");
+	public static Item			lapisShovel			= (new ItemSpadeMTM(LAPIS)).setUnlocalizedName("lapisShovel");
+	public static Item			lapisAxe			= (new ItemAxeMTM(LAPIS)).setUnlocalizedName("lapisAxe");
+	public static Item			lapisHoe			= (new ItemHoeMTM(LAPIS)).setUnlocalizedName("lapisHoe");
+	public static Item			lapisSword			= (new ItemSwordMTM(LAPIS, common)).setUnlocalizedName("lapisSword");
 	
-	public static CustomBlock		spaceBlock			= (CustomBlock) (new BlockSpaceblock(MoreToolsMod.spaceBlockID)).setUnlocalizedName("spaceblock").setHardness(3F);
-	public static BlockGlowing		glowingBlock		= (BlockGlowing) (new BlockGlowing(MoreToolsMod.glowingBlockID)).setUnlocalizedName("glowing");
+	public static Item			enderPick			= (new ItemPickaxeMTM(END)).setUnlocalizedName("enderPickaxe");
+	public static Item			enderShovel			= (new ItemSpadeMTM(END)).setUnlocalizedName("enderShovel");
+	public static Item			enderAxe			= (new ItemAxeMTM(END)).setUnlocalizedName("enderAxe");
+	public static Item			enderHoe			= (new ItemHoeMTM(END)).setUnlocalizedName("enderHoe");
+	public static Item			enderSword			= (new ItemSwordMTM(END, rare)).setUnlocalizedName("enderSword");
 	
-	// Items
+	public static Item			spacePick			= (new ItemPickaxeMTM(SPACE1)).setUnlocalizedName("spacePickaxe");
+	public static Item			spaceShovel			= (new ItemSpadeMTM(SPACE1)).setUnlocalizedName("spaceShovel");
+	public static Item			spaceAxe			= (new ItemAxeMTM(SPACE1)).setUnlocalizedName("spaceAxe");
+	public static Item			spaceHoe			= (new ItemHoeMTM(SPACE1)).setUnlocalizedName("spaceHoe");
+	public static Item			spaceSwordAdvanced	= (new ItemSwordMTM(SPACE1, epic)).setUnlocalizedName("spaceSwordStrong");
 	
-	public static Item				obsidianPick		= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 1, OBSIDIAN)).setUnlocalizedName("obsidianPickaxe");
-	public static Item				obsidianShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 2, OBSIDIAN)).setUnlocalizedName("obsidianShovel");
-	public static Item				obsidianAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 3, OBSIDIAN)).setUnlocalizedName("obsidianAxe");
-	public static Item				obsidianHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 4, OBSIDIAN)).setUnlocalizedName("obsidianHoe");
-	public static Item				obsidianSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 5, OBSIDIAN, uncommon)).setUnlocalizedName("obsidianSword");
+	public static Item			bonePick			= (new ItemPickaxeMTM(BONE)).setUnlocalizedName("bonePickaxe");
+	public static Item			boneShovel			= (new ItemSpadeMTM(BONE)).setUnlocalizedName("boneShovel");
+	public static Item			boneAxe				= (new ItemAxeMTM(BONE)).setUnlocalizedName("boneAxe");
+	public static Item			boneHoe				= (new ItemHoeMTM(BONE)).setUnlocalizedName("boneHoe");
+	public static Item			boneSword			= (new ItemSwordMTM(BONE, common)).setUnlocalizedName("boneSword");
 	
-	public static Item				redstonePick		= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 6, REDSTONE)).setUnlocalizedName("redstonePickaxe");
-	public static Item				redstoneShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 7, REDSTONE)).setUnlocalizedName("redstoneShovel");
-	public static Item				redstoneAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 8, REDSTONE)).setUnlocalizedName("redstoneAxe");
-	public static Item				redstoneHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 9, REDSTONE)).setUnlocalizedName("redstoneHoe");
-	public static Item				redstoneSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 10, REDSTONE, uncommon)).setUnlocalizedName("redstoneSword");
+	public static Item			sugarcanePick		= (new ItemPickaxeMTM(REED)).setUnlocalizedName("sugarcanePickaxe");
+	public static Item			sugarcaneShovel		= (new ItemSpadeMTM(REED)).setUnlocalizedName("sugarcaneShovel");
+	public static Item			sugarcaneAxe		= (new ItemAxeMTM(REED)).setUnlocalizedName("sugarcaneAxe");
+	public static Item			sugarcaneHoe		= (new ItemHoeMTM(REED)).setUnlocalizedName("sugarcaneHoe");
+	public static Item			sugarcaneSword		= (new ItemSwordMTM(REED, common)).setUnlocalizedName("sugarcaneSword");
 	
-	public static Item				coalPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 11, COAL)).setUnlocalizedName("coalPickaxe");
-	public static Item				coalShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 12, COAL)).setUnlocalizedName("coalShovel");
-	public static Item				coalAxe				= (new ItemAxeMTM(MoreToolsMod.toolsID + 13, COAL)).setUnlocalizedName("coalAxe");
-	public static Item				coalHoe				= (new ItemHoeMTM(MoreToolsMod.toolsID + 14, COAL)).setUnlocalizedName("coalHoe");
-	public static Item				coalSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 15, COAL, common)).setUnlocalizedName("coalSword");
+	public static Item			blazerodPick		= (new ItemPickaxeMTM(BLAZEROD)).setUnlocalizedName("blazePickaxe");
+	public static Item			blazerodShovel		= (new ItemSpadeMTM(BLAZEROD)).setUnlocalizedName("blazeShovel");
+	public static Item			blazerodAxe			= (new ItemAxeMTM(BLAZEROD)).setUnlocalizedName("blazeAxe");
+	public static Item			blazerodHoe			= (new ItemHoeMTM(BLAZEROD)).setUnlocalizedName("blazeHoe");
+	public static Item			blazerodSword		= (new ItemSwordMTM(BLAZEROD, uncommon)).setUnlocalizedName("blazeSword");
 	
-	public static Item				lapisPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 16, LAPIS)).setUnlocalizedName("lapisPickaxe");
-	public static Item				lapisShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 17, LAPIS)).setUnlocalizedName("lapisShovel");
-	public static Item				lapisAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 18, LAPIS)).setUnlocalizedName("lapisAxe");
-	public static Item				lapisHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 19, LAPIS)).setUnlocalizedName("lapisHoe");
-	public static Item				lapisSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 20, LAPIS, common)).setUnlocalizedName("lapisSword");
+	public static Item			dirtPick			= (new ItemPickaxeMTM(DIRT)).setUnlocalizedName("dirtPickaxe");
+	public static Item			dirtShovel			= (new ItemSpadeMTM(DIRT)).setUnlocalizedName("dirtShovel");
+	public static Item			dirtAxe				= (new ItemAxeMTM(DIRT)).setUnlocalizedName("dirtAxe");
+	public static Item			dirtHoe				= (new ItemHoeMTM(DIRT)).setUnlocalizedName("dirtHoe");
+	public static Item			dirtSword			= (new ItemSwordMTM(DIRT, common)).setUnlocalizedName("dirtSword");
 	
-	public static Item				enderPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 21, END)).setUnlocalizedName("enderPickaxe");
-	public static Item				enderShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 22, END)).setUnlocalizedName("enderShovel");
-	public static Item				enderAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 23, END)).setUnlocalizedName("enderAxe");
-	public static Item				enderHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 24, END)).setUnlocalizedName("enderHoe");
-	public static Item				enderSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 25, END, rare)).setUnlocalizedName("enderSword");
+	public static Item			glassPick			= (new ItemPickaxeMTM(GLASS)).setUnlocalizedName("glassPickaxe");
+	public static Item			glassShovel			= (new ItemSpadeMTM(GLASS)).setUnlocalizedName("glassShovel");
+	public static Item			glassAxe			= (new ItemAxeMTM(GLASS)).setUnlocalizedName("glassAxe");
+	public static Item			glassHoe			= (new ItemHoeMTM(GLASS)).setUnlocalizedName("glassHoe");
+	public static Item			glassSword			= (new ItemSwordMTM(GLASS, common)).setUnlocalizedName("glassSword");
 	
-	public static Item				spacePick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 26, SPACE1)).setUnlocalizedName("spacePickaxe");
-	public static Item				spaceShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 27, SPACE1)).setUnlocalizedName("spaceShovel");
-	public static Item				spaceAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 28, SPACE1)).setUnlocalizedName("spaceAxe");
-	public static Item				spaceHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 29, SPACE1)).setUnlocalizedName("spaceHoe");
-	public static Item				spaceSwordAdvanced	= (new ItemSwordMTM(MoreToolsMod.toolsID + 30, SPACE1, epic)).setUnlocalizedName("spaceSwordStrong");
+	public static Item			sandstonePick		= (new ItemPickaxeMTM(SANDSTONE)).setUnlocalizedName("sandstonePickaxe");
+	public static Item			sandstoneShovel		= (new ItemSpadeMTM(SANDSTONE)).setUnlocalizedName("sandstoneShovel");
+	public static Item			sandstoneAxe		= (new ItemAxeMTM(SANDSTONE)).setUnlocalizedName("sandstoneAxe");
+	public static Item			sandstoneHoe		= (new ItemHoeMTM(SANDSTONE)).setUnlocalizedName("sandstoneHoe");
+	public static Item			sandstoneSword		= (new ItemSwordMTM(SANDSTONE, common)).setUnlocalizedName("sandstoneSword");
 	
-	public static Item				bonePick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 31, BONE)).setUnlocalizedName("bonePickaxe");
-	public static Item				boneShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 32, BONE)).setUnlocalizedName("boneShovel");
-	public static Item				boneAxe				= (new ItemAxeMTM(MoreToolsMod.toolsID + 33, BONE)).setUnlocalizedName("boneAxe");
-	public static Item				boneHoe				= (new ItemHoeMTM(MoreToolsMod.toolsID + 34, BONE)).setUnlocalizedName("boneHoe");
-	public static Item				boneSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 35, BONE, common)).setUnlocalizedName("boneSword");
+	public static Item			brickPick			= (new ItemPickaxeMTM(BRICK)).setUnlocalizedName("brickPickaxe");
+	public static Item			brickShovel			= (new ItemSpadeMTM(BRICK)).setUnlocalizedName("brickShovel");
+	public static Item			brickAxe			= (new ItemAxeMTM(BRICK)).setUnlocalizedName("brickAxe");
+	public static Item			brickHoe			= (new ItemHoeMTM(BRICK)).setUnlocalizedName("brickHoe");
+	public static Item			brickSword			= (new ItemSwordMTM(BRICK, common)).setUnlocalizedName("brickSword");
 	
-	public static Item				sugarcanePick		= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 36, REED)).setUnlocalizedName("sugarcanePickaxe");
-	public static Item				sugarcaneShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 37, REED)).setUnlocalizedName("sugarcaneShovel");
-	public static Item				sugarcaneAxe		= (new ItemAxeMTM(MoreToolsMod.toolsID + 38, REED)).setUnlocalizedName("sugarcaneAxe");
-	public static Item				sugarcaneHoe		= (new ItemHoeMTM(MoreToolsMod.toolsID + 39, REED)).setUnlocalizedName("sugarcaneHoe");
-	public static Item				sugarcaneSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 40, REED, common)).setUnlocalizedName("sugarcaneSword");
+	public static Item			endstonePick		= (new ItemPickaxeMTM(ENDSTONE)).setUnlocalizedName("endstonePickaxe");
+	public static Item			endstoneShovel		= (new ItemSpadeMTM(ENDSTONE)).setUnlocalizedName("endstoneShovel");
+	public static Item			endstoneAxe			= (new ItemAxeMTM(ENDSTONE)).setUnlocalizedName("endstoneAxe");
+	public static Item			endstoneHoe			= (new ItemHoeMTM(ENDSTONE)).setUnlocalizedName("endstoneHoe");
+	public static Item			endstoneSword		= (new ItemSwordMTM(ENDSTONE, uncommon)).setUnlocalizedName("endstoneSword");
 	
-	public static Item				blazerodPick		= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 41, BLAZEROD)).setUnlocalizedName("blazePickaxe");
-	public static Item				blazerodShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 42, BLAZEROD)).setUnlocalizedName("blazeShovel");
-	public static Item				blazerodAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 43, BLAZEROD)).setUnlocalizedName("blazeAxe");
-	public static Item				blazerodHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 44, BLAZEROD)).setUnlocalizedName("blazeHoe");
-	public static Item				blazerodSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 45, BLAZEROD, uncommon)).setUnlocalizedName("blazeSword");
+	public static Item			excaliburSword		= (new ItemSwordMTM(EXCALIBUR, epic)).setUnlocalizedName("epicSword");
 	
-	public static Item				dirtPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 46, DIRT)).setUnlocalizedName("dirtPickaxe");
-	public static Item				dirtShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 47, DIRT)).setUnlocalizedName("dirtShovel");
-	public static Item				dirtAxe				= (new ItemAxeMTM(MoreToolsMod.toolsID + 48, DIRT)).setUnlocalizedName("dirtAxe");
-	public static Item				dirtHoe				= (new ItemHoeMTM(MoreToolsMod.toolsID + 49, DIRT)).setUnlocalizedName("dirtHoe");
-	public static Item				dirtSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 50, DIRT, common)).setUnlocalizedName("dirtSword");
+	public static Item			godPick				= (new ItemPickaxeMTM(GOD)).setUnlocalizedName("godPickaxe");
+	public static Item			godShovel			= (new ItemSpadeMTM(GOD)).setUnlocalizedName("godShovel");
+	public static Item			godAxe				= (new ItemAxeMTM(GOD)).setUnlocalizedName("godAxe");
+	public static Item			godHoe				= (new ItemHoeMTM(GOD)).setUnlocalizedName("godHoe");
+	public static Item			godSword			= (new ItemSwordMTM(GOD, epic)).setUnlocalizedName("godSword");
 	
-	public static Item				glassPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 51, GLASS)).setUnlocalizedName("glassPickaxe");
-	public static Item				glassShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 52, GLASS)).setUnlocalizedName("glassShovel");
-	public static Item				glassAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 53, GLASS)).setUnlocalizedName("glassAxe");
-	public static Item				glassHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 54, GLASS)).setUnlocalizedName("glassHoe");
-	public static Item				glassSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 55, GLASS, common)).setUnlocalizedName("glassSword");
+	public static Item			luziferPick			= (new ItemPickaxeMTM(LUZIFER)).setUnlocalizedName("luziferPickaxe");
+	public static Item			luziferShovel		= (new ItemSpadeMTM(LUZIFER)).setUnlocalizedName("luziferShovel");
+	public static Item			luziferAxe			= (new ItemAxeMTM(LUZIFER)).setUnlocalizedName("luziferAxe");
+	public static Item			luziferHoe			= (new ItemHoeMTM(LUZIFER)).setUnlocalizedName("luziferHoe");
+	public static Item			luziferSword		= (new ItemSwordMTM(LUZIFER, epic)).setUnlocalizedName("luziferSword");
 	
-	public static Item				sandstonePick		= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 56, SANDSTONE)).setUnlocalizedName("sandstonePickaxe");
-	public static Item				sandstoneShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 57, SANDSTONE)).setUnlocalizedName("sandstoneShovel");
-	public static Item				sandstoneAxe		= (new ItemAxeMTM(MoreToolsMod.toolsID + 58, SANDSTONE)).setUnlocalizedName("sandstoneAxe");
-	public static Item				sandstoneHoe		= (new ItemHoeMTM(MoreToolsMod.toolsID + 59, SANDSTONE)).setUnlocalizedName("sandstoneHoe");
-	public static Item				sandstoneSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 60, SANDSTONE, common)).setUnlocalizedName("sandstoneSword");
+	public static Item			lightsaberShaft		= (new ItemLightsaberShaft()).setUnlocalizedName("lsshaft");
+	public static Item			lightsaberBlue		= (new ItemLightsaber(LASER)).setUnlocalizedName("lightSaber1");
+	public static Item			lightsaberGreen		= (new ItemLightsaber(LASER)).setUnlocalizedName("lightSaber2");
+	public static Item			lightsaberPurple	= (new ItemLightsaber(LASER)).setUnlocalizedName("lightSaber3");
+	public static Item			lightsaberRed		= (new ItemLightsaber(LASER)).setUnlocalizedName("lightSaber4");
+	public static Item			lightsaberWhite		= (new ItemLightsaber(LASER)).setUnlocalizedName("lightSaber5");
 	
-	public static Item				brickPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 61, BRICK)).setUnlocalizedName("brickPickaxe");
-	public static Item				brickShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 62, BRICK)).setUnlocalizedName("brickShovel");
-	public static Item				brickAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 63, BRICK)).setUnlocalizedName("brickAxe");
-	public static Item				brickHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 64, BRICK)).setUnlocalizedName("brickHoe");
-	public static Item				brickSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 65, BRICK, common)).setUnlocalizedName("brickSword");
+	public static Item			emeraldPick			= (new ItemPickaxeMTM(EMERALD2)).setUnlocalizedName("emeraldPickaxe");
+	public static Item			emeraldShovel		= (new ItemSpadeMTM(EMERALD2)).setUnlocalizedName("emeraldShovel");
+	public static Item			emeraldAxe			= (new ItemAxeMTM(EMERALD2)).setUnlocalizedName("emeraldAxe");
+	public static Item			emeraldHoe			= (new ItemHoeMTM(EMERALD2)).setUnlocalizedName("emeraldHoe");
+	public static Item			emeraldSword		= (new ItemSwordMTM(EMERALD2, epic)).setUnlocalizedName("emeraldSword");
 	
-	public static Item				endstonePick		= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 66, ENDSTONE)).setUnlocalizedName("endstonePickaxe");
-	public static Item				endstoneShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 67, ENDSTONE)).setUnlocalizedName("endstoneShovel");
-	public static Item				endstoneAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 68, ENDSTONE)).setUnlocalizedName("endstoneAxe");
-	public static Item				endstoneHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 69, ENDSTONE)).setUnlocalizedName("endstoneHoe");
-	public static Item				endstoneSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 70, ENDSTONE, uncommon)).setUnlocalizedName("endstoneSword");
+	public static Item			netherstarPick		= (new ItemPickaxeMTM(NETHERSTAR)).setUnlocalizedName("netherstarPickaxe");
+	public static Item			netherstarShovel	= (new ItemSpadeMTM(NETHERSTAR)).setUnlocalizedName("netherstarShovel");
+	public static Item			netherstarAxe		= (new ItemAxeMTM(NETHERSTAR)).setUnlocalizedName("netherstarAxe");
+	public static Item			netherstarHoe		= (new ItemHoeMTM(NETHERSTAR)).setUnlocalizedName("netherstarHoe");
+	public static Item			netherstarSword		= (new ItemSwordMTM(NETHERSTAR, epic)).setUnlocalizedName("netherstarSword");
 	
-	public static Item				excaliburSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 75, EXCALIBUR, epic)).setUnlocalizedName("epicSword");
+	public static Item			potatoPick			= (new ItemPickaxeMTM(POTATO)).setUnlocalizedName("potatoPickaxe");
+	public static Item			potatoShovel		= (new ItemSpadeMTM(POTATO)).setUnlocalizedName("potatoShovel");
+	public static Item			potatoAxe			= (new ItemAxeMTM(POTATO)).setUnlocalizedName("potatoAxe");
+	public static Item			potatoHoe			= (new ItemHoeMTM(POTATO)).setUnlocalizedName("potatoHoe");
+	public static Item			potatoSword			= (new ItemSwordMTM(POTATO, common)).setUnlocalizedName("potatoSword");
 	
-	public static Item				godPick				= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 76, GOD)).setUnlocalizedName("godPickaxe");
-	public static Item				godShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 77, GOD)).setUnlocalizedName("godShovel");
-	public static Item				godAxe				= (new ItemAxeMTM(MoreToolsMod.toolsID + 78, GOD)).setUnlocalizedName("godAxe");
-	public static Item				godHoe				= (new ItemHoeMTM(MoreToolsMod.toolsID + 79, GOD)).setUnlocalizedName("godHoe");
-	public static Item				godSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 80, GOD, epic)).setUnlocalizedName("godSword");
+	public static Item			carrotPick			= (new ItemPickaxeMTM(CARROT)).setUnlocalizedName("carrotPickaxe");
+	public static Item			carrotShovel		= (new ItemSpadeMTM(CARROT)).setUnlocalizedName("carrotShovel");
+	public static Item			carrotAxe			= (new ItemAxeMTM(CARROT)).setUnlocalizedName("carrotAxe");
+	public static Item			carrotHoe			= (new ItemHoeMTM(CARROT)).setUnlocalizedName("carrotHoe");
+	public static Item			carrotSword			= (new ItemSwordMTM(CARROT, common)).setUnlocalizedName("carrotSword");
 	
-	public static Item				luziferPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 81, LUZIFER)).setUnlocalizedName("luziferPickaxe");
-	public static Item				luziferShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 82, LUZIFER)).setUnlocalizedName("luziferShovel");
-	public static Item				luziferAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 83, LUZIFER)).setUnlocalizedName("luziferAxe");
-	public static Item				luziferHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 84, LUZIFER)).setUnlocalizedName("luziferHoe");
-	public static Item				luziferSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 85, LUZIFER, epic)).setUnlocalizedName("luziferSword");
+	public static Item			fishPick			= (new ItemPickaxeMTM(FISH)).setUnlocalizedName("fishPickaxe");
+	public static Item			fishShovel			= (new ItemSpadeMTM(FISH)).setUnlocalizedName("fishShovel");
+	public static Item			fishAxe				= (new ItemAxeMTM(FISH)).setUnlocalizedName("fishAxe");
+	public static Item			fishHoe				= (new ItemHoeMTM(FISH)).setUnlocalizedName("fishHoe");
+	public static Item			fishSword			= (new ItemSwordMTM(FISH, common)).setUnlocalizedName("fishSword");
 	
-	public static Item				lightsaberShaft		= (new ItemLightsaberShaft(MoreToolsMod.itemsID + 05)).setUnlocalizedName("lsshaft");
-	public static Item				lightsaberBlue		= (new ItemLightsaber(MoreToolsMod.toolsID + 86, LASER)).setUnlocalizedName("lightSaber1");
-	public static Item				lightsaberGreen		= (new ItemLightsaber(MoreToolsMod.toolsID + 87, LASER)).setUnlocalizedName("lightSaber2");
-	public static Item				lightsaberPurple	= (new ItemLightsaber(MoreToolsMod.toolsID + 88, LASER)).setUnlocalizedName("lightSaber3");
-	public static Item				lightsaberRed		= (new ItemLightsaber(MoreToolsMod.toolsID + 89, LASER)).setUnlocalizedName("lightSaber4");
-	public static Item				lightsaberWhite		= (new ItemLightsaber(MoreToolsMod.toolsID + 90, LASER)).setUnlocalizedName("lightSaber5");
+	public static Item			baconPick			= (new ItemPickaxeMTM( BACON)).setUnlocalizedName("baconPickaxe");
+	public static Item			baconShovel			= (new ItemSpadeMTM( BACON)).setUnlocalizedName("baconShovel");
+	public static Item			baconAxe			= (new ItemAxeMTM( BACON)).setUnlocalizedName("baconAxe");
+	public static Item			baconHoe			= (new ItemHoeMTM( BACON)).setUnlocalizedName("baconHoe");
+	public static Item			baconSword			= (new ItemSwordMTM( BACON, common)).setUnlocalizedName("baconSword");
 	
-	public static Item				emeraldPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 91, EMERALD2)).setUnlocalizedName("emeraldPickaxe");
-	public static Item				emeraldShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 92, EMERALD2)).setUnlocalizedName("emeraldShovel");
-	public static Item				emeraldAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 93, EMERALD2)).setUnlocalizedName("emeraldAxe");
-	public static Item				emeraldHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 94, EMERALD2)).setUnlocalizedName("emeraldHoe");
-	public static Item				emeraldSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 95, EMERALD2, epic)).setUnlocalizedName("emeraldSword");
+	public static Item			leatherPick			= (new ItemDyeablePickaxe(LEATHER)).setUnlocalizedName("leatherPickaxe");
+	public static Item			leatherShovel		= (new ItemDyeableSpade(LEATHER)).setUnlocalizedName("leatherShovel");
+	public static Item			leatherAxe			= (new ItemDyeableAxe(LEATHER)).setUnlocalizedName("leatherAxe");
+	public static Item			leatherHoe			= (new ItemDyeableHoe(LEATHER)).setUnlocalizedName("leatherHoe");
+	public static Item			leatherSword		= (new ItemDyeableSword(LEATHER)).setUnlocalizedName("leatherSword");
 	
-	public static Item				netherstarPick		= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 96, NETHERSTAR)).setUnlocalizedName("netherstarPickaxe");
-	public static Item				netherstarShovel	= (new ItemSpadeMTM(MoreToolsMod.toolsID + 97, NETHERSTAR)).setUnlocalizedName("netherstarShovel");
-	public static Item				netherstarAxe		= (new ItemAxeMTM(MoreToolsMod.toolsID + 98, NETHERSTAR)).setUnlocalizedName("netherstarAxe");
-	public static Item				netherstarHoe		= (new ItemHoeMTM(MoreToolsMod.toolsID + 99, NETHERSTAR)).setUnlocalizedName("netherstarHoe");
-	public static Item				netherstarSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 120, NETHERSTAR, epic)).setUnlocalizedName("netherstarSword");
+	public static Item			glowstonePick		= (new ItemPickaxeMTM(GLOWSTONE)).setUnlocalizedName("glowstonePickaxe");
+	public static Item			glowstoneShovel		= (new ItemSpadeMTM(GLOWSTONE)).setUnlocalizedName("glowstoneShovel");
+	public static Item			glowstoneAxe		= (new ItemAxeMTM(GLOWSTONE)).setUnlocalizedName("glowstoneAxe");
+	public static Item			glowstoneHoe		= (new ItemHoeMTM(GLOWSTONE)).setUnlocalizedName("glowstoneHoe");
+	public static Item			glowstoneSword		= (new ItemSwordMTM(GLOWSTONE, common)).setUnlocalizedName("glowstoneSword");
 	
-	public static Item				potatoPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 121, POTATO)).setUnlocalizedName("potatoPickaxe");
-	public static Item				potatoShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 122, POTATO)).setUnlocalizedName("potatoShovel");
-	public static Item				potatoAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 123, POTATO)).setUnlocalizedName("potatoAxe");
-	public static Item				potatoHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 124, POTATO)).setUnlocalizedName("potatoHoe");
-	public static Item				potatoSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 125, POTATO, common)).setUnlocalizedName("potatoSword");
+	public static Item			slimePick			= (new ItemPickaxeMTM(SLIME)).setUnlocalizedName("slimePickaxe");
+	public static Item			slimeShovel			= (new ItemSpadeMTM(SLIME)).setUnlocalizedName("slimeShovel");
+	public static Item			slimeAxe			= (new ItemAxeMTM(SLIME)).setUnlocalizedName("slimeAxe");
+	public static Item			slimeHoe			= (new ItemHoeMTM(SLIME)).setUnlocalizedName("slimeHoe");
+	public static Item			slimeSword			= (new ItemSwordMTM(SLIME, common)).setUnlocalizedName("slimeSword");
 	
-	public static Item				carrotPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 126, CARROT)).setUnlocalizedName("carrotPickaxe");
-	public static Item				carrotShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 127, CARROT)).setUnlocalizedName("carrotShovel");
-	public static Item				carrotAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 128, CARROT)).setUnlocalizedName("carrotAxe");
-	public static Item				carrotHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 129, CARROT)).setUnlocalizedName("carrotHoe");
-	public static Item				carrotSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 130, CARROT, common)).setUnlocalizedName("carrotSword");
+	public static Item			spaceMultitool		= new ItemMultitool(SPACE1).setUnlocalizedName("spacemulti");
+	public static Item			spaceArrow			= new Item().setUnlocalizedName("spacearrow").setCreativeTab(CreativeTabs.tabCombat);
+	public static Item			spaceBow			= new ItemBowMTM(spaceArrow).setUnlocalizedName("spacebow");
+	public static Item			spaceIngot			= new Item().setUnlocalizedName("spaceingot").setCreativeTab(CreativeTabs.tabMaterials);
+	public static Item			spaceSword			= new ItemSwordMTM(SPACE2, rare).setUnlocalizedName("spaceSwordWeak");
 	
-	public static Item				fishPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 131, FISH)).setUnlocalizedName("fishPickaxe");
-	public static Item				fishShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 132, FISH)).setUnlocalizedName("fishShovel");
-	public static Item				fishAxe				= (new ItemAxeMTM(MoreToolsMod.toolsID + 133, FISH)).setUnlocalizedName("fishAxe");
-	public static Item				fishHoe				= (new ItemHoeMTM(MoreToolsMod.toolsID + 134, FISH)).setUnlocalizedName("fishHoe");
-	public static Item				fishSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 135, FISH, common)).setUnlocalizedName("fishSword");
+	public static Item			blazerodAndSteel	= (new ItemFlintAndSteelMTM(128)).setUnlocalizedName("blazeandsteel");
 	
-	public static Item				baconPick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 100 + 36, BACON)).setUnlocalizedName("baconPickaxe");
-	public static Item				baconShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 100 + 37, BACON)).setUnlocalizedName("baconShovel");
-	public static Item				baconAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 100 + 38, BACON)).setUnlocalizedName("baconAxe");
-	public static Item				baconHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 100 + 39, BACON)).setUnlocalizedName("baconHoe");
-	public static Item				baconSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 100 + 40, BACON, common)).setUnlocalizedName("baconSword");
+	public static Item			goldShears			= (new ItemShearsMTM(32, 2)).setUnlocalizedName("shearsgold");
+	public static Item			diamondShears		= (new ItemShearsMTM(1024, 5)).setUnlocalizedName("shearsdiamond");
 	
-	public static Item				leatherPick			= (new ItemDyeablePickaxe(MoreToolsMod.toolsID + 100 + 41, LEATHER)).setUnlocalizedName("leatherPickaxe");
-	public static Item				leatherShovel		= (new ItemDyeableShovel(MoreToolsMod.toolsID + 100 + 42, LEATHER)).setUnlocalizedName("leatherShovel");
-	public static Item				leatherAxe			= (new ItemDyeableAxe(MoreToolsMod.toolsID + 100 + 43, LEATHER)).setUnlocalizedName("leatherAxe");
-	public static Item				leatherHoe			= (new ItemDyeableHoe(MoreToolsMod.toolsID + 100 + 44, LEATHER)).setUnlocalizedName("leatherHoe");
-	public static Item				leatherSword		= (new ItemDyeableSword(MoreToolsMod.toolsID + 100 + 45, LEATHER)).setUnlocalizedName("leatherSword");
+	public static ItemStack		obsidian			= new ItemStack(Blocks.obsidian);
+	public static ItemStack		redstone_block		= new ItemStack(Blocks.redstone_block);
+	public static ItemStack		coal				= new ItemStack(Items.coal);
+	public static ItemStack		lapis_block			= new ItemStack(Blocks.lapis_block);
+	public static ItemStack		ender_pearl			= new ItemStack(Items.ender_pearl);
+	public static ItemStack		space				= new ItemStack(spaceIngot);
+	public static ItemStack		space_2				= new ItemStack(spaceBlock, 1, 1);
+	public static ItemStack		bone				= new ItemStack(Items.bone);
+	public static ItemStack		reeds				= new ItemStack(Items.reeds);
+	public static ItemStack		blaze_rod			= new ItemStack(Items.blaze_rod);
+	public static ItemStack		dirt				= new ItemStack(Blocks.dirt);
+	public static ItemStack		glass				= new ItemStack(Blocks.glass);
+	public static ItemStack		sandstone			= new ItemStack(Blocks.sandstone);
+	public static ItemStack		brick				= new ItemStack(Blocks.brick_block);
+	public static ItemStack		end_stone			= new ItemStack(Blocks.end_stone);
+	public static ItemStack		emerald				= new ItemStack(Items.emerald);
+	public static ItemStack		nether_star			= new ItemStack(Items.nether_star);
+	public static ItemStack		potato				= new ItemStack(Items.potato);
+	public static ItemStack		carrot				= new ItemStack(Items.carrot);
+	public static ItemStack		fish				= new ItemStack(Items.fish);
+	public static ItemStack		porkchop			= new ItemStack(Items.porkchop);
+	public static ItemStack		leather				= new ItemStack(Items.leather);
+	public static ItemStack		glowstone			= new ItemStack(Blocks.glowstone);
+	public static ItemStack		slime				= new ItemStack(Items.slime_ball);
 	
-	public static Item				glowstonePick		= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 100 + 46, GLOWSTONE)).setUnlocalizedName("glowstonePickaxe");
-	public static Item				glowstoneShovel		= (new ItemSpadeMTM(MoreToolsMod.toolsID + 100 + 47, GLOWSTONE)).setUnlocalizedName("glowstoneShovel");
-	public static Item				glowstoneAxe		= (new ItemAxeMTM(MoreToolsMod.toolsID + 100 + 48, GLOWSTONE)).setUnlocalizedName("glowstoneAxe");
-	public static Item				glowstoneHoe		= (new ItemHoeMTM(MoreToolsMod.toolsID + 100 + 49, GLOWSTONE)).setUnlocalizedName("glowstoneHoe");
-	public static Item				glowstoneSword		= (new ItemSwordMTM(MoreToolsMod.toolsID + 100 + 50, GLOWSTONE, common)).setUnlocalizedName("glowstoneSword");
-	
-	public static Item				slimePick			= (new ItemPickaxeMTM(MoreToolsMod.toolsID + 100 + 51, SLIME)).setUnlocalizedName("slimePickaxe");
-	public static Item				slimeShovel			= (new ItemSpadeMTM(MoreToolsMod.toolsID + 100 + 52, SLIME)).setUnlocalizedName("slimeShovel");
-	public static Item				slimeAxe			= (new ItemAxeMTM(MoreToolsMod.toolsID + 100 + 53, SLIME)).setUnlocalizedName("slimeAxe");
-	public static Item				slimeHoe			= (new ItemHoeMTM(MoreToolsMod.toolsID + 100 + 54, SLIME)).setUnlocalizedName("slimeHoe");
-	public static Item				slimeSword			= (new ItemSwordMTM(MoreToolsMod.toolsID + 100 + 55, SLIME, common)).setUnlocalizedName("slimeSword");
-	
-	public static Item				spaceMultitool		= (new ItemMultitool(MoreToolsMod.itemsID, SPACE1)).setUnlocalizedName("spacemulti");
-	public static Item				spaceArrow			= (new ItemMTM(MoreToolsMod.itemsID + 2, CreativeTabs.tabCombat)).setUnlocalizedName("spacearrow");
-	public static Item				spaceBow			= (new ItemBowMTM(MoreToolsMod.itemsID + 1, spaceArrow, false)).setUnlocalizedName("spacebow");
-	public static Item				spaceIngot			= (new ItemMTM(MoreToolsMod.itemsID + 3, CreativeTabs.tabMaterials)).setUnlocalizedName("spaceingot");
-	public static Item				spaceSword			= (new ItemSwordMTM(MoreToolsMod.itemsID + 4, SPACE2, rare)).setUnlocalizedName("spaceSwordWeak");
-	
-	public static Item				blazerodAndSteel	= (new ItemFlintAndSteelMTM(MoreToolsMod.toolsID + 204, 128)).setUnlocalizedName("blazeandsteel");
-	
-	public static Item				goldShears			= (new ItemShearsMTM(MoreToolsMod.toolsID + 205, 32, 2)).setUnlocalizedName("shearsgold");
-	public static Item				diamondShears		= (new ItemShearsMTM(MoreToolsMod.toolsID + 206, 1024, 5)).setUnlocalizedName("shearsdiamond");
-	
-	public static ItemStack			obsidian			= new ItemStack(Block.obsidian);
-	public static ItemStack			redstone			= new ItemStack(Block.blockRedstone);
-	public static ItemStack			coal				= new ItemStack(Item.coal);
-	public static ItemStack			lapis				= new ItemStack(Block.blockLapis);
-	public static ItemStack			enderPearl			= new ItemStack(Item.enderPearl);
-	public static ItemStack			space				= new ItemStack(spaceIngot);
-	public static ItemStack			spaceAdvanced		= new ItemStack(spaceBlock);
-	public static ItemStack			bone				= new ItemStack(Item.bone);
-	public static ItemStack			sugarcane			= new ItemStack(Item.reed);
-	public static ItemStack			blazerod			= new ItemStack(Item.blazeRod);
-	public static ItemStack			dirt				= new ItemStack(Block.dirt);
-	public static ItemStack			glass				= new ItemStack(Block.glass);
-	public static ItemStack			sandstone			= new ItemStack(Block.sandStone);
-	public static ItemStack			brick				= new ItemStack(Block.brick);
-	public static ItemStack			endstone			= new ItemStack(Block.whiteStone);
-	public static ItemStack			emerald				= new ItemStack(Item.emerald);
-	public static ItemStack			netherstar			= new ItemStack(Item.netherStar);
-	public static ItemStack			potato				= new ItemStack(Item.potato);
-	public static ItemStack			carrot				= new ItemStack(Item.carrot);
-	public static ItemStack			fish				= new ItemStack(Item.fishRaw);
-	public static ItemStack			bacon				= new ItemStack(Item.porkRaw);
-	public static ItemStack			leather				= new ItemStack(Item.leather);
-	public static ItemStack			glowstone			= new ItemStack(Item.glowstone);
-	public static ItemStack			slime				= new ItemStack(Item.slimeBall);
+	public static ItemStack		glowstone_dust		= new ItemStack(Items.glowstone_dust);
 	
 	public void load(FMLInitializationEvent event)
 	{
-		LanguageRegistry.instance().addStringLocalization("enchantment.quickdraw", "Quick Draw");
+		CSLang.addLocalizationUS("enchantment.quickdraw", "Quick Draw");
 		
 		this.addItems();
 		this.addBlocks();
@@ -306,11 +295,11 @@ public class MTMTools
 		CSItems.addTool(obsidianAxe, "Obsidian Axe", obsidian, 3);
 		CSItems.addTool(obsidianHoe, "Obsidian Hoe", obsidian, 4);
 		
-		CSItems.addTool(redstoneSword, "Redstone Sword", redstone, 0);
-		CSItems.addTool(redstoneShovel, "Redstone Shovel", redstone, 1);
-		CSItems.addTool(redstonePick, "Redstone Pickaxe", redstone, 2);
-		CSItems.addTool(redstoneAxe, "Redstone Axe", redstone, 3);
-		CSItems.addTool(redstoneHoe, "Redstone Hoe", redstone, 4);
+		CSItems.addTool(redstoneSword, "Redstone Sword", redstone_block, 0);
+		CSItems.addTool(redstoneShovel, "Redstone Shovel", redstone_block, 1);
+		CSItems.addTool(redstonePick, "Redstone Pickaxe", redstone_block, 2);
+		CSItems.addTool(redstoneAxe, "Redstone Axe", redstone_block, 3);
+		CSItems.addTool(redstoneHoe, "Redstone Hoe", redstone_block, 4);
 		
 		CSItems.addTool(coalSword, "Coal Sword", coal, 0);
 		CSItems.addTool(coalShovel, "Coal Shovel", coal, 1);
@@ -318,20 +307,20 @@ public class MTMTools
 		CSItems.addTool(coalAxe, "Coal Axe", coal, 3);
 		CSItems.addTool(coalHoe, "Coal Hoe", coal, 4);
 		
-		CSItems.addTool(lapisSword, "Lapislazuli Sword", lapis, 0);
-		CSItems.addTool(lapisShovel, "Lapislazuli Shovel", lapis, 1);
-		CSItems.addTool(lapisPick, "Lapislazuli Pickaxe", lapis, 2);
-		CSItems.addTool(lapisAxe, "Lapislazuli Axe", lapis, 3);
-		CSItems.addTool(lapisHoe, "Lapislazuli Hoe", lapis, 4);
+		CSItems.addTool(lapisSword, "Lapislazuli Sword", lapis_block, 0);
+		CSItems.addTool(lapisShovel, "Lapislazuli Shovel", lapis_block, 1);
+		CSItems.addTool(lapisPick, "Lapislazuli Pickaxe", lapis_block, 2);
+		CSItems.addTool(lapisAxe, "Lapislazuli Axe", lapis_block, 3);
+		CSItems.addTool(lapisHoe, "Lapislazuli Hoe", lapis_block, 4);
 		
-		CSItems.addTool(enderSword, "Ender Sword", enderPearl, 0);
-		CSItems.addTool(enderShovel, "Ender Shovel", enderPearl, 1);
-		CSItems.addTool(enderPick, "Ender Pickaxe", enderPearl, 2);
-		CSItems.addTool(enderAxe, "Ender Axe", enderPearl, 3);
-		CSItems.addTool(enderHoe, "Ender Hoe", enderPearl, 4);
+		CSItems.addTool(enderSword, "Ender Sword", ender_pearl, 0);
+		CSItems.addTool(enderShovel, "Ender Shovel", ender_pearl, 1);
+		CSItems.addTool(enderPick, "Ender Pickaxe", ender_pearl, 2);
+		CSItems.addTool(enderAxe, "Ender Axe", ender_pearl, 3);
+		CSItems.addTool(enderHoe, "Ender Hoe", ender_pearl, 4);
 		
 		CSItems.addTool(spaceSword, "Normal Spacesword", space, 0);
-		CSItems.addTool(spaceSwordAdvanced, "Advanced Spacesword", spaceAdvanced, 0);
+		CSItems.addTool(spaceSwordAdvanced, "Advanced Spacesword", space_2, 0);
 		CSItems.addTool(spaceShovel, "Space Shovel", space, 1);
 		CSItems.addTool(spacePick, "Space Pickaxe", space, 2);
 		CSItems.addTool(spaceAxe, "Space Axe", space, 3);
@@ -343,17 +332,17 @@ public class MTMTools
 		CSItems.addTool(boneAxe, "Bone Axe", bone, 3);
 		CSItems.addTool(boneHoe, "Bone Hoe", bone, 4);
 		
-		CSItems.addTool(sugarcaneSword, "Senseis Sword", sugarcane, 0);
-		CSItems.addTool(sugarcaneShovel, "Sugarcane Shovel", sugarcane, 1);
-		CSItems.addTool(sugarcanePick, "Sugarcane Pickaxe", sugarcane, 2);
-		CSItems.addTool(sugarcaneAxe, "Sugarcane Axe", sugarcane, 3);
-		CSItems.addTool(sugarcaneHoe, "Sugarcane Hoe", sugarcane, 4);
+		CSItems.addTool(sugarcaneSword, "Senseis Sword", reeds, 0);
+		CSItems.addTool(sugarcaneShovel, "Sugarcane Shovel", reeds, 1);
+		CSItems.addTool(sugarcanePick, "Sugarcane Pickaxe", reeds, 2);
+		CSItems.addTool(sugarcaneAxe, "Sugarcane Axe", reeds, 3);
+		CSItems.addTool(sugarcaneHoe, "Sugarcane Hoe", reeds, 4);
 		
-		CSItems.addTool(blazerodSword, "Blazerod Sword", blazerod, 0);
-		CSItems.addTool(blazerodShovel, "Blazerod Shovel", blazerod, 1);
-		CSItems.addTool(blazerodPick, "Blazerod Pickaxe", blazerod, 2);
-		CSItems.addTool(blazerodAxe, "Blazerod Axe", blazerod, 3);
-		CSItems.addTool(blazerodHoe, "Blazerod Hoe", blazerod, 4);
+		CSItems.addTool(blazerodSword, "Blazerod Sword", blaze_rod, 0);
+		CSItems.addTool(blazerodShovel, "Blazerod Shovel", blaze_rod, 1);
+		CSItems.addTool(blazerodPick, "Blazerod Pickaxe", blaze_rod, 2);
+		CSItems.addTool(blazerodAxe, "Blazerod Axe", blaze_rod, 3);
+		CSItems.addTool(blazerodHoe, "Blazerod Hoe", blaze_rod, 4);
 		
 		CSItems.addTool(dirtSword, "Dirt Sword", dirt, 0);
 		CSItems.addTool(dirtShovel, "Dirt Shovel", dirt, 1);
@@ -379,27 +368,27 @@ public class MTMTools
 		CSItems.addTool(brickAxe, "Brick Axe", brick, 3);
 		CSItems.addTool(brickHoe, "Brick Hoe", brick, 4);
 		
-		CSItems.addTool(endstoneSword, "Endstone Sword", endstone, 0);
-		CSItems.addTool(endstoneShovel, "Endstone Shovel", endstone, 1);
-		CSItems.addTool(endstonePick, "Endstone Pickaxe", endstone, 2);
-		CSItems.addTool(endstoneAxe, "Endstone Axe", endstone, 3);
-		CSItems.addTool(endstoneHoe, "Endstone Hoe", endstone, 4);
+		CSItems.addTool(endstoneSword, "Endstone Sword", end_stone, 0);
+		CSItems.addTool(endstoneShovel, "Endstone Shovel", end_stone, 1);
+		CSItems.addTool(endstonePick, "Endstone Pickaxe", end_stone, 2);
+		CSItems.addTool(endstoneAxe, "Endstone Axe", end_stone, 3);
+		CSItems.addTool(endstoneHoe, "Endstone Hoe", end_stone, 4);
 		
-		CSItems.addItemWithRecipe(excaliburSword, "Excalibur", 1, new Object[] { "gNg", "hDh", "d|d", Character.valueOf('g'), Item.ghastTear, Character.valueOf('N'), Item.netherStar, Character.valueOf('D'), Block.dragonEgg, 'h', new ItemStack(Item.skull, 1, 1), Character.valueOf('|'), Item.blazeRod, 'd', Item.diamond });
+		CSItems.addItemWithRecipe(excaliburSword, "Excalibur", 1, new Object[] { "gNg", "hDh", "d|d", 'g', Items.ghast_tear, 'N', Items.nether_star, 'D', Blocks.dragon_egg, 'h', new ItemStack(Items.skull, 1, 1), '|', Items.blaze_rod, 'd', Items.diamond });
 		
-		CSItems.addItemWithRecipe(godSword, "God's Sword", 1, new Object[] { "gGg", "gGg", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
-		CSItems.addItemWithRecipe(godShovel, "God's Shovel", 1, new Object[] { "gGg", " b ", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
-		CSItems.addItemWithRecipe(godPick, "God's Pickaxe", 1, new Object[] { "GGG", "gbg", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
-		CSItems.addItemWithRecipe(godAxe, "God's Axe", 1, new Object[] { "GGg", "Gb ", "gb ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
-		CSItems.addItemWithRecipe(godHoe, "God's Hoe", 1, new Object[] { "GGg", "gb ", " b ", 'g', Item.glowstone, 'G', Block.blockGold, 'b', Item.stick });
+		CSItems.addItemWithRecipe(godSword, "God's Sword", 1, new Object[] { "gGg", "gGg", " b ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
+		CSItems.addItemWithRecipe(godShovel, "God's Shovel", 1, new Object[] { "gGg", " b ", " b ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
+		CSItems.addItemWithRecipe(godPick, "God's Pickaxe", 1, new Object[] { "GGG", "gbg", " b ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
+		CSItems.addItemWithRecipe(godAxe, "God's Axe", 1, new Object[] { "GGg", "Gb ", "gb ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
+		CSItems.addItemWithRecipe(godHoe, "God's Hoe", 1, new Object[] { "GGg", "gb ", " b ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
 		
-		CSItems.addItemWithRecipe(luziferSword, "Luzifers's Sword", 1, new Object[] { "rRr", "rRr", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
-		CSItems.addItemWithRecipe(luziferShovel, "Luzifers's Shovel", 1, new Object[] { "rRr", " b ", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
-		CSItems.addItemWithRecipe(luziferPick, "Luzifers's Pickaxe", 1, new Object[] { "RRR", "rbr", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
-		CSItems.addItemWithRecipe(luziferAxe, "Luzifers's Axe", 1, new Object[] { "RRg", "Rb ", "rb ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
-		CSItems.addItemWithRecipe(luziferHoe, "Luzifers's Hoe", 1, new Object[] { "RRg", "rb ", " b ", 'r', Item.redstone, 'R', Block.netherBrick, 'b', Item.blazeRod });
+		CSItems.addItemWithRecipe(luziferSword, "Luzifers's Sword", 1, new Object[] { "rRr", "rRr", " b ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
+		CSItems.addItemWithRecipe(luziferShovel, "Luzifers's Shovel", 1, new Object[] { "rRr", " b ", " b ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
+		CSItems.addItemWithRecipe(luziferPick, "Luzifers's Pickaxe", 1, new Object[] { "RRR", "rbr", " b ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
+		CSItems.addItemWithRecipe(luziferAxe, "Luzifers's Axe", 1, new Object[] { "RRg", "Rb ", "rb ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
+		CSItems.addItemWithRecipe(luziferHoe, "Luzifers's Hoe", 1, new Object[] { "RRg", "rb ", " b ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
 		
-		CSItems.addItemWithRecipe(lightsaberShaft, "Lightsaber Shaft", 1, new Object[] { "idi", "rGi", "iii", Character.valueOf('i'), Item.ingotIron, 'r', Item.diamond, 'r', Item.redstone, 'G', Block.glowStone });
+		CSItems.addItemWithRecipe(lightsaberShaft, "Lightsaber Shaft", 1, new Object[] { "idi", "rGi", "iii", Character.valueOf('i'), Items.iron_ingot, 'r', Items.diamond, 'r', Items.redstone, 'G', Blocks.glowstone });
 		CSItems.addItem(lightsaberBlue, "Blue Lightsaber");
 		CSItems.addItem(lightsaberGreen, "Green Lightsaber");
 		CSItems.addItem(lightsaberPurple, "Purple Lightsaber");
@@ -412,11 +401,11 @@ public class MTMTools
 		CSItems.addTool(emeraldAxe, "Emerald Axe", emerald, 3);
 		CSItems.addTool(emeraldHoe, "Emerald Hoe", emerald, 4);
 		
-		CSItems.addTool(netherstarSword, "Nether Star Sword", netherstar, 0);
-		CSItems.addTool(netherstarShovel, "Nether Star Shovel", netherstar, 1);
-		CSItems.addTool(netherstarPick, "Nether Star Pickaxe", netherstar, 2);
-		CSItems.addTool(netherstarAxe, "Nether Star Axe", netherstar, 3);
-		CSItems.addTool(netherstarHoe, "Nether Star Hoe", netherstar, 4);
+		CSItems.addTool(netherstarSword, "Nether Star Sword", nether_star, 0);
+		CSItems.addTool(netherstarShovel, "Nether Star Shovel", nether_star, 1);
+		CSItems.addTool(netherstarPick, "Nether Star Pickaxe", nether_star, 2);
+		CSItems.addTool(netherstarAxe, "Nether Star Axe", nether_star, 3);
+		CSItems.addTool(netherstarHoe, "Nether Star Hoe", nether_star, 4);
 		
 		CSItems.addTool(potatoSword, "Potato Sword", potato, 0);
 		CSItems.addTool(potatoShovel, "Potato Shovel", potato, 1);
@@ -436,11 +425,11 @@ public class MTMTools
 		CSItems.addTool(fishAxe, "Fish Axe", fish, 3);
 		CSItems.addTool(fishHoe, "Fish Hoe", fish, 4);
 		
-		CSItems.addTool(baconSword, "Bacon Sword", bacon, 0);
-		CSItems.addTool(baconShovel, "Bacon Shovel", bacon, 1);
-		CSItems.addTool(baconPick, "Bacon Pickaxe", bacon, 2);
-		CSItems.addTool(baconAxe, "Bacon Axe", bacon, 3);
-		CSItems.addTool(baconHoe, "Bacon Hoe", bacon, 4);
+		CSItems.addTool(baconSword, "Bacon Sword", porkchop, 0);
+		CSItems.addTool(baconShovel, "Bacon Shovel", porkchop, 1);
+		CSItems.addTool(baconPick, "Bacon Pickaxe", porkchop, 2);
+		CSItems.addTool(baconAxe, "Bacon Axe", porkchop, 3);
+		CSItems.addTool(baconHoe, "Bacon Hoe", porkchop, 4);
 		
 		CSItems.addTool(leatherPick, "Leather Pickaxe", leather, 0);
 		CSItems.addTool(leatherShovel, "Leather Shovel", leather, 1);
@@ -461,21 +450,21 @@ public class MTMTools
 		CSItems.addTool(slimeSword, "Slime Sword", slime, 4);
 		
 		CSItems.addItemWithShapelessRecipe(spaceMultitool, "Space Multitool", 1, new Object[] { spacePick, spaceShovel, spaceAxe, spaceHoe, spaceSwordAdvanced });
-		CSItems.addItemWithRecipe(spaceBow, "Space Bow", 1, new Object[] { "sS ", "s S", "sS ", 'S', spaceIngot, 's', Item.silk });
-		CSItems.addItemWithRecipe(spaceArrow, "Space Arrow", 4, new Object[] { "s", "|", "f", Character.valueOf('s'), spaceIngot, Character.valueOf('|'), Item.stick, Character.valueOf('f'), Item.feather });
-		CSItems.addItemWithRecipe(spaceIngot, "Space Ingot", 9, new Object[] { "s", 's', new ItemStack(spaceBlock, 1, 1) });
+		CSItems.addItemWithRecipe(spaceBow, "Space Bow", 1, new Object[] { "sS ", "s S", "sS ", 'S', spaceIngot, 's', Items.string });
+		CSItems.addItemWithRecipe(spaceArrow, "Space Arrow", 4, new Object[] { "s", "|", "f", 's', spaceIngot, '|', Items.stick, 'f', Items.feather });
+		CSItems.addItemWithRecipe(spaceIngot, "Space Ingot", 9, new Object[] { "s", 's', space_2 });
 		
-		CSItems.addItemWithRecipe(blazerodAndSteel, "Blazerod and Steel", 1, new Object[] { "i ", " b", Character.valueOf('i'), Item.ingotIron, Character.valueOf('b'), Item.blazeRod });
+		CSItems.addItemWithRecipe(blazerodAndSteel, "Blazerod and Steel", 1, new Object[] { "i ", " b", 'i', Items.iron_ingot, 'b', Items.blaze_rod });
 		
-		CSItems.addItemWithRecipe(goldShears, "Gold Shears", 1, new Object[] { "X ", " X", Character.valueOf('X'), Item.ingotGold });
-		CSItems.addItemWithRecipe(diamondShears, "Diamond Shears", 1, new Object[] { "X ", " X", Character.valueOf('X'), Item.diamond });
+		CSItems.addItemWithRecipe(goldShears, "Gold Shears", 1, new Object[] { "X ", " X", 'X', Items.gold_ingot });
+		CSItems.addItemWithRecipe(diamondShears, "Diamond Shears", 1, new Object[] { "X ", " X", 'X', Items.diamond });
 	}
 	
 	public void addBlocks()
 	{
-		CSBlocks.addBlock(spaceBlock, ItemCustomBlock.class, "SpaceBlock");
+		CSBlocks.addBlock(spaceBlock, ItemCustomBlock.class, "Space Block");
 		CSBlocks.addBlock(glowingBlock, ItemBlock.class, "Glowing Block");
 		
-		MinecraftForge.setBlockHarvestLevel(spaceBlock, "pickaxe", 2);
+		spaceBlock.setHarvestLevel("pickaxe", 2);
 	}
 }

@@ -10,8 +10,8 @@ public class BlockSpaceblock extends CustomBlock
 	public static String[]	names		= new String[] { "Space Ore", "Space Block", "Old Space Block", "Old Space Block", "Old Space Block" };
 	public static String[]	textures	= new String[] { "space_ore", "space_block_1", "space_block_2", "space_block_3", "space_block_4" };
 	
-	public BlockSpaceblock(int id)
+	public BlockSpaceblock()
 	{
-		super(id, Material.rock, names, textures, new CreativeTabs[] { CreativeTabs.tabBlock });
+		super(Material.rock, names, textures, new CreativeTabs[] { CreativeTabs.tabBlock });
 	}
 }

@@ -1,224 +1,72 @@
 package clashsoft.mods.moretools.item.dyeable;
 
-import clashsoft.mods.moretools.addons.MTMTools;
+import java.util.Collections;
+
+import cpw.mods.fml.common.eventhandler.Event;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 
 public class ItemDyeableHoe extends ItemDyeableTool
 {
-	protected EnumToolMaterial	theToolMaterial;
+	protected ToolMaterial	theToolMaterial;
 	
-	public ItemDyeableHoe(int par1, EnumToolMaterial par2EnumToolMaterial)
+	public ItemDyeableHoe(ToolMaterial toolMaterial)
 	{
-		super(par1, 0, par2EnumToolMaterial, new Block[] {});
-		this.theToolMaterial = par2EnumToolMaterial;
-		this.maxStackSize = 1;
-		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
-		this.setCreativeTab(CreativeTabs.tabTools);
+		super(0F, toolMaterial, Collections.EMPTY_SET);
 	}
 	
-	/**
-	 * Callback for item usage. If the item does something special on right
-	 * clicking, he will have one of those. Return True if something happen and
-	 * false if it don't. This is for ITEMS, not BLOCKS
-	 */
 	@Override
-	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
+	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ)
 	{
-		if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))
+		if (!(player.canPlayerEdit(x, y, z, side, stack)))
 		{
 			return false;
 		}
-		else
+		
+		UseHoeEvent event = new UseHoeEvent(player, stack, world, x, y, z);
+		if (MinecraftForge.EVENT_BUS.post(event))
 		{
-			UseHoeEvent event = new UseHoeEvent(par2EntityPlayer, par1ItemStack, par3World, par4, par5, par6);
-			if (MinecraftForge.EVENT_BUS.post(event))
-			{
-				return false;
-			}
+			return false;
+		}
+		
+		if (event.getResult() == Event.Result.ALLOW)
+		{
+			stack.damageItem(1, player);
+			return true;
+		}
+		
+		Block block = world.getBlock(x, y, z);
+		
+		if ((side != 0) && (world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z)) && (((block == Blocks.grass) || (block == Blocks.dirt))))
+		{
+			Block block1 = Blocks.farmland;
+			world.playSoundEffect(x + 0.5F, y + 0.5F, z + 0.5F, block1.stepSound.getStepResourcePath(), (block1.stepSound.getVolume() + 1.0F) / 2.0F, block1.stepSound.getPitch() * 0.8F);
 			
-			if (event.getResult() == Result.ALLOW)
+			if (world.isRemote)
 			{
-				par1ItemStack.damageItem(1, par2EntityPlayer);
 				return true;
 			}
 			
-			int var11 = par3World.getBlockId(par4, par5, par6);
-			int var12 = par3World.getBlockId(par4, par5 + 1, par6);
-			
-			if ((par7 == 0 || var12 != 0 || var11 != Block.grass.blockID) && var11 != Block.dirt.blockID)
-			{
-				return false;
-			}
-			else
-			{
-				Block var13 = Block.tilledField;
-				par3World.playSoundEffect(par4 + 0.5F, par5 + 0.5F, par6 + 0.5F, var13.stepSound.getStepSound(), (var13.stepSound.getVolume() + 1.0F) / 2.0F, var13.stepSound.getPitch() * 0.8F);
-				
-				if (par3World.isRemote)
-				{
-					return true;
-				}
-				else
-				{
-					par3World.setBlock(par4, par5, par6, var13.blockID, 0, 0x02);
-					par1ItemStack.damageItem(1, par2EntityPlayer);
-					return true;
-				}
-			}
+			world.setBlock(x, y, z, block1);
+			stack.damageItem(1, player);
+			return true;
 		}
+		
+		return false;
 	}
 	
-	/**
-	 * Returns True is the item is renderer in full 3D when hold.
-	 */
 	@Override
+	@SideOnly(Side.CLIENT)
 	public boolean isFull3D()
 	{
 		return true;
-	}
-	
-	public String func_77842_f()
-	{
-		return this.theToolMaterial.toString();
-	}
-	
-	@Override
-	public int getColorFromItemStack(ItemStack par1ItemStack, int par2)
-	{
-		if (par2 > 0)
-		{
-			return 16777215;
-		}
-		else
-		{
-			int var3 = this.getColor(par1ItemStack);
-			
-			if (var3 < 0)
-			{
-				var3 = 16777215;
-			}
-			
-			return var3;
-		}
-	}
-	
-	@Override
-	public boolean requiresMultipleRenderPasses()
-	{
-		return true;
-	}
-	
-	/**
-	 * Return the enchantability factor of the item, most of the time is based
-	 * on material.
-	 */
-	@Override
-	public int getItemEnchantability()
-	{
-		return this.theToolMaterial.getEnchantability();
-	}
-	
-	/**
-	 * Return the armor material for this armor item.
-	 */
-	@Override
-	public EnumToolMaterial getToolMaterial()
-	{
-		return this.theToolMaterial;
-	}
-	
-	/**
-	 * Return whether the specified armor ItemStack has a color.
-	 */
-	@Override
-	public boolean hasColor(ItemStack par1ItemStack)
-	{
-		return this.theToolMaterial != MTMTools.LEATHER ? false : (!par1ItemStack.hasTagCompound() ? false : (!par1ItemStack.getTagCompound().hasKey("display") ? false : par1ItemStack.getTagCompound().getCompoundTag("display").hasKey("color")));
-	}
-	
-	/**
-	 * Return the color for the specified armor ItemStack.
-	 */
-	@Override
-	public int getColor(ItemStack par1ItemStack)
-	{
-		if (this.theToolMaterial != MTMTools.LEATHER)
-		{
-			return -1;
-		}
-		else
-		{
-			NBTTagCompound var2 = par1ItemStack.getTagCompound();
-			
-			if (var2 == null)
-			{
-				return 10511680;
-			}
-			else
-			{
-				NBTTagCompound var3 = var2.getCompoundTag("display");
-				return var3 == null ? 10511680 : (var3.hasKey("color") ? var3.getInteger("color") : 10511680);
-			}
-		}
-	}
-	
-	/**
-	 * Remove the color from the specified armor ItemStack.
-	 */
-	@Override
-	public void removeColor(ItemStack par1ItemStack)
-	{
-		if (this.theToolMaterial == MTMTools.LEATHER)
-		{
-			NBTTagCompound var2 = par1ItemStack.getTagCompound();
-			
-			if (var2 != null)
-			{
-				NBTTagCompound var3 = var2.getCompoundTag("display");
-				
-				if (var3.hasKey("color"))
-				{
-					var3.removeTag("color");
-				}
-			}
-		}
-	}
-	
-	@Override
-	public void func_82813_b(ItemStack par1ItemStack, int par2)
-	{
-		if (this.theToolMaterial != MTMTools.LEATHER)
-		{
-			throw new UnsupportedOperationException("Can\'t dye non-leather!");
-		}
-		else
-		{
-			NBTTagCompound var3 = par1ItemStack.getTagCompound();
-			
-			if (var3 == null)
-			{
-				var3 = new NBTTagCompound();
-				par1ItemStack.setTagCompound(var3);
-			}
-			
-			NBTTagCompound var4 = var3.getCompoundTag("display");
-			
-			if (!var3.hasKey("display"))
-			{
-				var3.setCompoundTag("display", var4);
-			}
-			
-			var4.setInteger("color", par2);
-		}
 	}
 }

@@ -1,38 +1,53 @@
 package clashsoft.mods.moretools.item.tools;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.EnumToolMaterial;
+import clashsoft.mods.moretools.addons.MTMTools;
+import clashsoft.mods.moretools.item.armor.ItemArmorMTM;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemSpadeMTM extends ItemToolMTM
+import net.minecraft.entity.Entity;
+import net.minecraft.item.EnumRarity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemSpade;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
+public class ItemSpadeMTM extends ItemSpade
 {
-	private static Block	blocksEffectiveAgainst[];
+	public EnumRarity	rarity;
 	
-	public ItemSpadeMTM(int par1, EnumToolMaterial par2EnumToolMaterial)
+	public ItemSpadeMTM(ToolMaterial material)
 	{
-		super(par1, 1, par2EnumToolMaterial, blocksEffectiveAgainst);
+		this(material, EnumRarity.common);
 	}
 	
-	public String getTextureFile()
+	public ItemSpadeMTM(ToolMaterial material, EnumRarity rarity)
 	{
-		return "/mod_moreTools/gui/tools.png";
+		super(material);
+		this.rarity = rarity;
 	}
 	
-	/**
-	 * Returns if the item (tool) can harvest results from the block type.
-	 */
 	@Override
-	public boolean canHarvestBlock(Block par1Block)
+	@SideOnly(Side.CLIENT)
+	public EnumRarity getRarity(ItemStack stack)
 	{
-		if (par1Block == Block.snow)
-		{
-			return true;
-		}
-		
-		return par1Block == Block.blockSnow;
+		return this.rarity;
 	}
 	
-	static
+	@Override
+	public void onUpdate(ItemStack stack, World world, Entity entity, int slot, boolean holding)
 	{
-		blocksEffectiveAgainst = (new Block[] { Block.grass, Block.dirt, Block.sand, Block.gravel, Block.snow, Block.blockSnow, Block.blockClay, Block.tilledField, Block.slowSand, Block.mycelium });
+		if ((this == MTMTools.glowstoneShovel) && holding)
+		{
+			ItemArmorMTM.setLight(world, entity);
+		}
+	}
+	
+	@Override
+	public Item setUnlocalizedName(String name)
+	{
+		super.setUnlocalizedName(name);
+		super.setTextureName(name);
+		return this;
 	}
 }

@@ -4,54 +4,40 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
 public class BlockGlowing extends Block
 {
-	public BlockGlowing(int par1)
+	public BlockGlowing()
 	{
-		super(par1, Material.air);
+		super(Material.air);
 		this.setBlockBounds(0.4995F, 0.4995F, 0.4995F, 0.5005F, 0.5005F, 0.5005F);
 		this.setTickRandomly(true);
 	}
 	
-	/**
-	 * Returns a bounding box from the pool of bounding boxes (this means this
-	 * box can change after the pool has been cleared to be reused)
-	 */
 	@Override
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z)
 	{
 		return null;
 	}
 	
-	/**
-	 * Is this block (a) opaque and (b) a full 1m cube? This determines whether
-	 * or not to render the shared face of two adjacent blocks and also whether
-	 * the player can attach torches, redstone wire, etc to this block.
-	 */
 	@Override
 	public boolean isOpaqueCube()
 	{
 		return false;
 	}
 	
-	/**
-	 * Ticks the block if it's been scheduled
-	 */
 	@Override
-	public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+	public void updateTick(World world, int x, int y, int z, Random random)
 	{
-		par1World.setBlock(par2, par3, par4, 0, 0, 0x02);
+		world.setBlockToAir(x, y, z);
 	}
 	
-	/**
-	 * Returns the ID of the items to drop on destruction.
-	 */
 	@Override
-	public int idDropped(int par1, Random par2Random, int par3)
+	public Item getItemDropped(int metadata, Random random, int fortune)
 	{
-		return 0;
+		return null;
 	}
 }

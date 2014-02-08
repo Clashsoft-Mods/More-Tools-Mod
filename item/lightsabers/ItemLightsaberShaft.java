@@ -1,7 +1,6 @@
 package clashsoft.mods.moretools.item.lightsabers;
 
 import clashsoft.mods.moretools.addons.MTMTools;
-import clashsoft.mods.moretools.item.ItemMTM;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,25 +8,20 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemLightsaberShaft extends ItemMTM
+public class ItemLightsaberShaft extends Item
 {
-	public ItemLightsaberShaft(int itemID)
+	public ItemLightsaberShaft()
 	{
-		super(itemID, CreativeTabs.tabCombat);
+		this.setCreativeTab(CreativeTabs.tabCombat);
 		this.setMaxStackSize(1);
 	}
 	
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
 	{
-		ItemStack blue = new ItemStack(MTMTools.lightsaberBlue, 1);
-		// par3EntityPlayer.triggerAchievement(MoreToolsMod_Achievements.lightsaber);
-		return blue;
+		return new ItemStack(MTMTools.lightsaberBlue, 1);
 	}
 	
-	/**
-	 * CLASHSOFT: This code makes items use their unlocalized name as icon name
-	 */
 	@Override
 	public Item setUnlocalizedName(String name)
 	{

@@ -6,13 +6,11 @@ import clashsoft.mods.moretools.addons.MTMTools;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class ItemArmorMTM extends ItemArmor
@@ -26,33 +24,27 @@ public class ItemArmorMTM extends ItemArmor
 	public final int				damageReduceAmount;
 	
 	/**
-	 * Used on RenderPlayer to select the correspondent armor to be rendered on
-	 * the player: 0 is cloth, 1 is chain, 2 is iron, 3 is diamond and 4 is
-	 * gold.
+	 * Used on RenderPlayer to select the correspondent armor to be rendered on the player: 0 is cloth, 1 is chain, 2 is iron, 3 is diamond and 4 is gold.
 	 */
 	public final int				renderIndex;
 	
-	/** The EnumArmorMaterial used for this ItemArmor */
-	public final EnumArmorMaterial	material;
+	/** The ArmorMaterial used for this ItemArmor */
+	public final ArmorMaterial	material;
 	
-	public ItemArmorMTM(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4)
+	public ItemArmorMTM(ArmorMaterial material, int renderIndex, int armorType)
 	{
-		super(par1, par2EnumArmorMaterial, par3, par4);
-		this.material = par2EnumArmorMaterial;
-		this.armorType = par4;
-		this.renderIndex = par3;
-		this.damageReduceAmount = par2EnumArmorMaterial.getDamageReductionAmount(par4);
-		this.setMaxDamage(par2EnumArmorMaterial.getDurability(par4));
+		super(material, renderIndex, armorType);
+		this.material = material;
+		this.armorType = armorType;
+		this.renderIndex = renderIndex;
+		this.damageReduceAmount = material.getDamageReductionAmount(armorType);
+		this.setMaxDamage(material.getDurability(armorType));
 		this.maxStackSize = 1;
 		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
-	/**
-	 * Called each tick as long the item is on a player inventory. Uses by maps
-	 * to check if is on a player hand and update it's contents.
-	 */
 	@Override
-	public void onArmorTickUpdate(World world, EntityPlayer player, ItemStack itemStack)
+	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack)
 	{
 		if (player instanceof EntityPlayer)
 		{
@@ -105,31 +97,14 @@ public class ItemArmorMTM extends ItemArmor
 		return this;
 	}
 	
-	public static void setLight(World par1World, Entity par2Entity)
+	public static void setLight(World world, Entity entity)
 	{
-		if (par1World.getBlockId(MathHelper.floor_double(par2Entity.posX), MathHelper.floor_double(par2Entity.posY), MathHelper.floor_double(par2Entity.posZ)) == 0)
+		int x = (int) entity.posX;
+		int y = (int) entity.posY;
+		int z = (int) entity.posZ;
+		if (world.isAirBlock(x, y, z))
 		{
-			par1World.setBlock(MathHelper.floor_double(par2Entity.posX), MathHelper.floor_double(par2Entity.posY), MathHelper.floor_double(par2Entity.posZ), MTMTools.glowingBlock.blockID, 0, 0x02);
+			world.setBlock(x, y, z, MTMTools.glowingBlock);
 		}
-	}
-	
-	/**
-	 * Updates the WatchableObject (Byte) created in entityInit(), setting it to
-	 * 0x01 if par1 is true or 0x00 if it is false.
-	 */
-	public static void setBesideClimbableBlock(Entity par1, boolean par2)
-	{
-		byte var2 = par1.getDataWatcher().getWatchableObjectByte(16);
-		
-		if (par2)
-		{
-			var2 = (byte) (var2 | 1);
-		}
-		else
-		{
-			var2 &= -2;
-		}
-		
-		par1.getDataWatcher().updateObject(16, Byte.valueOf(var2));
 	}
 }

@@ -1,264 +1,123 @@
 package clashsoft.mods.moretools.item.dyeable;
 
-import clashsoft.mods.moretools.addons.MTMTools;
+import java.util.Collections;
+
+import com.google.common.collect.Multimap;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumAction;
-import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
 public class ItemDyeableSword extends ItemDyeableTool
 {
-	private final EnumToolMaterial	toolMaterial;
-	
-	public ItemDyeableSword(int par1, EnumToolMaterial par2EnumToolMaterial)
+	public ItemDyeableSword(ToolMaterial toolMaterial)
 	{
-		super(par1, 4 + par2EnumToolMaterial.getDamageVsEntity(), par2EnumToolMaterial, new Block[] { Block.web });
-		this.toolMaterial = par2EnumToolMaterial;
+		super(4F, toolMaterial, Collections.EMPTY_SET);
+		
 		this.maxStackSize = 1;
-		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
-		this.setCreativeTab(CreativeTabs.tabCombat);
+		setMaxDamage(toolMaterial.getMaxUses());
+		setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
-	/**
-	 * Returns the strength of the stack against a given block. 1.0F base,
-	 * (Quality+1)*2 if correct blocktype, 1.5F if sword
-	 */
 	@Override
-	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
+	public float getDigSpeed(ItemStack stack, Block block, int metadata)
 	{
-		if (par2Block.blockID == Block.web.blockID)
+		if (block == Blocks.web)
 		{
 			return 15.0F;
 		}
-		else
+		
+		Material material = block.getMaterial();
+		if ((material == Material.plants) || (material == Material.vine) || (material == Material.coral) || (material == Material.leaves) || (material == Material.gourd))
 		{
-			Material var3 = par2Block.blockMaterial;
-			return var3 != Material.plants && var3 != Material.vine && var3 != Material.coral && var3 != Material.leaves && var3 != Material.pumpkin ? 1.0F : 1.5F;
+			return 1.5F;
 		}
+		return 1.0F;
 	}
 	
-	/**
-	 * Current implementations of this method in child classes do not use the
-	 * entry argument beside ev. They just raise the damage on the stack.
-	 */
 	@Override
-	public boolean hitEntity(ItemStack par1ItemStack, EntityLiving par2EntityLiving, EntityLiving par3EntityLiving)
+	public boolean hitEntity(ItemStack stack, EntityLivingBase living, EntityLivingBase living2)
 	{
-		par1ItemStack.damageItem(1, par3EntityLiving);
+		stack.damageItem(1, living2);
 		return true;
 	}
 	
-	public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving)
+	@Override
+	public boolean onBlockDestroyed(ItemStack stack, World world, Block block, int x, int y, int z, EntityLivingBase living)
 	{
-		if (Block.blocksList[par3].getBlockHardness(par2World, par4, par5, par6) != 0.0D)
+		if (block.getBlockHardness(world, x, y, z) != 0.0D)
 		{
-			par1ItemStack.damageItem(2, par7EntityLiving);
+			stack.damageItem(2, living);
 		}
-		
 		return true;
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	/**
-	 * Returns True is the item is renderer in full 3D when hold.
-	 */
 	public boolean isFull3D()
 	{
 		return true;
 	}
 	
-	/**
-	 * returns the action that specifies what animation to play when the items
-	 * is being used
-	 */
 	@Override
-	public EnumAction getItemUseAction(ItemStack par1ItemStack)
+	public EnumAction getItemUseAction(ItemStack stack)
 	{
 		return EnumAction.block;
 	}
 	
-	/**
-	 * How long it takes to use or consume an item
-	 */
 	@Override
-	public int getMaxItemUseDuration(ItemStack par1ItemStack)
+	public int getMaxItemUseDuration(ItemStack stack)
 	{
 		return 72000;
 	}
 	
-	/**
-	 * Called whenever this item is equipped and the right mouse button is
-	 * pressed. Args: itemStack, world, entityPlayer
-	 */
 	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
+	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
 	{
-		par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
-		return par1ItemStack;
-	}
-	
-	/**
-	 * Returns if the item (tool) can harvest results from the block type.
-	 */
-	@Override
-	public boolean canHarvestBlock(Block par1Block)
-	{
-		return par1Block.blockID == Block.web.blockID;
-	}
-	
-	public String func_77825_f()
-	{
-		return this.toolMaterial.toString();
-	}
-	
-	/**
-	 * Return whether this item is repairable in an anvil.
-	 */
-	@Override
-	public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
-	{
-		return this.toolMaterial.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
+		player.setItemInUse(stack, getMaxItemUseDuration(stack));
+		return stack;
 	}
 	
 	@Override
-	@SideOnly(Side.CLIENT)
-	public int getColorFromItemStack(ItemStack par1ItemStack, int par2)
+	public boolean canHarvestBlock(Block block, ItemStack stack)
 	{
-		if (par2 > 0)
-		{
-			return 16777215;
-		}
-		else
-		{
-			int var3 = this.getColor(par1ItemStack);
-			
-			if (var3 < 0)
-			{
-				var3 = 16777215;
-			}
-			
-			return var3;
-		}
+		return (block == Blocks.web);
 	}
 	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public boolean requiresMultipleRenderPasses()
-	{
-		return true;
-	}
-	
-	/**
-	 * Return the enchantability factor of the item, most of the time is based
-	 * on material.
-	 */
 	@Override
 	public int getItemEnchantability()
 	{
-		return this.toolMaterial.getEnchantability();
-	}
-	
-	/**
-	 * Return the armor material for this armor item.
-	 */
-	@Override
-	public EnumToolMaterial getToolMaterial()
-	{
-		return this.toolMaterial;
-	}
-	
-	/**
-	 * Return whether the specified armor ItemStack has a color.
-	 */
-	@Override
-	public boolean hasColor(ItemStack par1ItemStack)
-	{
-		return this.toolMaterial != MTMTools.LEATHER ? false : (!par1ItemStack.hasTagCompound() ? false : (!par1ItemStack.getTagCompound().hasKey("display") ? false : par1ItemStack.getTagCompound().getCompoundTag("display").hasKey("color")));
-	}
-	
-	/**
-	 * Return the color for the specified armor ItemStack.
-	 */
-	@Override
-	public int getColor(ItemStack par1ItemStack)
-	{
-		if (this.toolMaterial != MTMTools.LEATHER)
-		{
-			return -1;
-		}
-		else
-		{
-			NBTTagCompound var2 = par1ItemStack.getTagCompound();
-			
-			if (var2 == null)
-			{
-				return 10511680;
-			}
-			else
-			{
-				NBTTagCompound var3 = var2.getCompoundTag("display");
-				return var3 == null ? 10511680 : (var3.hasKey("color") ? var3.getInteger("color") : 10511680);
-			}
-		}
-	}
-	
-	/**
-	 * Remove the color from the specified armor ItemStack.
-	 */
-	@Override
-	public void removeColor(ItemStack par1ItemStack)
-	{
-		if (this.toolMaterial == MTMTools.LEATHER)
-		{
-			NBTTagCompound var2 = par1ItemStack.getTagCompound();
-			
-			if (var2 != null)
-			{
-				NBTTagCompound var3 = var2.getCompoundTag("display");
-				
-				if (var3.hasKey("color"))
-				{
-					var3.removeTag("color");
-				}
-			}
-		}
+		return this.material.getEnchantability();
 	}
 	
 	@Override
-	public void func_82813_b(ItemStack par1ItemStack, int par2)
+	public boolean getIsRepairable(ItemStack stack, ItemStack material)
 	{
-		if (this.toolMaterial != MTMTools.LEATHER)
+		if (this.material.customCraftingMaterial == material.getItem())
 		{
-			throw new UnsupportedOperationException("Can\'t dye non-leather!");
+			return true;
 		}
-		else
-		{
-			NBTTagCompound var3 = par1ItemStack.getTagCompound();
-			
-			if (var3 == null)
-			{
-				var3 = new NBTTagCompound();
-				par1ItemStack.setTagCompound(var3);
-			}
-			
-			NBTTagCompound var4 = var3.getCompoundTag("display");
-			
-			if (!var3.hasKey("display"))
-			{
-				var3.setCompoundTag("display", var4);
-			}
-			
-			var4.setInteger("color", par2);
-		}
+		return super.getIsRepairable(stack, material);
+	}
+	
+	@Override
+	public Multimap getItemAttributeModifiers()
+	{
+		Multimap localMultimap = super.getItemAttributeModifiers();
+		
+		localMultimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon modifier", this.damage, 0));
+		
+		return localMultimap;
 	}
 }

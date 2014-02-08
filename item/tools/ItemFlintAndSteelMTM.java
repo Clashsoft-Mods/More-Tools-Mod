@@ -6,9 +6,8 @@ import net.minecraft.item.ItemFlintAndSteel;
 
 public class ItemFlintAndSteelMTM extends ItemFlintAndSteel
 {
-	public ItemFlintAndSteelMTM(int itemID, int maxDamage)
+	public ItemFlintAndSteelMTM(int maxDamage)
 	{
-		super(itemID);
 		this.maxStackSize = 1;
 		this.setMaxDamage(maxDamage);
 		this.setCreativeTab(CreativeTabs.tabTools);

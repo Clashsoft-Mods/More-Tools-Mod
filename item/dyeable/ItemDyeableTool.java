@@ -1,46 +1,47 @@
 package clashsoft.mods.moretools.item.dyeable;
 
-import clashsoft.mods.moretools.addons.MTMTools;
-import clashsoft.mods.moretools.item.tools.ItemToolMTM;
+import java.util.Set;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 
-public class ItemDyeableTool extends ItemToolMTM
+public class ItemDyeableTool extends ItemTool
 {
-	private Icon[]				icons	= new Icon[2];
+	private IIcon[]					icons	= new IIcon[2];
 	
-	private EnumToolMaterial	material;
+	protected final ToolMaterial	material;
+	protected final float			damage;
 	
-	public ItemDyeableTool(int par1, float par2, EnumToolMaterial par3EnumToolMaterial, Block[] par4ArrayOfBlock)
+	public ItemDyeableTool(float weaponDamage, ToolMaterial toolMaterial, Set blocks)
 	{
-		super(par1, par2, par3EnumToolMaterial, par4ArrayOfBlock);
-		material = par3EnumToolMaterial;
+		super(weaponDamage, toolMaterial, blocks);
+		this.material = toolMaterial;
+		this.damage = weaponDamage + toolMaterial.getDamageVsEntity();
 	}
 	
 	@Override
-	public int getColorFromItemStack(ItemStack par1ItemStack, int par2)
+	public int getColorFromItemStack(ItemStack stack, int pass)
 	{
-		if (par2 > 0)
+		if (pass > 0)
 		{
 			return 16777215;
 		}
 		else
 		{
-			int var3 = this.getColor(par1ItemStack);
+			int color = this.getColor(stack);
 			
-			if (var3 < 0)
+			if (color < 0)
 			{
-				var3 = 16777215;
+				color = 16777215;
 			}
 			
-			return var3;
+			return color;
 		}
 	}
 	
@@ -50,131 +51,85 @@ public class ItemDyeableTool extends ItemToolMTM
 		return true;
 	}
 	
-	/**
-	 * Return the enchantability factor of the item, most of the time is based
-	 * on material.
-	 */
 	@Override
 	public int getItemEnchantability()
 	{
 		return this.material.getEnchantability();
 	}
 	
-	/**
-	 * Return the armor material for this armor item.
-	 */
-	public EnumToolMaterial getToolMaterial()
+	public ToolMaterial getToolMaterial()
 	{
 		return this.material;
 	}
 	
-	/**
-	 * Return whether the specified armor ItemStack has a color.
-	 */
-	public boolean hasColor(ItemStack par1ItemStack)
+	public boolean hasColor(ItemStack stack)
 	{
-		return this.material != MTMTools.LEATHER ? false : (!par1ItemStack.hasTagCompound() ? false : (!par1ItemStack.getTagCompound().hasKey("display") ? false : par1ItemStack.getTagCompound().getCompoundTag("display").hasKey("color")));
+		return this.getColor(stack) != 10511680;
 	}
 	
-	/**
-	 * Return the color for the specified armor ItemStack.
-	 */
-	public int getColor(ItemStack par1ItemStack)
+	public int getColor(ItemStack stack)
 	{
-		if (this.material != MTMTools.LEATHER)
+		NBTTagCompound compound = stack.getTagCompound();
+		
+		if (compound == null)
 		{
-			return -1;
+			return 10511680;
 		}
 		else
 		{
-			NBTTagCompound var2 = par1ItemStack.getTagCompound();
-			
-			if (var2 == null)
-			{
-				return 10511680;
-			}
-			else
-			{
-				NBTTagCompound var3 = var2.getCompoundTag("display");
-				return var3 == null ? 10511680 : (var3.hasKey("color") ? var3.getInteger("color") : 10511680);
-			}
+			NBTTagCompound display = compound.getCompoundTag("display");
+			return display == null ? 10511680 : (display.hasKey("color") ? display.getInteger("color") : 10511680);
 		}
 	}
 	
-	/**
-	 * Gets an icon index based on an item's damage value and the given render
-	 * pass
-	 */
 	@Override
-	public Icon getIconFromDamageForRenderPass(int par1, int par2)
+	public IIcon getIconFromDamageForRenderPass(int metadata, int pass)
 	{
-		return icons[par2 < 2 ? par2 : 1];
+		return this.icons[pass < 2 ? pass : 1];
 	}
 	
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerIcons(IconRegister par1IconRegister) // Registers the
-																// Icons
+	public void registerIcons(IIconRegister iconRegister)
 	{
-		String s = this instanceof ItemDyeableSword ? "sword" : this instanceof ItemDyeableShovel ? "spade" : this instanceof ItemDyeablePickaxe ? "pick" : this instanceof ItemDyeableAxe ? "axe" : "hoe";
-		this.icons[0] = par1IconRegister.registerIcon("l" + s + "1");
-		this.icons[1] = par1IconRegister.registerIcon("l" + s + "2");
+		String s = this instanceof ItemDyeableSword ? "sword" : this instanceof ItemDyeableSpade ? "spade" : this instanceof ItemDyeablePickaxe ? "pick" : this instanceof ItemDyeableAxe ? "axe" : "hoe";
+		this.icons[0] = iconRegister.registerIcon("l" + s + "1");
+		this.icons[1] = iconRegister.registerIcon("l" + s + "2");
 	}
 	
-	/**
-	 * Remove the color from the specified armor ItemStack.
-	 */
-	public void removeColor(ItemStack par1ItemStack)
+	public void removeColor(ItemStack stack)
 	{
-		if (this.material == MTMTools.LEATHER)
+		NBTTagCompound compound = stack.getTagCompound();
+		
+		if (compound != null)
 		{
-			NBTTagCompound var2 = par1ItemStack.getTagCompound();
+			NBTTagCompound display = compound.getCompoundTag("display");
 			
-			if (var2 != null)
+			if (display.hasKey("color"))
 			{
-				NBTTagCompound var3 = var2.getCompoundTag("display");
+				display.removeTag("color");
 				
-				if (var3.hasKey("color"))
-				{
-					var3.removeTag("color");
-				}
 			}
 		}
 	}
 	
-	public void func_82813_b(ItemStack par1ItemStack, int par2)
+	public void dye(ItemStack stack, int color)
 	{
-		if (this.material != MTMTools.LEATHER)
+		NBTTagCompound compound = stack.getTagCompound();
+		
+		if (compound == null)
 		{
-			throw new UnsupportedOperationException("Can\'t dye non-leather!");
+			compound = new NBTTagCompound();
+			stack.setTagCompound(compound);
 		}
-		else
-		{
-			NBTTagCompound var3 = par1ItemStack.getTagCompound();
-			
-			if (var3 == null)
-			{
-				var3 = new NBTTagCompound();
-				par1ItemStack.setTagCompound(var3);
-			}
-			
-			NBTTagCompound var4 = var3.getCompoundTag("display");
-			
-			if (!var3.hasKey("display"))
-			{
-				var3.setCompoundTag("display", var4);
-			}
-			
-			var4.setInteger("color", par2);
-		}
+		
+		NBTTagCompound display = compound.getCompoundTag("display");
+		display.setInteger("color", color);
 	}
 	
-	/**
-	 * Return whether this item is repairable in an anvil.
-	 */
 	@Override
-	public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
+	public boolean getIsRepairable(ItemStack stack, ItemStack material)
 	{
-		return this.material.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
+		return this.material.customCraftingMaterial == material.getItem() ? true : super.getIsRepairable(stack, material);
 	}
 }
