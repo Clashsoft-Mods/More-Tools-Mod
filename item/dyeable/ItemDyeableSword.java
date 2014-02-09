@@ -26,8 +26,8 @@ public class ItemDyeableSword extends ItemDyeableTool
 		super(4F, toolMaterial, Collections.EMPTY_SET);
 		
 		this.maxStackSize = 1;
-		setMaxDamage(toolMaterial.getMaxUses());
-		setCreativeTab(CreativeTabs.tabCombat);
+		this.setMaxDamage(toolMaterial.getMaxUses());
+		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
 	@Override
@@ -85,7 +85,7 @@ public class ItemDyeableSword extends ItemDyeableTool
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
 	{
-		player.setItemInUse(stack, getMaxItemUseDuration(stack));
+		player.setItemInUse(stack, this.getMaxItemUseDuration(stack));
 		return stack;
 	}
 	

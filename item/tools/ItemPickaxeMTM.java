@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class ItemPickaxeMTM extends ItemPickaxe
 {
-	public EnumRarity		rarity;
+	public EnumRarity	rarity;
 	
 	public ItemPickaxeMTM(ToolMaterial material)
 	{

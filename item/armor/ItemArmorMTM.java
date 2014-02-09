@@ -18,15 +18,16 @@ public class ItemArmorMTM extends ItemArmor
 	/**
 	 * Stores the armor type: 0 is helmet, 1 is plate, 2 is legs and 3 is boots
 	 */
-	public final int				armorType;
+	public final int			armorType;
 	
 	/** Holds the amount of damage that the armor reduces at full durability. */
-	public final int				damageReduceAmount;
+	public final int			damageReduceAmount;
 	
 	/**
-	 * Used on RenderPlayer to select the correspondent armor to be rendered on the player: 0 is cloth, 1 is chain, 2 is iron, 3 is diamond and 4 is gold.
+	 * Used on RenderPlayer to select the correspondent armor to be rendered on the player: 0 is
+	 * cloth, 1 is chain, 2 is iron, 3 is diamond and 4 is gold.
 	 */
-	public final int				renderIndex;
+	public final int			renderIndex;
 	
 	/** The ArmorMaterial used for this ItemArmor */
 	public final ArmorMaterial	material;

@@ -1,6 +1,6 @@
 package clashsoft.mods.moretools.client;
 
-import clashsoft.cslib.minecraft.util.CSLang;
+import clashsoft.cslib.minecraft.lang.CSLang;
 import clashsoft.mods.moretools.common.MTMCommonProxy;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 

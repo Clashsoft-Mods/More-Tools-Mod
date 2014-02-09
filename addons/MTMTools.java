@@ -4,14 +4,14 @@ import static net.minecraft.item.EnumRarity.common;
 import static net.minecraft.item.EnumRarity.epic;
 import static net.minecraft.item.EnumRarity.rare;
 import static net.minecraft.item.EnumRarity.uncommon;
-import clashsoft.cslib.addon.Addon;
-import clashsoft.cslib.minecraft.CustomBlock;
-import clashsoft.cslib.minecraft.CustomEnchantment;
-import clashsoft.cslib.minecraft.ItemCustomBlock;
-import clashsoft.cslib.minecraft.util.CSBlocks;
-import clashsoft.cslib.minecraft.util.CSCrafting;
-import clashsoft.cslib.minecraft.util.CSItems;
-import clashsoft.cslib.minecraft.util.CSLang;
+import clashsoft.cslib.minecraft.addon.Addon;
+import clashsoft.cslib.minecraft.block.CSBlocks;
+import clashsoft.cslib.minecraft.block.CustomBlock;
+import clashsoft.cslib.minecraft.crafting.CSCrafting;
+import clashsoft.cslib.minecraft.enchantment.CustomEnchantment;
+import clashsoft.cslib.minecraft.item.CSItems;
+import clashsoft.cslib.minecraft.item.block.ItemCustomBlock;
+import clashsoft.cslib.minecraft.lang.CSLang;
 import clashsoft.mods.moretools.block.BlockGlowing;
 import clashsoft.mods.moretools.block.BlockSpaceblock;
 import clashsoft.mods.moretools.crafting.RecipesToolDyes;
@@ -207,11 +207,11 @@ public class MTMTools
 	public static Item			fishHoe				= (new ItemHoeMTM(FISH)).setUnlocalizedName("fishHoe");
 	public static Item			fishSword			= (new ItemSwordMTM(FISH, common)).setUnlocalizedName("fishSword");
 	
-	public static Item			baconPick			= (new ItemPickaxeMTM( BACON)).setUnlocalizedName("baconPickaxe");
-	public static Item			baconShovel			= (new ItemSpadeMTM( BACON)).setUnlocalizedName("baconShovel");
-	public static Item			baconAxe			= (new ItemAxeMTM( BACON)).setUnlocalizedName("baconAxe");
-	public static Item			baconHoe			= (new ItemHoeMTM( BACON)).setUnlocalizedName("baconHoe");
-	public static Item			baconSword			= (new ItemSwordMTM( BACON, common)).setUnlocalizedName("baconSword");
+	public static Item			baconPick			= (new ItemPickaxeMTM(BACON)).setUnlocalizedName("baconPickaxe");
+	public static Item			baconShovel			= (new ItemSpadeMTM(BACON)).setUnlocalizedName("baconShovel");
+	public static Item			baconAxe			= (new ItemAxeMTM(BACON)).setUnlocalizedName("baconAxe");
+	public static Item			baconHoe			= (new ItemHoeMTM(BACON)).setUnlocalizedName("baconHoe");
+	public static Item			baconSword			= (new ItemSwordMTM(BACON, common)).setUnlocalizedName("baconSword");
 	
 	public static Item			leatherPick			= (new ItemDyeablePickaxe(LEATHER)).setUnlocalizedName("leatherPickaxe");
 	public static Item			leatherShovel		= (new ItemDyeableSpade(LEATHER)).setUnlocalizedName("leatherShovel");
@@ -374,21 +374,137 @@ public class MTMTools
 		CSItems.addTool(endstoneAxe, "Endstone Axe", end_stone, 3);
 		CSItems.addTool(endstoneHoe, "Endstone Hoe", end_stone, 4);
 		
-		CSItems.addItemWithRecipe(excaliburSword, "Excalibur", 1, new Object[] { "gNg", "hDh", "d|d", 'g', Items.ghast_tear, 'N', Items.nether_star, 'D', Blocks.dragon_egg, 'h', new ItemStack(Items.skull, 1, 1), '|', Items.blaze_rod, 'd', Items.diamond });
+		CSItems.addItemWithRecipe(excaliburSword, "Excalibur", 1, new Object[] {
+				"gNg",
+				"hDh",
+				"d|d",
+				'g',
+				Items.ghast_tear,
+				'N',
+				Items.nether_star,
+				'D',
+				Blocks.dragon_egg,
+				'h',
+				new ItemStack(Items.skull, 1, 1),
+				'|',
+				Items.blaze_rod,
+				'd',
+				Items.diamond });
 		
-		CSItems.addItemWithRecipe(godSword, "God's Sword", 1, new Object[] { "gGg", "gGg", " b ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
-		CSItems.addItemWithRecipe(godShovel, "God's Shovel", 1, new Object[] { "gGg", " b ", " b ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
-		CSItems.addItemWithRecipe(godPick, "God's Pickaxe", 1, new Object[] { "GGG", "gbg", " b ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
-		CSItems.addItemWithRecipe(godAxe, "God's Axe", 1, new Object[] { "GGg", "Gb ", "gb ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
-		CSItems.addItemWithRecipe(godHoe, "God's Hoe", 1, new Object[] { "GGg", "gb ", " b ", 'g', Items.glowstone_dust, 'G', Blocks.gold_block, 'b', Items.stick });
+		CSItems.addItemWithRecipe(godSword, "God's Sword", 1, new Object[] {
+				"gGg",
+				"gGg",
+				" b ",
+				'g',
+				Items.glowstone_dust,
+				'G',
+				Blocks.gold_block,
+				'b',
+				Items.stick });
+		CSItems.addItemWithRecipe(godShovel, "God's Shovel", 1, new Object[] {
+				"gGg",
+				" b ",
+				" b ",
+				'g',
+				Items.glowstone_dust,
+				'G',
+				Blocks.gold_block,
+				'b',
+				Items.stick });
+		CSItems.addItemWithRecipe(godPick, "God's Pickaxe", 1, new Object[] {
+				"GGG",
+				"gbg",
+				" b ",
+				'g',
+				Items.glowstone_dust,
+				'G',
+				Blocks.gold_block,
+				'b',
+				Items.stick });
+		CSItems.addItemWithRecipe(godAxe, "God's Axe", 1, new Object[] {
+				"GGg",
+				"Gb ",
+				"gb ",
+				'g',
+				Items.glowstone_dust,
+				'G',
+				Blocks.gold_block,
+				'b',
+				Items.stick });
+		CSItems.addItemWithRecipe(godHoe, "God's Hoe", 1, new Object[] {
+				"GGg",
+				"gb ",
+				" b ",
+				'g',
+				Items.glowstone_dust,
+				'G',
+				Blocks.gold_block,
+				'b',
+				Items.stick });
 		
-		CSItems.addItemWithRecipe(luziferSword, "Luzifers's Sword", 1, new Object[] { "rRr", "rRr", " b ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
-		CSItems.addItemWithRecipe(luziferShovel, "Luzifers's Shovel", 1, new Object[] { "rRr", " b ", " b ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
-		CSItems.addItemWithRecipe(luziferPick, "Luzifers's Pickaxe", 1, new Object[] { "RRR", "rbr", " b ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
-		CSItems.addItemWithRecipe(luziferAxe, "Luzifers's Axe", 1, new Object[] { "RRg", "Rb ", "rb ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
-		CSItems.addItemWithRecipe(luziferHoe, "Luzifers's Hoe", 1, new Object[] { "RRg", "rb ", " b ", 'r', Items.redstone, 'R', Blocks.nether_brick, 'b', Items.blaze_rod });
+		CSItems.addItemWithRecipe(luziferSword, "Luzifers's Sword", 1, new Object[] {
+				"rRr",
+				"rRr",
+				" b ",
+				'r',
+				Items.redstone,
+				'R',
+				Blocks.nether_brick,
+				'b',
+				Items.blaze_rod });
+		CSItems.addItemWithRecipe(luziferShovel, "Luzifers's Shovel", 1, new Object[] {
+				"rRr",
+				" b ",
+				" b ",
+				'r',
+				Items.redstone,
+				'R',
+				Blocks.nether_brick,
+				'b',
+				Items.blaze_rod });
+		CSItems.addItemWithRecipe(luziferPick, "Luzifers's Pickaxe", 1, new Object[] {
+				"RRR",
+				"rbr",
+				" b ",
+				'r',
+				Items.redstone,
+				'R',
+				Blocks.nether_brick,
+				'b',
+				Items.blaze_rod });
+		CSItems.addItemWithRecipe(luziferAxe, "Luzifers's Axe", 1, new Object[] {
+				"RRg",
+				"Rb ",
+				"rb ",
+				'r',
+				Items.redstone,
+				'R',
+				Blocks.nether_brick,
+				'b',
+				Items.blaze_rod });
+		CSItems.addItemWithRecipe(luziferHoe, "Luzifers's Hoe", 1, new Object[] {
+				"RRg",
+				"rb ",
+				" b ",
+				'r',
+				Items.redstone,
+				'R',
+				Blocks.nether_brick,
+				'b',
+				Items.blaze_rod });
 		
-		CSItems.addItemWithRecipe(lightsaberShaft, "Lightsaber Shaft", 1, new Object[] { "idi", "rGi", "iii", Character.valueOf('i'), Items.iron_ingot, 'r', Items.diamond, 'r', Items.redstone, 'G', Blocks.glowstone });
+		CSItems.addItemWithRecipe(lightsaberShaft, "Lightsaber Shaft", 1, new Object[] {
+				"idi",
+				"rGi",
+				"iii",
+				Character.valueOf('i'),
+				Items.iron_ingot,
+				'r',
+				Items.diamond,
+				'r',
+				Items.redstone,
+				'G',
+				Blocks.glowstone });
 		CSItems.addItem(lightsaberBlue, "Blue Lightsaber");
 		CSItems.addItem(lightsaberGreen, "Green Lightsaber");
 		CSItems.addItem(lightsaberPurple, "Purple Lightsaber");
@@ -449,15 +565,53 @@ public class MTMTools
 		CSItems.addTool(slimeHoe, "Slime Hoe", slime, 3);
 		CSItems.addTool(slimeSword, "Slime Sword", slime, 4);
 		
-		CSItems.addItemWithShapelessRecipe(spaceMultitool, "Space Multitool", 1, new Object[] { spacePick, spaceShovel, spaceAxe, spaceHoe, spaceSwordAdvanced });
-		CSItems.addItemWithRecipe(spaceBow, "Space Bow", 1, new Object[] { "sS ", "s S", "sS ", 'S', spaceIngot, 's', Items.string });
-		CSItems.addItemWithRecipe(spaceArrow, "Space Arrow", 4, new Object[] { "s", "|", "f", 's', spaceIngot, '|', Items.stick, 'f', Items.feather });
-		CSItems.addItemWithRecipe(spaceIngot, "Space Ingot", 9, new Object[] { "s", 's', space_2 });
+		CSItems.addItemWithShapelessRecipe(spaceMultitool, "Space Multitool", 1, new Object[] {
+				spacePick,
+				spaceShovel,
+				spaceAxe,
+				spaceHoe,
+				spaceSwordAdvanced });
+		CSItems.addItemWithRecipe(spaceBow, "Space Bow", 1, new Object[] {
+				"sS ",
+				"s S",
+				"sS ",
+				'S',
+				spaceIngot,
+				's',
+				Items.string });
+		CSItems.addItemWithRecipe(spaceArrow, "Space Arrow", 4, new Object[] {
+				"s",
+				"|",
+				"f",
+				's',
+				spaceIngot,
+				'|',
+				Items.stick,
+				'f',
+				Items.feather });
+		CSItems.addItemWithRecipe(spaceIngot, "Space Ingot", 9, new Object[] {
+				"s",
+				's',
+				space_2 });
 		
-		CSItems.addItemWithRecipe(blazerodAndSteel, "Blazerod and Steel", 1, new Object[] { "i ", " b", 'i', Items.iron_ingot, 'b', Items.blaze_rod });
+		CSItems.addItemWithRecipe(blazerodAndSteel, "Blazerod and Steel", 1, new Object[] {
+				"i ",
+				" b",
+				'i',
+				Items.iron_ingot,
+				'b',
+				Items.blaze_rod });
 		
-		CSItems.addItemWithRecipe(goldShears, "Gold Shears", 1, new Object[] { "X ", " X", 'X', Items.gold_ingot });
-		CSItems.addItemWithRecipe(diamondShears, "Diamond Shears", 1, new Object[] { "X ", " X", 'X', Items.diamond });
+		CSItems.addItemWithRecipe(goldShears, "Gold Shears", 1, new Object[] {
+				"X ",
+				" X",
+				'X',
+				Items.gold_ingot });
+		CSItems.addItemWithRecipe(diamondShears, "Diamond Shears", 1, new Object[] {
+				"X ",
+				" X",
+				'X',
+				Items.diamond });
 	}
 	
 	public void addBlocks()

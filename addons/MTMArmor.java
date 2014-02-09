@@ -1,7 +1,7 @@
 package clashsoft.mods.moretools.addons;
 
-import clashsoft.cslib.addon.Addon;
-import clashsoft.cslib.minecraft.util.CSItems;
+import clashsoft.cslib.minecraft.addon.Addon;
+import clashsoft.cslib.minecraft.item.CSItems;
 import clashsoft.mods.moretools.client.MTMClientProxy;
 import clashsoft.mods.moretools.item.armor.ItemArmorMTM;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -19,133 +19,225 @@ public class MTMArmor
 	
 	// Armor Materials
 	
-	public static ArmorMaterial	OBSIDIAN		= EnumHelper.addArmorMaterial("OBSIDIAN", 2048, new int[] { 10, 15, 13, 6 }, 7);
-	public static ArmorMaterial	REDSTONE		= EnumHelper.addArmorMaterial("REDSTONE", 100, new int[] { 1, 4, 3, 2 }, 10);
-	public static ArmorMaterial	COAL			= EnumHelper.addArmorMaterial("COAL", 128, new int[] { 1, 5, 3, 2 }, 10);
-	public static ArmorMaterial	LAPIS			= EnumHelper.addArmorMaterial("LAPIS", 128, new int[] { 1, 5, 3, 2 }, 10);
-	public static ArmorMaterial	END				= EnumHelper.addArmorMaterial("END", 1024, new int[] { 3, 8, 7, 6 }, 10);
-	public static ArmorMaterial	SPACE			= EnumHelper.addArmorMaterial("SPACE", 700, new int[] { 7, 10, 9, 8 }, 15);
-	public static ArmorMaterial	BONE			= EnumHelper.addArmorMaterial("BONE", 24, new int[] { 1, 5, 3, 2 }, 10);
-	public static ArmorMaterial	REED			= EnumHelper.addArmorMaterial("REED", 16, new int[] { 1, 5, 3, 2 }, 10);
-	public static ArmorMaterial	BLAZEROD		= EnumHelper.addArmorMaterial("BLAZEROD", 64, new int[] { 4, 10, 7, 3 }, 10);
-	public static ArmorMaterial	DIRT			= EnumHelper.addArmorMaterial("DIRT", 16, new int[] { 1, 1, 1, 1 }, 10);
-	public static ArmorMaterial	GLASS			= EnumHelper.addArmorMaterial("GLASS", 16, new int[] { 1, 1, 1, 1 }, 10);
-	public static ArmorMaterial	SANDSTONE		= EnumHelper.addArmorMaterial("SANDSTONE", 64, new int[] { 2, 4, 3, 2 }, 10);
-	public static ArmorMaterial	BRICK			= EnumHelper.addArmorMaterial("BRICK", 32, new int[] { 2, 4, 3, 2 }, 10);
-	public static ArmorMaterial	ENDSTONE		= EnumHelper.addArmorMaterial("ENDSTONE", 100, new int[] { 3, 5, 4, 2 }, 10);
+	public static ArmorMaterial	OBSIDIAN		= EnumHelper.addArmorMaterial("OBSIDIAN", 2048, new int[] {
+			10,
+			15,
+			13,
+			6									}, 7);
+	public static ArmorMaterial	REDSTONE		= EnumHelper.addArmorMaterial("REDSTONE", 100, new int[] {
+			1,
+			4,
+			3,
+			2									}, 10);
+	public static ArmorMaterial	COAL			= EnumHelper.addArmorMaterial("COAL", 128, new int[] {
+			1,
+			5,
+			3,
+			2									}, 10);
+	public static ArmorMaterial	LAPIS			= EnumHelper.addArmorMaterial("LAPIS", 128, new int[] {
+			1,
+			5,
+			3,
+			2									}, 10);
+	public static ArmorMaterial	END				= EnumHelper.addArmorMaterial("END", 1024, new int[] {
+			3,
+			8,
+			7,
+			6									}, 10);
+	public static ArmorMaterial	SPACE			= EnumHelper.addArmorMaterial("SPACE", 700, new int[] {
+			7,
+			10,
+			9,
+			8									}, 15);
+	public static ArmorMaterial	BONE			= EnumHelper.addArmorMaterial("BONE", 24, new int[] {
+			1,
+			5,
+			3,
+			2									}, 10);
+	public static ArmorMaterial	REED			= EnumHelper.addArmorMaterial("REED", 16, new int[] {
+			1,
+			5,
+			3,
+			2									}, 10);
+	public static ArmorMaterial	BLAZEROD		= EnumHelper.addArmorMaterial("BLAZEROD", 64, new int[] {
+			4,
+			10,
+			7,
+			3									}, 10);
+	public static ArmorMaterial	DIRT			= EnumHelper.addArmorMaterial("DIRT", 16, new int[] {
+			1,
+			1,
+			1,
+			1									}, 10);
+	public static ArmorMaterial	GLASS			= EnumHelper.addArmorMaterial("GLASS", 16, new int[] {
+			1,
+			1,
+			1,
+			1									}, 10);
+	public static ArmorMaterial	SANDSTONE		= EnumHelper.addArmorMaterial("SANDSTONE", 64, new int[] {
+			2,
+			4,
+			3,
+			2									}, 10);
+	public static ArmorMaterial	BRICK			= EnumHelper.addArmorMaterial("BRICK", 32, new int[] {
+			2,
+			4,
+			3,
+			2									}, 10);
+	public static ArmorMaterial	ENDSTONE		= EnumHelper.addArmorMaterial("ENDSTONE", 100, new int[] {
+			3,
+			5,
+			4,
+			2									}, 10);
 	// public static EnumArmorMaterial EPIC =
 	// EnumHelper.addArmorMaterial("EPIC", 4096, new int[] { 13, 18, 15, 10 },
 	// 1);
-	public static ArmorMaterial	INVISIBILITY	= EnumHelper.addArmorMaterial("INVISIBILITY", 24, new int[] { 2, 7, 5, 2 }, 10);
-	public static ArmorMaterial	HALLOWED		= EnumHelper.addArmorMaterial("HALLOWED", 512, new int[] { 8, 10, 9, 5 }, 7);
-	public static ArmorMaterial	GODDAWN			= EnumHelper.addArmorMaterial("GODDAWN", 512, new int[] { 8, 10, 9, 5 }, 7);
-	public static ArmorMaterial	EMERALD			= EnumHelper.addArmorMaterial("EMERALD", 512, new int[] { 3, 8, 6, 3 }, 13);
-	public static ArmorMaterial	NETHERSTAR		= EnumHelper.addArmorMaterial("NETHERSTAR", 512, new int[] { 11, 16, 14, 7 }, 20);
-	public static ArmorMaterial	POTATO			= EnumHelper.addArmorMaterial("POTATO", 16, new int[] { 1, 3, 3, 2 }, 7);
+	public static ArmorMaterial	INVISIBILITY	= EnumHelper.addArmorMaterial("INVISIBILITY", 24, new int[] {
+			2,
+			7,
+			5,
+			2									}, 10);
+	public static ArmorMaterial	HALLOWED		= EnumHelper.addArmorMaterial("HALLOWED", 512, new int[] {
+			8,
+			10,
+			9,
+			5									}, 7);
+	public static ArmorMaterial	GODDAWN			= EnumHelper.addArmorMaterial("GODDAWN", 512, new int[] {
+			8,
+			10,
+			9,
+			5									}, 7);
+	public static ArmorMaterial	EMERALD			= EnumHelper.addArmorMaterial("EMERALD", 512, new int[] {
+			3,
+			8,
+			6,
+			3									}, 13);
+	public static ArmorMaterial	NETHERSTAR		= EnumHelper.addArmorMaterial("NETHERSTAR", 512, new int[] {
+			11,
+			16,
+			14,
+			7									}, 20);
+	public static ArmorMaterial	POTATO			= EnumHelper.addArmorMaterial("POTATO", 16, new int[] {
+			1,
+			3,
+			3,
+			2									}, 7);
 	public static ArmorMaterial	CARROT			= POTATO;
-	public static ArmorMaterial	FISH			= EnumHelper.addArmorMaterial("FISH", 16, new int[] { 1, 3, 2, 1 }, 7);
+	public static ArmorMaterial	FISH			= EnumHelper.addArmorMaterial("FISH", 16, new int[] {
+			1,
+			3,
+			2,
+			1									}, 7);
 	public static ArmorMaterial	BACON			= FISH;
-	public static ArmorMaterial	GLOWSTONE		= EnumHelper.addArmorMaterial("GLOWSTONE", 64, new int[] { 1, 1, 1, 1 }, 10);
-	public static ArmorMaterial	SLIME			= EnumHelper.addArmorMaterial("SLIME", 80, new int[] { 1, 3, 2, 1 }, 7);
+	public static ArmorMaterial	GLOWSTONE		= EnumHelper.addArmorMaterial("GLOWSTONE", 64, new int[] {
+			1,
+			1,
+			1,
+			1									}, 10);
+	public static ArmorMaterial	SLIME			= EnumHelper.addArmorMaterial("SLIME", 80, new int[] {
+			1,
+			3,
+			2,
+			1									}, 7);
 	
 	// Items
 	
 	public static Item			obsidianHelmet;
 	public static Item			obsidianChestplate;
 	public static Item			obsidianLeggings;
-	public static Item			obsidianBoots;																						;
+	public static Item			obsidianBoots;						;
 	public static Item			redstoneHelmet;
 	public static Item			redstoneChestplate;
 	public static Item			redstoneLeggings;
-	public static Item			redstoneBoots;																						;
+	public static Item			redstoneBoots;						;
 	public static Item			coalHelmet;
 	public static Item			coalChestplate;
 	public static Item			coalLeggings;
-	public static Item			coalBoots;																							;
+	public static Item			coalBoots;							;
 	public static Item			lapisHelmet;
 	public static Item			lapisChestplate;
 	public static Item			lapisLeggings;
-	public static Item			lapisBoots;																							;
+	public static Item			lapisBoots;							;
 	public static Item			enderHelmet;
 	public static Item			enderChestplate;
 	public static Item			enderLeggings;
-	public static Item			enderBoots;																							;
+	public static Item			enderBoots;							;
 	public static Item			spaceHelmet;
 	public static Item			spaceChestplate;
 	public static Item			spaceLeggings;
-	public static Item			spaceBoots;																							;
+	public static Item			spaceBoots;							;
 	public static Item			boneHelmet;
 	public static Item			boneChestplate;
 	public static Item			boneLeggings;
-	public static Item			boneBoots;																							;
+	public static Item			boneBoots;							;
 	public static Item			sugarcaneHelmet;
 	public static Item			sugarcaneChestplate;
 	public static Item			sugarcaneLeggings;
-	public static Item			sugarcaneBoots;																						;
+	public static Item			sugarcaneBoots;						;
 	public static Item			blazerodHelmet;
 	public static Item			blazerodChestplate;
 	public static Item			blazerodLeggings;
-	public static Item			blazerodBoots;																						;
+	public static Item			blazerodBoots;						;
 	public static Item			dirtHelmet;
 	public static Item			dirtChestplate;
 	public static Item			dirtLeggings;
-	public static Item			dirtBoots;																							;
+	public static Item			dirtBoots;							;
 	public static Item			glassHelmet;
 	public static Item			glassChestplate;
 	public static Item			glassLeggings;
-	public static Item			glassBoots;																							;
+	public static Item			glassBoots;							;
 	public static Item			sandstoneHelmet;
 	public static Item			sandstoneChestplate;
 	public static Item			sandstoneLeggings;
-	public static Item			sandstoneBoots;																						;
+	public static Item			sandstoneBoots;						;
 	public static Item			brickHelmet;
 	public static Item			brickChestplate;
 	public static Item			brickLeggings;
-	public static Item			brickBoots;																							;
+	public static Item			brickBoots;							;
 	public static Item			endstoneHelmet;
 	public static Item			endstoneChestplate;
 	public static Item			endstoneLeggings;
-	public static Item			endstoneBoots;																						;
+	public static Item			endstoneBoots;						;
 	public static Item			godHelmet;
 	public static Item			godChestplate;
 	public static Item			godLeggings;
-	public static Item			godBoots;																							;
+	public static Item			godBoots;							;
 	public static Item			luziferHelmet;
 	public static Item			luziferChestplate;
 	public static Item			luziferLeggings;
-	public static Item			luziferBoots;																						;
+	public static Item			luziferBoots;						;
 	public static Item			invisibilityHelmet;
 	public static Item			invisibilityChestplate;
 	public static Item			invisibilityLeggings;
-	public static Item			invisibilityBoots;																					;
+	public static Item			invisibilityBoots;					;
 	public static Item			emeraldHelmet;
 	public static Item			emeraldChestplate;
 	public static Item			emeraldLeggings;
-	public static Item			emeraldBoots;																						;
+	public static Item			emeraldBoots;						;
 	public static Item			netherstarHelmet;
 	public static Item			netherstarChestplate;
 	public static Item			netherstarLeggings;
-	public static Item			netherstarBoots;																					;
+	public static Item			netherstarBoots;					;
 	public static Item			potatoHelmet;
 	public static Item			potatoChestplate;
 	public static Item			potatoLeggings;
-	public static Item			potatoBoots;																						;
+	public static Item			potatoBoots;						;
 	public static Item			carrotHelmet;
 	public static Item			carrotChestplate;
 	public static Item			carrotLeggings;
-	public static Item			carrotBoots;																						;
+	public static Item			carrotBoots;						;
 	public static Item			fishHelmet;
 	public static Item			fishChestplate;
 	public static Item			fishLeggings;
-	public static Item			fishBoots;																							;
+	public static Item			fishBoots;							;
 	public static Item			baconHelmet;
 	public static Item			baconChestplate;
 	public static Item			baconLeggings;
-	public static Item			baconBoots;																							;
+	public static Item			baconBoots;							;
 	public static Item			glowstoneHelmet;
 	public static Item			glowstoneChestplate;
 	public static Item			glowstoneLeggings;
-	public static Item			glowstoneBoots;																						;
+	public static Item			glowstoneBoots;						;
 	public static Item			slimeHelmet;
 	public static Item			slimeChestplate;
 	public static Item			slimeLeggings;
@@ -153,8 +245,8 @@ public class MTMArmor
 	
 	public void load(FMLInitializationEvent event)
 	{
-		init();
-		load();
+		this.init();
+		this.load();
 	}
 	
 	private void init()
@@ -357,20 +449,100 @@ public class MTMArmor
 		CSItems.addArmor(endstoneLeggings, "Endstone Leggings", MTMTools.end_stone, 2);
 		CSItems.addArmor(endstoneBoots, "Endstone Boots", MTMTools.end_stone, 3);
 		
-		CSItems.addItemWithRecipe(godHelmet, "God's Helmet", 1, new Object[] { "GGG", "GgG", 'G', Blocks.gold_block, 'g', Items.glowstone_dust });
-		CSItems.addItemWithRecipe(godChestplate, "God's Chestplate", 1, new Object[] { "GgG", "GGG", "GGG", 'G', Blocks.gold_block, 'g', Items.glowstone_dust });
-		CSItems.addItemWithRecipe(godLeggings, "God's Leggings", 1, new Object[] { "GGG", "GgG", "GgG", 'G', Blocks.gold_block, 'g', Items.glowstone_dust });
-		CSItems.addItemWithRecipe(godBoots, "God's Boots", 1, new Object[] { "g g", "GgG", "GgG", 'G', Blocks.gold_block, 'g', Items.glowstone_dust });
+		CSItems.addItemWithRecipe(godHelmet, "God's Helmet", 1, new Object[] {
+				"GGG",
+				"GgG",
+				'G',
+				Blocks.gold_block,
+				'g',
+				Items.glowstone_dust });
+		CSItems.addItemWithRecipe(godChestplate, "God's Chestplate", 1, new Object[] {
+				"GgG",
+				"GGG",
+				"GGG",
+				'G',
+				Blocks.gold_block,
+				'g',
+				Items.glowstone_dust });
+		CSItems.addItemWithRecipe(godLeggings, "God's Leggings", 1, new Object[] {
+				"GGG",
+				"GgG",
+				"GgG",
+				'G',
+				Blocks.gold_block,
+				'g',
+				Items.glowstone_dust });
+		CSItems.addItemWithRecipe(godBoots, "God's Boots", 1, new Object[] {
+				"g g",
+				"GgG",
+				"GgG",
+				'G',
+				Blocks.gold_block,
+				'g',
+				Items.glowstone_dust });
 		
-		CSItems.addItemWithRecipe(luziferHelmet, "Luzifer's Helmet", 1, new Object[] { "RRR", "RrR", 'R', Blocks.nether_brick, 'r', Items.redstone });
-		CSItems.addItemWithRecipe(luziferChestplate, "Luzifer's Chestplate", 1, new Object[] { "RrR", "RRR", "RRR", 'R', Blocks.nether_brick, 'r', Items.redstone });
-		CSItems.addItemWithRecipe(luziferLeggings, "Luzifer's Leggings", 1, new Object[] { "RRR", "RrR", "RrR", 'R', Blocks.nether_brick, 'r', Items.redstone });
-		CSItems.addItemWithRecipe(luziferBoots, "Luzifer's Boots", 1, new Object[] { "r r", "RrR", "RrR", 'R', Blocks.nether_brick, 'r', Items.redstone });
+		CSItems.addItemWithRecipe(luziferHelmet, "Luzifer's Helmet", 1, new Object[] {
+				"RRR",
+				"RrR",
+				'R',
+				Blocks.nether_brick,
+				'r',
+				Items.redstone });
+		CSItems.addItemWithRecipe(luziferChestplate, "Luzifer's Chestplate", 1, new Object[] {
+				"RrR",
+				"RRR",
+				"RRR",
+				'R',
+				Blocks.nether_brick,
+				'r',
+				Items.redstone });
+		CSItems.addItemWithRecipe(luziferLeggings, "Luzifer's Leggings", 1, new Object[] {
+				"RRR",
+				"RrR",
+				"RrR",
+				'R',
+				Blocks.nether_brick,
+				'r',
+				Items.redstone });
+		CSItems.addItemWithRecipe(luziferBoots, "Luzifer's Boots", 1, new Object[] {
+				"r r",
+				"RrR",
+				"RrR",
+				'R',
+				Blocks.nether_brick,
+				'r',
+				Items.redstone });
 		
-		CSItems.addItemWithRecipe(invisibilityHelmet, "Invisibility Helmet", 1, new Object[] { "idi", "i i", 'i', Items.iron_ingot, 'd', Items.diamond });
-		CSItems.addItemWithRecipe(invisibilityChestplate, "Invisibility Chestplate", 1, new Object[] { "i i", "idi", "iii", 'i', Items.iron_ingot, 'd', Items.diamond });
-		CSItems.addItemWithRecipe(invisibilityLeggings, "Invisibility Leggings", 1, new Object[] { "idi", "i i", "i i", 'i', Items.iron_ingot, 'd', Items.diamond });
-		CSItems.addItemWithRecipe(invisibilityBoots, "Invisibility Boots", 1, new Object[] { "d d", "i i", 'i', Items.iron_ingot, 'd', Items.diamond });
+		CSItems.addItemWithRecipe(invisibilityHelmet, "Invisibility Helmet", 1, new Object[] {
+				"idi",
+				"i i",
+				'i',
+				Items.iron_ingot,
+				'd',
+				Items.diamond });
+		CSItems.addItemWithRecipe(invisibilityChestplate, "Invisibility Chestplate", 1, new Object[] {
+				"i i",
+				"idi",
+				"iii",
+				'i',
+				Items.iron_ingot,
+				'd',
+				Items.diamond });
+		CSItems.addItemWithRecipe(invisibilityLeggings, "Invisibility Leggings", 1, new Object[] {
+				"idi",
+				"i i",
+				"i i",
+				'i',
+				Items.iron_ingot,
+				'd',
+				Items.diamond });
+		CSItems.addItemWithRecipe(invisibilityBoots, "Invisibility Boots", 1, new Object[] {
+				"d d",
+				"i i",
+				'i',
+				Items.iron_ingot,
+				'd',
+				Items.diamond });
 		
 		CSItems.addArmor(emeraldHelmet, "Emerald Helmet", MTMTools.emerald, 0);
 		CSItems.addArmor(emeraldChestplate, "Emerald Chestplate", MTMTools.emerald, 1);

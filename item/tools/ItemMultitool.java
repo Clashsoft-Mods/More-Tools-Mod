@@ -11,7 +11,7 @@ import net.minecraft.item.ItemTool;
 
 public class ItemMultitool extends ItemTool
 {
-	public static Set blocks = new HashSet();
+	public static Set	blocks	= new HashSet();
 	
 	static
 	{
@@ -23,5 +23,5 @@ public class ItemMultitool extends ItemTool
 	public ItemMultitool(ToolMaterial material)
 	{
 		super(6F, material, blocks);
-	}	
+	}
 }

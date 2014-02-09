@@ -92,7 +92,7 @@ public class ItemShearsMTM extends Item
 				
 				Random rand = new Random();
 				
-				for (int i = 0; i <= wool; i++)
+				for (int i = 0; i <= this.wool; i++)
 				{
 					if (i != 0)
 					{

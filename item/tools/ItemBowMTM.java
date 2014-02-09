@@ -32,8 +32,8 @@ public class ItemBowMTM extends Item
 	
 	public ItemBowMTM(Item arrow)
 	{
-		maxStackSize = 1;
-		setMaxDamage(384);
+		this.maxStackSize = 1;
+		this.setMaxDamage(384);
 		this.arrowToConsume = arrow;
 		this.setCreativeTab(CreativeTabs.tabCombat);
 	}
@@ -59,7 +59,7 @@ public class ItemBowMTM extends Item
 		
 		boolean flag = player.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, stack) > 0;
 		
-		if (flag || player.inventory.hasItem(arrowToConsume))
+		if (flag || player.inventory.hasItem(this.arrowToConsume))
 		{
 			float f = (j / 20.0F) + (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 0.04F);
 			f = (f * f + f * 2.0F) / 3.0F;
@@ -109,7 +109,7 @@ public class ItemBowMTM extends Item
 			}
 			else
 			{
-				player.inventory.consumeInventoryItem(arrowToConsume);
+				player.inventory.consumeInventoryItem(this.arrowToConsume);
 			}
 			
 			if (!world.isRemote)
@@ -134,9 +134,9 @@ public class ItemBowMTM extends Item
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
 	{
-		if (player.capabilities.isCreativeMode || player.inventory.hasItem(arrowToConsume))
+		if (player.capabilities.isCreativeMode || player.inventory.hasItem(this.arrowToConsume))
 		{
-			player.setItemInUse(stack, getMaxItemUseDuration(stack));
+			player.setItemInUse(stack, this.getMaxItemUseDuration(stack));
 		}
 		
 		return stack;
@@ -161,18 +161,18 @@ public class ItemBowMTM extends Item
 			
 			if (i >= j)
 			{
-				return icons[3];
+				return this.icons[3];
 			}
 			if (i > k)
 			{
-				return icons[2];
+				return this.icons[2];
 			}
 			if (i > l)
 			{
-				return icons[1];
+				return this.icons[1];
 			}
 		}
-		return icons[0];
+		return this.icons[0];
 	}
 	
 	@Override

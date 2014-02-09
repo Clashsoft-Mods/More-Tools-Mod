@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class ItemSwordMTM extends ItemSword
 {
-	public EnumRarity		rarity;
+	public EnumRarity	rarity;
 	
 	public ItemSwordMTM(ToolMaterial material)
 	{

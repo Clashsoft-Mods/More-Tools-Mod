@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class ItemAxeMTM extends ItemAxe
 {
-	public EnumRarity		rarity;
+	public EnumRarity	rarity;
 	
 	public ItemAxeMTM(ToolMaterial material)
 	{

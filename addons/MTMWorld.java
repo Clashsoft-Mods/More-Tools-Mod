@@ -2,7 +2,7 @@ package clashsoft.mods.moretools.addons;
 
 import java.util.Random;
 
-import clashsoft.cslib.addon.Addon;
+import clashsoft.cslib.minecraft.addon.Addon;
 import cpw.mods.fml.common.IWorldGenerator;
 
 import net.minecraft.world.World;
@@ -35,7 +35,7 @@ public class MTMWorld implements IWorldGenerator
 	{
 		if (world.provider.isSurfaceWorld())
 		{
-			generateSurface(world, random, chunkX, chunkZ);
+			this.generateSurface(world, random, chunkX, chunkZ);
 		}
 	}
 }
