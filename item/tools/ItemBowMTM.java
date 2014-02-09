@@ -20,7 +20,12 @@ import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 
 public class ItemBowMTM extends Item
 {
-	private static String[]	textures	= new String[] { "spacebow", "spacebow_1", "spacebow_2", "spacebow_3" };
+	private static String[]	textures	= new String[] {
+			"spacebow",
+			"spacebow_1",
+			"spacebow_2",
+			"spacebow_3"				};
+	
 	private IIcon[]			icons;
 	
 	private Item			arrowToConsume;
@@ -149,16 +154,23 @@ public class ItemBowMTM extends Item
 		boolean isSpaceBow = this == MTMTools.spaceBow;
 		if (usingItem != null && usingItem.getItem() == MTMTools.spaceBow)
 		{
-			int k = usingItem.getMaxItemUseDuration() - useRemaining;
-			int var1 = 18 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
-			int var2 = 13 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
-			int var3 = 0;
-			if (k >= var1)
+			int i = usingItem.getMaxItemUseDuration() - useRemaining;
+			int j = 18 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
+			int k = 13 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
+			int l = 0;
+			
+			if (i >= j)
+			{
 				return icons[3];
-			if (k > var2)
+			}
+			if (i > k)
+			{
 				return icons[2];
-			if (k > var3)
+			}
+			if (i > l)
+			{
 				return icons[1];
+			}
 		}
 		return icons[0];
 	}

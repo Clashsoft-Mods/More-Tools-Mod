@@ -20,10 +20,12 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 @Mod(modid = "MoreToolsMod", name = "More Tools Mod", version = MoreToolsMod.VERSION)
 public class MoreToolsMod
 {
-	public static final int			REVISION	= 6;
+	public static final String		MODID		= "moretools";
+	public static final String		NAME		= "More Tools Mod";
+	public static final int			REVISION	= 0;
 	public static final String		VERSION		= CSUpdate.CURRENT_VERSION + "-" + REVISION;
 	
-	@Instance("MoreToolsMod")
+	@Instance(MODID)
 	public static MoreToolsMod		instance;
 	
 	@SidedProxy(clientSide = "clashsoft.mods.moretools.client.MTMClientProxy", serverSide = "clashsoft.mods.moretools.common.MTMCommonProxy")
