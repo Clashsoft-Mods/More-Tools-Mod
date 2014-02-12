@@ -1,7 +1,6 @@
 package clashsoft.mods.moretools;
 
 import clashsoft.cslib.minecraft.item.CSStacks;
-import clashsoft.cslib.minecraft.update.CSUpdate;
 import clashsoft.mods.moretools.addons.MTMArmor;
 import clashsoft.mods.moretools.addons.MTMTools;
 import clashsoft.mods.moretools.addons.MTMWorld;
@@ -22,16 +21,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 
-@Mod(modid = MoreToolsMod.MODID, name = MoreToolsMod.NAME, version = MoreToolsMod.VERSION)
+@Mod(modid = MTMVersion.MODID, name = MTMVersion.NAME, version = MTMVersion.VERSION)
 public class MoreToolsMod
 {
-	public static final String		MODID			= "moretools";
-	public static final String		NAME			= "More Tools Mod";
-	public static final String		ACRONYM			= "mtm";
-	public static final int			REVISION		= 0;
-	public static final String		VERSION			= CSUpdate.CURRENT_VERSION + "-" + REVISION;
-	
-	@Instance(MODID)
+	@Instance(MTMVersion.MODID)
 	public static MoreToolsMod		instance;
 	
 	@SidedProxy(clientSide = "clashsoft.mods.moretools.client.MTMClientProxy", serverSide = "clashsoft.mods.moretools.common.MTMCommonProxy")
@@ -144,6 +137,7 @@ public class MoreToolsMod
 	{
 		MTMTools.instance.load(event);
 		MTMArmor.instance.load(event);
+		MTMVersion.write(event.getModMetadata());
 		
 		// Free up some memory
 		
@@ -168,7 +162,7 @@ public class MoreToolsMod
 	{
 		if (event.entity instanceof EntityPlayer)
 		{
-			CSUpdate.doClashsoftUpdateCheck((EntityPlayer) event.entity, NAME, ACRONYM, VERSION);
+			MTMVersion.updateCheck((EntityPlayer) event.entity);
 		}
 	}
 }
