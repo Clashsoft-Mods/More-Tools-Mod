@@ -4,9 +4,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFlintAndSteel;
 
-public class ItemFlintAndSteelMTM extends ItemFlintAndSteel
+public class ItemMTMFlintAndSteel extends ItemFlintAndSteel
 {
-	public ItemFlintAndSteelMTM(int maxDamage)
+	public ItemMTMFlintAndSteel(int maxDamage)
 	{
 		this.maxStackSize = 1;
 		this.setMaxDamage(maxDamage);

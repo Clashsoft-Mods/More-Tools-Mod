@@ -20,7 +20,7 @@ public class ItemDyeableHoe extends ItemDyeableTool
 	
 	public ItemDyeableHoe(ToolMaterial toolMaterial)
 	{
-		super(0F, toolMaterial, Collections.EMPTY_SET);
+		super(0F, toolMaterial, Collections.EMPTY_SET, "hoe");
 	}
 	
 	@Override

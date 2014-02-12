@@ -3,7 +3,6 @@ package clashsoft.mods.moretools.common;
 import cpw.mods.fml.common.network.IGuiHandler;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.stats.Achievement;
 import net.minecraft.world.World;
 
 public class MTMCommonProxy implements IGuiHandler
@@ -24,7 +23,8 @@ public class MTMCommonProxy implements IGuiHandler
 	{
 	}
 	
-	public void addAchievementUS(Achievement a, String name, String desc)
+	public int getArmorIndex(String name)
 	{
+		return 0;
 	}
 }

@@ -13,26 +13,24 @@ import net.minecraft.util.IIcon;
 
 public class ItemDyeableTool extends ItemTool
 {
-	private IIcon[]					icons	= new IIcon[2];
+	public IIcon			icon;
 	
-	protected final ToolMaterial	material;
-	protected final float			damage;
+	protected ToolMaterial	material;
+	protected float			damage;
+	protected String		type;
 	
-	public ItemDyeableTool(float weaponDamage, ToolMaterial toolMaterial, Set blocks)
+	public ItemDyeableTool(float weaponDamage, ToolMaterial toolMaterial, Set blocks, String type)
 	{
 		super(weaponDamage, toolMaterial, blocks);
 		this.material = toolMaterial;
 		this.damage = weaponDamage + toolMaterial.getDamageVsEntity();
+		this.type = type;
 	}
 	
 	@Override
 	public int getColorFromItemStack(ItemStack stack, int pass)
 	{
-		if (pass > 0)
-		{
-			return 16777215;
-		}
-		else
+		if (pass == 0)
 		{
 			int color = this.getColor(stack);
 			
@@ -43,6 +41,7 @@ public class ItemDyeableTool extends ItemTool
 			
 			return color;
 		}
+		return 16777215;
 	}
 	
 	@Override
@@ -85,16 +84,15 @@ public class ItemDyeableTool extends ItemTool
 	@Override
 	public IIcon getIconFromDamageForRenderPass(int metadata, int pass)
 	{
-		return this.icons[pass < 2 ? pass : 1];
+		return pass == 0 ? this.icon : this.itemIcon;
 	}
 	
-	@SideOnly(Side.CLIENT)
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		String s = this instanceof ItemDyeableSword ? "sword" : this instanceof ItemDyeableSpade ? "spade" : this instanceof ItemDyeablePickaxe ? "pick" : this instanceof ItemDyeableAxe ? "axe" : "hoe";
-		this.icons[0] = iconRegister.registerIcon("l" + s + "1");
-		this.icons[1] = iconRegister.registerIcon("l" + s + "2");
+		this.icon = iconRegister.registerIcon("moretools:leather_" + this.type + "_1");
+		this.itemIcon = iconRegister.registerIcon("moretools:leather_" + this.type + "_2");
 	}
 	
 	public void removeColor(ItemStack stack)
@@ -108,7 +106,6 @@ public class ItemDyeableTool extends ItemTool
 			if (display.hasKey("color"))
 			{
 				display.removeTag("color");
-				
 			}
 		}
 	}

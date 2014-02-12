@@ -20,23 +20,24 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
-public class ItemShearsMTM extends Item
+public class ItemMTMShears extends Item
 {
 	public int			wool;
 	public EnumRarity	rarity;
 	
-	public ItemShearsMTM(int uses, int woolCount)
+	public ItemMTMShears(int uses, int woolCount)
 	{
 		this(uses, woolCount, EnumRarity.common);
 	}
 	
-	public ItemShearsMTM(int uses, int woolCount, EnumRarity rarity)
+	public ItemMTMShears(int uses, int woolCount, EnumRarity rarity)
 	{
 		this.setMaxStackSize(1);
 		this.setMaxDamage(uses);
 		this.setCreativeTab(CreativeTabs.tabTools);
 		
 		this.wool = woolCount;
+		this.rarity = rarity;
 	}
 	
 	@Override
@@ -146,13 +147,5 @@ public class ItemShearsMTM extends Item
 			}
 		}
 		return false;
-	}
-	
-	@Override
-	public Item setUnlocalizedName(String name)
-	{
-		super.setUnlocalizedName(name);
-		super.setTextureName(name);
-		return this;
 	}
 }

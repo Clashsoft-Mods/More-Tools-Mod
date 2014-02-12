@@ -11,7 +11,7 @@ public class ItemDyeablePickaxe extends ItemDyeableTool
 {
 	public ItemDyeablePickaxe(ToolMaterial toolMaterial)
 	{
-		super(2.0F, toolMaterial, ItemDataPickaxe.blocksEffectiveAgainst);
+		super(2.0F, toolMaterial, ItemDataPickaxe.blocksEffectiveAgainst, "pickaxe");
 	}
 	
 	@Override

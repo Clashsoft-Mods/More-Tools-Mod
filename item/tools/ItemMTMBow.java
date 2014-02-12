@@ -18,19 +18,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 
-public class ItemBowMTM extends Item
+public class ItemMTMBow extends Item
 {
-	private static String[]	textures	= new String[] {
-			"spacebow",
-			"spacebow_1",
-			"spacebow_2",
-			"spacebow_3"				};
+	private IIcon[]	icons;
 	
-	private IIcon[]			icons;
+	public Item		arrowToConsume;
 	
-	private Item			arrowToConsume;
-	
-	public ItemBowMTM(Item arrow)
+	public ItemMTMBow(Item arrow)
 	{
 		this.maxStackSize = 1;
 		this.setMaxDamage(384);
@@ -151,8 +145,7 @@ public class ItemBowMTM extends Item
 	@Override
 	public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining)
 	{
-		boolean isSpaceBow = this == MTMTools.spaceBow;
-		if (usingItem != null && usingItem.getItem() == MTMTools.spaceBow)
+		if (usingItem != null)
 		{
 			int i = usingItem.getMaxItemUseDuration() - useRemaining;
 			int j = 18 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
@@ -161,36 +154,29 @@ public class ItemBowMTM extends Item
 			
 			if (i >= j)
 			{
-				return this.icons[3];
+				return this.icons[2];
 			}
 			if (i > k)
 			{
-				return this.icons[2];
+				return this.icons[1];
 			}
 			if (i > l)
 			{
-				return this.icons[1];
+				return this.icons[0];
 			}
 		}
-		return this.icons[0];
+		return super.getIcon(stack, renderPass, player, usingItem, useRemaining);
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		this.icons = new IIcon[textures.length];
-		for (int i = 0; i < textures.length; i++)
+		super.registerIcons(iconRegister);
+		this.icons = new IIcon[3];
+		for (int i = 0; i < 3; i++)
 		{
-			this.icons[i] = iconRegister.registerIcon(textures[i]);
+			this.icons[i] = iconRegister.registerIcon(this.getIconString() + "_" + i);
 		}
-	}
-	
-	@Override
-	public Item setUnlocalizedName(String name)
-	{
-		super.setUnlocalizedName(name);
-		super.setTextureName(name);
-		return this;
 	}
 }

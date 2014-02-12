@@ -10,7 +10,7 @@ public class ItemDyeableAxe extends ItemDyeableTool
 {
 	public ItemDyeableAxe(ToolMaterial toolMaterial)
 	{
-		super(3F, toolMaterial, ItemDataAxe.blocksEffectiveAgainst);
+		super(3F, toolMaterial, ItemDataAxe.blocksEffectiveAgainst, "axe");
 	}
 	
 	@Override

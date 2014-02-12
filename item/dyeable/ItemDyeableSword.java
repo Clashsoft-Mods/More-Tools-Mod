@@ -23,7 +23,7 @@ public class ItemDyeableSword extends ItemDyeableTool
 {
 	public ItemDyeableSword(ToolMaterial toolMaterial)
 	{
-		super(4F, toolMaterial, Collections.EMPTY_SET);
+		super(4F, toolMaterial, Collections.EMPTY_SET, "sword");
 		
 		this.maxStackSize = 1;
 		this.setMaxDamage(toolMaterial.getMaxUses());

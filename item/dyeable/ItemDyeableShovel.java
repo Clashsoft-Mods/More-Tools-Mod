@@ -6,11 +6,11 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-public class ItemDyeableSpade extends ItemDyeableTool
+public class ItemDyeableShovel extends ItemDyeableTool
 {
-	public ItemDyeableSpade(ToolMaterial toolMaterial)
+	public ItemDyeableShovel(ToolMaterial toolMaterial)
 	{
-		super(1.0F, toolMaterial, ItemDataSpade.blocksEffectiveAgainst);
+		super(1.0F, toolMaterial, ItemDataSpade.blocksEffectiveAgainst, "shovel");
 	}
 	
 	public boolean canHarvestBlock(ItemStack stack, Block block, int metadata)
