@@ -23,6 +23,7 @@ public class MTMVersion
 		metadata.modId = MODID;
 		metadata.version = VERSION;
 		metadata.logoFile = "moretools:logo.png";
+		metadata.url = "https://github.com/Clashsoft/More-Tools-Mod/wiki";
 		metadata.authorList = CSArrays.asList("Clashsoft");
 	}
 	

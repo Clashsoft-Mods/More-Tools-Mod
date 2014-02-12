@@ -135,12 +135,19 @@ public class MoreToolsMod
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		MTMTools.instance.load(event);
-		MTMArmor.instance.load(event);
 		MTMVersion.write(event.getModMetadata());
 		
-		// Free up some memory
+		MTMTools.instance.load(event);
+		MTMArmor.instance.load(event);
 		
+		free();
+	}
+	
+	/**
+	 * Frees up some memory by setting data arrays to null. Then let the GC do its work.
+	 */
+	public static void free()
+	{
 		armorMaterials = null;
 		armorTypes = null;
 		toolMaterials = null;
