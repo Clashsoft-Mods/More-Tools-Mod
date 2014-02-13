@@ -141,7 +141,7 @@ public class MTMTools implements CSStacks
 			}
 		}
 		
-		spaceSword = new ItemMTMSword(SPACE, EnumRarity.uncommon).setUnlocalizedName("space_sword").setTextureName("moretools:space_sword_0");
+		spaceSword = new ItemMTMSword(SPACE, EnumRarity.uncommon).setUnlocalizedName("space_sword").setTextureName("moretools:space_sword");
 		spaceSword1 = new ItemMTMSword(SPACE_STRONG, EnumRarity.rare).setUnlocalizedName("space_sword_1").setTextureName("moretools:space_sword_1");
 		spaceSword2 = new ItemMTMSword(SPACE_EPIC, EnumRarity.epic).setUnlocalizedName("space_sword_2").setTextureName("moretools:space_sword_2");
 		spaceShovel = new ItemMTMShovel(SPACE, EnumRarity.uncommon).setUnlocalizedName("space_shovel").setTextureName("moretools:space_shovel");
@@ -149,7 +149,7 @@ public class MTMTools implements CSStacks
 		spaceAxe = new ItemMTMAxe(SPACE, EnumRarity.uncommon).setUnlocalizedName("space_axe").setTextureName("moretools:space_axe");
 		spaceHoe = new ItemMTMHoe(SPACE, EnumRarity.uncommon).setUnlocalizedName("space_hoe").setTextureName("moretools:space_hoe");
 		
-		spaceMultitool = new ItemMultitool(SPACE).setUnlocalizedName("space_multitool").setTextureName("moretools:space_multitool");
+		spaceMultitool = new ItemMultitool(SPACE, EnumRarity.uncommon).setUnlocalizedName("space_multitool").setTextureName("moretools:space_multitool");
 		spaceArrow = new Item().setUnlocalizedName("space_arrow").setTextureName("moretools:space_arrow").setCreativeTab(CreativeTabs.tabCombat);
 		spaceIngot = new Item().setUnlocalizedName("space_ingot").setTextureName("moretools:space_ingot").setCreativeTab(CreativeTabs.tabMaterials);
 		spaceBow = new ItemMTMBow(spaceIngot).setUnlocalizedName("space_bow").setTextureName("moretools:space_bow");
