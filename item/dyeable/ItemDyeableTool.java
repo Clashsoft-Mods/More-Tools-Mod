@@ -68,17 +68,15 @@ public class ItemDyeableTool extends ItemTool
 	
 	public int getColor(ItemStack stack)
 	{
-		NBTTagCompound compound = stack.getTagCompound();
+		NBTTagCompound nbt = stack.getTagCompound();
 		
-		if (compound == null)
+		if (nbt == null)
 		{
 			return 10511680;
 		}
-		else
-		{
-			NBTTagCompound display = compound.getCompoundTag("display");
-			return display == null ? 10511680 : (display.hasKey("color") ? display.getInteger("color") : 10511680);
-		}
+		
+		NBTTagCompound display = nbt.getCompoundTag("display");
+		return ((display.hasKey("color", 3)) ? display.getInteger("color") : (display == null) ? 10511680 : 10511680);
 	}
 	
 	@Override
@@ -97,30 +95,32 @@ public class ItemDyeableTool extends ItemTool
 	
 	public void removeColor(ItemStack stack)
 	{
-		NBTTagCompound compound = stack.getTagCompound();
+		NBTTagCompound nbt = stack.getTagCompound();
 		
-		if (compound != null)
+		if (nbt != null)
 		{
-			NBTTagCompound display = compound.getCompoundTag("display");
-			
-			if (display.hasKey("color"))
-			{
-				display.removeTag("color");
-			}
+			NBTTagCompound display = nbt.getCompoundTag("display");
+			display.removeTag("color");
 		}
 	}
 	
 	public void dye(ItemStack stack, int color)
 	{
-		NBTTagCompound compound = stack.getTagCompound();
+		NBTTagCompound nbt = stack.getTagCompound();
 		
-		if (compound == null)
+		if (nbt == null)
 		{
-			compound = new NBTTagCompound();
-			stack.setTagCompound(compound);
+			nbt = new NBTTagCompound();
+			stack.setTagCompound(nbt);
 		}
 		
-		NBTTagCompound display = compound.getCompoundTag("display");
+		NBTTagCompound display = nbt.getCompoundTag("display");
+		
+		if (!(nbt.hasKey("display", 10)))
+		{
+			nbt.setTag("display", display);
+		}
+		
 		display.setInteger("color", color);
 	}
 	

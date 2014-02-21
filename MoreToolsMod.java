@@ -115,7 +115,7 @@ public class MoreToolsMod
 			CSStacks.reeds,
 			CSStacks.blaze_rod,
 			CSStacks.dirt,
-			CSStacks.glass,
+			CSStacks.glass_block,
 			CSStacks.sandstone,
 			CSStacks.brick,
 			CSStacks.end_stone,

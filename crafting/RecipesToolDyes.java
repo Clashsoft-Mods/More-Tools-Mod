@@ -50,9 +50,6 @@ public class RecipesToolDyes implements IRecipe
 		return theTool != null && dyes > 0;
 	}
 	
-	/**
-	 * Returns an Item that is the result of this recipe
-	 */
 	@Override
 	public ItemStack getCraftingResult(InventoryCrafting inventory)
 	{
@@ -77,7 +74,6 @@ public class RecipesToolDyes implements IRecipe
 				if (theTool == null)
 				{
 					theTool = stack.copy();
-					theTool.stackSize = 1;
 					
 					if (item.hasColor(stack))
 					{

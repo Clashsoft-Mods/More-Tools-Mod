@@ -16,6 +16,7 @@ import clashsoft.mods.moretools.crafting.RecipesToolDyes;
 import clashsoft.mods.moretools.item.ItemLightsaber;
 import clashsoft.mods.moretools.item.dyeable.*;
 import clashsoft.mods.moretools.item.tools.*;
+import clashsoft.mods.moretools.item.tools.glowstone.*;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -176,11 +177,11 @@ public class MTMTools implements CSStacks
 		leatherAxe = new ItemDyeableAxe(LEATHER).setUnlocalizedName("leather_axe").setTextureName("moretools:leather_axe");
 		leatherHoe = new ItemDyeableHoe(LEATHER).setUnlocalizedName("leather_hoe").setTextureName("moretools:leather_hoe");
 		
-		glowstoneSword = new ItemMTMSword(GLOWSTONE).setUnlocalizedName("glowstone_sword").setTextureName("moretools:glowstone_sword");
-		glowstoneShovel = new ItemMTMShovel(GLOWSTONE).setUnlocalizedName("glowstone_shovel").setTextureName("moretools:glowstone_shovel");
-		glowstonePickaxe = new ItemMTMPickaxe(GLOWSTONE).setUnlocalizedName("glowstone_pickaxe").setTextureName("moretools:glowstone_pickaxe");
-		glowstoneAxe = new ItemMTMAxe(GLOWSTONE).setUnlocalizedName("glowstone_axe").setTextureName("moretools:glowstone_axe");
-		glowstoneHoe = new ItemMTMHoe(GLOWSTONE).setUnlocalizedName("glowstone_hoe").setTextureName("moretools:glowstone_hoe");
+		glowstoneSword = new ItemGlowstoneSword(GLOWSTONE).setUnlocalizedName("glowstone_sword").setTextureName("moretools:glowstone_sword");
+		glowstoneShovel = new ItemGlowstoneShovel(GLOWSTONE).setUnlocalizedName("glowstone_shovel").setTextureName("moretools:glowstone_shovel");
+		glowstonePickaxe = new ItemGlowstonePickaxe(GLOWSTONE).setUnlocalizedName("glowstone_pickaxe").setTextureName("moretools:glowstone_pickaxe");
+		glowstoneAxe = new ItemGlowstoneAxe(GLOWSTONE).setUnlocalizedName("glowstone_axe").setTextureName("moretools:glowstone_axe");
+		glowstoneHoe = new ItemGlowstoneHoe(GLOWSTONE).setUnlocalizedName("glowstone_hoe").setTextureName("moretools:glowstone_hoe");
 		
 		blazerodAndSteel = new ItemMTMFlintAndSteel(128).setUnlocalizedName("blazerod_and_steel").setTextureName("moretools:blazerod_and_steel");
 		

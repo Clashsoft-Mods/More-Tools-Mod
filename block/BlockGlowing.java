@@ -13,6 +13,7 @@ public class BlockGlowing extends Block
 	public BlockGlowing()
 	{
 		super(Material.air);
+		this.setLightLevel(1F);
 		this.setBlockBounds(0.4995F, 0.4995F, 0.4995F, 0.5005F, 0.5005F, 0.5005F);
 		this.setTickRandomly(true);
 	}
@@ -39,5 +40,11 @@ public class BlockGlowing extends Block
 	public Item getItemDropped(int metadata, Random random, int fortune)
 	{
 		return null;
+	}
+	
+	@Override
+	public void onBlockAdded(World world, int x, int y, int z)
+	{
+		world.setBlockToAir(x, y, z);
 	}
 }

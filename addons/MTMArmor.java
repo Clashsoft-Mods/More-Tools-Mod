@@ -6,6 +6,7 @@ import clashsoft.cslib.minecraft.item.CSStacks;
 import clashsoft.mods.moretools.MTMVersion;
 import clashsoft.mods.moretools.MoreToolsMod;
 import clashsoft.mods.moretools.client.MTMClientProxy;
+import clashsoft.mods.moretools.item.ItemInvisibilityArmor;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 import net.minecraft.init.Blocks;
@@ -213,10 +214,10 @@ public class MTMArmor
 		luziferLeggings = (new ItemArmor(LUZIFER, MTMClientProxy.goddawn, 2)).setUnlocalizedName("luzifer_leggings").setTextureName("moretools:luzifer_leggings");
 		luziferBoots = (new ItemArmor(LUZIFER, MTMClientProxy.goddawn, 3)).setUnlocalizedName("luzifer_boots").setTextureName("moretools:luzifer_boots");
 		
-		invisibilityHelmet = (new ItemArmor(INVISIBILITY, MTMClientProxy.invisibility, 0)).setUnlocalizedName("invisibility_helmet").setTextureName("moretools:invisibility_helmet");
-		invisibilityChestplate = (new ItemArmor(INVISIBILITY, MTMClientProxy.invisibility, 1)).setUnlocalizedName("invisibility_chestplate").setTextureName("moretools:invisibility_chestplate");
-		invisibilityLeggings = (new ItemArmor(INVISIBILITY, MTMClientProxy.invisibility, 2)).setUnlocalizedName("invisibility_leggings").setTextureName("moretools:invisibility_leggings");
-		invisibilityBoots = (new ItemArmor(INVISIBILITY, MTMClientProxy.invisibility, 3)).setUnlocalizedName("invisibility_boots").setTextureName("moretools:invisibility_boots");
+		invisibilityHelmet = (new ItemInvisibilityArmor(INVISIBILITY, MTMClientProxy.invisibility, 0)).setUnlocalizedName("invisibility_helmet").setTextureName("moretools:invisibility_helmet");
+		invisibilityChestplate = (new ItemInvisibilityArmor(INVISIBILITY, MTMClientProxy.invisibility, 1)).setUnlocalizedName("invisibility_chestplate").setTextureName("moretools:invisibility_chestplate");
+		invisibilityLeggings = (new ItemInvisibilityArmor(INVISIBILITY, MTMClientProxy.invisibility, 2)).setUnlocalizedName("invisibility_leggings").setTextureName("moretools:invisibility_leggings");
+		invisibilityBoots = (new ItemInvisibilityArmor(INVISIBILITY, MTMClientProxy.invisibility, 3)).setUnlocalizedName("invisibility_boots").setTextureName("moretools:invisibility_boots");
 		
 		glowstoneHelmet = new ItemArmor(GLOWSTONE, MTMClientProxy.glowstone, 0).setUnlocalizedName("glowstone_helmet").setTextureName("moretools:glowstone_helmet");
 		glowstoneChestplate = new ItemArmor(GLOWSTONE, MTMClientProxy.glowstone, 1).setUnlocalizedName("glowstone_chestplate").setTextureName("moretools:glowstone_chestplate");
