@@ -32,7 +32,7 @@ public class MTMClientProxy extends MTMCommonProxy
 		Integer integer = armorIndices.get(name);
 		if (integer == null)
 		{
-			int i = RenderingRegistry.addNewArmourRendererPrefix(name);
+			int i = RenderingRegistry.addNewArmourRendererPrefix("moretools:" + name);
 			integer = Integer.valueOf(i);
 			armorIndices.put(name, integer);
 		}
