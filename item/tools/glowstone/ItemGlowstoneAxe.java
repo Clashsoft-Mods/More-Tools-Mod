@@ -1,11 +1,11 @@
 package clashsoft.mods.moretools.item.tools.glowstone;
 
+import clashsoft.mods.moretools.item.ItemGlowstoneArmor;
+import clashsoft.mods.moretools.item.tools.ItemMTMAxe;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
-import clashsoft.mods.moretools.addons.MTMTools;
-import clashsoft.mods.moretools.item.tools.ItemMTMAxe;
 
 public class ItemGlowstoneAxe extends ItemMTMAxe
 {
@@ -17,13 +17,9 @@ public class ItemGlowstoneAxe extends ItemMTMAxe
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int slot, boolean flag)
 	{
-		int x = (int) entity.posX;
-		int y = (int) entity.posY;
-		int z = (int) entity.posZ;
-		
-		if (world.isAirBlock(x, y, z))
+		if (flag)
 		{
-			world.setBlock(x, y, z, MTMTools.glowingBlock);
+			ItemGlowstoneArmor.glow(world, entity);
 		}
 	}
 }

@@ -6,6 +6,7 @@ import clashsoft.cslib.minecraft.item.CSStacks;
 import clashsoft.mods.moretools.MTMVersion;
 import clashsoft.mods.moretools.MoreToolsMod;
 import clashsoft.mods.moretools.client.MTMClientProxy;
+import clashsoft.mods.moretools.item.ItemGlowstoneArmor;
 import clashsoft.mods.moretools.item.ItemInvisibilityArmor;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
@@ -219,10 +220,10 @@ public class MTMArmor
 		invisibilityLeggings = (new ItemInvisibilityArmor(INVISIBILITY, MTMClientProxy.invisibility, 2)).setUnlocalizedName("invisibility_leggings").setTextureName("moretools:invisibility_leggings");
 		invisibilityBoots = (new ItemInvisibilityArmor(INVISIBILITY, MTMClientProxy.invisibility, 3)).setUnlocalizedName("invisibility_boots").setTextureName("moretools:invisibility_boots");
 		
-		glowstoneHelmet = new ItemArmor(GLOWSTONE, MTMClientProxy.glowstone, 0).setUnlocalizedName("glowstone_helmet").setTextureName("moretools:glowstone_helmet");
-		glowstoneChestplate = new ItemArmor(GLOWSTONE, MTMClientProxy.glowstone, 1).setUnlocalizedName("glowstone_chestplate").setTextureName("moretools:glowstone_chestplate");
-		glowstoneLeggings = new ItemArmor(GLOWSTONE, MTMClientProxy.glowstone, 2).setUnlocalizedName("glowstone_leggings").setTextureName("moretools:glowstone_leggings");
-		glowstoneBoots = new ItemArmor(GLOWSTONE, MTMClientProxy.glowstone, 3).setUnlocalizedName("glowstone_boots").setTextureName("moretools:glowstone_boots");
+		glowstoneHelmet = new ItemGlowstoneArmor(GLOWSTONE, MTMClientProxy.glowstone, 0).setUnlocalizedName("glowstone_helmet").setTextureName("moretools:glowstone_helmet");
+		glowstoneChestplate = new ItemGlowstoneArmor(GLOWSTONE, MTMClientProxy.glowstone, 1).setUnlocalizedName("glowstone_chestplate").setTextureName("moretools:glowstone_chestplate");
+		glowstoneLeggings = new ItemGlowstoneArmor(GLOWSTONE, MTMClientProxy.glowstone, 2).setUnlocalizedName("glowstone_leggings").setTextureName("moretools:glowstone_leggings");
+		glowstoneBoots = new ItemGlowstoneArmor(GLOWSTONE, MTMClientProxy.glowstone, 3).setUnlocalizedName("glowstone_boots").setTextureName("moretools:glowstone_boots");
 	}
 	
 	private void load()

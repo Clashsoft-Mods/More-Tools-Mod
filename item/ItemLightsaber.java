@@ -24,18 +24,20 @@ public class ItemLightsaber extends ItemMTMSword
 	public ItemLightsaber(ToolMaterial toolMaterial)
 	{
 		super(toolMaterial, EnumRarity.rare);
-		this.maxStackSize = 1;
+		this.setHasSubtypes(true);
+		this.setMaxDamage(1);
 	}
 	
 	@Override
-	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
+	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ)
 	{
-		if (player.isSneaking())
+		if (!world.isRemote)
 		{
 			int newDamage = (stack.getItemDamage() + 1) % types.length;
 			stack.setItemDamage(newDamage);
+			return true;
 		}
-		return super.onItemRightClick(stack, world, player);
+		return false;
 	}
 	
 	@Override
@@ -54,9 +56,10 @@ public class ItemLightsaber extends ItemMTMSword
 	public void registerIcons(IIconRegister iconRegister)
 	{
 		this.icons = new IIcon[6];
-		for (int i = 0; i < this.icons.length; i++)
+		this.icons[0] = iconRegister.registerIcon("moretools:lightsaber");
+		for (int i = 1; i < this.icons.length; i++)
 		{
-			icons[i] = iconRegister.registerIcon(getIconString() + "_" + types[i]);
+			icons[i] = iconRegister.registerIcon("moretools:lightsaber_" + types[i]);
 		}
 	}
 }
