@@ -10,9 +10,9 @@ public class BlockSpaceblock extends CustomBlock
 	public static String[]	names		= new String[] {
 			"ore",
 			"block",
-			"block",
-			"block",
-			"block"					};
+			"old",
+			"old",
+			"old"						};
 	public static String[]	textures	= new String[] {
 			"moretools:space_ore",
 			"moretools:space_block",

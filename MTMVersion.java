@@ -10,8 +10,7 @@ public class MTMVersion
 	public static final String		NAME			= "More Tools Mod";
 	public static final String		ACRONYM			= "mtm";
 	
-	public static final int			REVISION		= 0;
-	public static final String		VERSION			= CSUpdate.CURRENT_VERSION + "-" + REVISION;
+	public static final String		VERSION			= CSUpdate.CURRENT_VERSION + ".1.0.0";
 	
 	public static void updateCheck()
 	{

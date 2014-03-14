@@ -256,7 +256,7 @@ public class MTMTools implements CSStacks
 		
 		CSCrafting.addStorageBlock(new ItemStack(spaceIngot), new ItemStack(spaceBlock, 1, 1), 3);
 		
-		CSCrafting.addSmelting(new ItemStack(spaceBlock, 1, 0), new ItemStack(spaceIngot, 1), 0.5F);
+		CSCrafting.addFurnaceRecipe(new ItemStack(spaceBlock, 1, 0), new ItemStack(spaceIngot, 1), 0.5F);
 		CSCrafting.registerRecipe(new RecipesToolDyes());
 	}
 	
