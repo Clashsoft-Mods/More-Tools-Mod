@@ -25,19 +25,24 @@ public class ItemLightsaber extends ItemMTMSword
 	{
 		super(toolMaterial, EnumRarity.rare);
 		this.setHasSubtypes(true);
-		this.setMaxDamage(1);
 	}
 	
 	@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ)
 	{
-		if (!world.isRemote)
+		return false;
+	}
+	
+	@Override
+	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player)
+	{
+		if (player.isSneaking())
 		{
 			int newDamage = (stack.getItemDamage() + 1) % types.length;
 			stack.setItemDamage(newDamage);
-			return true;
+			return stack;
 		}
-		return false;
+		return super.onItemRightClick(stack, world, player);
 	}
 	
 	@Override
