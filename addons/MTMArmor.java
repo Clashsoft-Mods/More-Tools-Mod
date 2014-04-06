@@ -3,7 +3,6 @@ package clashsoft.mods.moretools.addons;
 import clashsoft.cslib.minecraft.addon.Addon;
 import clashsoft.cslib.minecraft.item.CSItems;
 import clashsoft.cslib.minecraft.item.CSStacks;
-import clashsoft.mods.moretools.MTMVersion;
 import clashsoft.mods.moretools.MoreToolsMod;
 import clashsoft.mods.moretools.client.MTMClientProxy;
 import clashsoft.mods.moretools.item.ItemGlowstoneArmor;
@@ -18,7 +17,7 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
-@Addon(modName = MTMVersion.NAME, addonName = "Armor")
+@Addon(modName = MoreToolsMod.NAME, addonName = "Armor")
 public class MTMArmor
 {
 	public static MTMArmor		instance		= new MTMArmor();

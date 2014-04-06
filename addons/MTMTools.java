@@ -8,7 +8,6 @@ import clashsoft.cslib.minecraft.enchantment.CustomEnchantment;
 import clashsoft.cslib.minecraft.item.CSItems;
 import clashsoft.cslib.minecraft.item.CSStacks;
 import clashsoft.cslib.minecraft.item.block.ItemCustomBlock;
-import clashsoft.mods.moretools.MTMVersion;
 import clashsoft.mods.moretools.MoreToolsMod;
 import clashsoft.mods.moretools.block.BlockGlowing;
 import clashsoft.mods.moretools.block.BlockSpaceblock;
@@ -28,8 +27,8 @@ import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
-@Addon(modName = MTMVersion.NAME, addonName = "Tools")
-public class MTMTools implements CSStacks
+@Addon(modName = MoreToolsMod.NAME, addonName = "Tools")
+public class MTMTools
 {
 	public static MTMTools		instance		= new MTMTools();
 	

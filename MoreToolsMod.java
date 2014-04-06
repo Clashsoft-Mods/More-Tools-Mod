@@ -1,6 +1,9 @@
 package clashsoft.mods.moretools;
 
+import clashsoft.cslib.minecraft.CSLib;
+import clashsoft.cslib.minecraft.ClashsoftMod;
 import clashsoft.cslib.minecraft.item.CSStacks;
+import clashsoft.cslib.minecraft.update.CSUpdate;
 import clashsoft.mods.moretools.addons.MTMArmor;
 import clashsoft.mods.moretools.addons.MTMTools;
 import clashsoft.mods.moretools.addons.MTMWorld;
@@ -10,6 +13,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -17,10 +21,16 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 
-@Mod(modid = MTMVersion.MODID, name = MTMVersion.NAME, version = MTMVersion.VERSION)
-public class MoreToolsMod
+@Mod(modid = MoreToolsMod.MODID, name = MoreToolsMod.NAME, version = MoreToolsMod.VERSION, dependencies = MoreToolsMod.DEPENDENCIES)
+public class MoreToolsMod extends ClashsoftMod
 {
-	@Instance(MTMVersion.MODID)
+	public static final String		MODID			= "moretools";
+	public static final String		NAME			= "More Tools Mod";
+	public static final String		ACRONYM			= "mtm";
+	public static final String		VERSION			= CSUpdate.CURRENT_VERSION + "-1.0.0";
+	public static final String		DEPENDENCIES	= CSLib.DEPENDENCY;
+	
+	@Instance(MODID)
 	public static MoreToolsMod		instance;
 	
 	@SidedProxy(clientSide = "clashsoft.mods.moretools.client.MTMClientProxy", serverSide = "clashsoft.mods.moretools.common.MTMCommonProxy")
@@ -128,16 +138,39 @@ public class MoreToolsMod
 			CSStacks.glowstone,
 			CSStacks.slimeball						};
 	
+	public MoreToolsMod()
+	{
+		super(MODID, NAME, ACRONYM, VERSION);
+		this.url = "https://github.com/Clashsoft/More-Tools-Mod/wiki/";
+	}
+	
+	@Override
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		MTMVersion.updateCheck();
-		MTMVersion.write(event.getModMetadata());
+		super.preInit(event);
 		
 		MTMTools.instance.load(event);
 		MTMArmor.instance.load(event);
 		
 		free();
+	}
+	
+	@Override
+	@EventHandler
+	public void init(FMLInitializationEvent event)
+	{
+		super.init(event);
+		
+		GameRegistry.registerWorldGenerator(new MTMWorld(), 1);
+		proxy.registerRenderers();
+	}
+	
+	@Override
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event)
+	{
+		super.postInit(event);
 	}
 	
 	/**
@@ -151,12 +184,5 @@ public class MoreToolsMod
 		toolTypes = null;
 		materialNames = null;
 		stacks = null;
-	}
-	
-	@EventHandler
-	public void load(FMLInitializationEvent event)
-	{
-		GameRegistry.registerWorldGenerator(new MTMWorld(), 1);
-		proxy.registerRenderers();
 	}
 }
