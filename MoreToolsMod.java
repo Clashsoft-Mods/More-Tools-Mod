@@ -7,7 +7,7 @@ import clashsoft.cslib.minecraft.update.CSUpdate;
 import clashsoft.mods.moretools.addons.MTMArmor;
 import clashsoft.mods.moretools.addons.MTMTools;
 import clashsoft.mods.moretools.addons.MTMWorld;
-import clashsoft.mods.moretools.common.MTMCommonProxy;
+import clashsoft.mods.moretools.common.MTMProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -33,8 +33,8 @@ public class MoreToolsMod extends ClashsoftMod
 	@Instance(MODID)
 	public static MoreToolsMod		instance;
 	
-	@SidedProxy(clientSide = "clashsoft.mods.moretools.client.MTMClientProxy", serverSide = "clashsoft.mods.moretools.common.MTMCommonProxy")
-	public static MTMCommonProxy	proxy;
+	@SidedProxy(clientSide = "clashsoft.mods.moretools.client.MTMClientProxy", serverSide = "clashsoft.mods.moretools.common.MTMProxy")
+	public static MTMProxy			proxy;
 	
 	public static ArmorMaterial[]	armorMaterials	= new ArmorMaterial[] {
 			MTMArmor.OBSIDIAN,
@@ -140,7 +140,7 @@ public class MoreToolsMod extends ClashsoftMod
 	
 	public MoreToolsMod()
 	{
-		super(MODID, NAME, ACRONYM, VERSION);
+		super(proxy, MODID, NAME, ACRONYM, VERSION);
 		this.url = "https://github.com/Clashsoft/More-Tools-Mod/wiki/";
 	}
 	
@@ -163,7 +163,6 @@ public class MoreToolsMod extends ClashsoftMod
 		super.init(event);
 		
 		GameRegistry.registerWorldGenerator(new MTMWorld(), 1);
-		proxy.registerRenderers();
 	}
 	
 	@Override
