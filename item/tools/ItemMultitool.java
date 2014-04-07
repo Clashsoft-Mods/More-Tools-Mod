@@ -22,7 +22,7 @@ public class ItemMultitool extends ItemTool
 		blocks.addAll(ItemDataSpade.blocksEffectiveAgainst);
 	}
 	
-	public EnumRarity rarity;
+	public EnumRarity	rarity;
 	
 	public ItemMultitool(ToolMaterial material)
 	{

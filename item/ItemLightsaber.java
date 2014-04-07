@@ -64,7 +64,7 @@ public class ItemLightsaber extends ItemMTMSword
 		this.icons[0] = iconRegister.registerIcon("moretools:lightsaber");
 		for (int i = 1; i < this.icons.length; i++)
 		{
-			icons[i] = iconRegister.registerIcon("moretools:lightsaber_" + types[i]);
+			this.icons[i] = iconRegister.registerIcon("moretools:lightsaber_" + types[i]);
 		}
 	}
 }

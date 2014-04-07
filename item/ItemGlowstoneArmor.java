@@ -14,7 +14,7 @@ public class ItemGlowstoneArmor extends ItemArmor
 	{
 		super(material, renderIndex, type);
 	}
-
+	
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack)
 	{
