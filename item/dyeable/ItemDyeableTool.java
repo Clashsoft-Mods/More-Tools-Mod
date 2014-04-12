@@ -76,7 +76,11 @@ public class ItemDyeableTool extends ItemTool
 		}
 		
 		NBTTagCompound display = nbt.getCompoundTag("display");
-		return ((display.hasKey("color", 3)) ? display.getInteger("color") : (display == null) ? 10511680 : 10511680);
+		if (display != null && display.hasKey("color"))
+		{
+			return display.getInteger("color");
+		}
+		return 10511680;
 	}
 	
 	@Override

@@ -34,8 +34,8 @@ public class MTMClientProxy extends MTMProxy
 		if (integer == null)
 		{
 			int i = RenderingRegistry.addNewArmourRendererPrefix(name);
-			integer = Integer.valueOf(i);
-			this.armorIndices.put(name, integer);
+			this.armorIndices.put(name, i);
+			return i;
 		}
 		return integer.intValue();
 	}
