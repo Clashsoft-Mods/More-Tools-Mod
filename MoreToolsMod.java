@@ -27,7 +27,7 @@ public class MoreToolsMod extends ClashsoftMod
 	public static final String		MODID			= "moretools";
 	public static final String		NAME			= "More Tools Mod";
 	public static final String		ACRONYM			= "mtm";
-	public static final String		VERSION			= CSUpdate.CURRENT_VERSION + "-1.0.0";
+	public static final String		VERSION			= CSUpdate.CURRENT_VERSION + "-1.0.0-pre";
 	public static final String		DEPENDENCIES	= CSLib.DEPENDENCY;
 	
 	@Instance(MODID)
