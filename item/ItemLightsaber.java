@@ -11,13 +11,7 @@ import net.minecraft.world.World;
 
 public class ItemLightsaber extends ItemMTMSword
 {
-	public static final String[]	types	= new String[] {
-			"shaft",
-			"blue",
-			"green",
-			"red",
-			"purple",
-			"white"						};
+	public static final String[]	types	= new String[] { "shaft", "blue", "green", "red", "purple", "white" };
 	
 	public IIcon[]					icons;
 	

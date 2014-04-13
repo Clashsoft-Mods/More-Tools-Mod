@@ -120,7 +120,7 @@ public class ItemDyeableTool extends ItemTool
 		
 		NBTTagCompound display = nbt.getCompoundTag("display");
 		
-		if (!(nbt.hasKey("display", 10)))
+		if (!nbt.hasKey("display", 10))
 		{
 			nbt.setTag("display", display);
 		}

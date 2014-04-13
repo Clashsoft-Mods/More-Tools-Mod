@@ -20,14 +20,14 @@ public class MTMWorld implements IWorldGenerator
 			int randPosX = chunkX * 16 + rand.nextInt(16);
 			int randPosY = rand.nextInt(20);
 			int randPosZ = chunkZ * 16 + rand.nextInt(16);
-			(new WorldGenMinable(MTMTools.spaceBlock, 6)).generate(world, rand, randPosX, randPosY, randPosZ);
+			new WorldGenMinable(MTMTools.spaceBlock, 6).generate(world, rand, randPosX, randPosY, randPosZ);
 		}
 		if (rand.nextInt(64) == 0)
 		{
 			int randPosX = chunkX * 16 + rand.nextInt(16);
 			int randPosY = rand.nextInt(20);
 			int randPosZ = chunkZ * 16 + rand.nextInt(16);
-			(new WorldGenMinable(MTMTools.spaceBlock, 24)).generate(world, rand, randPosX, randPosY, randPosZ);
+			new WorldGenMinable(MTMTools.spaceBlock, 24).generate(world, rand, randPosX, randPosY, randPosZ);
 		}
 	}
 	

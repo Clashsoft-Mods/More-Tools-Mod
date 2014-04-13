@@ -55,7 +55,7 @@ public class ItemMTMBow extends Item
 		
 		if (flag || player.inventory.hasItem(this.arrowToConsume))
 		{
-			float f = (j / 20.0F) + (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 0.04F);
+			float f = j / 20.0F + EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 0.04F;
 			f = (f * f + f * 2.0F) / 3.0F;
 			
 			if (f < 0.1D)
@@ -148,8 +148,8 @@ public class ItemMTMBow extends Item
 		if (usingItem != null)
 		{
 			int i = usingItem.getMaxItemUseDuration() - useRemaining;
-			int j = 18 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
-			int k = 13 - (EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4);
+			int j = 18 - EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4;
+			int k = 13 - EnchantmentHelper.getEnchantmentLevel(MTMTools.quickDraw.effectId, stack) * 4;
 			int l = 0;
 			
 			if (i >= j)

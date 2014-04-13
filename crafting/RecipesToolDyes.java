@@ -79,9 +79,9 @@ public class RecipesToolDyes implements IRecipe
 					if (item.hasColor(stack))
 					{
 						int color = item.getColor(theTool);
-						int r = (color >> 16 & 0xFF);
-						int g = (color >> 8 & 0xFF);
-						int b = (color & 0xFF);
+						int r = color >> 16 & 0xFF;
+						int g = color >> 8 & 0xFF;
+						int b = color & 0xFF;
 						
 						saturation += Math.max(r, Math.max(g, b));
 						colors[0] += r;
@@ -116,7 +116,9 @@ public class RecipesToolDyes implements IRecipe
 		}
 		
 		if (item == null)
+		{
 			return null;
+		}
 		
 		int r = colors[0] / coloredItems;
 		int g = colors[1] / coloredItems;
@@ -129,7 +131,7 @@ public class RecipesToolDyes implements IRecipe
 		g = (int) (g * f2 / f4);
 		b = (int) (b * f2 / f4);
 		
-		int color = (r << 16) | (g <<8) | b;
+		int color = r << 16 | g << 8 | b;
 		
 		item.dye(theTool, color);
 		return theTool;

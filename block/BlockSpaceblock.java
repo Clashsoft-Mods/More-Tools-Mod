@@ -7,18 +7,8 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockSpaceblock extends CustomBlock
 {
-	public static String[]	names		= new String[] {
-			"ore",
-			"block",
-			"old",
-			"old",
-			"old"						};
-	public static String[]	textures	= new String[] {
-			"moretools:space_ore",
-			"moretools:space_block",
-			"moretools:space_block_1",
-			"moretools:space_block_2",
-			"moretools:space_block_3"	};
+	public static String[]	names		= new String[] { "ore", "block", "old", "old", "old" };
+	public static String[]	textures	= new String[] { "moretools:space_ore", "moretools:space_block", "moretools:space_block_1", "moretools:space_block_2", "moretools:space_block_3" };
 	
 	public BlockSpaceblock()
 	{

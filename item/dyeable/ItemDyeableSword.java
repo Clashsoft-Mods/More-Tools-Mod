@@ -39,7 +39,7 @@ public class ItemDyeableSword extends ItemDyeableTool
 		}
 		
 		Material material = block.getMaterial();
-		if ((material == Material.plants) || (material == Material.vine) || (material == Material.coral) || (material == Material.leaves) || (material == Material.gourd))
+		if (material == Material.plants || material == Material.vine || material == Material.coral || material == Material.leaves || material == Material.gourd)
 		{
 			return 1.5F;
 		}
@@ -92,7 +92,7 @@ public class ItemDyeableSword extends ItemDyeableTool
 	@Override
 	public boolean canHarvestBlock(Block block, ItemStack stack)
 	{
-		return (block == Blocks.web);
+		return block == Blocks.web;
 	}
 	
 	@Override

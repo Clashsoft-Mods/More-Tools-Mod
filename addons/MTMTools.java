@@ -189,8 +189,8 @@ public class MTMTools
 		
 		// Blocks
 		
-		spaceBlock = (CustomBlock) (new BlockSpaceblock()).setBlockName("spaceblock").setHardness(3F);
-		glowingBlock = (BlockGlowing) (new BlockGlowing()).setBlockName("glowing");
+		spaceBlock = (CustomBlock) new BlockSpaceblock().setBlockName("spaceblock").setHardness(3F);
+		glowingBlock = (BlockGlowing) new BlockGlowing().setBlockName("glowing");
 		
 		spaceBlock.setHarvestLevel("pickaxe", 2);
 		
