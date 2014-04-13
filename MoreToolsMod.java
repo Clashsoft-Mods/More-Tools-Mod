@@ -36,107 +36,17 @@ public class MoreToolsMod extends ClashsoftMod
 	@SidedProxy(clientSide = "clashsoft.mods.moretools.client.MTMClientProxy", serverSide = "clashsoft.mods.moretools.common.MTMProxy")
 	public static MTMProxy			proxy;
 	
-	public static ArmorMaterial[]	armorMaterials	= new ArmorMaterial[] {
-			MTMArmor.OBSIDIAN,
-			MTMArmor.REDSTONE,
-			MTMArmor.COAL,
-			MTMArmor.LAPIS,
-			MTMArmor.END,
-			MTMArmor.BONE,
-			MTMArmor.REED,
-			MTMArmor.BLAZEROD,
-			MTMArmor.DIRT,
-			MTMArmor.GLASS,
-			MTMArmor.SANDSTONE,
-			MTMArmor.BRICK,
-			MTMArmor.ENDSTONE,
-			MTMArmor.EMERALD,
-			MTMArmor.NETHERSTAR,
-			MTMArmor.POTATO,
-			MTMArmor.CARROT,
-			MTMArmor.FISH,
-			MTMArmor.BACON,
-			MTMArmor.SLIME							};
+	public static ArmorMaterial[]	armorMaterials	= new ArmorMaterial[] { MTMArmor.OBSIDIAN, MTMArmor.REDSTONE, MTMArmor.COAL, MTMArmor.LAPIS, MTMArmor.END, MTMArmor.BONE, MTMArmor.REED, MTMArmor.BLAZEROD, MTMArmor.DIRT, MTMArmor.GLASS, MTMArmor.SANDSTONE, MTMArmor.BRICK, MTMArmor.ENDSTONE, MTMArmor.EMERALD, MTMArmor.NETHERSTAR, MTMArmor.POTATO, MTMArmor.CARROT, MTMArmor.FISH, MTMArmor.BACON, MTMArmor.SLIME };
 	
-	public static String[]			armorTypes		= new String[] {
-			"helmet",
-			"chestplate",
-			"leggings",
-			"boots"								};
+	public static String[]			armorTypes		= new String[] { "helmet", "chestplate", "leggings", "boots" };
 	
-	public static ToolMaterial[]	toolMaterials	= new ToolMaterial[] {
-			MTMTools.OBSIDIAN,
-			MTMTools.REDSTONE,
-			MTMTools.COAL,
-			MTMTools.LAPIS,
-			MTMTools.END,
-			MTMTools.BONE,
-			MTMTools.REED,
-			MTMTools.BLAZEROD,
-			MTMTools.DIRT,
-			MTMTools.GLASS,
-			MTMTools.SANDSTONE,
-			MTMTools.BRICK,
-			MTMTools.ENDSTONE,
-			MTMTools.EMERALD,
-			MTMTools.NETHERSTAR,
-			MTMTools.POTATO,
-			MTMTools.CARROT,
-			MTMTools.FISH,
-			MTMTools.BACON,
-			MTMTools.SLIME							};
+	public static ToolMaterial[]	toolMaterials	= new ToolMaterial[] { MTMTools.OBSIDIAN, MTMTools.REDSTONE, MTMTools.COAL, MTMTools.LAPIS, MTMTools.END, MTMTools.BONE, MTMTools.REED, MTMTools.BLAZEROD, MTMTools.DIRT, MTMTools.GLASS, MTMTools.SANDSTONE, MTMTools.BRICK, MTMTools.ENDSTONE, MTMTools.EMERALD, MTMTools.NETHERSTAR, MTMTools.POTATO, MTMTools.CARROT, MTMTools.FISH, MTMTools.BACON, MTMTools.SLIME };
 	
-	public static String[]			toolTypes		= new String[] {
-			"sword",
-			"shovel",
-			"pickaxe",
-			"axe",
-			"hoe"									};
+	public static String[]			toolTypes		= new String[] { "sword", "shovel", "pickaxe", "axe", "hoe" };
 	
-	public static String[]			materialNames	= new String[] {
-			"obsidian",
-			"redstone",
-			"coal",
-			"lapis",
-			"ender",
-			"bone",
-			"sugarcane",
-			"blaze",
-			"dirt",
-			"glass",
-			"sandstone",
-			"brick",
-			"endstone",
-			"emerald",
-			"netherstar",
-			"potato",
-			"carrot",
-			"fish",
-			"bacon",
-			"slime"								};
+	public static String[]			materialNames	= new String[] { "obsidian", "redstone", "coal", "lapis", "ender", "bone", "sugarcane", "blaze", "dirt", "glass", "sandstone", "brick", "endstone", "emerald", "netherstar", "potato", "carrot", "fish", "bacon", "slime" };
 	
-	public static ItemStack[]		stacks			= new ItemStack[] {
-			CSStacks.obsidian,
-			CSStacks.redstone_block,
-			CSStacks.coal,
-			CSStacks.lapis_block,
-			CSStacks.ender_pearl,
-			CSStacks.bone,
-			CSStacks.reeds,
-			CSStacks.blaze_rod,
-			CSStacks.dirt,
-			CSStacks.glass_block,
-			CSStacks.sandstone,
-			CSStacks.brick,
-			CSStacks.end_stone,
-			CSStacks.emerald,
-			CSStacks.nether_star,
-			CSStacks.potato,
-			CSStacks.carrot,
-			CSStacks.fish,
-			CSStacks.porkchop,
-			CSStacks.glowstone,
-			CSStacks.slimeball						};
+	public static ItemStack[]		stacks			= new ItemStack[] { CSStacks.obsidian, CSStacks.redstone_block, CSStacks.coal, CSStacks.lapis_block, CSStacks.ender_pearl, CSStacks.bone, CSStacks.reeds, CSStacks.blaze_rod, CSStacks.dirt, CSStacks.glass_block, CSStacks.sandstone, CSStacks.brick, CSStacks.end_stone, CSStacks.emerald, CSStacks.nether_star, CSStacks.potato, CSStacks.carrot, CSStacks.fish, CSStacks.porkchop, CSStacks.glowstone, CSStacks.slimeball };
 	
 	public MoreToolsMod()
 	{
@@ -173,7 +83,8 @@ public class MoreToolsMod extends ClashsoftMod
 	}
 	
 	/**
-	 * Frees up some memory by setting data arrays to null. Then let the GC do its work.
+	 * Frees up some memory by setting data arrays to null. Then let the GC do
+	 * its work.
 	 */
 	public static void free()
 	{

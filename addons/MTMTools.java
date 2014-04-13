@@ -37,22 +37,22 @@ public class MTMTools
 	public static ToolMaterial	COAL			= EnumHelper.addToolMaterial("COAL", 1, 128, 3F, 2.1F, 15);
 	public static ToolMaterial	LAPIS			= EnumHelper.addToolMaterial("LAPIS", 2, 256, 3F, 2F, 15);
 	public static ToolMaterial	END				= EnumHelper.addToolMaterial("END", 2, 512, 5F, 2.8F, 15);
-	public static ToolMaterial	SPACE			= EnumHelper.addToolMaterial("SPACE1", 3, 4096, 30F, 10F, 12);
-	public static ToolMaterial	SPACE_STRONG	= EnumHelper.addToolMaterial("SPACE2", 3, 6144, 40F, 12F, 14);
-	public static ToolMaterial	SPACE_EPIC		= EnumHelper.addToolMaterial("SPACE3", 3, 8196, 50F, 14F, 16);
-	public static ToolMaterial	BONE			= EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 1.2F, 15);
-	public static ToolMaterial	REED			= EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 0.2F, 15);
-	public static ToolMaterial	BLAZEROD		= EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 1.9F, 15);
-	public static ToolMaterial	DIRT			= EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, -0.1F, 15);
-	public static ToolMaterial	GLASS			= EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 1.3F, 15);
-	public static ToolMaterial	SANDSTONE		= EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 1.8F, 15);
+	public static ToolMaterial	SPACE			= EnumHelper.addToolMaterial("SPACE1", 3, 4096, 10F, 8F, 12);
+	public static ToolMaterial	SPACE_STRONG	= EnumHelper.addToolMaterial("SPACE2", 3, 6144, 12F, 9F, 14);
+	public static ToolMaterial	SPACE_EPIC		= EnumHelper.addToolMaterial("SPACE3", 3, 8196, 14F, 10F, 16);
+	public static ToolMaterial	BONE			= EnumHelper.addToolMaterial("BONE", 1, 32, 1.5F, 1.25F, 15);
+	public static ToolMaterial	REED			= EnumHelper.addToolMaterial("REED", 0, 16, 0.5F, 0.25F, 15);
+	public static ToolMaterial	BLAZEROD		= EnumHelper.addToolMaterial("BLAZEROD", 2, 512, 6F, 1.75F, 15);
+	public static ToolMaterial	DIRT			= EnumHelper.addToolMaterial("DIRT", 0, 16, 0.8F, 0.25F, 15);
+	public static ToolMaterial	GLASS			= EnumHelper.addToolMaterial("GLASS", 0, 16, 0.5F, 1.25F, 15);
+	public static ToolMaterial	SANDSTONE		= EnumHelper.addToolMaterial("SANDSTONE", 1, 128, 3F, 1.75F, 15);
 	public static ToolMaterial	BRICK			= EnumHelper.addToolMaterial("BRICK", 1, 128, 2.5F, 1.75F, 15);
-	public static ToolMaterial	ENDSTONE		= EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 2.9F, 15);
+	public static ToolMaterial	ENDSTONE		= EnumHelper.addToolMaterial("ENDSTONE", 2, 256, 3.5F, 3F, 15);
 	public static ToolMaterial	EXCALIBUR		= EnumHelper.addToolMaterial("EXCALIBUR", 3, 16392, 10F, 20F, 1);
 	public static ToolMaterial	GOD				= EnumHelper.addToolMaterial("GOD", 3, 2048, 5F, 15F, 10);
 	public static ToolMaterial	LUZIFER			= EnumHelper.addToolMaterial("LUZIFER", 3, 2048, 5F, 15F, 10);
 	public static ToolMaterial	LASER			= EnumHelper.addToolMaterial("LASER", 3, -1, 1F, 25F, 1);
-	public static ToolMaterial	EMERALD			= EnumHelper.addToolMaterial("EMERALD2", 3, 1536, 8F, 2.95F, 17);
+	public static ToolMaterial	EMERALD			= EnumHelper.addToolMaterial("EMERALD2", 3, 1536, 8F, 3F, 17);
 	public static ToolMaterial	NETHERSTAR		= EnumHelper.addToolMaterial("NETHERSTAR", 3, 2048, 12F, 4F, 20);
 	public static ToolMaterial	POTATO			= EnumHelper.addToolMaterial("POTATO", 1, 64, 3F, 0.6F, 15);
 	public static ToolMaterial	CARROT			= EnumHelper.addToolMaterial("CARROT", 1, 64, 3F, 0.6F, 15);
@@ -60,7 +60,7 @@ public class MTMTools
 	public static ToolMaterial	BACON			= EnumHelper.addToolMaterial("BACON", 1, 64, 2.5F, 0.7F, 15);
 	public static ToolMaterial	LEATHER			= ToolMaterial.WOOD;
 	public static ToolMaterial	GLOWSTONE		= EnumHelper.addToolMaterial("GLOWSTONE", 2, 64, 1F, 1F, 16);
-	public static ToolMaterial	SLIME			= EnumHelper.addToolMaterial("SLIME", 1, 80, 1.2F, 0.85F, 15);
+	public static ToolMaterial	SLIME			= EnumHelper.addToolMaterial("SLIME", 1, 80, 1.25F, 1F, 15);
 	
 	public static Enchantment	quickDraw		= new CustomEnchantment(7, 1, 3, EnumEnchantmentType.bow, "quickdraw");
 	

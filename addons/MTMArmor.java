@@ -24,130 +24,34 @@ public class MTMArmor
 	
 	// Armor Materials
 	
-	public static ArmorMaterial	OBSIDIAN		= EnumHelper.addArmorMaterial("OBSIDIAN", 2048, new int[] {
-			10,
-			15,
-			13,
-			6									}, 7);
-	public static ArmorMaterial	REDSTONE		= EnumHelper.addArmorMaterial("REDSTONE", 100, new int[] {
-			1,
-			4,
-			3,
-			2									}, 10);
-	public static ArmorMaterial	COAL			= EnumHelper.addArmorMaterial("COAL", 128, new int[] {
-			1,
-			5,
-			3,
-			2									}, 10);
-	public static ArmorMaterial	LAPIS			= EnumHelper.addArmorMaterial("LAPIS", 128, new int[] {
-			1,
-			5,
-			3,
-			2									}, 10);
-	public static ArmorMaterial	END				= EnumHelper.addArmorMaterial("END", 1024, new int[] {
-			3,
-			8,
-			7,
-			6									}, 10);
-	public static ArmorMaterial	SPACE			= EnumHelper.addArmorMaterial("SPACE", 700, new int[] {
-			7,
-			10,
-			9,
-			8									}, 15);
-	public static ArmorMaterial	BONE			= EnumHelper.addArmorMaterial("BONE", 24, new int[] {
-			1,
-			5,
-			3,
-			2									}, 10);
-	public static ArmorMaterial	REED			= EnumHelper.addArmorMaterial("REED", 16, new int[] {
-			1,
-			5,
-			3,
-			2									}, 10);
-	public static ArmorMaterial	BLAZEROD		= EnumHelper.addArmorMaterial("BLAZEROD", 64, new int[] {
-			4,
-			10,
-			7,
-			3									}, 10);
-	public static ArmorMaterial	DIRT			= EnumHelper.addArmorMaterial("DIRT", 16, new int[] {
-			1,
-			1,
-			1,
-			1									}, 10);
-	public static ArmorMaterial	GLASS			= EnumHelper.addArmorMaterial("GLASS", 16, new int[] {
-			1,
-			1,
-			1,
-			1									}, 10);
-	public static ArmorMaterial	SANDSTONE		= EnumHelper.addArmorMaterial("SANDSTONE", 64, new int[] {
-			2,
-			4,
-			3,
-			2									}, 10);
-	public static ArmorMaterial	BRICK			= EnumHelper.addArmorMaterial("BRICK", 32, new int[] {
-			2,
-			4,
-			3,
-			2									}, 10);
-	public static ArmorMaterial	ENDSTONE		= EnumHelper.addArmorMaterial("ENDSTONE", 100, new int[] {
-			3,
-			5,
-			4,
-			2									}, 10);
+	public static ArmorMaterial	OBSIDIAN		= EnumHelper.addArmorMaterial("OBSIDIAN", 2048, new int[] { 10, 15, 13, 6 }, 7);
+	public static ArmorMaterial	REDSTONE		= EnumHelper.addArmorMaterial("REDSTONE", 100, new int[] { 1, 4, 3, 2 }, 10);
+	public static ArmorMaterial	COAL			= EnumHelper.addArmorMaterial("COAL", 128, new int[] { 1, 5, 3, 2 }, 10);
+	public static ArmorMaterial	LAPIS			= EnumHelper.addArmorMaterial("LAPIS", 128, new int[] { 1, 5, 3, 2 }, 10);
+	public static ArmorMaterial	END				= EnumHelper.addArmorMaterial("END", 1024, new int[] { 3, 8, 7, 6 }, 10);
+	public static ArmorMaterial	SPACE			= EnumHelper.addArmorMaterial("SPACE", 700, new int[] { 7, 10, 9, 8 }, 15);
+	public static ArmorMaterial	BONE			= EnumHelper.addArmorMaterial("BONE", 24, new int[] { 1, 5, 3, 2 }, 10);
+	public static ArmorMaterial	REED			= EnumHelper.addArmorMaterial("REED", 16, new int[] { 1, 5, 3, 2 }, 10);
+	public static ArmorMaterial	BLAZEROD		= EnumHelper.addArmorMaterial("BLAZEROD", 64, new int[] { 4, 10, 7, 3 }, 10);
+	public static ArmorMaterial	DIRT			= EnumHelper.addArmorMaterial("DIRT", 16, new int[] { 1, 1, 1, 1 }, 10);
+	public static ArmorMaterial	GLASS			= EnumHelper.addArmorMaterial("GLASS", 16, new int[] { 1, 1, 1, 1 }, 10);
+	public static ArmorMaterial	SANDSTONE		= EnumHelper.addArmorMaterial("SANDSTONE", 64, new int[] { 2, 4, 3, 2 }, 10);
+	public static ArmorMaterial	BRICK			= EnumHelper.addArmorMaterial("BRICK", 32, new int[] { 2, 4, 3, 2 }, 10);
+	public static ArmorMaterial	ENDSTONE		= EnumHelper.addArmorMaterial("ENDSTONE", 100, new int[] { 3, 5, 4, 2 }, 10);
 	
-	public static ArmorMaterial	EPIC			= EnumHelper.addArmorMaterial("EPIC", 4096, new int[] {
-			13,
-			18,
-			15,
-			10									}, 1);
+	public static ArmorMaterial	EPIC			= EnumHelper.addArmorMaterial("EPIC", 4096, new int[] { 13, 18, 15, 10 }, 1);
 	
-	public static ArmorMaterial	INVISIBILITY	= EnumHelper.addArmorMaterial("INVISIBILITY", 24, new int[] {
-			2,
-			7,
-			5,
-			2									}, 10);
-	public static ArmorMaterial	GOD				= EnumHelper.addArmorMaterial("HALLOWED", 512, new int[] {
-			8,
-			10,
-			9,
-			5									}, 7);
-	public static ArmorMaterial	LUZIFER			= EnumHelper.addArmorMaterial("GODDAWN", 512, new int[] {
-			8,
-			10,
-			9,
-			5									}, 7);
-	public static ArmorMaterial	EMERALD			= EnumHelper.addArmorMaterial("EMERALD", 512, new int[] {
-			3,
-			8,
-			6,
-			3									}, 13);
-	public static ArmorMaterial	NETHERSTAR		= EnumHelper.addArmorMaterial("NETHERSTAR", 512, new int[] {
-			11,
-			16,
-			14,
-			7									}, 20);
-	public static ArmorMaterial	POTATO			= EnumHelper.addArmorMaterial("POTATO", 16, new int[] {
-			1,
-			3,
-			3,
-			2									}, 7);
+	public static ArmorMaterial	INVISIBILITY	= EnumHelper.addArmorMaterial("INVISIBILITY", 24, new int[] { 2, 7, 5, 2 }, 10);
+	public static ArmorMaterial	GOD				= EnumHelper.addArmorMaterial("HALLOWED", 512, new int[] { 8, 10, 9, 5 }, 7);
+	public static ArmorMaterial	LUZIFER			= EnumHelper.addArmorMaterial("GODDAWN", 512, new int[] { 8, 10, 9, 5 }, 7);
+	public static ArmorMaterial	EMERALD			= EnumHelper.addArmorMaterial("EMERALD", 512, new int[] { 3, 8, 6, 3 }, 13);
+	public static ArmorMaterial	NETHERSTAR		= EnumHelper.addArmorMaterial("NETHERSTAR", 512, new int[] { 11, 16, 14, 7 }, 20);
+	public static ArmorMaterial	POTATO			= EnumHelper.addArmorMaterial("POTATO", 16, new int[] { 1, 3, 3, 2 }, 7);
 	public static ArmorMaterial	CARROT			= POTATO;
-	public static ArmorMaterial	FISH			= EnumHelper.addArmorMaterial("FISH", 16, new int[] {
-			1,
-			3,
-			2,
-			1									}, 7);
+	public static ArmorMaterial	FISH			= EnumHelper.addArmorMaterial("FISH", 16, new int[] { 1, 3, 2, 1 }, 7);
 	public static ArmorMaterial	BACON			= FISH;
-	public static ArmorMaterial	GLOWSTONE		= EnumHelper.addArmorMaterial("GLOWSTONE", 64, new int[] {
-			1,
-			1,
-			1,
-			1									}, 10);
-	public static ArmorMaterial	SLIME			= EnumHelper.addArmorMaterial("SLIME", 80, new int[] {
-			1,
-			3,
-			2,
-			1									}, 7);
+	public static ArmorMaterial	GLOWSTONE		= EnumHelper.addArmorMaterial("GLOWSTONE", 64, new int[] { 1, 1, 1, 1 }, 10);
+	public static ArmorMaterial	SLIME			= EnumHelper.addArmorMaterial("SLIME", 80, new int[] { 1, 3, 2, 1 }, 7);
 	
 	public static Item			spaceHelmet;
 	public static Item			spaceChestplate;
