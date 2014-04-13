@@ -7,6 +7,8 @@ import clashsoft.cslib.minecraft.item.datatools.ItemDataAxe;
 import clashsoft.cslib.minecraft.item.datatools.ItemDataPickaxe;
 import clashsoft.cslib.minecraft.item.datatools.ItemDataSpade;
 
+import com.google.common.collect.ImmutableSet;
+
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
@@ -39,5 +41,17 @@ public class ItemMultitool extends ItemTool
 	public EnumRarity getRarity(ItemStack stack)
 	{
 		return this.rarity;
+	}
+	
+	@Override
+	public Set<String> getToolClasses(ItemStack stack)
+	{
+		return ImmutableSet.of("pickaxe", "spade", "axe");
+	}
+	
+	@Override
+	public int getHarvestLevel(ItemStack stack, String toolClass)
+	{
+		return this.toolMaterial.getHarvestLevel();
 	}
 }
