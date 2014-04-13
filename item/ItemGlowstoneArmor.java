@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class ItemGlowstoneArmor extends ItemArmor
@@ -23,9 +24,9 @@ public class ItemGlowstoneArmor extends ItemArmor
 	
 	public static void glow(World world, Entity entity)
 	{
-		int x = (int) (entity.posX + 0.5D) - 1;
+		int x = MathHelper.floor_double(entity.posX);
 		int y = (int) entity.posY;
-		int z = (int) (entity.posZ + 0.5D) - 1;
+		int z = MathHelper.floor_double(entity.posZ);
 		
 		for (int x1 = -2; x1 < 3; x1++)
 		{
@@ -33,6 +34,7 @@ public class ItemGlowstoneArmor extends ItemArmor
 			{
 				for (int z1 = -2; z1 < 3; z1++)
 				{
+					// x == 0 && y == 0 && z == 0
 					if ((x1 | y1 | z1) == 0)
 					{
 						continue;
