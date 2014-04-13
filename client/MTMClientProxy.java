@@ -5,24 +5,24 @@ import java.util.Map;
 
 import clashsoft.mods.moretools.common.MTMProxy;
 import cpw.mods.fml.client.registry.RenderingRegistry;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class MTMClientProxy extends MTMProxy
 {
 	public Map<String, Integer>	armorIndices	= new HashMap();
 	
 	public static int			space;
-	public static int			hallowed;
-	public static int			goddawn;
+	public static int			god;
+	public static int			luzifer;
 	public static int			invisibility;
 	public static int			glowstone;
 	
 	@Override
-	public void init(FMLInitializationEvent event)
+	public void preInit(FMLPreInitializationEvent event)
 	{
 		space = this.getArmorIndex("space");
-		hallowed = this.getArmorIndex("hallowed");
-		goddawn = this.getArmorIndex("goddawn");
+		god = this.getArmorIndex("god");
+		luzifer = this.getArmorIndex("luzifer");
 		invisibility = this.getArmorIndex("invisibility");
 		glowstone = this.getArmorIndex("glowstone");
 	}
@@ -34,7 +34,7 @@ public class MTMClientProxy extends MTMProxy
 		if (integer == null)
 		{
 			int i = RenderingRegistry.addNewArmourRendererPrefix(name);
-			this.armorIndices.put(name, i);
+			this.armorIndices.put(name, Integer.valueOf(i)); 
 			return i;
 		}
 		return integer.intValue();

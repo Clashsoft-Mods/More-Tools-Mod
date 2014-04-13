@@ -108,15 +108,15 @@ public class MTMArmor
 		spaceLeggings = new ItemArmor(SPACE, MTMClientProxy.space, 2).setUnlocalizedName("space_leggings").setTextureName("moretools:space_leggings");
 		spaceBoots = new ItemArmor(SPACE, MTMClientProxy.space, 3).setUnlocalizedName("space_boots").setTextureName("moretools:space_boots");
 		
-		godHelmet = (new ItemArmor(GOD, MTMClientProxy.hallowed, 0)).setUnlocalizedName("god_helmet").setTextureName("moretools:god_helmet");
-		godChestplate = (new ItemArmor(GOD, MTMClientProxy.hallowed, 1)).setUnlocalizedName("god_chestplate").setTextureName("moretools:god_chestplate");
-		godLeggings = (new ItemArmor(GOD, MTMClientProxy.hallowed, 2)).setUnlocalizedName("god_leggings").setTextureName("moretools:god_leggings");
-		godBoots = (new ItemArmor(GOD, MTMClientProxy.hallowed, 3)).setUnlocalizedName("god_boots").setTextureName("moretools:god_boots");
+		godHelmet = (new ItemArmor(GOD, MTMClientProxy.god, 0)).setUnlocalizedName("god_helmet").setTextureName("moretools:god_helmet");
+		godChestplate = (new ItemArmor(GOD, MTMClientProxy.god, 1)).setUnlocalizedName("god_chestplate").setTextureName("moretools:god_chestplate");
+		godLeggings = (new ItemArmor(GOD, MTMClientProxy.god, 2)).setUnlocalizedName("god_leggings").setTextureName("moretools:god_leggings");
+		godBoots = (new ItemArmor(GOD, MTMClientProxy.god, 3)).setUnlocalizedName("god_boots").setTextureName("moretools:god_boots");
 		
-		luziferHelmet = (new ItemArmor(LUZIFER, MTMClientProxy.goddawn, 0)).setUnlocalizedName("luzifer_helmet").setTextureName("moretools:luzifer_helmet");
-		luziferChestplate = (new ItemArmor(LUZIFER, MTMClientProxy.goddawn, 1)).setUnlocalizedName("luzifer_chestplate").setTextureName("moretools:luzifer_chestplate");
-		luziferLeggings = (new ItemArmor(LUZIFER, MTMClientProxy.goddawn, 2)).setUnlocalizedName("luzifer_leggings").setTextureName("moretools:luzifer_leggings");
-		luziferBoots = (new ItemArmor(LUZIFER, MTMClientProxy.goddawn, 3)).setUnlocalizedName("luzifer_boots").setTextureName("moretools:luzifer_boots");
+		luziferHelmet = (new ItemArmor(LUZIFER, MTMClientProxy.luzifer, 0)).setUnlocalizedName("luzifer_helmet").setTextureName("moretools:luzifer_helmet");
+		luziferChestplate = (new ItemArmor(LUZIFER, MTMClientProxy.luzifer, 1)).setUnlocalizedName("luzifer_chestplate").setTextureName("moretools:luzifer_chestplate");
+		luziferLeggings = (new ItemArmor(LUZIFER, MTMClientProxy.luzifer, 2)).setUnlocalizedName("luzifer_leggings").setTextureName("moretools:luzifer_leggings");
+		luziferBoots = (new ItemArmor(LUZIFER, MTMClientProxy.luzifer, 3)).setUnlocalizedName("luzifer_boots").setTextureName("moretools:luzifer_boots");
 		
 		invisibilityHelmet = (new ItemInvisibilityArmor(INVISIBILITY, MTMClientProxy.invisibility, 0)).setUnlocalizedName("invisibility_helmet").setTextureName("moretools:invisibility_helmet");
 		invisibilityChestplate = (new ItemInvisibilityArmor(INVISIBILITY, MTMClientProxy.invisibility, 1)).setUnlocalizedName("invisibility_chestplate").setTextureName("moretools:invisibility_chestplate");
