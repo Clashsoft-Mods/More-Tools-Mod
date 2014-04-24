@@ -1,0 +1,143 @@
+1.7.2-1.0.0
+
+! Update to 1.7.2
+* Major structure changes
+* Fixed MANY bugs
+
+1.6.4-5
+
+* Fixed armor textures
+
+1.6.4-4
+
+* Fixed update notifications
+* Rewritten mod loading
+
+1.6.4-3
+
++ Added automatic updates
+
+1.6.4-2
+
++ Added update checking
+
+1.6.4-1
+
+! Update to 1.6.4
+
+1.6.2-2.1
+
+* Minor Clashsoft API changes
+
+1.6.2-2
+
+* Seperated Clashsoft API
+
+1.6.2-1
+
+! Update to 1.6.2
+* More balancing
+
+1.5.2-2
+
++ Added Ender Tools teleportation
+* Balancing
+
+1.5.2-1
+
+! Update to 1.5.2
++ Added some test items
+* Redstone tools are crafted with redstone blocks
+
+1.5.1-1
+
+! Update to 1.5.1
++ Added Invisibility Armor
+* Improved recipes
+
+1.5.0-1
+
+! Update to 1.5
++ Added Slime Tools and Armor
+
+1.4.6-2
+
++ Added MULTIPLAYER SUPPORT
++ Added Glowstone Tools and Armor
+
+1.4.6-1
+
+! Update to 1.4.6
+* Easier Installation
+
+1.4.4-3
+
+* Fixed leather tool crafting recipes
+
+1.4.4-2
+
++ Added leather / dyeable tools
++ Added Gold and Diamond Shears
+* Balanced Space Armor
+
+1.4.4-1
+
++ Added more tools
+* Renamed Hallowed Tools to God's Tools
+* Renamed Goddawn Tools to Luzifer's Tools
+* Fixed some bugs
+* Use of Clashsoft API
+
+1.3.2-2
+
++ Added armor for the other materials
++ Added Emerald Tools
++ Added Hallowed Tools
++ Added Goddawn Tools
++ Added Lightsabers
+
+1.3.2-1
+
+! Update to 1.3.2
++ Added new Space Block texture
++ Added rarity indicators for Swords
+* Space ore is more rare. (At the moment its more common than Coal)
+* Space armor crafted with Space Ingots
+* Space Blocks and Space Ore can only be mined with iron pickaxes.
+* All tools are now enchantable.
+* Fixed item-IDs sharing music disc IDs
+* Easier Installation
+* Many internal changes
+
+1.2.5-5
+
++ Added Space Block armor
++ Added Space Bow and Arrow
++ Added Space Ore
++ Added Space Ingot
++ Added two different Space Swords
++ Added Space Multitool
+* Use of Forge
+* New Space Block recipe
+- Removed dragon egg recipe.
+
+1.2.5-4
+
+* Fixed space tools textures
+
+1.2.5-3
+
++ Added Bone, Blaze Rod, Brick and Sugar Cane Tools
++ Added Dirt, Glass, Endstone and Sandstone Tools
+
+1.2.5-2
+
++ Added Space Tools
++ Added Achievements
+
+1.2.5-1
+
++ Added Redstone, Coal, Lapis Lazuli, Obsidian and Ender Pearl Tools
++ Added Space Tools
++ Added Dragon Egg crafting recipe
++ Added Space Block
