@@ -2,15 +2,12 @@ package clashsoft.mods.moretools.addons;
 
 import java.util.Random;
 
-import clashsoft.cslib.minecraft.addon.Addon;
-import clashsoft.mods.moretools.MoreToolsMod;
 import cpw.mods.fml.common.IWorldGenerator;
 
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 
-@Addon(modName = MoreToolsMod.NAME, addonName = "World")
 public class MTMWorld implements IWorldGenerator
 {
 	public void generateSurface(World world, Random rand, int chunkX, int chunkZ)

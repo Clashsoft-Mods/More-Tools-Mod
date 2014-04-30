@@ -1,6 +1,5 @@
 package clashsoft.mods.moretools.addons;
 
-import clashsoft.cslib.minecraft.addon.Addon;
 import clashsoft.cslib.minecraft.block.CSBlocks;
 import clashsoft.cslib.minecraft.block.CustomBlock;
 import clashsoft.cslib.minecraft.crafting.CSCrafting;
@@ -27,7 +26,6 @@ import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
-@Addon(modName = MoreToolsMod.NAME, addonName = "Tools")
 public class MTMTools
 {
 	public static MTMTools		instance		= new MTMTools();
