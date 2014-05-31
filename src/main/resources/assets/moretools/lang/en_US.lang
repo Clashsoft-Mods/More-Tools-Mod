@@ -1,0 +1,280 @@
+item.bacon_sword.name=Bacon Sword
+item.bacon_shovel.name=Bacon Shovel
+item.bacon_pickaxe.name=Bacon Pickaxe
+item.bacon_axe.name=Bacon Axe
+item.bacon_hoe.name=Bacon Hoe
+item.bacon_helmet.name=Bacon Helmet
+item.bacon_chestplate.name=Bacon Chestplate
+item.bacon_leggings.name=Bacon Leggings
+item.bacon_boots.name=Bacon Boots
+
+item.blaze_sword.name=Blaze Sword
+item.blaze_shovel.name=Blaze Shovel
+item.blaze_pickaxe.name=Blaze Pickaxe
+item.blaze_axe.name=Blaze Axe
+item.blaze_hoe.name=Blaze Hoe
+item.blaze_helmet.name=Blaze Helmet
+item.blaze_chestplate.name=Blaze Chestplate
+item.blaze_leggings.name=Blaze Leggings
+item.blaze_boots.name=Blaze Boots
+
+item.blazerod_and_steel.name=Blaze Rod and Steel
+
+item.brick_sword.name=Brick Sword
+item.brick_shovel.name=Brick Shovel
+item.brick_pickaxe.name=Brick Pickaxe
+item.brick_axe.name=Brick Axe
+item.brick_hoe.name=Brick Hoe
+item.brick_helmet.name=Brick Helmet
+item.brick_chestplate.name=Brick Chestplate
+item.brick_leggings.name=Brick Leggings
+item.brick_boots.name=Brick Boots
+
+item.bone_sword.name=Bone Sword
+item.bone_shovel.name=Bone Shovel
+item.bone_pickaxe.name=Bone Pickaxe
+item.bone_axe.name=Bone Axe
+item.bone_hoe.name=Bone Hoe
+item.bone_helmet.name=Bone Helmet
+item.bone_chestplate.name=Bone Chestplate
+item.bone_leggings.name=Bone Leggings
+item.bone_boots.name=Bone Boots
+
+item.carrot_sword.name=Carrot Sword
+item.carrot_shovel.name=Carrot Shovel
+item.carrot_pickaxe.name=Carrot Pickaxe
+item.carrot_axe.name=Carrot Axe
+item.carrot_hoe.name=Carrot Hoe
+item.carrot_helmet.name=Carrot Helmet
+item.carrot_chestplate.name=Carrot Chestplate
+item.carrot_leggings.name=Carrot Leggings
+item.carrot_boots.name=Carrot Boots
+
+item.coal_sword.name=Coal Sword
+item.coal_shovel.name=Coal Shovel
+item.coal_pickaxe.name=Coal Pickaxe
+item.coal_axe.name=Coal Axe
+item.coal_hoe.name=Coal Hoe
+item.coal_helmet.name=Coal Helmet
+item.coal_chestplate.name=Coal Chestplate
+item.coal_leggings.name=Coal Leggings
+item.coal_boots.name=Coal Boots
+
+item.diamond_shears.name=Diamond Shears
+
+item.dirt_sword.name=Dirt Sword
+item.dirt_shovel.name=Dirt Shovel
+item.dirt_pickaxe.name=Dirt Pickaxe
+item.dirt_axe.name=Dirt Axe
+item.dirt_hoe.name=Dirt Hoe
+item.dirt_helmet.name=Dirt Helmet
+item.dirt_chestplate.name=Dirt Chestplate
+item.dirt_leggings.name=Dirt Leggings
+item.dirt_boots.name=Dirt Boots
+
+item.emerald_sword.name=Emerald Sword
+item.emerald_shovel.name=Emerald Shovel
+item.emerald_pickaxe.name=Emerald Pickaxe
+item.emerald_axe.name=Emerald Axe
+item.emerald_hoe.name=Emerald Hoe
+item.emerald_helmet.name=Emerald Helmet
+item.emerald_chestplate.name=Emerald Chestplate
+item.emerald_leggings.name=Emerald Leggings
+item.emerald_boots.name=Emerald Boots
+
+item.ender_sword.name=Ender Sword
+item.ender_shovel.name=Ender Shovel
+item.ender_pickaxe.name=Ender Pickaxe
+item.ender_axe.name=Ender Axe
+item.ender_hoe.name=Ender Hoe
+item.ender_helmet.name=Ender Helmet
+item.ender_chestplate.name=Ender Chestplate
+item.ender_leggings.name=Ender Leggings
+item.ender_boots.name=Ender Boots
+
+item.endstone_sword.name=Endstone Sword
+item.endstone_shovel.name=Endstone Shovel
+item.endstone_pickaxe.name=Endstone Pickaxe
+item.endstone_axe.name=Endstone Axe
+item.endstone_hoe.name=Endstone Hoe
+item.endstone_helmet.name=Endstone Helmet
+item.endstone_chestplate.name=Endstone Chestplate
+item.endstone_leggings.name=Endstone Leggings
+item.endstone_boots.name=Endstone Boots
+
+item.excalibur.name=Excalibur
+
+item.fish_sword.name=Fish Sword
+item.fish_shovel.name=Fish Shovel
+item.fish_pickaxe.name=Fish Pickaxe
+item.fish_axe.name=Fish Axe
+item.fish_hoe.name=Fish Hoe
+item.fish_helmet.name=Fish Helmet
+item.fish_chestplate.name=Fish Chestplate
+item.fish_leggings.name=Fish Leggings
+item.fish_boots.name=Fish Boots
+
+item.glass_sword.name=Glass Sword
+item.glass_shovel.name=Glass Shovel
+item.glass_pickaxe.name=Glass Pickaxe
+item.glass_axe.name=Glass Axe
+item.glass_hoe.name=Glass Hoe
+item.glass_helmet.name=Glass Helmet
+item.glass_chestplate.name=Glass Chestplate
+item.glass_leggings.name=Glass Leggings
+item.glass_boots.name=Glass Boots
+
+item.glowstone_sword.name=Glowstone Sword
+item.glowstone_shovel.name=Glowstone Shovel
+item.glowstone_pickaxe.name=Glowstone Pickaxe
+item.glowstone_axe.name=Glowstone Axe
+item.glowstone_hoe.name=Glowstone Hoe
+item.glowstone_helmet.name=Glowstone Helmet
+item.glowstone_chestplate.name=Glowstone Chestplate
+item.glowstone_leggings.name=Glowstone Leggings
+item.glowstone_boots.name=Glowstone Boots
+
+item.god_sword.name=God Sword
+item.god_shovel.name=God Shovel
+item.god_pickaxe.name=God Pickaxe
+item.god_axe.name=God Axe
+item.god_hoe.name=God Hoe
+item.god_helmet.name=God Helmet
+item.god_chestplate.name=God Chestplate
+item.god_leggings.name=God Leggings
+item.god_boots.name=God Boots
+
+item.gold_shears.name=Golden Shears
+
+item.invisibility_helmet.name=Invisibility Helmet
+item.invisibility_chestplate.name=Invisibility Chestplate
+item.invisibility_leggings.name=Invisibility Leggings
+item.invisibility_boots.name=Invisibility Boots
+
+item.lapis_sword.name=Lapis Sword
+item.lapis_shovel.name=Lapis Shovel
+item.lapis_pickaxe.name=Lapis Pickaxe
+item.lapis_axe.name=Lapis Axe
+item.lapis_hoe.name=Lapis Hoe
+item.lapis_helmet.name=Lapis Helmet
+item.lapis_chestplate.name=Lapis Chestplate
+item.lapis_leggings.name=Lapis Leggings
+item.lapis_boots.name=Lapis Boots
+
+item.leather_sword.name=Leather Sword
+item.leather_shovel.name=Leather Shovel
+item.leather_pickaxe.name=Leather Pickaxe
+item.leather_axe.name=Leather Axe
+item.leather_hoe.name=Leather Hoe
+item.leather_helmet.name=Leather Helmet
+item.leather_chestplate.name=Leather Chestplate
+item.leather_leggings.name=Leather Leggings
+item.leather_boots.name=Leather Boots
+
+item.lightsaber.shaft.name=Lightsaber Shaft
+item.lightsaber.blue.name=Blue Lightsaber
+item.lightsaber.green.name=Green Lightsaber
+item.lightsaber.red.name=Red Lightsaber
+item.lightsaber.purple.name=Purple Lightsaber
+item.lightsaber.white.name=White Lightsaber
+
+item.luzifer_sword.name=Luzifer Sword
+item.luzifer_shovel.name=Luzifer Shovel
+item.luzifer_pickaxe.name=Luzifer Pickaxe
+item.luzifer_axe.name=Luzifer Axe
+item.luzifer_hoe.name=Luzifer Hoe
+item.luzifer_helmet.name=Luzifer Helmet
+item.luzifer_chestplate.name=Luzifer Chestplate
+item.luzifer_leggings.name=Luzifer Leggings
+item.luzifer_boots.name=Luzifer Boots
+
+item.netherstar_sword.name=Netherstar Sword
+item.netherstar_shovel.name=Netherstar Shovel
+item.netherstar_pickaxe.name=Netherstar Pickaxe
+item.netherstar_axe.name=Netherstar Axe
+item.netherstar_hoe.name=Netherstar Hoe
+item.netherstar_helmet.name=Netherstar Helmet
+item.netherstar_chestplate.name=Netherstar Chestplate
+item.netherstar_leggings.name=Netherstar Leggings
+item.netherstar_boots.name=Netherstar Boots
+
+item.obsidian_sword.name=Obsidian Sword
+item.obsidian_shovel.name=Obsidian Shovel
+item.obsidian_pickaxe.name=Obsidian Pickaxe
+item.obsidian_axe.name=Obsidian Axe
+item.obsidian_hoe.name=Obsidian Hoe
+item.obsidian_helmet.name=Obsidian Helmet
+item.obsidian_chestplate.name=Obsidian Chestplate
+item.obsidian_leggings.name=Obsidian Leggings
+item.obsidian_boots.name=Obsidian Boots
+
+item.potato_sword.name=Potato Sword
+item.potato_shovel.name=Potato Shovel
+item.potato_pickaxe.name=Potato Pickaxe
+item.potato_axe.name=Potato Axe
+item.potato_hoe.name=Potato Hoe
+item.potato_helmet.name=Potato Helmet
+item.potato_chestplate.name=Potato Chestplate
+item.potato_leggings.name=Potato Leggings
+item.potato_boots.name=Potato Boots
+
+item.redstone_sword.name=Redstone Sword
+item.redstone_shovel.name=Redstone Shovel
+item.redstone_pickaxe.name=Redstone Pickaxe
+item.redstone_axe.name=Redstone Axe
+item.redstone_hoe.name=Redstone Hoe
+item.redstone_helmet.name=Redstone Helmet
+item.redstone_chestplate.name=Redstone Chestplate
+item.redstone_leggings.name=Redstone Leggings
+item.redstone_boots.name=Redstone Boots
+
+item.sandstone_sword.name=Sandstone Sword
+item.sandstone_shovel.name=Sandstone Shovel
+item.sandstone_pickaxe.name=Sandstone Pickaxe
+item.sandstone_axe.name=Sandstone Axe
+item.sandstone_hoe.name=Sandstone Hoe
+item.sandstone_helmet.name=Sandstone Helmet
+item.sandstone_chestplate.name=Sandstone Chestplate
+item.sandstone_leggings.name=Sandstone Leggings
+item.sandstone_boots.name=Sandstone Boots
+
+item.slime_sword.name=Slime Sword
+item.slime_shovel.name=Slime Shovel
+item.slime_pickaxe.name=Slime Pickaxe
+item.slime_axe.name=Slime Axe
+item.slime_hoe.name=Slime Hoe
+item.slime_helmet.name=Slime Helmet
+item.slime_chestplate.name=Slime Chestplate
+item.slime_leggings.name=Slime Leggings
+item.slime_boots.name=Slime Boots
+
+item.space_sword_0.name=Space Sword
+item.space_sword_1.name=Galaxy Sword
+item.space_sword_2.name=Hyperspace Sword
+item.space_shovel.name=Space Shovel
+item.space_pickaxe.name=Space Pickaxe
+item.space_axe.name=Space Axe
+item.space_hoe.name=Space Hoe
+item.space_multitool.name=Space Multitool
+item.space_helmet.name=Space Helmet
+item.space_chestplate.name=Space Chestplate
+item.space_leggings.name=Space Leggings
+item.space_boots.name=Space Boots
+item.space_bow.name=Space Bow
+item.space_arrow.name=Space Arrow
+item.space_ingot.name=Space Ingot
+
+item.sugarcane_sword.name=Sugarcane Sword
+item.sugarcane_shovel.name=Sugarcane Shovel
+item.sugarcane_pickaxe.name=Sugarcane Pickaxe
+item.sugarcane_axe.name=Sugarcane Axe
+item.sugarcane_hoe.name=Sugarcane Hoe
+item.sugarcane_helmet.name=Sugarcane Helmet
+item.sugarcane_chestplate.name=Sugarcane Chestplate
+item.sugarcane_leggings.name=Sugarcane Leggings
+item.sugarcane_boots.name=Sugarcane Boots
+
+tile.space_block.ore.name=Space Ore
+tile.space_block.block.name=Space Block
+tile.space_block.old.name=Space Block
+tile.space_block.old.desc=Legacy Block
