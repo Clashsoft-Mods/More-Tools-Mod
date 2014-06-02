@@ -11,7 +11,6 @@ import clashsoft.mods.moretools.common.MTMProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -33,8 +32,7 @@ public class MoreToolsMod extends ClashsoftMod
 	@Instance(MODID)
 	public static MoreToolsMod		instance;
 	
-	@SidedProxy(clientSide = "clashsoft.mods.moretools.client.MTMClientProxy", serverSide = "clashsoft.mods.moretools.common.MTMProxy")
-	public static MTMProxy			proxy;
+	public static MTMProxy			proxy			= createProxy("clashsoft.mods.moretools.client.MTMClientProxy", "clashsoft.mods.moretools.common.MTMProxy");
 	
 	public static ArmorMaterial[]	armorMaterials	= new ArmorMaterial[] { MTMArmor.OBSIDIAN, MTMArmor.REDSTONE, MTMArmor.COAL, MTMArmor.LAPIS, MTMArmor.END, MTMArmor.BONE, MTMArmor.REED, MTMArmor.BLAZEROD, MTMArmor.DIRT, MTMArmor.GLASS, MTMArmor.SANDSTONE, MTMArmor.BRICK, MTMArmor.ENDSTONE, MTMArmor.EMERALD, MTMArmor.NETHERSTAR, MTMArmor.POTATO, MTMArmor.CARROT, MTMArmor.FISH, MTMArmor.BACON, MTMArmor.SLIME };
 	
