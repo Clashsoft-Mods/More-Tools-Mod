@@ -2,7 +2,7 @@ package clashsoft.mods.moretools;
 
 import clashsoft.cslib.minecraft.init.CSLib;
 import clashsoft.cslib.minecraft.init.ClashsoftMod;
-import clashsoft.cslib.minecraft.item.CSStacks;
+import clashsoft.cslib.minecraft.stack.CSStacks;
 import clashsoft.cslib.minecraft.update.CSUpdate;
 import clashsoft.mods.moretools.addons.MTMArmor;
 import clashsoft.mods.moretools.addons.MTMTools;

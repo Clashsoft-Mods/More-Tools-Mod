@@ -1,7 +1,7 @@
 package clashsoft.mods.moretools.addons;
 
 import clashsoft.cslib.minecraft.item.CSItems;
-import clashsoft.cslib.minecraft.item.CSStacks;
+import clashsoft.cslib.minecraft.stack.CSStacks;
 import clashsoft.mods.moretools.MoreToolsMod;
 import clashsoft.mods.moretools.client.MTMClientProxy;
 import clashsoft.mods.moretools.item.ItemGlowstoneArmor;
