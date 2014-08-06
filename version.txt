@@ -1,2 +1,6 @@
 version=1.7.10-1.0.1
 url=https://github.com/Clashsoft/More-Tools-Mod/releases/download/1.7.10-1.0.1/MoreToolsMod-1.7.10-1.0.1.jar
+
+> Update to Minecraft 1.7.10.
+> Update to Clashsoft Lib 1.7.10-2.4.2.
+* Fixed UpdateChecker not working.
