@@ -4,6 +4,8 @@ import clashsoft.cslib.minecraft.init.CSLib;
 import clashsoft.cslib.minecraft.init.ClashsoftMod;
 import clashsoft.cslib.minecraft.stack.CSStacks;
 import clashsoft.cslib.minecraft.update.CSUpdate;
+import clashsoft.cslib.minecraft.update.reader.SimpleUpdateReader;
+import clashsoft.cslib.minecraft.update.updater.ModUpdater;
 import clashsoft.mods.moretools.addons.MTMArmor;
 import clashsoft.mods.moretools.addons.MTMTools;
 import clashsoft.mods.moretools.addons.MTMWorld;
@@ -50,6 +52,13 @@ public class MoreToolsMod extends ClashsoftMod
 	{
 		super(proxy, MODID, NAME, ACRONYM, VERSION);
 		this.url = "https://github.com/Clashsoft/More-Tools-Mod/wiki/";
+	}
+	
+	@Override
+	public void updateCheck()
+	{
+		final String url = "https://raw.githubusercontent.com/Clashsoft/More-Tools-Mod/master/version.txt";
+		CSUpdate.updateCheck(new ModUpdater(NAME, ACRONYM, VERSION, url, SimpleUpdateReader.instance));
 	}
 	
 	@Override
