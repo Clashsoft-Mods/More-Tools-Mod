@@ -1,6 +1,5 @@
-version=1.7.10-1.0.1
-url=https://github.com/Clashsoft/More-Tools-Mod/releases/download/1.7.10-1.0.1/MoreToolsMod-1.7.10-1.0.1.jar
+version=1.7.10-1.0.2
+url=https://github.com/Clashsoft/More-Tools-Mod/releases/download/1.7.10-1.0.2/MoreToolsMod-1.7.10-1.0.2.jar
 
-> Update to Minecraft 1.7.10.
-> Update to Clashsoft Lib 1.7.10-2.4.2.
-* Fixed UpdateChecker not working.
+> Update to Forge 1.7.10-10.13.0.1207.
+> Update to Clashsoft Lib 1.7.10-2.5.0.
